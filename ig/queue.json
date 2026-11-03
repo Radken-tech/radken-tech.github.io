@@ -1,4 +1,47 @@
 {
   "note": "Instagram post queue. One post a day goes out at 09:47 Dar time once its date arrives. Images must be JPEG, square (1080x1080) or portrait (1080x1350), in ig/img/.",
-  "posts": []
+  "posts": [
+    {
+      "id": "p001",
+      "date": "2026-11-05",
+      "image": "ig/img/p001.jpg",
+      "caption": "Habari Dar es Salaam 👋 We're Radken Tech.\n\nWe write the IT documents that schools, clinics and small businesses need but rarely have time to prepare: network and CCTV proposals, IT policy packs, tender specifications and asset registers. We don't sell or install equipment, so our advice stays independent.\n\n🇹🇿 Sisi ni Radken Tech. Tunaandaa nyaraka za TEHAMA kwa shule, kliniki na biashara ndogo: mapendekezo ya mtandao na CCTV, sera za TEHAMA, vipimo vya zabuni na rejista za vifaa. Hatuuzi wala kufunga vifaa, hivyo ushauri wetu unabaki huru.\n\n🔗 Prices and a free sample: link in bio\n📲 WhatsApp 0786 670 743\n\n#DarEsSalaam #Tanzania #TEHAMA #ITConsulting #SchoolsTanzania #ClinicsTanzania #CCTV",
+      "posted": false
+    },
+    {
+      "id": "p002",
+      "date": "2026-11-06",
+      "image": "ig/img/p002.jpg",
+      "caption": "Clear prices, before any work begins.\n\nEvery job starts with a short requirements form. You then get a proforma with the exact price, valid for 14 days, so there are no surprises.\n\n🇹🇿 Bei zilizo wazi kabla kazi haijaanza. Kila kazi huanza na fomu fupi ya mahitaji, kisha unapokea proforma yenye bei kamili, halali kwa siku 14. Hakuna malipo ya kushtukiza.\n\n🔗 Prices and a free sample: link in bio\n📲 WhatsApp 0786 670 743\n\n#DarEsSalaam #Tanzania #TEHAMA #ITConsulting #SmallBusinessTanzania #ITPolicy #NetworkDesign",
+      "posted": false
+    },
+    {
+      "id": "p003",
+      "date": "2026-11-07",
+      "image": "ig/img/p003.jpg",
+      "caption": "Five IT gaps we see again and again in clinics.\n\nEach one can stop the clinic's work or put patient records at risk, and Tanzania's Personal Data Protection Act, 2022 expects personal data to be protected. Most can be fixed with clear written rules before spending money on new equipment.\n\n🇹🇿 Mapungufu matano ya TEHAMA tunayoyaona mara kwa mara kwenye kliniki. Kila moja linaweza kusimamisha huduma au kuhatarisha kumbukumbu za wagonjwa. Mengi yanatatuliwa kwa kanuni zilizoandikwa vizuri, kabla ya kununua vifaa vipya.\n\n🔗 Prices and a free sample: link in bio\n📲 WhatsApp 0786 670 743\n\n#DarEsSalaam #Tanzania #TEHAMA #ITConsulting #ClinicsTanzania #HealthcareIT #DataProtection",
+      "posted": false
+    },
+    {
+      "id": "p004",
+      "date": "2026-11-08",
+      "image": "ig/img/p004.jpg",
+      "caption": "A quick check for every school compound.\n\nIf you can't tick all four, a CCTV proposal shows exactly which cameras go where, how much storage you need and what it should cost, so you can compare supplier quotes like for like.\n\n🇹🇿 Ukaguzi mfupi kwa kila shule. Kama huwezi kuweka alama kwenye yote manne, pendekezo la CCTV linaonyesha kamera zipi ziwekwe wapi, hifadhi kiasi gani inahitajika na gharama yake, ili ulinganishe nukuu za wasambazaji kwa usawa.\n\n🔗 Prices and a free sample: link in bio\n📲 WhatsApp 0786 670 743\n\n#DarEsSalaam #Tanzania #TEHAMA #ITConsulting #SchoolsTanzania #SchoolSafety #CCTV",
+      "posted": false
+    },
+    {
+      "id": "p005",
+      "date": "2026-11-09",
+      "image": "ig/img/p005.jpg",
+      "caption": "See exactly what you get before you pay anything.\n\nWe've published a full sample network proposal for a fictional two-campus primary school in Dar: current setup, risks, the design, an itemised bill of quantities in TZS and a phased plan. Read it free from the link in our bio.\n\n🇹🇿 Ona unachopata kabla ya kulipa chochote. Tumeweka mfano kamili wa pendekezo la mtandao kwa shule ya kubuni yenye kampasi mbili hapa Dar. Lisome bure kupitia kiungo kilicho kwenye wasifu wetu.\n\n🔗 Prices and a free sample: link in bio\n📲 WhatsApp 0786 670 743\n\n#DarEsSalaam #Tanzania #TEHAMA #ITConsulting #SchoolsTanzania #NetworkDesign #ITProposal",
+      "posted": false
+    },
+    {
+      "id": "p006",
+      "date": "2026-11-10",
+      "image": "ig/img/p006.jpg",
+      "caption": "From first message to finished document, in four steps.\n\n1. Fill in the short requirements form\n2. Receive a proforma with the exact price\n3. Pay by Airtel Money\n4. Get your branded Word document in 3–7 working days\n\n🇹🇿 Hatua nne tu: jaza fomu fupi, pokea proforma, lipa kwa Airtel Money, pokea nyaraka yako ndani ya siku 3–7 za kazi.\n\n🔗 Prices and a free sample: link in bio\n📲 WhatsApp 0786 670 743\n\n#DarEsSalaam #Tanzania #TEHAMA #ITConsulting #SmallBusinessTanzania #ClinicsTanzania #SchoolsTanzania",
+      "posted": false
+    }
+  ]
 }
