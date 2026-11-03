@@ -1,0 +1,52 @@
+name: Instagram publisher
+
+# Posts anything due in ig/queue.json to Instagram once a day.
+# Needs two repository secrets (Settings > Secrets and variables > Actions):
+#   IG_USER_ID       the Instagram business account id
+#   IG_ACCESS_TOKEN  a long-lived access token from the Meta developer app
+# Without them it runs in safe mode and only reports what it would post.
+
+on:
+  schedule:
+    - cron: "47 6 * * *"   # 06:47 UTC = 09:47 in Dar es Salaam
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Safe mode: show what would be posted, post nothing"
+        type: boolean
+        default: true
+
+permissions:
+  contents: write   # to record which posts went out in ig/queue.json
+
+concurrency:
+  group: instagram-publisher
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Publish due posts
+        env:
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+          DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run && '1' || '0' }}
+        run: python ig/publish.py
+
+      - name: Save what was posted
+        if: always()
+        run: |
+          if ! git diff --quiet ig/queue.json; then
+            git config user.name "radken-instagram-bot"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add ig/queue.json
+            git commit -m "Instagram: record posted items"
+            git push
+          fi
