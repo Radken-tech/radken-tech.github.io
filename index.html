@@ -1,0 +1,921 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Radken Tech</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a working document desk. Hero pairs the promise with a real proposal cover; below, a priced service schedule, the four-step order flow, and contact. */
+:root{
+  --navy:#0B2545; --teal:#0E9E84; --teal-bright:#13C4A3;
+  --bg:#F5F8FA; --surface:#FFFFFF; --fg:#13233A; --muted:#55657A; --line:#D9E1E8; --tint:#E6F5F1;
+  --on-navy:#F2F7FA; --on-accent:#062018;
+  --display:"Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --body:"IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --mono:"IBM Plex Mono", ui-monospace, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --navy:#0A1C33; --teal:#2FD3B2; --teal-bright:#2FD3B2;
+  --bg:#0C1626; --surface:#122139; --fg:#E7EEF5; --muted:#9AAABD; --line:#22344F; --tint:#123A3A;
+  --on-navy:#F2F7FA; color-scheme:dark }}
+:root[data-theme="dark"]{
+  --navy:#0A1C33; --teal:#2FD3B2; --teal-bright:#2FD3B2;
+  --bg:#0C1626; --surface:#122139; --fg:#E7EEF5; --muted:#9AAABD; --line:#22344F; --tint:#123A3A;
+  --on-navy:#F2F7FA; color-scheme:dark }
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.6}
+.wrap{max-width:1080px;margin:0 auto;padding-inline:20px}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;line-height:1.1}
+p{margin:0}
+a{color:var(--teal)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--teal-bright);outline-offset:2px}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--teal)}
+
+/* header */
+.top{background:var(--navy);color:var(--on-navy)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:14px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--on-navy)}
+.brand b{font-family:var(--display);font-weight:800;font-size:20px;letter-spacing:.04em}
+.brand span{font-family:var(--display);font-weight:700;font-size:12px;letter-spacing:.3em;color:var(--teal-bright);display:block;line-height:1}
+.top nav{display:flex;gap:20px;flex-wrap:wrap}
+.top nav a{color:var(--on-navy);text-decoration:none;font-size:14px;opacity:.85}
+.top nav a:hover{opacity:1;color:var(--teal-bright)}
+.top nav{margin-left:auto}
+.lang{display:inline-flex;border:1px solid #3A5578;border-radius:6px;overflow:hidden;background:transparent;padding:0;cursor:pointer;font-family:var(--mono);font-size:12px}
+.lang span{padding:6px 10px;color:var(--on-navy);opacity:.7}
+.lang span.on{background:var(--teal-bright);color:var(--on-accent);opacity:1;font-weight:500}
+html[lang="sw"] .steps li::before{content:"Hatua " counter(st)}
+
+/* hero */
+.hero{background:var(--navy);color:var(--on-navy);padding-block:48px 64px}
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+.hero h1{font-size:clamp(34px,5.4vw,58px);font-weight:800;letter-spacing:-.01em}
+.hero h1 em{font-style:normal;color:var(--teal-bright)}
+.hero .lead{margin-top:20px;font-size:18px;max-width:34em;color:#C9D6E3}
+.hero .eyebrow{color:var(--teal-bright);margin-bottom:16px;display:block}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:6px;font-weight:600;font-size:15px;text-decoration:none;border:1.5px solid transparent;cursor:pointer;font-family:var(--body)}
+.btn-primary{background:var(--teal-bright);color:#062018}
+.btn-primary:hover{filter:brightness(1.06)}
+.btn-ghost{border-color:#3A5578;color:var(--on-navy);background:transparent}
+.btn-ghost:hover{border-color:var(--teal-bright)}
+
+/* proposal cover */
+.cover{background:#FFFFFF;color:#13233A;border-radius:4px;padding:28px 26px 22px;box-shadow:0 24px 50px rgba(0,0,0,.35);transform:rotate(1.5deg);max-width:380px;justify-self:center;width:100%;position:relative}
+.cover::after{content:"";position:absolute;inset:auto 14px -10px 14px;height:10px;background:#E4EAF0;border-radius:0 0 4px 4px;z-index:-1}
+.cover .ref{font-family:var(--mono);font-size:11px;color:#55657A;display:flex;justify-content:space-between;border-bottom:1px solid #D9E1E8;padding-bottom:10px}
+.cover h3{font-size:24px;margin-top:22px;color:#0B2545}
+.cover .for{margin-top:6px;font-size:14px;color:#55657A}
+.cover ol{margin:20px 0 0;padding:0;list-style:none;font-size:13.5px;counter-reset:s}
+.cover li{display:flex;justify-content:space-between;gap:8px;padding:7px 0;border-bottom:1px dashed #D9E1E8;counter-increment:s}
+.cover li::before{content:counter(s) ".";font-family:var(--mono);color:#0E9E84;width:22px;flex:none}
+.cover li span:first-child{flex:1}
+.cover li span:last-child{font-family:var(--mono);color:#55657A;font-size:12px}
+.cover .foot{margin-top:18px;display:flex;align-items:center;gap:8px;font-family:var(--display);font-weight:700;font-size:13px;color:#0B2545}
+.cover .foot small{font-family:var(--body);font-weight:400;color:#55657A;margin-left:auto;font-size:11px}
+
+/* sections */
+section{padding-block:72px}
+.head{max-width:40em;display:grid;gap:12px;margin-bottom:36px}
+.head h2{font-size:clamp(28px,3.6vw,40px);font-weight:800;color:var(--fg)}
+.head p{color:var(--muted);font-size:17px}
+
+/* services schedule */
+.schedule{background:var(--surface);border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.row{display:grid;grid-template-columns:168px minmax(0,1fr) auto;gap:6px 24px;padding:20px 24px;border-bottom:1px solid var(--line);align-items:center}
+.row:last-child{border-bottom:0}
+.row .ill{grid-column:1;grid-row:1 / span 3;width:168px;height:112px;object-fit:cover;border-radius:6px;background:var(--tint);display:block;max-width:100%}
+.row h3{grid-column:2;font-size:19px;font-weight:700;align-self:end}
+.row p{grid-column:2;color:var(--muted);font-size:15px;max-width:52ch;align-self:start}
+.price{grid-column:3;grid-row:1 / span 3;text-align:right;font-family:var(--mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+.row.template .ill{background:var(--surface)}
+/* illustration strokes and fills come from theme tokens */
+.ill .s{fill:none;stroke:var(--fg);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.ill .a{fill:none;stroke:var(--teal);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.ill .fa{fill:var(--teal)}
+.ill .fp{fill:var(--surface);stroke:var(--fg);stroke-width:2.2;stroke-linejoin:round}
+.ill .fl{fill:var(--line)}
+.price small{display:block;font-size:11px;color:var(--muted);letter-spacing:.08em;text-transform:uppercase}
+.price strong{font-size:18px;font-weight:500;color:var(--fg)}
+.row.template{background:var(--tint)}
+.eta{display:block;font-style:normal;font-family:var(--body);font-size:12px;color:var(--muted);margin-top:2px}
+.req{grid-column:2;justify-self:start;font-size:14px;font-weight:600;color:var(--teal);text-decoration:none;margin-top:2px}
+.req::after{content:" \2192"}
+.req:hover{text-decoration:underline}
+.wa-float{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:20;display:inline-flex;align-items:center;gap:8px;padding:12px 18px 12px 14px;border-radius:999px;background:var(--teal-bright);color:var(--on-accent);font-weight:600;font-size:15px;text-decoration:none;box-shadow:0 8px 24px rgba(6,32,24,.35)}
+.wa-float:hover{filter:brightness(1.06)}
+.wa-float svg{flex:none}
+.note{margin-top:14px;font-size:14px;color:var(--muted)}
+
+/* who it's for */
+.alt{background:var(--surface);border-block:1px solid var(--line)}
+.who{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.who > div{display:grid;gap:8px;align-content:start;min-width:0}
+.who h3{font-size:20px}
+.who p{color:var(--muted);font-size:15px}
+.who .eyebrow{color:var(--muted)}
+
+/* steps */
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:20px;counter-reset:st}
+.steps li{counter-increment:st;display:grid;gap:8px;align-content:start;padding-top:16px;border-top:3px solid var(--teal);min-width:0}
+.steps li::before{content:"Step " counter(st);font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--teal)}
+.steps h3{font-size:18px}
+.steps p{color:var(--muted);font-size:15px}
+
+/* about */
+.about{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;align-items:start}
+.about p{color:var(--muted);font-size:17px;max-width:36em}
+.about p + p{margin-top:14px}
+.creds{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px;padding:0;list-style:none}
+.creds li{font-family:var(--mono);font-size:12px;padding:6px 10px;border:1px solid var(--line);border-radius:999px;color:var(--fg);background:var(--surface)}
+
+/* contact */
+.contact{background:var(--navy);color:var(--on-navy)}
+.contact .head h2{color:var(--on-navy)}
+.contact .head p{color:#C9D6E3}
+.contact .eyebrow{color:var(--teal-bright)}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card{border:1px solid #2A4468;border-radius:8px;padding:20px;display:grid;gap:10px;min-width:0}
+.card small{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--teal-bright)}
+.card .val{font-size:18px;font-weight:600;word-break:break-word;user-select:all}
+.card .acts{display:flex;gap:8px;flex-wrap:wrap}
+.chip{font-size:13px;padding:6px 12px;border-radius:5px;border:1px solid #3A5578;background:transparent;color:var(--on-navy);text-decoration:none;cursor:pointer;font-family:var(--body)}
+.chip:hover{border-color:var(--teal-bright);color:var(--teal-bright)}
+.pay{margin-top:28px;font-size:14px;color:#C9D6E3}
+
+footer{background:var(--navy);color:#8FA3B8;font-size:13px;border-top:1px solid #1D3456}
+footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding-block:20px}
+
+@media (max-width:860px){
+  .hero .wrap,.about{grid-template-columns:1fr}
+  .cover{transform:none}
+  .steps{grid-template-columns:repeat(2,1fr)}
+  .who,.cards{grid-template-columns:1fr}
+}
+@media (max-width:520px){
+  .steps{grid-template-columns:1fr}
+  .row{grid-template-columns:minmax(0,1fr);gap:6px;padding:16px}
+  .row .ill{grid-column:1;grid-row:auto;width:100%;height:auto;aspect-ratio:3/2;margin-bottom:8px}
+  .row h3,.row p,.req{grid-column:1}
+  .price{grid-column:1;grid-row:auto;text-align:left}
+  .price small{display:inline;margin-right:6px}
+  .eta{display:inline;margin-left:8px}
+  .top nav{order:3;width:100%;margin-left:0;gap:18px;overflow-x:auto;white-space:nowrap;padding-bottom:2px}
+  footer .wrap{padding-bottom:84px}
+  section{padding-block:56px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+
+/* ===== Vibrancy layer: warm accent, service cards, trust strip ===== */
+:root{ --sun:#F5A524; --sun-tint:#FFF1D6; --on-sun:#2A1A00; --sky-tint:#E7F0FB; --shadow:rgba(11,37,69,.14) }
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){ --sun:#FFC15A; --sun-tint:#3A2E14; --on-sun:#2A1A00; --sky-tint:#16294A; --shadow:rgba(0,0,0,.45) }}
+:root[data-theme="dark"]{ --sun:#FFC15A; --sun-tint:#3A2E14; --on-sun:#2A1A00; --sky-tint:#16294A; --shadow:rgba(0,0,0,.45) }
+
+/* hero glow + node pattern echoing the logo */
+.hero{position:relative;overflow:hidden;
+  background:
+    radial-gradient(760px 420px at 88% 18%, rgba(19,196,163,.26), transparent 62%),
+    radial-gradient(620px 340px at 4% 110%, rgba(245,165,36,.20), transparent 60%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cg fill='none' stroke='%2313C4A3' stroke-opacity='.10' stroke-width='1.5'%3E%3Cpath d='M20 20h50l20 30-20 30H20zM70 80l30 30'/%3E%3C/g%3E%3Cg fill='%2313C4A3' fill-opacity='.18'%3E%3Ccircle cx='20' cy='20' r='4'/%3E%3Ccircle cx='70' cy='20' r='3'/%3E%3Ccircle cx='90' cy='50' r='4'/%3E%3Ccircle cx='20' cy='80' r='3'/%3E%3Ccircle cx='100' cy='110' r='4'/%3E%3C/g%3E%3C/svg%3E"),
+    var(--navy)}
+.hero h1 em{background:linear-gradient(transparent 62%, rgba(245,165,36,.35) 62%);padding-inline:.08em}
+.btn-primary{box-shadow:0 8px 22px rgba(19,196,163,.35)}
+.btn-primary:hover{transform:translateY(-1px)}
+.btn{transition:transform .15s, filter .15s, border-color .15s}
+.hero-art{position:relative;justify-self:center;width:100%;max-width:400px}
+.hero-photo{position:absolute;width:72%;height:auto;left:-14%;top:-22px;border-radius:6px;transform:rotate(-5deg);box-shadow:0 18px 40px rgba(0,0,0,.4);opacity:.95}
+.hero-art .cover{margin-left:auto}
+
+/* trust strip */
+.trust{background:var(--teal-bright);color:var(--on-accent)}
+.trust ul{list-style:none;margin:0;padding:16px 0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px 24px}
+.trust li{display:flex;align-items:center;gap:10px;font-weight:600;font-size:15px;min-width:0}
+.trust svg{flex:none;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+
+/* services as photo cards */
+.schedule{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;background:none;border:0;border-radius:0;overflow:visible}
+.row{display:flex;flex-direction:column;gap:8px;padding:0 0 20px;border:1px solid var(--line);border-radius:12px;background:var(--surface);overflow:hidden;transition:transform .2s, box-shadow .2s;min-width:0}
+.row:last-child{border-bottom:1px solid var(--line)}
+.row:hover{transform:translateY(-4px);box-shadow:0 16px 34px var(--shadow)}
+.row .ill{width:100%;height:auto;aspect-ratio:3/2;border-radius:0;margin:0 0 8px;transition:transform .4s}
+.row:hover .ill{transform:scale(1.03)}
+.row h3,.row p{padding-inline:20px}
+.row h3{font-size:20px}
+.price{display:flex;align-items:baseline;flex-wrap:wrap;gap:4px 8px;margin:auto 20px 0;padding-top:14px;border-top:1px dashed var(--line);text-align:left;white-space:normal}
+.price small{display:inline;margin:0}
+.price strong{font-size:20px;font-weight:600}
+.eta{display:inline-block;margin:0 0 0 auto;padding:3px 10px;border-radius:999px;background:var(--sun-tint);color:var(--fg);font-size:12px;font-weight:500}
+.req{margin:6px 20px 0;padding:10px 14px;border-radius:8px;background:var(--tint);text-align:center;justify-self:auto;align-self:stretch}
+.req:hover{text-decoration:none;background:var(--teal-bright);color:var(--on-accent)}
+.row.template{background:var(--sun-tint);border-color:transparent}
+.row.template .req{background:var(--sun);color:var(--on-sun)}
+
+/* who we work with: tinted cards */
+.who > div{padding:24px;border-radius:12px}
+.who > div:nth-child(1){background:var(--sun-tint)}
+.who > div:nth-child(2){background:var(--tint)}
+.who > div:nth-child(3){background:var(--sky-tint)}
+.who .eyebrow{color:var(--fg);opacity:.7}
+
+/* steps: numbered pills */
+.steps li{border-top:0;padding:22px;border-radius:12px;background:var(--surface);border:1px solid var(--line)}
+.steps li::before{justify-self:start;padding:4px 12px;border-radius:999px;background:var(--teal-bright);color:var(--on-accent);font-weight:500}
+.steps li:nth-child(3)::before{background:var(--sun);color:var(--on-sun)}
+
+/* contact: WhatsApp card stands out */
+.cards .card:first-child{background:rgba(19,196,163,.12);border-color:var(--teal-bright)}
+.creds li:nth-child(odd){background:var(--tint)}
+.creds li:nth-child(even){background:var(--sun-tint)}
+
+@media (max-width:860px){
+  .schedule{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .trust ul{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .hero-photo{display:none}
+}
+@media (max-width:560px){
+  .schedule{grid-template-columns:minmax(0,1fr)}
+  .row{padding:0 0 18px}
+  .row .ill{margin-bottom:8px}
+  .trust li{font-size:14px}
+}
+@media (prefers-reduced-motion:reduce){.row,.row .ill,.btn{transition:none}.row:hover,.row:hover .ill,.btn-primary:hover{transform:none}}
+
+/* ===== Requirements form ===== */
+:root{ --danger:#C2410C }
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){ --danger:#FF8A5B }}
+:root[data-theme="dark"]{ --danger:#FF8A5B }
+.steplink{justify-self:start;font-weight:600;font-size:14px;color:var(--teal);text-decoration:none}
+.steplink::after{content:" \2193"}
+.steplink:hover{text-decoration:underline}
+.rq{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:28px;display:grid;gap:30px;box-shadow:0 12px 30px var(--shadow)}
+.rq fieldset{border:0;margin:0;padding:0;min-width:0}
+.rq legend{padding:0;font-family:var(--display);font-weight:700;font-size:20px;color:var(--fg);margin-bottom:14px}
+.rq .grp{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 22px}
+.rq .grp > legend{grid-column:1/-1}
+.svc-pick{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.svc-pick label{display:flex;align-items:center;gap:10px;padding:12px 14px;border:1.5px solid var(--line);border-radius:10px;cursor:pointer;font-weight:600;font-size:15px;min-width:0;background:var(--bg);transition:border-color .15s, background .15s}
+.svc-pick label:hover{border-color:var(--teal)}
+.svc-pick label:has(input:checked){border-color:var(--teal);background:var(--tint)}
+.rq input[type=radio],.rq input[type=checkbox]{accent-color:var(--teal);width:16px;height:16px;flex:none;margin:0}
+.rq .f{display:grid;gap:6px;align-content:start;min-width:0}
+.rq .f.wide{grid-column:1/-1}
+.rq .l{font-size:14px;font-weight:600;color:var(--fg);margin:0 0 2px;font-family:var(--body)}
+.rq .star{color:var(--danger)}
+.rq input[type=text],.rq input[type=tel],.rq input[type=number],.rq input[type=date],.rq select,.rq textarea{font:inherit;font-size:15px;padding:10px 12px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--fg);width:100%;min-width:0}
+.rq textarea{resize:vertical}
+.rq input:focus,.rq select:focus,.rq textarea:focus{outline:2px solid var(--teal);outline-offset:1px;border-color:transparent}
+.rq .opts{display:flex;flex-wrap:wrap;gap:8px}
+.rq .opts label{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border:1px solid var(--line);border-radius:999px;font-size:14px;cursor:pointer;background:var(--bg)}
+.rq .opts label:has(input:checked){border-color:var(--teal);background:var(--tint)}
+.rq .err{color:var(--danger);font-size:13px;margin:0}
+.rq .bad input,.rq .bad select,.rq .bad textarea{border-color:var(--danger)}
+.rq .hint{color:var(--muted);margin:-12px 0 0}
+.rq-actions{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.btn-line{border-color:var(--line);color:var(--fg);background:var(--surface)}
+.btn-line:hover{border-color:var(--teal)}
+.rq-done{margin-top:20px;background:var(--tint);border:1px solid var(--teal);border-radius:14px;padding:24px;display:grid;gap:14px}
+.rq-done h3{font-size:22px}
+.rq-done p{color:var(--fg)}
+.rq-done pre{white-space:pre-wrap;word-break:break-word;font-family:var(--mono);font-size:13px;background:var(--surface);color:var(--fg);padding:14px;border-radius:8px;max-height:280px;overflow:auto;margin:0}
+@media (max-width:860px){ .svc-pick{grid-template-columns:repeat(2,minmax(0,1fr))} }
+@media (max-width:560px){
+  .rq{padding:18px}
+  .svc-pick,.rq .grp{grid-template-columns:minmax(0,1fr)}
+}
+
+.rq .sub{grid-column:1/-1;margin:14px 0 0;padding-top:16px;border-top:1px solid var(--line);font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--teal)}
+.rq .skip{grid-column:1/-1;margin:-6px 0 0;font-size:14px;color:var(--muted)}
+.rq .follow{padding:12px 14px;border-radius:10px;background:var(--sun-tint)}
+
+/* ===== Tabbed pages ===== */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;box-shadow:0 1px 0 #1D3456}
+.top nav{gap:6px}
+.top nav a{padding:8px 14px;border-radius:999px}
+.top nav a.on{background:rgba(19,196,163,.18);color:var(--teal-bright);opacity:1}
+.top nav a.cta{background:var(--teal-bright);color:var(--on-accent);opacity:1;font-weight:600}
+.top nav a.cta:hover{color:var(--on-accent);filter:brightness(1.06)}
+.top nav a.cta.on{box-shadow:inset 0 0 0 2px var(--on-navy)}
+.page:not([hidden]){animation:pgin .25s ease}
+@keyframes pgin{from{transform:translateY(6px)}to{transform:none}}
+.pg-next{display:flex;justify-content:center;margin-top:28px}
+.page > section{min-height:55vh}
+@media (max-width:560px){ .top nav{gap:4px} .top nav a{padding:7px 12px} }
+@media (prefers-reduced-motion:reduce){ .page:not([hidden]){animation:none} }
+</style>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Radken Tech home">
+      <svg width="40" height="40" viewBox="0 0 200 200" aria-hidden="true">
+        <rect width="200" height="200" rx="36" fill="#13325C"/>
+        <g stroke="#13C4A3" stroke-width="12" stroke-linecap="round" fill="none">
+          <line x1="60" y1="40" x2="60" y2="160"/><line x1="60" y1="40" x2="120" y2="40"/><line x1="120" y1="40" x2="140" y2="75"/>
+          <line x1="140" y1="75" x2="120" y2="105"/><line x1="120" y1="105" x2="60" y2="105"/><line x1="100" y1="105" x2="145" y2="160"/>
+        </g>
+        <g fill="#FFFFFF" stroke="#13C4A3" stroke-width="7">
+          <circle cx="60" cy="40" r="13"/><circle cx="120" cy="40" r="11"/><circle cx="140" cy="75" r="13"/>
+          <circle cx="60" cy="105" r="11"/><circle cx="60" cy="160" r="13"/><circle cx="145" cy="160" r="13"/>
+        </g>
+      </svg>
+      <div><b>RADKEN</b><span>TECH</span></div>
+    </a>
+    <nav aria-label="Pages">
+      <a href="#home" data-sw="Nyumbani">Home</a>
+      <a href="#services" data-sw="Huduma">Services</a>
+      <a href="#how" data-sw="Jinsi inavyofanya kazi">How it works</a>
+      <a href="#form" class="cta" data-sw="Omba huduma">Request</a>
+      <a href="#about" data-sw="Kuhusu">About</a>
+      <a href="#contact" data-sw="Mawasiliano">Contact</a>
+    </nav>
+    <button class="lang" id="lang-toggle" type="button" aria-label="Switch language / Badilisha lugha"><span data-l="en" class="on">EN</span><span data-l="sw">SW</span></button>
+  </div>
+</header>
+
+<main id="top">
+<div class="page" data-page="home">
+  <div class="hero">
+    <div class="wrap">
+      <div>
+        <span class="eyebrow" data-sw="Mapendekezo · Sera · Vipimo vya TEHAMA · Dar es Salaam">IT Proposals · Policies · Specs · Dar es Salaam</span>
+        <h1 data-sw="Nyaraka za TEHAMA ambazo shule au kliniki yako &lt;em&gt;imekuwa ikiziahirisha&lt;/em&gt;, zimeandaliwa kitaalamu.">The IT paperwork your school or clinic <em>keeps putting off</em>, done properly.</h1>
+        <p class="lead" data-sw="Radken Tech huandaa nyaraka za TEHAMA zilizo wazi na tayari kutumika: mapendekezo ya mtandao na CCTV, sera za TEHAMA, vipimo vya zabuni na rejista za vifaa. Unapata nyaraka ambayo bodi, msambazaji au mkaguzi wako anaweza kuifanyia kazi.">Radken Tech writes clear, ready-to-use IT documents: network and CCTV proposals, IT policies, tender specifications and equipment registers. You get a document your board, supplier or auditor can act on.</p>
+        <div class="cta">
+          <a class="btn btn-primary" href="#form" data-sw="Omba pendekezo">Request a proposal</a>
+          <a class="btn btn-ghost" href="#services" data-sw="Angalia bei">See prices</a>
+        </div>
+      </div>
+      <div class="hero-art">
+      <img class="hero-photo" src="img/radken-network.webp" alt="" width="640" height="426">
+      <div class="cover" aria-label="Example of a Radken Tech proposal cover">
+        <div class="ref"><span>Ref RT-NP-2026-014</span><span>Draft v1</span></div>
+        <h3>Network Upgrade Proposal</h3>
+        <p class="for">Prepared for a two-campus primary school</p>
+        <ol>
+          <li><span>Current setup (from your requirements form)</span><span>p.2</span></li>
+          <li><span>Recommended design &amp; Wi-Fi coverage</span><span>p.4</span></li>
+          <li><span>Bill of quantities (TZS)</span><span>p.7</span></li>
+          <li><span>Rollout plan &amp; supplier specs</span><span>p.9</span></li>
+        </ol>
+        <div class="foot">RADKEN TECH <small>Sample cover</small></div>
+      </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="trust"><div class="wrap"><ul><li><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12V4h8l10 10-8 8L3 12z"/><circle cx="7.5" cy="8.5" r="1.5"/></svg><span data-sw="Bei maalum kwa shilingi">Fixed prices in TZS</span></li><li><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span data-sw="Tayari ndani ya siku 3–7 za kazi">Ready in 3–7 working days</span></li><li><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="2.5" width="12" height="19" rx="2.5"/><path d="M10.5 18h3"/></svg><span data-sw="Lipa kwa Airtel Money">Pay with Airtel Money</span></li><li><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h10M9 4v2M6.5 6c.8 3.5 3.3 6.3 6.5 7.5M12 6c-.8 3.5-3.6 6.5-7 8"/><path d="M13 20l4-9 4 9M14.5 17h5"/></svg><span data-sw="Kiingereza na Kiswahili">English &amp; Kiswahili</span></li></ul></div></div>
+
+  <section class="alt">
+    <div class="wrap">
+      <div class="head">
+        <span class="eyebrow" data-sw="Tunaowahudumia">Who we work with</span>
+        <h2 data-sw="Kwa taasisi zisizo na idara kamili ya TEHAMA.">Built for organisations without a full IT department.</h2>
+      </div>
+      <div class="who">
+        <div>
+          <span class="eyebrow" data-sw="Shule">Schools</span>
+          <h3 data-sw="Shule binafsi">Private schools</h3>
+          <p data-sw="Maabara za kompyuta, kompyuta za walimu, Wi-Fi katika kampasi zote na CCTV getini, vyote vikiwa na nyaraka na rahisi kupangia bajeti.">Computer labs, staff laptops, Wi-Fi across campuses and CCTV at the gate, all documented and easy to budget for.</p>
+        </div>
+        <div>
+          <span class="eyebrow" data-sw="Afya">Health</span>
+          <h3 data-sw="Kliniki na polikliniki">Clinics &amp; polyclinics</h3>
+          <p data-sw="Kanuni za taarifa za wagonjwa, mtandao imara kwa mifumo ya maabara na picha za uchunguzi, na kamera za ulinzi kwa wodi na stoo.">Patient data rules, reliable networks for lab and imaging systems, and security cameras for wards and stores.</p>
+        </div>
+        <div>
+          <span class="eyebrow" data-sw="Biashara">Business</span>
+          <h3 data-sw="Biashara ndogo">Small businesses</h3>
+          <p data-sw="Ofisi zinazohitaji kununua vifaa kwa busara, kuweka kanuni za TEHAMA kwa wafanyakazi, au kufuatilia mali zao.">Offices that need to buy equipment wisely, set staff IT rules, or keep track of what they own.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div class="page" data-page="services">
+  <section id="services">
+    <div class="wrap">
+      <div class="head">
+        <span class="eyebrow" data-sw="Huduma na bei">Services &amp; prices</span>
+        <h2 data-sw="Bei za kuanzia zilizo wazi, kwa shilingi, kabla kazi haijaanza.">Fixed starting prices, in shillings, before any work begins.</h2>
+        <p data-sw="Kila kazi huanza na fomu fupi ya mahitaji. Kisha unapokea proforma yenye bei kamili, hivyo hakuna malipo ya kushtukiza.">Every job starts with a short requirements form. You then receive a proforma with the exact price, so nothing is billed by surprise.</p>
+      </div>
+      <div class="schedule">
+        <div class="row">
+          <img class="ill" src="img/radken-network.webp" alt="Blue network cables plugged into a network switch" width="640" height="427" loading="lazy" decoding="async">
+          <h3 data-sw="Pendekezo la kuboresha mtandao">Network upgrade proposal</h3>
+          <p data-sw="Muundo wa mtandao wa waya na Wi-Fi, orodha ya vifaa, makadirio ya gharama (BOQ) na mpango wa utekelezaji unaoweza kumkabidhi fundi yeyote.">Wired and Wi-Fi design, equipment list, costed bill of quantities and a rollout plan you can hand to any installer.</p>
+          <div class="price"><small data-sw="kuanzia">from</small><strong>TZS 300,000</strong><em class="eta" data-sw="Siku 5–7 za kazi">5–7 working days</em></div>
+          <a class="req" href="#form" data-service="network" data-sw="Anza ombi">Start request</a>
+        </div>
+        <div class="row">
+          <img class="ill" src="img/radken-policy.webp" alt="Hands signing a document at a desk" width="640" height="427" loading="lazy" decoding="async">
+          <h3 data-sw="Kifurushi cha sera za TEHAMA">IT policy pack</h3>
+          <p data-sw="Matumizi yanayokubalika, nywila, ulinzi wa taarifa, nakala rudufu (backup) na kanuni za vifaa, zimeandikwa kwa ajili ya wafanyakazi wako na tayari kusainiwa.">Acceptable use, passwords, data protection, backups and device rules, written for your staff and ready to sign.</p>
+          <div class="price"><small data-sw="kuanzia">from</small><strong>TZS 250,000</strong><em class="eta" data-sw="Siku 5 za kazi">5 working days</em></div>
+          <a class="req" href="#form" data-service="policy" data-sw="Anza ombi">Start request</a>
+        </div>
+        <div class="row">
+          <img class="ill" src="img/radken-cctv.webp" alt="Security camera mounted on an outside wall" width="640" height="427" loading="lazy" decoding="async">
+          <h3 data-sw="Pendekezo la mfumo wa CCTV">CCTV system proposal</h3>
+          <p data-sw="Mahali pa kuweka kamera, mahitaji ya kurekodi na kuhifadhi, orodha ya vifaa na gharama kwa madarasa, mageti, wodi au stoo.">Camera positions, recording and storage needs, equipment list and costs for classrooms, gates, wards or stores.</p>
+          <div class="price"><small data-sw="kuanzia">from</small><strong>TZS 200,000</strong><em class="eta" data-sw="Siku 3–5 za kazi">3–5 working days</em></div>
+          <a class="req" href="#form" data-service="cctv" data-sw="Anza ombi">Start request</a>
+        </div>
+        <div class="row">
+          <img class="ill" src="img/radken-specs.webp" alt="Calculator and paperwork used to compare supplier quotes" width="640" height="427" loading="lazy" decoding="async">
+          <h3 data-sw="Vipimo vya ununuzi na nyaraka za zabuni">Procurement specs &amp; tender documents</h3>
+          <p data-sw="Vipimo vya kiufundi vilivyo wazi kwa kompyuta, vifaa vya mtandao au CCTV, ili wasambazaji watoe nukuu zinazolingana.">Clear technical specifications for computers, network gear or CCTV, so suppliers quote like for like.</p>
+          <div class="price"><small data-sw="kuanzia">from</small><strong>TZS 200,000</strong><em class="eta" data-sw="Siku 3–5 za kazi">3–5 working days</em></div>
+          <a class="req" href="#form" data-service="specs" data-sw="Anza ombi">Start request</a>
+        </div>
+        <div class="row">
+          <img class="ill" src="img/radken-assets.webp" alt="A row of laptops on an office table" width="640" height="427" loading="lazy" decoding="async">
+          <h3 data-sw="Kuandaa rejista ya vifaa vya TEHAMA">IT asset register setup</h3>
+          <p data-sw="Rejista inayofanya kazi ya kila kompyuta, printa na kifaa: nani anacho, kiko wapi, hali yake na thamani yake.">A working register of every computer, printer and device: who has it, where it is, its condition and value.</p>
+          <div class="price"><small data-sw="kuanzia">from</small><strong>TZS 150,000</strong><em class="eta" data-sw="Siku 3 za kazi">3 working days</em></div>
+          <a class="req" href="#form" data-service="assets" data-sw="Anza ombi">Start request</a>
+        </div>
+        <div class="row template">
+          <img class="ill" src="img/radken-templates.webp" alt="Filling in a checklist on a clipboard" width="640" height="427" loading="lazy" decoding="async">
+          <h3 data-sw="Violezo vilivyo tayari">Ready-made templates</h3>
+          <p data-sw="Nyaraka za kujaza mwenyewe, kama Orodha ya Ukaguzi wa Eneo kwa Mtandao na CCTV, na Rejista ya Vifaa vya TEHAMA.">Do-it-yourself documents, such as the Network &amp; CCTV Site Survey Checklist and the IT Asset Register.</p>
+          <div class="price"><small data-sw="kila kimoja">each</small><strong>TZS 20,000</strong><em class="eta" data-sw="Siku hiyo hiyo">Same day</em></div>
+          <a class="req" href="https://wa.me/255786670743?text=Hi%20Radken%20Tech%2C%20I%27d%20like%20to%20buy%20a%20ready-made%20template%3A%20%5Btemplate%20name%5D." target="_blank" rel="noopener" data-wa-en="Hi Radken Tech, I&#x27;d like to buy a ready-made template: [template name]." data-wa-sw="Habari Radken Tech, ningependa kununua kiolezo: [jina la kiolezo]." data-sw="Nunua kupitia WhatsApp">Buy on WhatsApp</a>
+        </div>
+      </div>
+      <p class="note" data-sw="Radken Tech huandaa nyaraka tu. Ufungaji hufanywa na msambazaji unayemchagua, hivyo ushauri wetu unabaki huru. Muda wa kukamilisha unahesabiwa kuanzia malipo yako yanapothibitishwa.">Radken Tech prepares documents only. Installation is done by your chosen supplier, which keeps our advice independent. Delivery times count from when your payment is confirmed.</p>
+      <div class="pg-next"><a class="btn btn-primary" href="#form" data-sw="Anza ombi">Start a request</a></div>
+    </div>
+  </section>
+</div>
+
+<div class="page" data-page="how">
+  <section id="how">
+    <div class="wrap">
+      <div class="head">
+        <span class="eyebrow" data-sw="Jinsi inavyofanya kazi">How it works</span>
+        <h2 data-sw="Kutoka ujumbe wa kwanza hadi nyaraka iliyokamilika.">From first message to finished document.</h2>
+      </div>
+      <ol class="steps">
+        <li><h3 data-sw="Tuambie unachohitaji">Tell us what you need</h3><p data-sw="Chagua huduma yako na ujibu fomu fupi. Maswali yanaendana na huduma uliyochagua.">Pick your service and answer a short form. The questions match the service you choose.</p><a class="steplink" href="#form" data-sw="Fungua fomu">Open the form</a></li>
+        <li><h3 data-sw="Pokea proforma">Receive a proforma</h3><p data-sw="Unapata bei kamili na namba ya kumbukumbu, halali kwa siku 14.">You get an exact price and a reference number, valid for 14 days.</p></li>
+        <li><h3 data-sw="Lipa kwa simu">Pay by mobile money</h3><p data-sw="Lipa kupitia Airtel Money na utaje namba ya kumbukumbu ya proforma.">Pay with Airtel Money and quote the proforma reference.</p></li>
+        <li><h3 data-sw="Pokea nyaraka yako">Get your document</h3><p data-sw="Pokea nyaraka ya Word yenye nembo yetu, tayari kuhariri, kuchapisha au kushiriki.">Receive a branded Word document, ready to edit, print or share.</p></li>
+      </ol>
+    </div>
+  </section>
+</div>
+
+<div class="page" data-page="form">
+  <section id="form" class="formsec alt">
+    <div class="wrap">
+      <div class="head">
+        <span class="eyebrow" data-sw="Fomu ya mahitaji">Requirements form</span>
+        <h2 data-sw="Tuambie unachohitaji.">Tell us what you need.</h2>
+        <p data-sw="Chagua huduma, jibu maswali yake, kisha tuma majibu yako kwa WhatsApp. Inachukua takriban dakika 5–10.">Pick a service, answer the questions for it, then send your answers on WhatsApp. It takes about 5–10 minutes.</p>
+      </div>
+      <form id="rq" class="rq" novalidate></form>
+      <div id="rq-done" class="rq-done" hidden></div>
+    </div>
+  </section>
+</div>
+
+<div class="page" data-page="about">
+  <section id="about">
+    <div class="wrap about">
+      <div class="head" style="margin-bottom:0">
+        <span class="eyebrow" data-sw="Kuhusu">About</span>
+        <h2 data-sw="Inaendeshwa na mtaalamu wa TEHAMA mwenye uzoefu wa kazi halisi.">Run by an IT professional who has done the work.</h2>
+      </div>
+      <div>
+        <p data-sw="Radken Tech inaendeshwa na Kenny Rodgers, mtaalamu wa TEHAMA aliyeko Dar es Salaam mwenye uzoefu wa vitendo katika mitandao ya taasisi, usalama wa mtandao, ukaguzi wa maeneo na uandishi wa nyaraka za kiufundi.">Radken Tech is run by Kenny Rodgers, an IT professional based in Dar es Salaam with hands-on experience in enterprise networks, network security, site surveys and technical documentation.</p>
+        <p data-sw="Nyaraka hizi zinatokana na kazi halisi: cha kukagua unapotembelea eneo, kile wasambazaji huacha kwenye nukuu zao, na kile wakaguzi huomba kuona.">The documents come from real field work: what to check on a site visit, what suppliers leave out of quotes, and what auditors ask to see.</p>
+        <ul class="creds">
+          <li data-sw="Ukaguzi wa maeneo kwa mtandao na CCTV">Network &amp; CCTV site surveys</li>
+          <li data-sw="Usalama wa mtandao">Network security</li>
+          <li data-sw="Vipimo vya ununuzi">Procurement specifications</li>
+          <li data-sw="Nyaraka za kiufundi">Technical documentation</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div class="page" data-page="contact">
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <div class="head">
+        <span class="eyebrow" data-sw="Mawasiliano">Contact</span>
+        <h2 data-sw="Omba pendekezo au kiolezo.">Ask for a proposal or a template.</h2>
+        <p data-sw="Tuma ujumbe wenye jina la taasisi yako na unachohitaji. Utajibiwa pamoja na fomu ya mahitaji.">Send a message with your organisation's name and what you need. You'll get a reply with the requirements form.</p>
+      </div>
+      <div class="cards">
+        <div class="card">
+          <small data-sw="Simu na WhatsApp">Phone &amp; WhatsApp</small>
+          <div class="val" id="v-phone">+255 786 670 743</div>
+          <div class="acts">
+            <button class="chip" type="button" data-copy="v-phone" data-sw="Nakili">Copy</button>
+            <a class="chip" href="https://wa.me/255786670743?text=Hi%20Radken%20Tech%2C%20I%27m%20from%20%5Bschool/clinic%20name%5D%20and%20I%20need%20help%20with%20an%20IT%20document." target="_blank" rel="noopener" data-wa-en="Hi Radken Tech, I&#x27;m from [school/clinic name] and I need help with an IT document." data-wa-sw="Habari Radken Tech, natoka [jina la shule/kliniki] na ninahitaji msaada wa nyaraka ya TEHAMA." data-sw="Fungua WhatsApp">Open WhatsApp</a>
+          </div>
+        </div>
+        <div class="card">
+          <small data-sw="Barua pepe">Email</small>
+          <div class="val" id="v-email">kennyrodgers36@outlook.com</div>
+          <div class="acts">
+            <button class="chip" type="button" data-copy="v-email" data-sw="Nakili">Copy</button>
+            <a class="chip" href="mailto:kennyrodgers36@outlook.com" data-sw="Andika barua pepe">Write email</a>
+          </div>
+        </div>
+        <div class="card">
+          <small data-sw="Mahali">Location</small>
+          <div class="val">Dar es Salaam, Tanzania</div>
+          <p style="font-size:14px;color:#C9D6E3" data-sw="Kazi hufanyika kwa mbali, hivyo tunahudumia wateja popote Tanzania.">Work is done remotely, so we serve clients anywhere in Tanzania.</p>
+        </div>
+      </div>
+      <p class="pay" data-sw="Malipo: Airtel Money, jina la akaunti Kenny Rodgers, kwenye +255 786 670 743. Daima taja namba ya kumbukumbu ya proforma yako.">Payment: Airtel Money, account name Kenny Rodgers, on +255 786 670 743. Always quote your proforma reference.</p>
+    </div>
+  </section>
+</div>
+</main>
+
+<a class="wa-float" href="https://wa.me/255786670743?text=Hi%20Radken%20Tech%2C%20I%27m%20from%20%5Bschool/clinic%20name%5D%20and%20I%20need%20help%20with%20an%20IT%20document." target="_blank" rel="noopener" data-wa-en="Hi Radken Tech, I&#x27;m from [school/clinic name] and I need help with an IT document." data-wa-sw="Habari Radken Tech, natoka [jina la shule/kliniki] na ninahitaji msaada wa nyaraka ya TEHAMA." aria-label="Chat with Radken Tech on WhatsApp">
+  <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.5 8.5 0 0 1-12.6 7.4L3 20.5l1.6-5.2A8.5 8.5 0 1 1 21 11.5z"/><path d="M8.5 11.5h.01M12 11.5h.01M15.5 11.5h.01"/></svg>
+  <span data-sw="Tuandikie">Chat with us</span>
+</a>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Radken Tech · IT Proposals · Policies · Specs</span>
+    <span>Dar es Salaam, Tanzania</span>
+  </div>
+</footer>
+
+<script>
+var LANG='en';
+var WORDS={en:{copied:'Copied',selected:'Selected'},sw:{copied:'Imenakiliwa',selected:'Imechaguliwa'}};
+function waHref(msg){ return 'https://wa.me/255786670743?text='+encodeURIComponent(msg); }
+function setLang(l){
+  LANG=l;
+  document.documentElement.lang=l;
+  document.querySelectorAll('[data-sw]').forEach(function(el){
+    if(el.dataset.en===undefined) el.dataset.en=el.innerHTML;
+    el.innerHTML = l==='sw' ? el.getAttribute('data-sw') : el.dataset.en;
+  });
+  document.querySelectorAll('[data-wa-en]').forEach(function(a){
+    a.href = waHref(a.getAttribute(l==='sw'?'data-wa-sw':'data-wa-en'));
+  });
+  document.querySelectorAll('#lang-toggle span').forEach(function(sp){ sp.classList.toggle('on', sp.dataset.l===l); });
+  try{ localStorage.setItem('radken-lang', l); }catch(e){}
+  if(window.renderForm) window.renderForm();
+}
+document.getElementById('lang-toggle').addEventListener('click', function(){ setLang(LANG==='en'?'sw':'en'); });
+try{ var saved=localStorage.getItem('radken-lang'); if(saved==='sw') setLang('sw'); }catch(e){}
+
+document.querySelectorAll('[data-copy]').forEach(function(b){
+  b.addEventListener('click', function(){
+    var el=document.getElementById(b.getAttribute('data-copy'));
+    var text=el.textContent.trim();
+    var label=b.innerHTML;
+    function flash(t){ b.textContent=t; setTimeout(function(){ b.innerHTML=label; },1500); }
+    function fallback(){ var r=document.createRange(); r.selectNodeContents(el); var s=window.getSelection(); s.removeAllRanges(); s.addRange(r); flash(WORDS[LANG].selected); }
+    try{ navigator.clipboard.writeText(text).then(function(){ flash(WORDS[LANG].copied); }, fallback); }catch(e){ fallback(); }
+  });
+});
+
+(function(){
+var YN=[['Yes','Ndiyo'],['No','Hapana'],['Not sure','Sina uhakika']];
+function q(id,o){ o.id=id; return o; }
+function S(en,sw){ return {type:'section',en:en,sw:sw}; }
+var BUDGET=function(){ return q('budget',{type:'select',en:'Rough budget for the project (equipment and installation)',sw:'Bajeti ya makadirio ya mradi (vifaa na ufungaji)',
+  opts:[['Under TZS 5 million','Chini ya TZS milioni 5'],['TZS 5–15 million','TZS milioni 5–15'],['TZS 15–40 million','TZS milioni 15–40'],['Above TZS 40 million','Zaidi ya TZS milioni 40'],['Not sure yet','Bado sina uhakika']]}); };
+var PHASED=function(){ return q('phased',{type:'radio',en:'Can the work be done in phases?',sw:'Kazi inaweza kufanywa kwa awamu?',opts:YN}); };
+var POWER=function(){ return q('power',{type:'radio',wide:1,en:'How reliable is the power supply?',sw:'Umeme ni wa uhakika kiasi gani?',opts:[['Reliable','Wa uhakika'],['Frequent cuts, we have a generator or UPS','Unakatika mara kwa mara, tuna jenereta au UPS'],['Frequent cuts, no backup','Unakatika mara kwa mara, hakuna akiba']]}); };
+var BLD=function(id){ return q(id,{type:'number',en:'Number of buildings or blocks',sw:'Idadi ya majengo au vitalu'}); };
+
+var COMMON=[
+  q('org',{type:'text',req:1,en:'Organisation name',sw:'Jina la taasisi',ph:['e.g. Upendo Primary School','mf. Shule ya Msingi Upendo']}),
+  q('orgtype',{type:'radio',en:'Type of organisation',sw:'Aina ya taasisi',opts:[['School','Shule'],['Clinic or hospital','Kliniki au hospitali'],['Business or office','Biashara au ofisi'],['Other','Nyingine']]}),
+  q('name',{type:'text',req:1,en:'Your name',sw:'Jina lako'}),
+  q('role',{type:'text',en:'Your role',sw:'Wadhifa wako',ph:['e.g. Bursar, Head teacher, Clinic manager','mf. Mhasibu, Mkuu wa shule, Meneja wa kliniki']}),
+  q('phone',{type:'tel',req:1,en:'Phone / WhatsApp number',sw:'Namba ya simu / WhatsApp',ph:['e.g. 0712 345 678','mf. 0712 345 678']}),
+  q('loc',{type:'text',en:'Location',sw:'Mahali',ph:['e.g. Mbezi Beach, Dar es Salaam','mf. Mbezi Beach, Dar es Salaam']}),
+  q('when',{type:'select',en:'When do you need the document?',sw:'Unahitaji nyaraka lini?',opts:[['As soon as possible','Haraka iwezekanavyo'],['Within 2 weeks','Ndani ya wiki 2'],['Within a month','Ndani ya mwezi mmoja'],['Just planning for now','Tunapanga tu kwa sasa']]}),
+  q('heard',{type:'select',en:'How did you hear about us?',sw:'Ulitusikiaje?',opts:[['WhatsApp','WhatsApp'],['Friend or colleague','Rafiki au mfanyakazi mwenzako'],['Email from us','Barua pepe kutoka kwetu'],['Online','Mtandaoni'],['Other','Nyingine']]})
+];
+
+var SERVICES=[
+ {id:'network',en:'Network upgrade proposal',sw:'Pendekezo la kuboresha mtandao',q:[
+  S('Site and buildings','Eneo na majengo'),
+  BLD('n_bld'),
+  q('n_floors',{type:'number',en:'Most floors in any one building',sw:'Idadi kubwa ya ghorofa katika jengo moja'}),
+  q('dist',{type:'select',en:'Longest distance between buildings',sw:'Umbali mkubwa kati ya majengo',opts:[['Single building','Jengo moja tu'],['Under 50 m','Chini ya mita 50'],['50–100 m','Mita 50–100'],['100–300 m','Mita 100–300'],['Over 300 m','Zaidi ya mita 300']]}),
+  q('plan',{type:'radio',en:'Do you have a floor plan or site sketch?',sw:'Mna ramani ya jengo au mchoro wa eneo?',opts:YN}),
+  POWER(),
+  S('Users and devices','Watumiaji na vifaa'),
+  q('n_users',{type:'number',en:'Number of people who use the network',sw:'Idadi ya watu wanaotumia mtandao'}),
+  q('peak',{type:'number',en:'Most people online at the same time',sw:'Idadi kubwa ya watu mtandaoni kwa wakati mmoja'}),
+  q('n_desk',{type:'number',en:'Number of desktop computers',sw:'Idadi ya kompyuta za mezani'}),
+  q('n_lap',{type:'number',en:'Number of laptops',sw:'Idadi ya laptop'}),
+  q('n_print',{type:'number',en:'Number of network printers',sw:'Idadi ya printa za mtandao'}),
+  q('byod',{type:'radio',en:'Do staff, students or patients connect their own phones?',sw:'Wafanyakazi, wanafunzi au wagonjwa huunganisha simu zao?',opts:YN}),
+  q('apps',{type:'checks',wide:1,en:'What is the network used for?',sw:'Mtandao unatumika kwa nini?',opts:[['Email and browsing','Barua pepe na kuvinjari'],['School or hospital system','Mfumo wa shule au hospitali'],['Online classes or video calls','Masomo mtandaoni au simu za video'],['Lab or imaging equipment','Vifaa vya maabara au picha za uchunguzi'],['Accounting system','Mfumo wa uhasibu'],['CCTV cameras','Kamera za CCTV'],['Computer lab exams','Mitihani kwenye maabara ya kompyuta']]}),
+  S('Internet connection','Muunganisho wa intaneti'),
+  q('isp',{type:'text',en:'Current internet provider and speed',sw:'Mtoa huduma wa intaneti na kasi ya sasa',ph:['e.g. TTCL fibre, 20 Mbps','mf. TTCL fibre, Mbps 20']}),
+  q('n_links',{type:'radio',en:'How many internet connections do you have?',sw:'Mna miunganisho mingapi ya intaneti?',opts:[['None yet','Bado hakuna'],['One','Mmoja'],['Two (one as backup)','Miwili (mmoja wa akiba)']]}),
+  S('Current setup','Mfumo uliopo'),
+  q('probs',{type:'checks',wide:1,en:'What problems do you have today?',sw:'Mna changamoto gani kwa sasa?',opts:[['Slow internet','Intaneti ni ya polepole'],["Wi-Fi doesn't reach some rooms",'Wi-Fi haifiki baadhi ya vyumba'],['Connection keeps dropping','Mtandao unakatika mara kwa mara'],['Messy or old cabling','Nyaya zimechakaa au hazijapangwa'],['New building with no network','Jengo jipya lisilo na mtandao'],['Worried about security','Tuna wasiwasi kuhusu usalama']]}),
+  q('cabling',{type:'radio',wide:1,en:'What cabling do you have now?',sw:'Mna nyaya za aina gani kwa sasa?',opts:[['None','Hakuna'],['A few old cables','Nyaya chache za zamani'],['Structured cabling (Cat5e/Cat6)','Nyaya zilizopangwa (Cat5e/Cat6)'],['Not sure','Sina uhakika']]}),
+  q('rack',{type:'radio',en:'Do you have a server room or network cabinet?',sw:'Mna chumba cha seva au kabati la mtandao?',opts:YN}),
+  q('itsupport',{type:'radio',en:'Who looks after your IT today?',sw:'Nani anashughulikia TEHAMA yenu kwa sasa?',opts:[['Our own IT staff','Mfanyakazi wetu wa TEHAMA'],['An outside technician','Fundi wa nje'],['Nobody','Hakuna']]}),
+  q('equip',{type:'text',wide:1,en:'Main network equipment you have now',sw:'Vifaa vikuu vya mtandao mlivyo navyo sasa',ph:['e.g. TP-Link router, 2 switches, 3 access points','mf. ruta ya TP-Link, swichi 2, access point 3']}),
+  S('What the new network must do','Mtandao mpya unapaswa kufanya nini'),
+  q('goals',{type:'checks',wide:1,en:'Choose everything that applies',sw:'Chagua yote yanayohusika',opts:[['Wi-Fi in every room','Wi-Fi kila chumba'],['Separate Wi-Fi for staff, students/patients and guests','Wi-Fi tofauti kwa wafanyakazi, wanafunzi/wagonjwa na wageni'],['Block unsafe websites','Kuzuia tovuti hatari'],['Control how much internet each group uses','Kudhibiti matumizi ya intaneti kwa kila kundi'],['Link buildings together','Kuunganisha majengo'],['Automatic switch to backup internet','Kuhamia intaneti ya akiba yenyewe'],['Firewall and security','Firewall na usalama']]}),
+  q('wifi',{type:'textarea',wide:1,en:'Which rooms or areas need Wi-Fi?',sw:'Vyumba au maeneo gani yanahitaji Wi-Fi?',ph:['e.g. 12 classrooms, staff room, library','mf. madarasa 12, chumba cha walimu, maktaba']}),
+  q('outdoor',{type:'radio',en:'Do you need Wi-Fi outdoors (field, compound)?',sw:'Mnahitaji Wi-Fi nje (uwanjani, eneo la wazi)?',opts:YN}),
+  q('growth',{type:'select',en:'Expected growth in users over 3 years',sw:'Ongezeko la watumiaji linalotarajiwa ndani ya miaka 3',opts:[['Little or none','Kidogo au hakuna'],['About 25%','Takriban 25%'],['About 50%','Takriban 50%'],['Double or more','Mara mbili au zaidi']]}),
+  S('Budget','Bajeti'),
+  BUDGET(), PHASED()
+ ]},
+ {id:'policy',en:'IT policy pack',sw:'Kifurushi cha sera za TEHAMA',q:[
+  S('Your organisation','Taasisi yenu'),
+  q('p_staff',{type:'number',en:'Number of staff who use computers',sw:'Idadi ya wafanyakazi wanaotumia kompyuta'}),
+  q('p_people',{type:'number',en:'Students enrolled, or patients per day',sw:'Wanafunzi waliosajiliwa, au wagonjwa kwa siku'}),
+  q('p_branches',{type:'number',en:'Number of branches',sw:'Idadi ya matawi'}),
+  S('Data and systems','Taarifa na mifumo'),
+  q('records',{type:'radio',en:'Do you keep student or patient records on computer?',sw:'Mnahifadhi kumbukumbu za wanafunzi au wagonjwa kwenye kompyuta?',opts:[['Yes','Ndiyo'],['No','Hapana'],['Partly','Kwa sehemu']]}),
+  q('systems',{type:'text',en:'Which systems do you use?',sw:'Mnatumia mifumo gani?',ph:['e.g. school management system, accounting','mf. mfumo wa usimamizi wa shule, uhasibu']}),
+  q('storage',{type:'checks',wide:1,en:'Where is your data stored?',sw:'Taarifa zenu zinahifadhiwa wapi?',opts:[['On office computers','Kwenye kompyuta za ofisi'],['On a local server','Kwenye seva ya ndani'],['In the cloud (Google, Microsoft)','Kwenye wingu (Google, Microsoft)'],['On paper','Kwenye karatasi']]}),
+  q('backup',{type:'radio',en:'Do you back up your data?',sw:'Mnahifadhi nakala rudufu za taarifa zenu?',opts:[['Yes, regularly','Ndiyo, mara kwa mara'],['Sometimes','Mara nyingine'],['No','Hapana']]}),
+  q('email',{type:'radio',en:'What email do staff use for work?',sw:'Wafanyakazi wanatumia barua pepe gani kazini?',opts:[['Organisation email (own domain)','Barua pepe ya taasisi (domain yetu)'],['Personal Gmail or Yahoo','Gmail au Yahoo binafsi'],['A mix','Mchanganyiko']]}),
+  q('shared',{type:'radio',en:'Do staff share computers or passwords?',sw:'Wafanyakazi wanashirikiana kompyuta au nywila?',opts:YN}),
+  S('Policies','Sera'),
+  q('pols',{type:'checks',wide:1,en:'Which policies do you need?',sw:'Mnahitaji sera zipi?',opts:[['Acceptable use','Matumizi yanayokubalika'],['Passwords and access','Nywila na ruhusa za kuingia'],['Data protection and privacy','Ulinzi wa taarifa na faragha'],['Backup and recovery','Nakala rudufu na urejeshaji'],['Email and internet use','Matumizi ya barua pepe na intaneti'],['Staff devices (phones, laptops)','Vifaa vya wafanyakazi (simu, laptop)'],['Handling security incidents','Kushughulikia matukio ya usalama'],['All of the above','Zote hapo juu']]}),
+  q('incidents',{type:'radio',wide:1,en:'Have you had a security problem before (virus, hacked account, lost data)?',sw:'Mmewahi kupata tatizo la usalama (virusi, akaunti kudukuliwa, kupoteza taarifa)?',opts:YN}),
+  q('inc_desc',{type:'textarea',wide:1,show:['incidents',[0]],en:'What happened, briefly?',sw:'Nini kilitokea, kwa ufupi?'}),
+  S('Approval and format','Uidhinishaji na muundo'),
+  q('audit',{type:'text',wide:1,en:'Is an inspector, auditor or regulator asking for these?',sw:'Kuna mkaguzi au mamlaka inayodai sera hizi?',ph:['e.g. annual audit, ministry inspection','mf. ukaguzi wa mwaka, ukaguzi wa wizara']}),
+  q('p_lang',{type:'radio',en:'Language of the policies',sw:'Lugha ya sera',opts:[['English','Kiingereza'],['Kiswahili','Kiswahili'],['Both','Zote mbili']]}),
+  q('signoff',{type:'radio',wide:1,en:'Who will approve the policies?',sw:'Nani ataidhinisha sera?',opts:[['Board','Bodi'],['Director or owner','Mkurugenzi au mmiliki'],['Head teacher or medical officer in charge','Mkuu wa shule au mganga mfawidhi'],['Not sure','Sina uhakika']]}),
+  q('training',{type:'radio',wide:1,en:'Do you also want a one-page summary for staff?',sw:'Mnataka pia muhtasari wa ukurasa mmoja kwa wafanyakazi?',opts:YN})
+ ]},
+ {id:'cctv',en:'CCTV system proposal',sw:'Pendekezo la mfumo wa CCTV',q:[
+  S('Site','Eneo'),
+  BLD('c_bld'),
+  q('size',{type:'radio',wide:1,en:'Size of the compound',sw:'Ukubwa wa eneo',opts:[['Small (one building)','Ndogo (jengo moja)'],['Medium (a few buildings)','Wastani (majengo machache)'],['Large campus','Kampasi kubwa']]}),
+  POWER(),
+  S('What to cover','Maeneo ya kufunika'),
+  q('areas',{type:'checks',wide:1,en:'Which areas should the cameras cover?',sw:'Kamera zinapaswa kufunika maeneo gani?',opts:[['Main gate','Geti kuu'],['Fence or perimeter','Uzio au mzunguko'],['Parking','Maegesho'],['Corridors','Korido'],['Classrooms or wards','Madarasa au wodi'],['Store or pharmacy','Stoo au famasia'],['Reception','Mapokezi'],['Cash office','Ofisi ya fedha']]}),
+  q('n_cam',{type:'number',en:'How many cameras do you think you need? (estimate)',sw:'Unadhani mnahitaji kamera ngapi? (makadirio)'}),
+  q('n_out',{type:'number',en:'How many of them outdoors?',sw:'Ngapi kati ya hizo zitakuwa nje?'}),
+  q('detail',{type:'radio',wide:1,en:'How much detail do you need to see?',sw:'Mnahitaji kuona kwa undani kiasi gani?',opts:[['General view of activity','Mwonekano wa jumla'],['Recognise faces','Kutambua sura'],['Read number plates','Kusoma namba za magari']]}),
+  q('night',{type:'radio',en:'Do you need clear night recording?',sw:'Mnahitaji kurekodi vizuri usiku?',opts:YN}),
+  q('audio',{type:'radio',en:'Do you need sound recording?',sw:'Mnahitaji kurekodi sauti?',opts:YN}),
+  q('privacy',{type:'text',wide:1,en:'Areas that must not be recorded',sw:'Maeneo yasiyopaswa kurekodiwa',ph:['e.g. toilets, consultation rooms','mf. vyoo, vyumba vya kumwona daktari']}),
+  S('Recording and viewing','Kurekodi na kuangalia'),
+  q('days',{type:'select',en:'How many days of recordings should be kept?',sw:'Rekodi zihifadhiwe kwa siku ngapi?',opts:[['7 days','Siku 7'],['14 days','Siku 14'],['30 days','Siku 30'],['Not sure','Sina uhakika']]}),
+  q('viewers',{type:'number',en:'How many people will watch the cameras?',sw:'Watu wangapi wataangalia kamera?'}),
+  q('remote',{type:'radio',en:'Do you want to watch the cameras on your phone?',sw:'Mnataka kuangalia kamera kwenye simu?',opts:YN}),
+  q('alerts',{type:'radio',show:['remote',[0]],en:'Do you want motion alerts on your phone?',sw:'Mnataka taarifa za mwendo kwenye simu?',opts:YN}),
+  q('monitor',{type:'radio',wide:1,en:'Do you need a screen at the guard post or office?',sw:'Mnahitaji skrini kwenye kibanda cha mlinzi au ofisini?',opts:YN}),
+  S('Existing system','Mfumo uliopo'),
+  q('existing',{type:'radio',wide:1,en:'Do you already have cameras?',sw:'Tayari mna kamera?',opts:[['No cameras yet','Hakuna kamera bado'],['Yes, working','Ndiyo, zinafanya kazi'],['Yes, but some are broken','Ndiyo, lakini baadhi zimeharibika']]}),
+  q('ex_n',{type:'number',show:['existing',[1,2]],en:'How many cameras now?',sw:'Kamera ngapi kwa sasa?'}),
+  q('ex_type',{type:'radio',show:['existing',[1,2]],en:'Type of current system',sw:'Aina ya mfumo uliopo',opts:[['Analog (DVR)','Analogi (DVR)'],['IP cameras (NVR)','Kamera za IP (NVR)'],['Not sure','Sina uhakika']]}),
+  q('ex_keep',{type:'radio',show:['existing',[1,2]],en:'Should we plan to reuse the existing cameras?',sw:'Tupange kutumia tena kamera zilizopo?',opts:YN}),
+  q('netcab',{type:'radio',wide:1,en:'Is there network cabling the cameras could use?',sw:'Kuna nyaya za mtandao ambazo kamera zinaweza kutumia?',opts:YN}),
+  S('Budget','Bajeti'),
+  BUDGET(), PHASED()
+ ]},
+ {id:'specs',en:'Procurement specs & tender documents',sw:'Vipimo vya ununuzi na nyaraka za zabuni',q:[
+  S('The purchase','Ununuzi'),
+  q('items',{type:'checks',wide:1,en:'What are you buying?',sw:'Mnanunua nini?',opts:[['Desktop computers','Kompyuta za mezani'],['Laptops','Laptop'],['Printers','Printa'],['Network equipment','Vifaa vya mtandao'],['CCTV equipment','Vifaa vya CCTV'],['Servers or storage','Seva au hifadhi'],['UPS and power','UPS na umeme'],['Software','Programu']]}),
+  q('qty',{type:'textarea',wide:1,en:'Quantities',sw:'Idadi',ph:['e.g. 30 desktops, 5 laptops, 2 printers','mf. kompyuta 30, laptop 5, printa 2']}),
+  q('purpose',{type:'textarea',wide:1,en:'What will the equipment be used for?',sw:'Vifaa vitatumika kwa kazi gani?',ph:['e.g. new computer lab for Form 1–4','mf. maabara mpya ya kompyuta kwa Kidato 1–4']}),
+  S('Technical needs','Mahitaji ya kiufundi'),
+  q('use_level',{type:'radio',wide:1,en:'How demanding is the work?',sw:'Kazi ni nzito kiasi gani?',opts:[['Basic office work','Kazi za kawaida za ofisi'],['Teaching and online classes','Kufundishia na masomo mtandaoni'],['Heavy (design, imaging, servers)','Nzito (usanifu, picha za uchunguzi, seva)']]}),
+  q('os',{type:'radio',wide:1,en:'Software requirements',sw:'Mahitaji ya programu',opts:[['Windows','Windows'],['Any','Yoyote'],['Specific software must run on it','Programu maalum lazima ifanye kazi']]}),
+  q('sw_req',{type:'text',wide:1,show:['os',[2]],en:'Which software?',sw:'Programu zipi?'}),
+  q('warranty',{type:'select',en:'Minimum warranty',sw:'Udhamini wa chini kabisa',opts:[['1 year','Mwaka 1'],['2 years','Miaka 2'],['3 years','Miaka 3'],['Not sure','Sina uhakika']]}),
+  q('local',{type:'radio',en:'Must the supplier offer support in Tanzania?',sw:'Msambazaji lazima atoe huduma Tanzania?',opts:YN}),
+  q('brands',{type:'text',wide:1,en:'Preferred brands, or brands to avoid',sw:'Chapa mnazopendelea au za kuepuka'}),
+  S('Tender details','Taarifa za zabuni'),
+  q('tender',{type:'radio',en:'Is this for a formal tender?',sw:'Je, ni kwa ajili ya zabuni rasmi?',opts:YN}),
+  q('t_method',{type:'select',show:['tender',[0]],en:'Tender method',sw:'Njia ya zabuni',opts:[['Open tender','Zabuni ya wazi'],['Request for quotations','Maombi ya nukuu'],['Direct purchase','Ununuzi wa moja kwa moja'],['Not sure','Sina uhakika']]}),
+  q('t_eval',{type:'radio',wide:1,show:['tender',[0]],en:'How will bids be judged?',sw:'Zabuni zitapimwa vipi?',opts:[['Lowest price','Bei ya chini'],['Best value (price and quality)','Thamani bora (bei na ubora)'],['Not sure','Sina uhakika']]}),
+  q('t_rules',{type:'radio',wide:1,show:['tender',[0]],en:'Must it follow public procurement rules (PPRA / NeST)?',sw:'Lazima ifuate taratibu za ununuzi wa umma (PPRA / NeST)?',opts:YN}),
+  q('deadline',{type:'date',en:'Purchase or tender deadline',sw:'Tarehe ya mwisho ya ununuzi au zabuni'}),
+  q('delivery',{type:'text',en:'Delivery and installation location',sw:'Mahali pa kupeleka na kufunga'}),
+  S('Budget','Bajeti'),
+  BUDGET()
+ ]},
+ {id:'assets',en:'IT asset register setup',sw:'Kuandaa rejista ya vifaa vya TEHAMA',q:[
+  S('Size','Ukubwa'),
+  q('a_count',{type:'select',en:'About how many IT items do you have?',sw:'Mna vifaa vya TEHAMA takriban vingapi?',opts:[['Under 50','Chini ya 50'],['50–150','50–150'],['150–500','150–500'],['More than 500','Zaidi ya 500']]}),
+  q('a_sites',{type:'number',en:'Number of branches or locations',sw:'Idadi ya matawi au maeneo'}),
+  q('a_depts',{type:'number',en:'Number of departments',sw:'Idadi ya idara'}),
+  q('a_types',{type:'checks',wide:1,en:'What types of items?',sw:'Ni aina gani za vifaa?',opts:[['Desktops','Kompyuta za mezani'],['Laptops','Laptop'],['Printers and copiers','Printa na mashine za kunakili'],['Projectors','Projekta'],['Network devices','Vifaa vya mtandao'],['CCTV','CCTV'],['Phones and tablets','Simu na tablet'],['Servers','Seva']]}),
+  S('Current records','Kumbukumbu zilizopo'),
+  q('a_list',{type:'radio',wide:1,en:'Do you have a list today?',sw:'Mna orodha kwa sasa?',opts:[['No list','Hakuna orodha'],['On paper','Kwenye karatasi'],['In Excel','Kwenye Excel'],['In a system','Kwenye mfumo']]}),
+  q('a_listq',{type:'radio',wide:1,show:['a_list',[1,2,3]],en:'How up to date is it?',sw:'Iko sahihi kiasi gani?',opts:[['Up to date','Iko sahihi'],['Partly','Kwa sehemu'],['Very old','Ni ya zamani sana']]}),
+  q('a_purch',{type:'radio',wide:1,en:'Do you have purchase dates and prices?',sw:'Mna tarehe na bei za ununuzi?',opts:[['For most items','Kwa vifaa vingi'],['For some','Kwa baadhi'],['No','Hapana']]}),
+  S('What to track','Cha kufuatilia'),
+  q('a_fields',{type:'checks',wide:1,en:'What should the register record?',sw:'Rejista irekodi nini?',opts:[['Serial numbers','Namba za utambulisho (serial)'],['Who uses each item','Nani anatumia kila kifaa'],['Location and department','Mahali na idara'],['Condition','Hali ya kifaa'],['Purchase price and value','Bei ya ununuzi na thamani'],['Warranty end date','Mwisho wa udhamini'],['Repairs and maintenance','Matengenezo'],['Disposal','Kuondolewa kwa kifaa']]}),
+  q('a_value',{type:'radio',en:'Track value and depreciation?',sw:'Kufuatilia thamani na uchakavu?',opts:YN}),
+  q('a_dep',{type:'select',show:['a_value',[0]],en:'Depreciation method',sw:'Njia ya kukokotoa uchakavu',opts:[['Straight line','Mstari ulionyooka (straight line)'],['Same as our accounts','Kama hesabu zetu'],['Not sure','Sina uhakika']]}),
+  q('a_tags',{type:'radio',en:'Do you need asset labels or barcodes?',sw:'Mnahitaji lebo au barcode za vifaa?',opts:YN}),
+  q('a_owner',{type:'radio',wide:1,en:'Who will keep the register up to date?',sw:'Nani atasasisha rejista?',opts:[['IT staff','Mfanyakazi wa TEHAMA'],['Accounts','Uhasibu'],['Administration','Utawala'],['Not decided','Bado hatujaamua']]}),
+  q('a_format',{type:'radio',en:'Preferred format',sw:'Muundo unaopendelea',opts:[['Excel','Excel'],['Google Sheets','Google Sheets'],['Not sure','Sina uhakika']]}),
+  q('a_audit',{type:'radio',en:'Is this for an audit?',sw:'Ni kwa ajili ya ukaguzi?',opts:YN})
+ ]},
+ {id:'templates',en:'Ready-made templates',sw:'Violezo vilivyo tayari',q:[
+  q('t_which',{type:'checks',wide:1,req:1,en:'Which templates?',sw:'Violezo vipi?',opts:[['Network & CCTV Site Survey Checklist','Orodha ya Ukaguzi wa Eneo kwa Mtandao na CCTV'],['IT Asset Register','Rejista ya Vifaa vya TEHAMA']]}),
+  q('t_use',{type:'text',wide:1,en:'What will you use it for?',sw:'Mtakitumia kwa kazi gani?'})
+ ]}
+];
+var NOTES=q('notes',{type:'textarea',wide:1,en:'Anything else we should know?',sw:'Kuna jambo lingine tunalopaswa kujua?'});
+
+var CONTROL={};
+SERVICES.forEach(function(s){ s.q.forEach(function(f){ if(f.show) CONTROL[f.show[0]]=1; }); });
+
+var UI={
+ pick:['1. Which service do you need?','1. Unahitaji huduma gani?'],
+ hint:['Choose a service above to see its questions.','Chagua huduma hapo juu ili uone maswali yake.'],
+ you:['2. About you','2. Kuhusu wewe'],
+ job:['3. About your request','3. Kuhusu ombi lako'],
+ skip:['Only fields marked * are required. Skip anything you are not sure about, and we will ask on WhatsApp.','Sehemu zenye * pekee ndizo za lazima. Ruka usichokuwa na uhakika nacho, tutakuuliza kwa WhatsApp.'],
+ submit:['Prepare my request','Andaa ombi langu'],
+ reset:['Start over','Anza upya'],
+ need:['Please fill in this field.','Tafadhali jaza sehemu hii.'],
+ needOne:['Please pick at least one.','Tafadhali chagua angalau kimoja.'],
+ needSvc:['Choose a service first.','Chagua huduma kwanza.'],
+ doneH:['Your request is ready to send','Ombi lako liko tayari kutumwa'],
+ doneP:['Open WhatsApp with your answers filled in, then press Send. You will get a reply with a proforma and the exact price.','Fungua WhatsApp ikiwa na majibu yako, kisha bonyeza Tuma. Utajibiwa na proforma pamoja na bei kamili.'],
+ openWa:['Open WhatsApp','Fungua WhatsApp'],
+ email:['Send by email instead','Tuma kwa barua pepe'],
+ copy:['Copy answers','Nakili majibu'],
+ copied:['Copied','Imenakiliwa'],
+ edit:['Edit answers','Hariri majibu'],
+ head:['Radken Tech request','Ombi kwa Radken Tech'],
+ svc:['Service','Huduma'],
+ contact:['Contact','Mawasiliano']
+};
+function L(){ return window.LANG==='sw'?1:0; }
+function t(pair){ return pair[L()]; }
+function tx(o){ return L()?o.sw:o.en; }
+function esc(v){ return String(v).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];}); }
+
+var state={service:null,v:{}};
+var form=document.getElementById('rq'), done=document.getElementById('rq-done');
+function svc(){ for(var i=0;i<SERVICES.length;i++) if(SERVICES[i].id===state.service) return SERVICES[i]; return null; }
+function visible(f){
+  if(!f.show) return true;
+  var v=state.v[f.show[0]], ok=f.show[1];
+  if(Array.isArray(v)) return v.some(function(i){return ok.indexOf(i)>-1;});
+  return v!==undefined && ok.indexOf(v)>-1;
+}
+
+function field(f){
+  if(f.type==='section') return '<h4 class="sub">'+esc(tx(f))+'</h4>';
+  if(!visible(f)) return '';
+  var v=state.v[f.id], id='rq-'+f.id, label=esc(tx(f))+(f.req?' <span class="star" aria-hidden="true">*</span>':''), h='';
+  var ph=f.ph?' placeholder="'+esc(f.ph[L()])+'"':'';
+  var cls='f'+(f.wide?' wide':'')+(f.show?' follow':'');
+  if(f.type==='radio'||f.type==='checks'){
+    var type=f.type==='radio'?'radio':'checkbox';
+    h='<fieldset class="'+cls+'" data-q="'+f.id+'"><legend class="l">'+label+'</legend><div class="opts">';
+    f.opts.forEach(function(o,i){
+      var on = f.type==='radio' ? v===i : (v||[]).indexOf(i)>-1;
+      h+='<label><input type="'+type+'" name="'+f.id+'" value="'+i+'"'+(on?' checked':'')+'> '+esc(o[L()])+'</label>';
+    });
+    return h+'</div><p class="err" hidden></p></fieldset>';
+  }
+  h='<label class="'+cls+'" data-q="'+f.id+'" for="'+id+'"><span class="l">'+label+'</span>';
+  if(f.type==='select'){
+    h+='<select id="'+id+'" name="'+f.id+'"><option value="">—</option>';
+    f.opts.forEach(function(o,i){ h+='<option value="'+i+'"'+(v===i?' selected':'')+'>'+esc(o[L()])+'</option>'; });
+    h+='</select>';
+  } else if(f.type==='textarea'){
+    h+='<textarea id="'+id+'" name="'+f.id+'" rows="3"'+ph+'>'+esc(v||'')+'</textarea>';
+  } else {
+    h+='<input id="'+id+'" name="'+f.id+'" type="'+f.type+'"'+(f.type==='number'?' min="0" inputmode="numeric"':'')+ph+' value="'+esc(v||'')+'">';
+  }
+  return h+'<span class="err" hidden></span></label>';
+}
+
+function render(){
+  var s=svc(), h='<fieldset class="pick"><legend>'+t(UI.pick)+'</legend><div class="svc-pick">';
+  SERVICES.forEach(function(x){
+    h+='<label><input type="radio" name="service" value="'+x.id+'"'+(state.service===x.id?' checked':'')+'><span>'+esc(tx(x))+'</span></label>';
+  });
+  h+='</div><p class="err" id="rq-svc-err" hidden></p></fieldset>';
+  if(!s){ h+='<p class="hint">'+t(UI.hint)+'</p>'; }
+  else {
+    h+='<fieldset class="grp"><legend>'+t(UI.you)+'</legend>'+COMMON.map(field).join('')+'</fieldset>';
+    h+='<fieldset class="grp"><legend>'+t(UI.job)+' · '+esc(tx(s))+'</legend><p class="skip">'+t(UI.skip)+'</p>'+s.q.map(field).join('')+'<h4 class="sub">'+esc(tx(NOTES))+'</h4>'+field(Object.assign({},NOTES,{en:'',sw:''}))+'</fieldset>';
+    h+='<div class="rq-actions"><button class="btn btn-primary" type="submit">'+t(UI.submit)+'</button><button class="btn btn-line" type="button" id="rq-reset">'+t(UI.reset)+'</button></div>';
+  }
+  form.innerHTML=h;
+  var r=document.getElementById('rq-reset');
+  if(r) r.addEventListener('click',function(){ state={service:state.service,v:{}}; done.hidden=true; render(); });
+  if(!done.hidden) showDone();
+}
+window.renderForm=render;
+
+form.addEventListener('change',onInput); form.addEventListener('input',onInput);
+function onInput(e){
+  var el=e.target; if(!el.name) return;
+  if(el.name==='service'){ if(state.service!==el.value){ state.service=el.value; done.hidden=true; render(); } return; }
+  if(el.type==='checkbox'){
+    state.v[el.name]=[].slice.call(form.querySelectorAll('input[name="'+el.name+'"]:checked')).map(function(c){return +c.value;});
+  } else if(el.type==='radio'||el.tagName==='SELECT'){
+    state.v[el.name]= el.value===''?undefined:+el.value;
+  } else state.v[el.name]=el.value;
+  var box=el.closest('[data-q]'); if(box){ var er=box.querySelector('.err'); if(er) er.hidden=true; box.classList.remove('bad'); }
+  if(CONTROL[el.name] && e.type==='change'){ var y=window.scrollY; render(); window.scrollTo(0,y); }
+}
+
+function val(f){
+  var v=state.v[f.id];
+  if(v===undefined||v===''||(Array.isArray(v)&&!v.length)) return '';
+  if(f.type==='checks') return v.map(function(i){return f.opts[i][L()];}).join(', ');
+  if(f.type==='radio'||f.type==='select') return f.opts[v][L()];
+  return String(v).trim();
+}
+function answerable(){ var s=svc(); return s?COMMON.concat(s.q,[NOTES]).filter(function(f){return f.type!=='section'&&visible(f);}):[]; }
+function message(){
+  var s=svc(), out=['*'+t(UI.head)+'*', t(UI.svc)+': '+tx(s)];
+  function block(title, list){
+    var lines=[]; list.forEach(function(f){ if(!visible(f)) return; var v=val(f); if(v) lines.push('• '+tx(f).replace(/\?$/,'')+': '+v); });
+    if(lines.length){ out.push('', '*'+title+'*'); out.push.apply(out,lines); }
+  }
+  block(t(UI.contact), COMMON);
+  var title=tx(s), buf=[];
+  s.q.forEach(function(f){ if(f.type==='section'){ block(title,buf); title=tx(f); buf=[]; } else buf.push(f); });
+  block(title,buf);
+  var n=val(NOTES); if(n){ out.push('', '*'+tx(NOTES).replace(/\?$/,'')+'*', n); }
+  return out.join('\n');
+}
+
+form.addEventListener('submit',function(e){
+  e.preventDefault();
+  if(!svc()){ var se=document.getElementById('rq-svc-err'); se.textContent=t(UI.needSvc); se.hidden=false; return; }
+  var first=null;
+  answerable().forEach(function(f){
+    if(!f.req) return;
+    var box=form.querySelector('[data-q="'+f.id+'"]'), er=box&&box.querySelector('.err');
+    if(!val(f)){ if(er){ er.textContent=t(f.type==='checks'?UI.needOne:UI.need); er.hidden=false; } if(box) box.classList.add('bad'); first=first||box; }
+  });
+  if(first){ first.scrollIntoView({behavior:'smooth',block:'center'}); var inp=first.querySelector('input,textarea,select'); if(inp) inp.focus({preventScroll:true}); return; }
+  done.hidden=false; showDone(); done.scrollIntoView({behavior:'smooth',block:'start'});
+});
+
+function showDone(){
+  var m=message();
+  var wa='https://wa.me/255786670743?text='+encodeURIComponent(m);
+  var mail='mailto:kennyrodgers36@outlook.com?subject='+encodeURIComponent(t(UI.head)+' – '+tx(svc()))+'&body='+encodeURIComponent(m.replace(/\*/g,''));
+  done.innerHTML='<h3>'+t(UI.doneH)+'</h3><p>'+t(UI.doneP)+'</p>'+
+    '<div class="rq-actions"><a class="btn btn-primary" href="'+wa+'" target="_blank" rel="noopener">'+t(UI.openWa)+'</a>'+
+    '<a class="btn btn-line" href="'+mail+'">'+t(UI.email)+'</a>'+
+    '<button class="btn btn-line" type="button" id="rq-copy">'+t(UI.copy)+'</button>'+
+    '<button class="btn btn-line" type="button" id="rq-edit">'+t(UI.edit)+'</button></div>'+
+    '<pre id="rq-msg">'+esc(m)+'</pre>';
+  document.getElementById('rq-edit').addEventListener('click',function(){ done.hidden=true; form.scrollIntoView({behavior:'smooth',block:'start'}); });
+  var cb=document.getElementById('rq-copy');
+  cb.addEventListener('click',function(){
+    function ok(){ cb.textContent=t(UI.copied); setTimeout(function(){cb.textContent=t(UI.copy);},1500); }
+    function fb(){ var r=document.createRange(); r.selectNodeContents(document.getElementById('rq-msg')); var sl=window.getSelection(); sl.removeAllRanges(); sl.addRange(r); }
+    try{ navigator.clipboard.writeText(m).then(ok,fb); }catch(e){ fb(); }
+  });
+}
+
+document.querySelectorAll('[data-service]').forEach(function(a){
+  a.addEventListener('click',function(){ state.service=a.getAttribute('data-service'); done.hidden=true; render(); });
+});
+render();
+})();
+
+
+// ===== Tabbed pages =====
+(function(){
+  var PAGES=['home','services','how','form','about','contact'];
+  function show(p,scroll){
+    if(p==='top'||PAGES.indexOf(p)<0) p='home';
+    document.querySelectorAll('.page').forEach(function(el){ el.hidden = el.getAttribute('data-page')!==p; });
+    document.querySelectorAll('.top nav a').forEach(function(a){
+      var on=a.getAttribute('href')==='#'+p; a.classList.toggle('on',on);
+      if(on) a.setAttribute('aria-current','page'); else a.removeAttribute('aria-current');
+    });
+    if(scroll!==false) window.scrollTo(0,0);
+    try{ history.replaceState(null,'','#'+p); }catch(e){}
+  }
+  document.addEventListener('click',function(e){
+    var a=e.target.closest && e.target.closest('a[href^="#"]'); if(!a) return;
+    var p=a.getAttribute('href').slice(1);
+    if(p==='top'||PAGES.indexOf(p)>-1){ e.preventDefault(); show(p); }
+  });
+  window.addEventListener('hashchange',function(){ show(location.hash.slice(1)); });
+  show((location.hash||'#home').slice(1), false);
+})();
+</script>
+
+</body></html>

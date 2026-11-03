@@ -1,1 +1,8 @@
-# radken-tech.github.io.
+# Radken Tech website
+
+Public website for Radken Tech — IT proposals, policies and specs for schools, clinics and small businesses in Dar es Salaam.
+
+- `index.html` — the whole site (English & Kiswahili), including the requirements form (sends via WhatsApp or email; no server needed)
+- `img/` — service photos
+
+Live at https://radken-tech.github.io — hosted with GitHub Pages from the `main` branch.
