@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sample Network Upgrade Proposal · Radken Tech</title>
+<meta name="description" content="A sample Radken Tech network upgrade proposal for a fictional two-campus primary school in Dar es Salaam.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{--navy:#0B2545;--teal:#0E9E84;--teal-bright:#13C4A3;--sun:#F5A524;--sun-tint:#FFF1D6;--bg:#F5F8FA;--paper:#FFFFFF;--fg:#13233A;--muted:#55657A;--line:#D9E1E8;--tint:#E6F5F1;
+--display:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;--body:"IBM Plex Sans","Segoe UI",system-ui,sans-serif;--mono:"IBM Plex Mono",ui-monospace,Consolas,monospace}
+@media (prefers-color-scheme:dark){:root{--bg:#0C1626;--paper:#122139;--fg:#E7EEF5;--muted:#9AAABD;--line:#22344F;--tint:#123A3A;--teal:#2FD3B2;--sun-tint:#3A2E14}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.65 var(--body)}
+a{color:var(--teal)}
+.bar{background:var(--navy);color:#F2F7FA}
+.bar .in{max-width:860px;margin:0 auto;padding:12px 20px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.bar a{color:#F2F7FA;text-decoration:none;font-family:var(--display);font-weight:800;letter-spacing:.04em}
+.bar a span{color:var(--teal-bright)}
+.bar .act{display:flex;gap:8px;flex-wrap:wrap}
+.btn{display:inline-block;padding:9px 16px;border-radius:6px;font:600 14px var(--body);text-decoration:none;border:1.5px solid transparent;cursor:pointer}
+.btn.p{background:var(--teal-bright);color:#062018}
+.btn.g{border-color:#3A5578;color:#F2F7FA;background:transparent}
+.note{max-width:860px;margin:16px auto 0;padding:0 20px}
+.note p{margin:0;background:var(--sun-tint);border-left:4px solid var(--sun);border-radius:6px;padding:10px 14px;font-size:14px}
+.doc{max-width:860px;margin:16px auto 48px;background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:clamp(20px,5vw,56px)}
+.cover{border-bottom:3px solid var(--teal);padding-bottom:22px;margin-bottom:8px}
+.ref{font:500 12px var(--mono);color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+h1{font:800 clamp(28px,5vw,40px)/1.1 var(--display);margin:18px 0 6px;color:var(--fg)}
+.for{color:var(--muted);margin:0}
+.meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px;margin-top:18px;font-size:14px}
+.meta div{background:var(--bg);border-radius:6px;padding:8px 12px}
+.meta b{display:block;font:500 11px var(--mono);text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+h2{font:700 22px/1.2 var(--display);margin:34px 0 10px;color:var(--fg)}
+h2 .n{color:var(--teal);font-family:var(--mono);font-size:16px;margin-right:8px}
+h3{font:600 16px var(--body);margin:18px 0 4px}
+p{margin:0 0 10px}
+ul{margin:0 0 10px;padding-left:20px}
+li{margin-bottom:4px}
+.tbl{overflow-x:auto;margin:10px 0}
+table{width:100%;border-collapse:collapse;font-size:14px;min-width:540px}
+th,td{border-bottom:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+th{font:500 11px var(--mono);text-transform:uppercase;letter-spacing:.06em;color:var(--muted);background:var(--bg)}
+td.r,th.r{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
+tr.tot td{font-weight:700;border-bottom:0}
+.risk{display:inline-block;font:600 11px var(--body);padding:2px 8px;border-radius:999px}
+.hi{background:#F7DEDB;color:#A3312A}.md{background:#FBEBCF;color:#9A5B00}
+.callout{background:var(--tint);border-radius:8px;padding:12px 16px;margin:12px 0;font-size:15px}
+.phases{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;margin:10px 0}
+.phases div{border:1px solid var(--line);border-top:3px solid var(--teal);border-radius:6px;padding:10px 12px;font-size:14px}
+.phases b{display:block;font-family:var(--display);font-size:15px}
+.end{margin-top:34px;padding-top:16px;border-top:1px solid var(--line);font-size:14px;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+.cta{max-width:860px;margin:-24px auto 48px;padding:0 20px;text-align:center}
+.cta .btn{margin:4px}
+@media print{.bar,.note,.cta{display:none}body{background:#fff;color:#000}.doc{border:0;margin:0;padding:0;max-width:none}h2{break-after:avoid}table{min-width:0}}
+</style>
+</head>
+<body>
+<div class="bar"><div class="in">
+  <a href="./">RADKEN <span>TECH</span></a>
+  <div class="act"><a class="btn g" href="javascript:window.print()">Print / save as PDF</a><a class="btn p" href="./#form">Request your own</a></div>
+</div></div>
+
+<div class="note"><p><b>This is a sample.</b> Mwangaza Academy is a fictional school, and every figure below is illustrative. Your proposal is written from your own requirements form, for your own site.</p></div>
+
+<article class="doc">
+  <header class="cover">
+    <div class="ref"><span>Ref RT-NP-SAMPLE</span><span>Version 1.0 · For board review</span></div>
+    <h1>Network Upgrade Proposal</h1>
+    <p class="for">Prepared for Mwangaza Academy, a two-campus private primary school in Dar es Salaam</p>
+    <div class="meta">
+      <div><b>Prepared by</b>Kenny Rodgers, Radken Tech</div>
+      <div><b>Sites</b>Main campus (3 blocks) and Annex (1 block), 450 m apart</div>
+      <div><b>Users</b>520 pupils · 38 staff · ~160 devices</div>
+    </div>
+  </header>
+
+  <h2><span class="n">1</span>Executive summary</h2>
+  <p>Mwangaza Academy's network has grown one router at a time. Today it runs on a single 20 Mbps fibre link with no backup, consumer routers in each block, and one shared Wi-Fi password used by staff, pupils and visitors alike. The result is slow internet at peak times, Wi-Fi dead spots in two classroom blocks, and no protection for the school's records if the link or a router fails.</p>
+  <p>This proposal sets out a phased upgrade that gives every block reliable wired and wireless coverage, links the Annex to the main campus, separates staff, pupil and guest traffic, and adds a backup internet line and power protection.</p>
+  <div class="callout"><b>Indicative budget:</b> TZS 18–29 million for equipment and installation, which can be spread across three school terms. All figures are estimates, to be confirmed by supplier quotations.</div>
+
+  <h2><span class="n">2</span>Current situation</h2>
+  <p>From the school's requirements form and the equipment list provided:</p>
+  <ul>
+    <li><b>Internet:</b> one 20 Mbps fibre line at the main campus. The Annex shares it over a long outdoor cable that fails in heavy rain.</li>
+    <li><b>Equipment:</b> 4 consumer Wi-Fi routers and 2 unmanaged 8-port switches, mostly over 5 years old.</li>
+    <li><b>Cabling:</b> mixed Cat5 runs along walls with no labelling and no central cabinet.</li>
+    <li><b>Uses:</b> school management system, staff email, a 30-seat computer lab, online exam practice and 6 CCTV cameras.</li>
+    <li><b>Power:</b> frequent short cuts; a generator covers the office block only.</li>
+  </ul>
+
+  <h2><span class="n">3</span>Problems and risks</h2>
+  <div class="tbl"><table>
+    <thead><tr><th>Issue</th><th>Impact on the school</th><th>Risk</th></tr></thead>
+    <tbody>
+      <tr><td>Single internet line</td><td>Any outage stops fee records, email and lab lessons</td><td><span class="risk hi">High</span></td></tr>
+      <tr><td>One shared Wi-Fi network</td><td>Pupils and visitors can reach staff computers and records</td><td><span class="risk hi">High</span></td></tr>
+      <tr><td>No power protection</td><td>Equipment restarts or is damaged during power cuts</td><td><span class="risk md">Medium</span></td></tr>
+      <tr><td>Weak Annex link</td><td>Annex loses internet in the rainy season</td><td><span class="risk md">Medium</span></td></tr>
+      <tr><td>Wi-Fi dead spots in Blocks B and C</td><td>Teachers can't use online material in class</td><td><span class="risk md">Medium</span></td></tr>
+    </tbody>
+  </table></div>
+
+  <h2><span class="n">4</span>Proposed solution</h2>
+  <h3>4.1 Internet and backup link</h3>
+  <p>Keep the current fibre as the main line and add a 4G/5G backup router. A firewall switches over automatically, so the school stays online when the fibre drops.</p>
+  <h3>4.2 Core and access switching</h3>
+  <p>Install a lockable wall cabinet in the main office with a managed core switch, and a PoE access switch in each block. PoE powers the Wi-Fi points and cameras through the network cable, so no extra power sockets are needed.</p>
+  <h3>4.3 Wi-Fi coverage</h3>
+  <p>Replace the consumer routers with 12 ceiling-mounted access points, all managed from one place: 9 at the main campus, including the staff room and hall, and 3 at the Annex.</p>
+  <h3>4.4 Separate networks for each group</h3>
+  <ul>
+    <li><b>Staff:</b> full access to the school system and printers.</li>
+    <li><b>Pupils and lab:</b> internet only, with unsafe sites filtered.</li>
+    <li><b>Guests:</b> internet only, speed-limited and isolated.</li>
+    <li><b>CCTV:</b> cameras kept on their own network.</li>
+  </ul>
+  <h3>4.5 Linking the Annex</h3>
+  <p>Replace the outdoor cable with a point-to-point wireless link between the two campuses, which is unaffected by rain or digging.</p>
+  <h3>4.6 Power protection</h3>
+  <p>Add a UPS in the main cabinet and smaller UPS units at each block switch, giving about 30–60 minutes of runtime during power cuts.</p>
+
+  <h2><span class="n">5</span>Bill of quantities</h2>
+  <p>Indicative TZS ranges for budgeting. Final prices come from supplier quotations, which this proposal's specifications make easy to compare like for like.</p>
+  <div class="tbl"><table>
+    <thead><tr><th>Item</th><th class="r">Qty</th><th class="r">Estimate (TZS)</th></tr></thead>
+    <tbody>
+      <tr><td>Business firewall with dual internet (failover)</td><td class="r">1</td><td class="r">1,500,000 – 2,800,000</td></tr>
+      <tr><td>4G/5G backup router</td><td class="r">1</td><td class="r">250,000 – 450,000</td></tr>
+      <tr><td>Managed core switch, 24-port</td><td class="r">1</td><td class="r">900,000 – 1,600,000</td></tr>
+      <tr><td>Managed PoE access switch, 8–16 port</td><td class="r">4</td><td class="r">2,400,000 – 4,000,000</td></tr>
+      <tr><td>Ceiling Wi-Fi access point, centrally managed</td><td class="r">12</td><td class="r">3,600,000 – 5,400,000</td></tr>
+      <tr><td>Point-to-point wireless link (pair)</td><td class="r">1</td><td class="r">700,000 – 1,300,000</td></tr>
+      <tr><td>Wall cabinet 9U with patch panel and accessories</td><td class="r">1</td><td class="r">450,000 – 800,000</td></tr>
+      <tr><td>UPS 1.5 kVA (core) and 650 VA (blocks)</td><td class="r">5</td><td class="r">1,800,000 – 2,700,000</td></tr>
+      <tr><td>Cat6 cabling, trunking and labelled drop points</td><td class="r">60 drops</td><td class="r">4,200,000 – 6,000,000</td></tr>
+      <tr><td>Installation, configuration and testing</td><td class="r">1 lot</td><td class="r">2,500,000 – 3,500,000</td></tr>
+      <tr class="tot"><td>Total (indicative)</td><td></td><td class="r">18,300,000 – 28,550,000</td></tr>
+    </tbody>
+  </table></div>
+
+  <h2><span class="n">6</span>Implementation phases</h2>
+  <div class="phases">
+    <div><b>Phase 1 · Term 1</b>Firewall, backup internet, core cabinet and UPS. This fixes the highest risks first.</div>
+    <div><b>Phase 2 · Term 2</b>Cabling, block switches and Wi-Fi for the main campus.</div>
+    <div><b>Phase 3 · Term 3</b>Annex wireless link, Annex Wi-Fi, and the final network separation.</div>
+  </div>
+  <p>Work is scheduled for weekends and school holidays, so lessons are not disrupted.</p>
+
+  <h2><span class="n">7</span>Maintenance and support</h2>
+  <ul>
+    <li>Monthly check of firewall logs, backup-line status and UPS batteries by the school's chosen technician.</li>
+    <li>Change Wi-Fi passwords each term; keep the guest network separate at all times.</li>
+    <li>Keep equipment firmware up to date, and record every device in the school's IT asset register.</li>
+  </ul>
+
+  <h2><span class="n">8</span>Next steps</h2>
+  <ol>
+    <li>Board reviews this proposal and approves Phase 1.</li>
+    <li>The school sends the bill of quantities to 2–3 suppliers for quotations.</li>
+    <li>Radken Tech helps compare the quotations against the specification, if requested.</li>
+  </ol>
+
+  <div class="end"><span>Radken Tech · IT Proposals · Policies · Specs</span><span>0786 670 743 · kennyrodgers36@outlook.com</span></div>
+</article>
+
+<div class="cta">
+  <a class="btn p" href="./#form">Request a proposal for your school or clinic</a>
+  <a class="btn" style="border-color:var(--line);color:var(--fg)" href="./#services">See all services &amp; prices</a>
+</div>
+</body>
+</html>
