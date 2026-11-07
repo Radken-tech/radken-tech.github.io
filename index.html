@@ -43,6 +43,9 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--teal-bright);outlin
 .top nav{margin-left:auto}
 .lang{display:inline-flex;border:1px solid #3A5578;border-radius:6px;overflow:hidden;background:transparent;padding:0;cursor:pointer;font-family:var(--mono);font-size:12px}
 .lang span{padding:6px 10px;color:var(--on-navy);opacity:.7}
+.switches{display:flex;gap:6px;flex-wrap:nowrap}
+.ctry span{white-space:nowrap}
+@media (max-width:520px){.ctry span b{display:none}.ctry span{padding:6px 8px}}
 .lang span.on{background:var(--teal-bright);color:var(--on-accent);opacity:1;font-weight:500}
 html[lang="sw"] .steps li::before{content:"Hatua " counter(st)}
 
@@ -327,7 +330,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
       <a href="#about" data-sw="Kuhusu">About</a>
       <a href="#contact" data-sw="Mawasiliano">Contact</a>
     </nav>
-    <button class="lang" id="lang-toggle" type="button" aria-label="Switch language / Badilisha lugha"><span data-l="en" class="on">EN</span><span data-l="sw">SW</span></button>
+    <div class="switches"><button class="lang ctry" id="ctry-toggle" type="button" aria-label="Choose country / Chagua nchi"><span data-c="TZ" class="on">🇹🇿<b> TZ</b></span><span data-c="KE">🇰🇪<b> KE</b></span></button>
+    <button class="lang" id="lang-toggle" type="button" aria-label="Switch language / Badilisha lugha"><span data-l="en" class="on">EN</span><span data-l="sw">SW</span></button></div>
   </div>
 </header>
 
@@ -336,7 +340,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
   <div class="hero">
     <div class="wrap">
       <div>
-        <span class="eyebrow" data-sw="Mapendekezo · Sera · Vipimo vya TEHAMA · Dar es Salaam">IT Proposals · Policies · Specs · Dar es Salaam</span>
+        <span class="eyebrow" data-sw="Mapendekezo · Sera · Vipimo vya TEHAMA · Dar es Salaam" data-ke="IT Proposals · Policies · Specs · Kenya" data-ke-sw="Mapendekezo · Sera · Vipimo vya TEHAMA · Kenya">IT Proposals · Policies · Specs · Dar es Salaam</span>
         <h1 data-sw="Nyaraka za TEHAMA ambazo shule au kliniki yako &lt;em&gt;imekuwa ikiziahirisha&lt;/em&gt;, zimeandaliwa kitaalamu.">The IT paperwork your school or clinic <em>keeps putting off</em>, done properly.</h1>
         <p class="lead" data-sw="Radken Tech huandaa nyaraka za TEHAMA zilizo wazi na tayari kutumika: mapendekezo ya mtandao na CCTV, sera za TEHAMA, vipimo vya zabuni na rejista za vifaa. Unapata nyaraka ambayo bodi, msambazaji au mkaguzi wako anaweza kuifanyia kazi.">Radken Tech writes clear, ready-to-use IT documents: network and CCTV proposals, IT policies, tender specifications and equipment registers. You get a document your board, supplier or auditor can act on.</p>
         <div class="cta">
@@ -354,7 +358,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
         <ol>
           <li><span>Current setup (from your requirements form)</span><span>p.2</span></li>
           <li><span>Recommended design &amp; Wi-Fi coverage</span><span>p.4</span></li>
-          <li><span>Bill of quantities (TZS)</span><span>p.7</span></li>
+          <li><span data-ke="Bill of quantities (KES)">Bill of quantities (TZS)</span><span>p.7</span></li>
           <li><span>Rollout plan &amp; supplier specs</span><span>p.9</span></li>
         </ol>
         <div class="foot">RADKEN TECH <small>Sample cover</small></div>
@@ -405,7 +409,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
           <img class="ill" src="img/radken-network.webp" alt="Blue network cables plugged into a network switch" width="640" height="427" loading="lazy" decoding="async">
           <h3 data-sw="Pendekezo la kuboresha mtandao">Network upgrade proposal</h3>
           <p data-sw="Muundo wa mtandao wa waya na Wi-Fi, orodha ya vifaa, makadirio ya gharama (BOQ) na mpango wa utekelezaji unaoweza kumkabidhi fundi yeyote.">Wired and Wi-Fi design, equipment list, costed bill of quantities and a rollout plan you can hand to any installer.</p>
-          <div class="price"><small data-sw="kuanzia">from</small><strong>TZS 300,000</strong><em class="eta" data-sw="Siku 5–7 za kazi">5–7 working days</em></div>
+          <div class="price"><small data-sw="kuanzia">from</small><strong data-ke="KES 25,000">TZS 300,000</strong><em class="eta" data-sw="Siku 5–7 za kazi">5–7 working days</em></div>
           <a class="req" href="#form" data-service="network" data-sw="Anza ombi">Start request</a>
           <a href="sample.html" style="display:block;margin:8px 20px 0;text-align:center;font-size:14px;font-weight:600;color:var(--teal)" data-sw="Tazama mfano">See a sample</a>
         </div>
@@ -413,35 +417,35 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
           <img class="ill" src="img/radken-policy.webp" alt="Hands signing a document at a desk" width="640" height="427" loading="lazy" decoding="async">
           <h3 data-sw="Kifurushi cha sera za TEHAMA">IT policy pack</h3>
           <p data-sw="Matumizi yanayokubalika, nywila, ulinzi wa taarifa, nakala rudufu (backup) na kanuni za vifaa, zimeandikwa kwa ajili ya wafanyakazi wako na tayari kusainiwa.">Acceptable use, passwords, data protection, backups and device rules, written for your staff and ready to sign.</p>
-          <div class="price"><small data-sw="kuanzia">from</small><strong>TZS 250,000</strong><em class="eta" data-sw="Siku 5 za kazi">5 working days</em></div>
+          <div class="price"><small data-sw="kuanzia">from</small><strong data-ke="KES 20,000">TZS 250,000</strong><em class="eta" data-sw="Siku 5 za kazi">5 working days</em></div>
           <a class="req" href="#form" data-service="policy" data-sw="Anza ombi">Start request</a>
         </div>
         <div class="row">
           <img class="ill" src="img/radken-cctv.webp" alt="Security camera mounted on an outside wall" width="640" height="427" loading="lazy" decoding="async">
           <h3 data-sw="Pendekezo la mfumo wa CCTV">CCTV system proposal</h3>
           <p data-sw="Mahali pa kuweka kamera, mahitaji ya kurekodi na kuhifadhi, orodha ya vifaa na gharama kwa madarasa, mageti, wodi au stoo.">Camera positions, recording and storage needs, equipment list and costs for classrooms, gates, wards or stores.</p>
-          <div class="price"><small data-sw="kuanzia">from</small><strong>TZS 200,000</strong><em class="eta" data-sw="Siku 3–5 za kazi">3–5 working days</em></div>
+          <div class="price"><small data-sw="kuanzia">from</small><strong data-ke="KES 15,000">TZS 200,000</strong><em class="eta" data-sw="Siku 3–5 za kazi">3–5 working days</em></div>
           <a class="req" href="#form" data-service="cctv" data-sw="Anza ombi">Start request</a>
         </div>
         <div class="row">
           <img class="ill" src="img/radken-specs.webp" alt="Calculator and paperwork used to compare supplier quotes" width="640" height="427" loading="lazy" decoding="async">
           <h3 data-sw="Vipimo vya ununuzi na nyaraka za zabuni">Procurement specs &amp; tender documents</h3>
           <p data-sw="Vipimo vya kiufundi vilivyo wazi kwa kompyuta, vifaa vya mtandao au CCTV, ili wasambazaji watoe nukuu zinazolingana.">Clear technical specifications for computers, network gear or CCTV, so suppliers quote like for like.</p>
-          <div class="price"><small data-sw="kuanzia">from</small><strong>TZS 200,000</strong><em class="eta" data-sw="Siku 3–5 za kazi">3–5 working days</em></div>
+          <div class="price"><small data-sw="kuanzia">from</small><strong data-ke="KES 15,000">TZS 200,000</strong><em class="eta" data-sw="Siku 3–5 za kazi">3–5 working days</em></div>
           <a class="req" href="#form" data-service="specs" data-sw="Anza ombi">Start request</a>
         </div>
         <div class="row">
           <img class="ill" src="img/radken-assets.webp" alt="A row of laptops on an office table" width="640" height="427" loading="lazy" decoding="async">
           <h3 data-sw="Kuandaa rejista ya vifaa vya TEHAMA">IT asset register setup</h3>
           <p data-sw="Rejista inayofanya kazi ya kila kompyuta, printa na kifaa: nani anacho, kiko wapi, hali yake na thamani yake.">A working register of every computer, printer and device: who has it, where it is, its condition and value.</p>
-          <div class="price"><small data-sw="kuanzia">from</small><strong>TZS 150,000</strong><em class="eta" data-sw="Siku 3 za kazi">3 working days</em></div>
+          <div class="price"><small data-sw="kuanzia">from</small><strong data-ke="KES 10,000">TZS 150,000</strong><em class="eta" data-sw="Siku 3 za kazi">3 working days</em></div>
           <a class="req" href="#form" data-service="assets" data-sw="Anza ombi">Start request</a>
         </div>
         <div class="row template">
           <img class="ill" src="img/radken-templates.webp" alt="Filling in a checklist on a clipboard" width="640" height="427" loading="lazy" decoding="async">
           <h3 data-sw="Violezo vilivyo tayari">Ready-made templates</h3>
           <p data-sw="Nyaraka za kujaza mwenyewe, kama Orodha ya Ukaguzi wa Eneo kwa Mtandao na CCTV, na Rejista ya Vifaa vya TEHAMA.">Do-it-yourself documents, such as the Network &amp; CCTV Site Survey Checklist and the IT Asset Register.</p>
-          <div class="price"><small data-sw="kila kimoja">each</small><strong>TZS 20,000</strong><em class="eta" data-sw="Siku hiyo hiyo">Same day</em></div>
+          <div class="price"><small data-sw="kila kimoja">each</small><strong data-ke="KES 1,500">TZS 20,000</strong><em class="eta" data-sw="Siku hiyo hiyo">Same day</em></div>
           <a class="req" href="https://wa.me/255786670743?text=Hi%20Radken%20Tech%2C%20I%27d%20like%20to%20buy%20a%20ready-made%20template%3A%20%5Btemplate%20name%5D." target="_blank" rel="noopener" data-wa-en="Hi Radken Tech, I&#x27;d like to buy a ready-made template: [template name]." data-wa-sw="Habari Radken Tech, ningependa kununua kiolezo: [jina la kiolezo]." data-sw="Nunua kupitia WhatsApp">Buy on WhatsApp</a>
         </div>
       </div>
@@ -461,7 +465,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
       <ol class="steps">
         <li><h3 data-sw="Tuambie unachohitaji">Tell us what you need</h3><p data-sw="Chagua huduma yako na ujibu fomu fupi. Maswali yanaendana na huduma uliyochagua.">Pick your service and answer a short form. The questions match the service you choose.</p><a class="steplink" href="#form" data-sw="Fungua fomu">Open the form</a></li>
         <li><h3 data-sw="Pokea proforma">Receive a proforma</h3><p data-sw="Unapata bei kamili na namba ya kumbukumbu, halali kwa siku 14.">You get an exact price and a reference number, valid for 14 days.</p></li>
-        <li><h3 data-sw="Lipa kwa simu">Pay by mobile money</h3><p data-sw="Lipa kupitia Airtel Money na utaje namba ya kumbukumbu ya proforma.">Pay with Airtel Money and quote the proforma reference.</p></li>
+        <li><h3 data-sw="Lipa kwa simu">Pay by mobile money</h3><p data-sw="Lipa kupitia Airtel Money na utaje namba ya kumbukumbu ya proforma." data-ke="Pay by M-Pesa or bank transfer using the details on your proforma, and quote its reference." data-ke-sw="Lipa kwa M-Pesa au benki kwa kutumia maelezo yaliyo kwenye proforma yako, na utaje namba yake ya kumbukumbu.">Pay with Airtel Money and quote the proforma reference.</p></li>
         <li><h3 data-sw="Pokea nyaraka yako">Get your document</h3><p data-sw="Pokea nyaraka ya Word yenye nembo yetu, tayari kuhariri, kuchapisha au kushiriki.">Receive a branded Word document, ready to edit, print or share.</p></li>
       </ol>
     </div>
@@ -490,7 +494,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
         <h2 data-sw="Inaendeshwa na mtaalamu wa TEHAMA mwenye uzoefu wa kazi halisi.">Run by an IT professional who has done the work.</h2>
       </div>
       <div>
-        <p data-sw="Radken Tech inaendeshwa na Kenny Rodgers, mtaalamu wa TEHAMA aliyeko Dar es Salaam mwenye uzoefu wa vitendo katika mitandao ya taasisi, usalama wa mtandao, ukaguzi wa maeneo na uandishi wa nyaraka za kiufundi.">Radken Tech is run by Kenny Rodgers, an IT professional based in Dar es Salaam with hands-on experience in enterprise networks, network security, site surveys and technical documentation.</p>
+        <p data-sw="Radken Tech inaendeshwa na Kenny Rodgers, mtaalamu wa TEHAMA aliyeko Dar es Salaam mwenye uzoefu wa vitendo katika mitandao ya taasisi, usalama wa mtandao, ukaguzi wa maeneo na uandishi wa nyaraka za kiufundi." data-ke="Radken Tech is run by Kenny Rodgers, an IT professional based in Dar es Salaam with hands-on experience in enterprise networks, network security, site surveys and technical documentation. In Kenya, your contact is Simon Kimani." data-ke-sw="Radken Tech inaendeshwa na Kenny Rodgers, mtaalamu wa TEHAMA aliyeko Dar es Salaam mwenye uzoefu wa vitendo katika mitandao ya taasisi, usalama wa mtandao, ukaguzi wa maeneo na uandishi wa nyaraka za kiufundi. Nchini Kenya, mwakilishi wako ni Simon Kimani.">Radken Tech is run by Kenny Rodgers, an IT professional based in Dar es Salaam with hands-on experience in enterprise networks, network security, site surveys and technical documentation.</p>
         <p data-sw="Nyaraka hizi zinatokana na kazi halisi: cha kukagua unapotembelea eneo, kile wasambazaji huacha kwenye nukuu zao, na kile wakaguzi huomba kuona.">The documents come from real field work: what to check on a site visit, what suppliers leave out of quotes, and what auditors ask to see.</p>
         <ul class="creds">
           <li data-sw="Ukaguzi wa maeneo kwa mtandao na CCTV">Network &amp; CCTV site surveys</li>
@@ -514,7 +518,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
       <div class="cards">
         <div class="card">
           <small data-sw="Simu na WhatsApp">Phone &amp; WhatsApp</small>
-          <div class="val" id="v-phone">+255 786 670 743</div>
+          <div class="val" id="v-phone" data-ke="+254 795 685 178">+255 786 670 743</div>
           <div class="acts">
             <button class="chip" type="button" data-copy="v-phone" data-sw="Nakili">Copy</button>
             <a class="chip" href="https://wa.me/255786670743?text=Hi%20Radken%20Tech%2C%20I%27m%20from%20%5Bschool/clinic%20name%5D%20and%20I%20need%20help%20with%20an%20IT%20document." target="_blank" rel="noopener" data-wa-en="Hi Radken Tech, I&#x27;m from [school/clinic name] and I need help with an IT document." data-wa-sw="Habari Radken Tech, natoka [jina la shule/kliniki] na ninahitaji msaada wa nyaraka ya TEHAMA." data-sw="Fungua WhatsApp">Open WhatsApp</a>
@@ -522,19 +526,19 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
         </div>
         <div class="card">
           <small data-sw="Barua pepe">Email</small>
-          <div class="val" id="v-email">kennyrodgers36@outlook.com</div>
+          <div class="val" id="v-email" data-ke="cymoreslick@gmail.com">kennyrodgers36@outlook.com</div>
           <div class="acts">
             <button class="chip" type="button" data-copy="v-email" data-sw="Nakili">Copy</button>
-            <a class="chip" href="mailto:kennyrodgers36@outlook.com" data-sw="Andika barua pepe">Write email</a>
+            <a class="chip" data-mail href="mailto:kennyrodgers36@outlook.com" data-sw="Andika barua pepe">Write email</a>
           </div>
         </div>
         <div class="card">
           <small data-sw="Mahali">Location</small>
-          <div class="val">Dar es Salaam, Tanzania</div>
-          <p style="font-size:14px;color:#C9D6E3" data-sw="Kazi hufanyika kwa mbali, hivyo tunahudumia wateja popote Tanzania.">Work is done remotely, so we serve clients anywhere in Tanzania.</p>
+          <div class="val" data-ke="Kenya">Dar es Salaam, Tanzania</div>
+          <p style="font-size:14px;color:#C9D6E3" data-sw="Kazi hufanyika kwa mbali, hivyo tunahudumia wateja popote Tanzania." data-ke="Work is done remotely, so we serve clients anywhere in Kenya." data-ke-sw="Kazi hufanyika kwa mbali, hivyo tunahudumia wateja popote Kenya.">Work is done remotely, so we serve clients anywhere in Tanzania.</p>
         </div>
       </div>
-      <p class="pay" data-sw="Malipo: Airtel Money, jina la akaunti Kenny Rodgers, kwenye +255 786 670 743. Daima taja namba ya kumbukumbu ya proforma yako.">Payment: Airtel Money, account name Kenny Rodgers, on +255 786 670 743. Always quote your proforma reference.</p>
+      <p class="pay" data-sw="Malipo: Airtel Money, jina la akaunti Kenny Rodgers, kwenye +255 786 670 743. Daima taja namba ya kumbukumbu ya proforma yako." data-ke="Payment: M-Pesa or bank transfer. The details come with your proforma. Always quote your proforma reference." data-ke-sw="Malipo: M-Pesa au benki. Maelezo yanakuja pamoja na proforma yako. Daima taja namba ya kumbukumbu ya proforma yako.">Payment: Airtel Money, account name Kenny Rodgers, on +255 786 670 743. Always quote your proforma reference.</p>
     </div>
   </section>
 </div>
@@ -548,21 +552,33 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
 <footer>
   <div class="wrap">
     <span>© 2026 Radken Tech · IT Proposals · Policies · Specs</span>
-    <span>Dar es Salaam, Tanzania</span>
+    <span data-ke="Kenya">Dar es Salaam, Tanzania</span>
   </div>
 </footer>
 
 <script>
-var LANG='en';
+var LANG='en', CTRY='TZ';
+/* Each market has its own contact; Kenya enquiries go to Simon Kimani */
+var CONTACTS={TZ:{wa:'255786670743',email:'kennyrodgers36@outlook.com'},KE:{wa:'254795685178',email:'cymoreslick@gmail.com'}};
 var WORDS={en:{copied:'Copied',selected:'Selected'},sw:{copied:'Imenakiliwa',selected:'Imechaguliwa'}};
-function waHref(msg){ return 'https://wa.me/255786670743?text='+encodeURIComponent(msg); }
+function waHref(msg){ return 'https://wa.me/'+CONTACTS[CTRY].wa+'?text='+encodeURIComponent(msg); }
+/* Text picks by country, then language: Kenya text (data-ke / data-ke-sw) where it exists, otherwise the Tanzania text */
+function pick(el,l){
+  var ke=CTRY==='KE'&&el.hasAttribute('data-ke');
+  if(ke) return l==='sw' ? (el.getAttribute('data-ke-sw')||el.getAttribute('data-ke')) : el.getAttribute('data-ke');
+  return l==='sw' && el.hasAttribute('data-sw') ? el.getAttribute('data-sw') : el.dataset.en;
+}
 function setLang(l){
   LANG=l;
   document.documentElement.lang=l;
-  document.querySelectorAll('[data-sw]').forEach(function(el){
+  document.querySelectorAll('[data-sw],[data-ke]').forEach(function(el){
     if(el.dataset.en===undefined) el.dataset.en=el.innerHTML;
-    el.innerHTML = l==='sw' ? el.getAttribute('data-sw') : el.dataset.en;
+    el.innerHTML = pick(el,l);
   });
+  document.querySelectorAll('a[href*="wa.me/"]:not([data-wa-en])').forEach(function(a){
+    a.href=a.href.replace(/wa\.me\/\d+/,'wa.me/'+CONTACTS[CTRY].wa);
+  });
+  document.querySelectorAll('[data-mail]').forEach(function(a){ a.href='mailto:'+CONTACTS[CTRY].email; });
   document.querySelectorAll('[data-wa-en]').forEach(function(a){
     a.href = waHref(a.getAttribute(l==='sw'?'data-wa-sw':'data-wa-en'));
   });
@@ -571,6 +587,20 @@ function setLang(l){
   if(window.renderForm) window.renderForm();
 }
 document.getElementById('lang-toggle').addEventListener('click', function(){ setLang(LANG==='en'?'sw':'en'); });
+function setCountry(c){
+  CTRY=c==='KE'?'KE':'TZ';
+  document.querySelectorAll('#ctry-toggle span').forEach(function(sp){ sp.classList.toggle('on', sp.dataset.c===CTRY); });
+  try{ localStorage.setItem('radken-country', CTRY); }catch(e){}
+  setLang(LANG);
+}
+document.getElementById('ctry-toggle').addEventListener('click', function(){ setCountry(CTRY==='TZ'?'KE':'TZ'); });
+/* ?ke or ?country=ke in the link opens the Kenya version (used in Simon's emails); otherwise the visitor's last choice */
+(function(){
+  var qs=(location.search||'').toLowerCase(), c=null;
+  if(/[?&](ke|country=ke)\b/.test(qs)) c='KE'; else if(/[?&](tz|country=tz)\b/.test(qs)) c='TZ';
+  if(!c){ try{ c=localStorage.getItem('radken-country'); }catch(e){} }
+  if(c==='KE') setCountry('KE');
+})();
 try{ var saved=localStorage.getItem('radken-lang'); if(saved==='sw') setLang('sw'); }catch(e){}
 
 document.querySelectorAll('[data-copy]').forEach(function(b){
@@ -589,7 +619,9 @@ var YN=[['Yes','Ndiyo'],['No','Hapana'],['Not sure','Sina uhakika']];
 function q(id,o){ o.id=id; return o; }
 function S(en,sw){ return {type:'section',en:en,sw:sw}; }
 var BUDGET=function(){ return q('budget',{type:'select',en:'Rough budget for the project (equipment and installation)',sw:'Bajeti ya makadirio ya mradi (vifaa na ufungaji)',
-  opts:[['Under TZS 5 million','Chini ya TZS milioni 5'],['TZS 5–15 million','TZS milioni 5–15'],['TZS 15–40 million','TZS milioni 15–40'],['Above TZS 40 million','Zaidi ya TZS milioni 40'],['Not sure yet','Bado sina uhakika']]}); };
+  get opts(){ return CTRY==='KE'
+    ? [['Under KES 250,000','Chini ya KES 250,000'],['KES 250,000–750,000','KES 250,000–750,000'],['KES 750,000–2 million','KES 750,000–milioni 2'],['Above KES 2 million','Zaidi ya KES milioni 2'],['Not sure yet','Bado sina uhakika']]
+    : [['Under TZS 5 million','Chini ya TZS milioni 5'],['TZS 5–15 million','TZS milioni 5–15'],['TZS 15–40 million','TZS milioni 15–40'],['Above TZS 40 million','Zaidi ya TZS milioni 40'],['Not sure yet','Bado sina uhakika']]; }}); };
 var PHASED=function(){ return q('phased',{type:'radio',en:'Can the work be done in phases?',sw:'Kazi inaweza kufanywa kwa awamu?',opts:YN}); };
 var POWER=function(){ return q('power',{type:'radio',wide:1,en:'How reliable is the power supply?',sw:'Umeme ni wa uhakika kiasi gani?',opts:[['Reliable','Wa uhakika'],['Frequent cuts, we have a generator or UPS','Unakatika mara kwa mara, tuna jenereta au UPS'],['Frequent cuts, no backup','Unakatika mara kwa mara, hakuna akiba']]}); };
 var BLD=function(id){ return q(id,{type:'number',en:'Number of buildings or blocks',sw:'Idadi ya majengo au vitalu'}); };
@@ -600,7 +632,7 @@ var COMMON=[
   q('name',{type:'text',req:1,en:'Your name',sw:'Jina lako'}),
   q('role',{type:'text',en:'Your role',sw:'Wadhifa wako',ph:['e.g. Bursar, Head teacher, Clinic manager','mf. Mhasibu, Mkuu wa shule, Meneja wa kliniki']}),
   q('phone',{type:'tel',req:1,en:'Phone / WhatsApp number',sw:'Namba ya simu / WhatsApp',ph:['e.g. 0712 345 678','mf. 0712 345 678']}),
-  q('loc',{type:'text',en:'Location',sw:'Mahali',ph:['e.g. Mbezi Beach, Dar es Salaam','mf. Mbezi Beach, Dar es Salaam']}),
+  q('loc',{type:'text',en:'Location',sw:'Mahali',get ph(){ return CTRY==='KE'?['e.g. Westlands, Nairobi','mf. Westlands, Nairobi']:['e.g. Mbezi Beach, Dar es Salaam','mf. Mbezi Beach, Dar es Salaam']; }}),
   q('when',{type:'select',en:'When do you need the document?',sw:'Unahitaji nyaraka lini?',opts:[['As soon as possible','Haraka iwezekanavyo'],['Within 2 weeks','Ndani ya wiki 2'],['Within a month','Ndani ya mwezi mmoja'],['Just planning for now','Tunapanga tu kwa sasa']]}),
   q('heard',{type:'select',en:'How did you hear about us?',sw:'Ulitusikiaje?',opts:[['WhatsApp','WhatsApp'],['Friend or colleague','Rafiki au mfanyakazi mwenzako'],['Email from us','Barua pepe kutoka kwetu'],['Online','Mtandaoni'],['Other','Nyingine']]})
 ];
@@ -698,7 +730,7 @@ var SERVICES=[
   q('os',{type:'radio',wide:1,en:'Software requirements',sw:'Mahitaji ya programu',opts:[['Windows','Windows'],['Any','Yoyote'],['Specific software must run on it','Programu maalum lazima ifanye kazi']]}),
   q('sw_req',{type:'text',wide:1,show:['os',[2]],en:'Which software?',sw:'Programu zipi?'}),
   q('warranty',{type:'select',en:'Minimum warranty',sw:'Udhamini wa chini kabisa',opts:[['1 year','Mwaka 1'],['2 years','Miaka 2'],['3 years','Miaka 3'],['Not sure','Sina uhakika']]}),
-  q('local',{type:'radio',en:'Must the supplier offer support in Tanzania?',sw:'Msambazaji lazima atoe huduma Tanzania?',opts:YN}),
+  q('local',{type:'radio',get en(){ return 'Must the supplier offer support in '+(CTRY==='KE'?'Kenya':'Tanzania')+'?'; },get sw(){ return 'Msambazaji lazima atoe huduma '+(CTRY==='KE'?'Kenya':'Tanzania')+'?'; },opts:YN}),
   q('brands',{type:'text',wide:1,en:'Preferred brands, or brands to avoid',sw:'Chapa mnazopendelea au za kuepuka'}),
   S('Tender details','Taarifa za zabuni'),
   q('tender',{type:'radio',en:'Is this for a formal tender?',sw:'Je, ni kwa ajili ya zabuni rasmi?',opts:YN}),
@@ -845,7 +877,7 @@ function val(f){
 }
 function answerable(){ var s=svc(); return s?COMMON.concat(s.q,[NOTES]).filter(function(f){return f.type!=='section'&&visible(f);}):[]; }
 function message(){
-  var s=svc(), out=['*'+t(UI.head)+'*', t(UI.svc)+': '+tx(s)];
+  var s=svc(), out=['*'+t(UI.head)+'*', (LANG==='sw'?'Nchi':'Country')+': '+(CTRY==='KE'?'Kenya':'Tanzania'), t(UI.svc)+': '+tx(s)];
   function block(title, list){
     var lines=[]; list.forEach(function(f){ if(!visible(f)) return; var v=val(f); if(v) lines.push('• '+tx(f).replace(/\?$/,'')+': '+v); });
     if(lines.length){ out.push('', '*'+title+'*'); out.push.apply(out,lines); }
@@ -873,8 +905,8 @@ form.addEventListener('submit',function(e){
 
 function showDone(){
   var m=message();
-  var wa='https://wa.me/255786670743?text='+encodeURIComponent(m);
-  var mail='mailto:kennyrodgers36@outlook.com?subject='+encodeURIComponent(t(UI.head)+' – '+tx(svc()))+'&body='+encodeURIComponent(m.replace(/\*/g,''));
+  var wa=waHref(m);
+  var mail='mailto:'+CONTACTS[CTRY].email+'?subject='+encodeURIComponent(t(UI.head)+' – '+tx(svc()))+'&body='+encodeURIComponent(m.replace(/\*/g,''));
   done.innerHTML='<h3>'+t(UI.doneH)+'</h3><p>'+t(UI.doneP)+'</p>'+
     '<div class="rq-actions"><a class="btn btn-primary" href="'+wa+'" target="_blank" rel="noopener">'+t(UI.openWa)+'</a>'+
     '<a class="btn btn-line" href="'+mail+'">'+t(UI.email)+'</a>'+
