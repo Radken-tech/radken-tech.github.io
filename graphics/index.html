@@ -77,7 +77,7 @@ section{padding-block:52px}
 .steps span{color:var(--muted);font-size:15px}
 
 .contact{background:var(--surface);border-block:1px solid var(--line)}
-.contact .wrap{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;align-items:center}
+.contact .wrap{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:32px;align-items:start}
 .card{display:grid;gap:4px}
 .card b{font-family:var(--display);font-size:22px}
 .card span{color:var(--muted)}
@@ -117,9 +117,9 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 <main id="top">
   <div class="hero">
     <div class="wrap">
-      <span class="eyebrow" data-sw="Arusha · Kitengo cha Radken Consolidated">Arusha · A Radken Consolidated division</span>
+      <span class="eyebrow" data-sw="Arusha na Kenya · Kitengo cha Radken Consolidated">Arusha &amp; Kenya · A Radken Consolidated division</span>
       <h1 data-sw="Michoro inayoonekana, &lt;em&gt;bei inayoeleweka&lt;/em&gt;.">Design that gets noticed, <em>at clear prices</em>.</h1>
-      <p class="lead" data-sw="Posters, mabango, kadi za biashara na CV zilizoandikwa vizuri. Tuma ujumbe wa WhatsApp, tuambie unachohitaji, na David atakuandalia.">Posters, banners, business cards and well-written CVs. Send a WhatsApp message, tell us what you need, and David will design it for you.</p>
+      <p class="lead" data-sw="Posters, mabango, kadi za biashara na CV zilizoandikwa vizuri. Tuma ujumbe wa WhatsApp, tuambie unachohitaji, na tutakuandalia. David anahudumia Tanzania na Simon anahudumia Kenya.">Posters, banners, business cards and well-written CVs. Send a WhatsApp message, tell us what you need, and we'll design it for you. David looks after Tanzania and Simon looks after Kenya.</p>
       <div class="cta">
         <a class="btn btn-sun wa" data-svc="general" href="https://wa.me/255782394926" target="_blank" rel="noopener" data-sw="Agiza kwa WhatsApp">Order on WhatsApp</a>
         <a class="btn btn-ghost" href="#prices" data-sw="Angalia bei">See prices</a>
@@ -159,7 +159,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
           <a class="order wa" data-svc="cv" href="https://wa.me/255782394926" target="_blank" rel="noopener" data-sw="Agiza CV">Order a CV</a>
         </article>
       </div>
-      <p class="note" data-sw="Bei ni za muundo (design). Gharama za uchapishaji, kama zinahitajika, zitakubaliwa kabla ya kazi kuanza. Bei zinajadilika.">Prices are for the design. Printing, if you need it, is agreed before work starts. Prices are open to discussion.</p>
+      <p class="note" data-sw="Bei hizi ni za Tanzania, kwa ajili ya muundo (design). Gharama za uchapishaji, kama zinahitajika, zitakubaliwa kabla ya kazi kuanza. Bei zinajadilika. Uko Kenya? Wasiliana na Simon Kimani kwa bei kwa KES.">These are Tanzania prices, for the design. Printing, if you need it, is agreed before work starts. Prices are open to discussion. In Kenya? Contact Simon Kimani for prices in KES.</p>
     </div>
   </section>
 
@@ -180,14 +180,20 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
   <section id="contact" class="contact">
     <div class="wrap">
       <div class="card">
-        <span class="eyebrow" data-sw="Mawasiliano">Contact</span>
+        <span class="eyebrow" data-sw="🇹🇿 Tanzania">🇹🇿 Tanzania</span>
         <b>David Martin</b>
-        <span data-sw="Mbunifu wa michoro, Radken Graphics · Arusha, Tanzania">Graphic designer, Radken Graphics · Arusha, Tanzania</span>
+        <span data-sw="Mbunifu wa michoro, Radken Graphics · Arusha">Graphic designer, Radken Graphics · Arusha</span>
         <a href="https://wa.me/255782394926" target="_blank" rel="noopener">+255 782 394 926</a>
         <a href="mailto:davidmartinex210@gmail.com">davidmartinex210@gmail.com</a>
+        <a class="btn btn-sun wa" data-svc="general" href="https://wa.me/255782394926" target="_blank" rel="noopener" style="justify-self:start;margin-top:10px" data-sw="Ongea na David kwa WhatsApp">Chat with David on WhatsApp</a>
       </div>
-      <div class="cta" style="margin:0">
-        <a class="btn btn-sun wa" data-svc="general" href="https://wa.me/255782394926" target="_blank" rel="noopener" data-sw="Ongea na David kwa WhatsApp">Chat with David on WhatsApp</a>
+      <div class="card">
+        <span class="eyebrow" data-sw="🇰🇪 Kenya">🇰🇪 Kenya</span>
+        <b>Simon Kimani</b>
+        <span data-sw="Mbunifu wa michoro, Radken Graphics · Kenya (bei kwa KES)">Graphic designer, Radken Graphics · Kenya (prices in KES)</span>
+        <a href="https://wa.me/254795685178" target="_blank" rel="noopener">+254 795 685 178</a>
+        <a href="mailto:slicksigns63@gmail.com">slicksigns63@gmail.com</a>
+        <a class="btn btn-sun wa" data-svc="kenya" data-num="254795685178" href="https://wa.me/254795685178" target="_blank" rel="noopener" style="justify-self:start;margin-top:10px" data-sw="Ongea na Simon kwa WhatsApp">Chat with Simon on WhatsApp</a>
       </div>
     </div>
   </section>
@@ -201,11 +207,11 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
   els.forEach(function(el){ el.dataset.en=el.innerHTML; });
   /* Each order button opens WhatsApp to David with a ready message for that service, in the visitor's language */
   var MSG={
-    en:{general:"Hello Radken Graphics, I'd like to order a design.",poster:"Hello Radken Graphics, I'd like to order a poster (TZS 25,000).",banner:"Hello Radken Graphics, I'd like to order a banner (TZS 35,000).",card:"Hello Radken Graphics, I'd like to order business cards (TZS 15,000).",cv:"Hello Radken Graphics, I'd like you to write my CV (TZS 15,000)."},
-    sw:{general:"Habari Radken Graphics, ningependa kuagiza muundo.",poster:"Habari Radken Graphics, ningependa kuagiza poster (TZS 25,000).",banner:"Habari Radken Graphics, ningependa kuagiza bango (TZS 35,000).",card:"Habari Radken Graphics, ningependa kuagiza kadi za biashara (TZS 15,000).",cv:"Habari Radken Graphics, ningependa mniandikie CV (TZS 15,000)."}
+    en:{kenya:"Hello Radken Graphics (Kenya), I'd like to order a design. What are your prices in KES?",general:"Hello Radken Graphics, I'd like to order a design.",poster:"Hello Radken Graphics, I'd like to order a poster (TZS 25,000).",banner:"Hello Radken Graphics, I'd like to order a banner (TZS 35,000).",card:"Hello Radken Graphics, I'd like to order business cards (TZS 15,000).",cv:"Hello Radken Graphics, I'd like you to write my CV (TZS 15,000)."},
+    sw:{kenya:"Habari Radken Graphics (Kenya), ningependa kuagiza muundo. Bei zenu kwa KES ni zipi?",general:"Habari Radken Graphics, ningependa kuagiza muundo.",poster:"Habari Radken Graphics, ningependa kuagiza poster (TZS 25,000).",banner:"Habari Radken Graphics, ningependa kuagiza bango (TZS 35,000).",card:"Habari Radken Graphics, ningependa kuagiza kadi za biashara (TZS 15,000).",cv:"Habari Radken Graphics, ningependa mniandikie CV (TZS 15,000)."}
   };
   function setLinks(){
-    document.querySelectorAll('a.wa').forEach(function(a){ a.href='https://wa.me/255782394926?text='+encodeURIComponent(MSG[LANG][a.dataset.svc]||MSG[LANG].general); });
+    document.querySelectorAll('a.wa').forEach(function(a){ a.href='https://wa.me/'+(a.dataset.num||'255782394926')+'?text='+encodeURIComponent(MSG[LANG][a.dataset.svc]||MSG[LANG].general); });
   }
   function setLang(l){
     LANG=l==='sw'?'sw':'en';
