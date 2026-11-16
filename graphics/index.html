@@ -49,7 +49,7 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--sun);outline-offset
 .hero::after{content:"";position:absolute;inset:auto -120px -160px auto;width:460px;height:460px;border-radius:50%;background:radial-gradient(closest-side,rgba(245,165,36,.22),transparent);pointer-events:none}
 .hero .wrap{position:relative;z-index:1}
 .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
-.hero-img{display:block;width:100%;height:auto;border-radius:16px;box-shadow:0 18px 40px rgba(0,0,0,.35)}
+.hero-img{display:block;width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;background:#13325C;border-radius:16px;box-shadow:0 18px 40px rgba(0,0,0,.35)}
 @media (max-width:820px){.hero-grid{grid-template-columns:1fr;gap:28px}}
 .hero h1{font-size:clamp(32px,6vw,54px);font-weight:800;margin-top:12px;max-width:16ch}
 .hero h1 em{font-style:normal;color:var(--sun)}
@@ -135,7 +135,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
         <a class="btn btn-ghost" href="#prices" data-sw="Angalia bei">See prices</a>
       </div>
       </div>
-      <img class="hero-img" src="../img/divisions/graphics.webp" alt="Illustration of a roll-up banner, a poster, business cards and a CV" width="1200" height="750">
+      <img class="hero-img" src="https://images.unsplash.com/photo-1572044162444-ad60f128bdea?auto=format&fit=crop&w=1200&h=750&q=70" alt="A graphic designer working on a laptop surrounded by colour swatches" width="1200" height="750">
       </div>
     </div>
   </div>
@@ -220,7 +220,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
   </section>
 </main>
 
-<footer><div class="wrap"><span>© 2026 Radken Graphics · Arusha</span><span>A division of <a href="../">Radken Consolidated</a></span></div></footer>
+<footer><div class="wrap"><span>© 2026 Radken Graphics · Arusha</span><span>A division of <a href="../">Radken Consolidated</a> · Photo: Theme Photos on Unsplash</span></div></footer>
 
 <script>
 (function(){
