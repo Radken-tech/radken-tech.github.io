@@ -595,7 +595,12 @@ function setCountry(c){
 }
 document.getElementById('ctry-toggle').addEventListener('click', function(){ setCountry(CTRY==='TZ'?'KE':'TZ'); });
 /* ?ke or ?country=ke in the link opens the Kenya version (used in Simon's emails); otherwise the visitor's last choice */
+/* Kenya is paused for Radken Technologies (Nov 2026): the switch is hidden and every visitor sees the Tanzania version.
+   Set KENYA_OPEN to true to bring the Kenya version back. */
+var KENYA_OPEN=false;
+if(!KENYA_OPEN){ document.getElementById('ctry-toggle').hidden=true; try{ localStorage.removeItem('radken-country'); }catch(e){} }
 (function(){
+  if(!KENYA_OPEN) return;
   var qs=(location.search||'').toLowerCase(), c=null;
   if(/[?&](ke|country=ke)\b/.test(qs)) c='KE'; else if(/[?&](tz|country=tz)\b/.test(qs)) c='TZ';
   if(!c){ try{ c=localStorage.getItem('radken-country'); }catch(e){} }
