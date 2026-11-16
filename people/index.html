@@ -1,254 +1,873 @@
-<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
 <title>Radken People · Radken Consolidated</title>
-<meta name="description" content="Radken People, Nairobi: HR policies, recruitment, contracts, onboarding and appraisals for schools, clinics and small businesses. A division of Radken Consolidated.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
-/* Layout: same family structure as Radken Graphics (hero, priced service cards with WhatsApp order buttons, how it works, contact), with a violet accent for the HR division. */
+/* Layout: same family layout as Radken Technologies. Hero pairs the promise with a sample HR handbook cover; below, priced service photo cards, the four-step flow, a request form and contact. Kenya only (KES). */
 :root{
-  --navy:#0B2545; --teal:#0E9E84; --acc:#8B7CF6; --on-acc:#160F3A;
-  --bg:#F5F8FA; --surface:#FFFFFF; --fg:#13233A; --muted:#55657A; --line:#D9E1E8; --tint:#EEEBFE; --ico:#5B4BD6;
-  --on-navy:#F2F7FA;
-  --display:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;
-  --body:"IBM Plex Sans","Segoe UI",system-ui,sans-serif;
-  --mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;
+  --navy:#0B2545; --teal:#0E9E84; --teal-bright:#13C4A3;
+  --bg:#F5F8FA; --surface:#FFFFFF; --fg:#13233A; --muted:#55657A; --line:#D9E1E8; --tint:#E6F5F1;
+  --on-navy:#F2F7FA; --on-accent:#062018;
+  --display:"Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --body:"IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --mono:"IBM Plex Mono", ui-monospace, Consolas, monospace;
 }
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
-  --navy:#0A1C33; --teal:#2FD3B2; --acc:#A99BFF; --ico:#A99BFF;
-  --bg:#0C1626; --surface:#122139; --fg:#E7EEF5; --muted:#9AAABD; --line:#22344F; --tint:#25204A; color-scheme:dark}}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --navy:#0A1C33; --teal:#2FD3B2; --teal-bright:#2FD3B2;
+  --bg:#0C1626; --surface:#122139; --fg:#E7EEF5; --muted:#9AAABD; --line:#22344F; --tint:#123A3A;
+  --on-navy:#F2F7FA; color-scheme:dark }}
 :root[data-theme="dark"]{
-  --navy:#0A1C33; --teal:#2FD3B2; --acc:#A99BFF; --ico:#A99BFF;
-  --bg:#0C1626; --surface:#122139; --fg:#E7EEF5; --muted:#9AAABD; --line:#22344F; --tint:#25204A; color-scheme:dark}
+  --navy:#0A1C33; --teal:#2FD3B2; --teal-bright:#2FD3B2;
+  --bg:#0C1626; --surface:#122139; --fg:#E7EEF5; --muted:#9AAABD; --line:#22344F; --tint:#123A3A;
+  --on-navy:#F2F7FA; color-scheme:dark }
+
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 var(--body)}
-.wrap{max-width:1080px;margin:0 auto;padding-inline:16px}
-h1,h2,h3{font-family:var(--display);margin:0;line-height:1.1;text-wrap:balance}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.6}
+.wrap{max-width:1080px;margin:0 auto;padding-inline:20px}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;line-height:1.1}
 p{margin:0}
 a{color:var(--teal)}
-a:focus-visible,button:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
-.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--acc)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--teal-bright);outline-offset:2px}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--teal)}
 
+/* header */
 .top{background:var(--navy);color:var(--on-navy)}
-.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:14px;flex-wrap:wrap}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:14px;flex-wrap:wrap}
 .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--on-navy)}
-.brand b{font-family:var(--display);font-weight:800;font-size:20px;letter-spacing:.04em;display:block;line-height:1.1}
-.brand span{font-family:var(--display);font-weight:700;font-size:11px;letter-spacing:.3em;color:var(--acc);display:block;line-height:1}
-.top nav{display:flex;gap:4px 18px;flex-wrap:wrap;align-items:center}
+.brand b{font-family:var(--display);font-weight:800;font-size:20px;letter-spacing:.04em}
+.brand span{font-family:var(--display);font-weight:700;font-size:12px;letter-spacing:.3em;color:var(--teal-bright);display:block;line-height:1}
+.top nav{display:flex;gap:20px;flex-wrap:wrap}
 .top nav a{color:var(--on-navy);text-decoration:none;font-size:14px;opacity:.85}
+.top nav a:hover{opacity:1;color:var(--teal-bright)}
+.top nav{margin-left:auto}
 .lang{display:inline-flex;border:1px solid #3A5578;border-radius:6px;overflow:hidden;background:transparent;padding:0;cursor:pointer;font-family:var(--mono);font-size:12px}
 .lang span{padding:6px 10px;color:var(--on-navy);opacity:.7}
-.lang span.on{background:var(--acc);color:var(--on-acc);opacity:1;font-weight:500}
+.switches{display:flex;gap:6px;flex-wrap:nowrap}
+.ctry span{white-space:nowrap}
+@media (max-width:520px){.ctry span b{display:none}.ctry span{padding:6px 8px}}
+.lang span.on{background:var(--teal-bright);color:var(--on-accent);opacity:1;font-weight:500}
+html[lang="sw"] .steps li::before{content:"Hatua " counter(st)}
 
-.hero{background:var(--navy);color:var(--on-navy);padding-block:48px 120px;position:relative;overflow:hidden}
-.hero::after{content:"";position:absolute;inset:auto -120px -160px auto;width:460px;height:460px;border-radius:50%;background:radial-gradient(closest-side,rgba(139,124,246,.25),transparent);pointer-events:none}
-.hero .wrap{position:relative;z-index:1}
-.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
-.hero-img{display:block;width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;background:#13325C;border-radius:16px;box-shadow:0 18px 40px rgba(0,0,0,.35)}
-@media (max-width:820px){.hero-grid{grid-template-columns:1fr;gap:28px}}
-.hero h1{font-size:clamp(32px,6vw,54px);font-weight:800;margin-top:12px;max-width:17ch}
-.hero h1 em{font-style:normal;color:var(--acc)}
-.hero .lead{font-size:18px;color:#C9D6E3;margin-top:16px;max-width:60ch}
-.cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}
-.btn{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:600;font-size:15px;border-radius:8px;padding:12px 18px;border:1px solid transparent}
-.btn-acc{background:var(--acc);color:var(--on-acc)}
-.btn-ghost{border-color:#3A5578;color:var(--on-navy)}
+/* hero */
+.hero{background:var(--navy);color:var(--on-navy);padding-block:48px 64px}
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+.hero h1{font-size:clamp(34px,5.4vw,58px);font-weight:800;letter-spacing:-.01em}
+.hero h1 em{font-style:normal;color:var(--teal-bright)}
+.hero .lead{margin-top:20px;font-size:18px;max-width:34em;color:#C9D6E3}
+.hero .eyebrow{color:var(--teal-bright);margin-bottom:16px;display:block}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:6px;font-weight:600;font-size:15px;text-decoration:none;border:1.5px solid transparent;cursor:pointer;font-family:var(--body)}
+.btn-primary{background:var(--teal-bright);color:#062018}
+.btn-primary:hover{filter:brightness(1.06)}
+.btn-ghost{border-color:#3A5578;color:var(--on-navy);background:transparent}
+.btn-ghost:hover{border-color:var(--teal-bright)}
 
-.menu{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin-top:-80px;position:relative;z-index:2}
-.svc{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px;display:grid;gap:10px;align-content:start;min-width:0;box-shadow:0 10px 28px rgba(11,37,69,.10)}
-.svc .ico{width:44px;height:44px;border-radius:10px;display:grid;place-items:center;background:var(--tint);color:var(--ico)}
-.svc h3{font-size:20px}
-.svc p{color:var(--muted);font-size:15px}
-.price{font-family:var(--display);font-weight:800;font-size:28px;font-variant-numeric:tabular-nums;line-height:1}
-.price small{font:500 12px var(--mono);color:var(--muted);letter-spacing:.08em;margin-right:6px;vertical-align:middle}
-.price .per{font:500 13px var(--body);color:var(--muted);letter-spacing:0;margin-left:4px}
-.svc .order{justify-self:start;font-weight:600;text-decoration:none;font-size:15px;color:var(--teal)}
-.svc .order::after{content:" →"}
-.note{color:var(--muted);font-size:14px;margin-top:16px}
+/* proposal cover */
+.cover{background:#FFFFFF;color:#13233A;border-radius:4px;padding:28px 26px 22px;box-shadow:0 24px 50px rgba(0,0,0,.35);transform:rotate(1.5deg);max-width:380px;justify-self:center;width:100%;position:relative}
+.cover::after{content:"";position:absolute;inset:auto 14px -10px 14px;height:10px;background:#E4EAF0;border-radius:0 0 4px 4px;z-index:-1}
+.cover .ref{font-family:var(--mono);font-size:11px;color:#55657A;display:flex;justify-content:space-between;border-bottom:1px solid #D9E1E8;padding-bottom:10px}
+.cover h3{font-size:24px;margin-top:22px;color:#0B2545}
+.cover .for{margin-top:6px;font-size:14px;color:#55657A}
+.cover ol{margin:20px 0 0;padding:0;list-style:none;font-size:13.5px;counter-reset:s}
+.cover li{display:flex;justify-content:space-between;gap:8px;padding:7px 0;border-bottom:1px dashed #D9E1E8;counter-increment:s}
+.cover li::before{content:counter(s) ".";font-family:var(--mono);color:#0E9E84;width:22px;flex:none}
+.cover li span:first-child{flex:1}
+.cover li span:last-child{font-family:var(--mono);color:#55657A;font-size:12px}
+.cover .foot{margin-top:18px;display:flex;align-items:center;gap:8px;font-family:var(--display);font-weight:700;font-size:13px;color:#0B2545}
+.cover .foot small{font-family:var(--body);font-weight:400;color:#55657A;margin-left:auto;font-size:11px}
 
-section{padding-block:52px}
-.sec-head{display:grid;gap:8px;margin-bottom:22px;max-width:62ch}
-.sec-head h2{font-size:clamp(26px,4vw,34px)}
-.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;counter-reset:st}
-.steps li{counter-increment:st;display:grid;gap:4px;border-top:3px solid var(--acc);padding-top:12px}
-.steps li::before{content:counter(st);font:700 13px var(--mono);color:var(--acc)}
-.steps b{font-family:var(--display);font-size:18px}
-.steps span{color:var(--muted);font-size:15px}
+/* sections */
+section{padding-block:72px}
+.head{max-width:40em;display:grid;gap:12px;margin-bottom:36px}
+.head h2{font-size:clamp(28px,3.6vw,40px);font-weight:800;color:var(--fg)}
+.head p{color:var(--muted);font-size:17px}
 
-.contact{background:var(--surface);border-block:1px solid var(--line)}
-.contact .wrap{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;align-items:center}
-.card{display:grid;gap:4px}
-.card b{font-family:var(--display);font-size:22px}
-.card span{color:var(--muted)}
-.card a{overflow-wrap:anywhere}
+/* services schedule */
+.schedule{background:var(--surface);border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.row{display:grid;grid-template-columns:168px minmax(0,1fr) auto;gap:6px 24px;padding:20px 24px;border-bottom:1px solid var(--line);align-items:center}
+.row:last-child{border-bottom:0}
+.row .ill{grid-column:1;grid-row:1 / span 3;width:168px;height:112px;object-fit:cover;border-radius:6px;background:var(--tint);display:block;max-width:100%}
+.row h3{grid-column:2;font-size:19px;font-weight:700;align-self:end}
+.row p{grid-column:2;color:var(--muted);font-size:15px;max-width:52ch;align-self:start}
+.price{grid-column:3;grid-row:1 / span 3;text-align:right;font-family:var(--mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+.row.template .ill{background:var(--surface)}
+/* illustration strokes and fills come from theme tokens */
+.ill .s{fill:none;stroke:var(--fg);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.ill .a{fill:none;stroke:var(--teal);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.ill .fa{fill:var(--teal)}
+.ill .fp{fill:var(--surface);stroke:var(--fg);stroke-width:2.2;stroke-linejoin:round}
+.ill .fl{fill:var(--line)}
+.price small{display:block;font-size:11px;color:var(--muted);letter-spacing:.08em;text-transform:uppercase}
+.price strong{font-size:18px;font-weight:500;color:var(--fg)}
+.row.template{background:var(--tint)}
+.eta{display:block;font-style:normal;font-family:var(--body);font-size:12px;color:var(--muted);margin-top:2px}
+.req{grid-column:2;justify-self:start;font-size:14px;font-weight:600;color:var(--teal);text-decoration:none;margin-top:2px}
+.req::after{content:" \2192"}
+.req:hover{text-decoration:underline}
+.wa-float{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:20;display:inline-flex;align-items:center;gap:8px;padding:12px 18px 12px 14px;border-radius:999px;background:var(--teal-bright);color:var(--on-accent);font-weight:600;font-size:15px;text-decoration:none;box-shadow:0 8px 24px rgba(6,32,24,.35)}
+.wa-float:hover{filter:brightness(1.06)}
+.wa-float svg{flex:none}
+.note{margin-top:14px;font-size:14px;color:var(--muted)}
 
-footer{color:var(--muted);font-size:13px;padding-block:28px}
-footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+/* who it's for */
+.alt{background:var(--surface);border-block:1px solid var(--line)}
+.who{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.who > div{display:grid;gap:8px;align-content:start;min-width:0}
+.who h3{font-size:20px}
+.who p{color:var(--muted);font-size:15px}
+.who .eyebrow{color:var(--muted)}
+
+/* steps */
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:20px;counter-reset:st}
+.steps li{counter-increment:st;display:grid;gap:8px;align-content:start;padding-top:16px;border-top:3px solid var(--teal);min-width:0}
+.steps li::before{content:"Step " counter(st);font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--teal)}
+.steps h3{font-size:18px}
+.steps p{color:var(--muted);font-size:15px}
+
+/* about */
+.about{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;align-items:start}
+.about p{color:var(--muted);font-size:17px;max-width:36em}
+.about p + p{margin-top:14px}
+.creds{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px;padding:0;list-style:none}
+.creds li{font-family:var(--mono);font-size:12px;padding:6px 10px;border:1px solid var(--line);border-radius:999px;color:var(--fg);background:var(--surface)}
+
+/* contact */
+.contact{background:var(--navy);color:var(--on-navy)}
+.contact .head h2{color:var(--on-navy)}
+.contact .head p{color:#C9D6E3}
+.contact .eyebrow{color:var(--teal-bright)}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card{border:1px solid #2A4468;border-radius:8px;padding:20px;display:grid;gap:10px;min-width:0}
+.card small{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--teal-bright)}
+.card .val{font-size:18px;font-weight:600;word-break:break-word;user-select:all}
+.card .acts{display:flex;gap:8px;flex-wrap:wrap}
+.chip{font-size:13px;padding:6px 12px;border-radius:5px;border:1px solid #3A5578;background:transparent;color:var(--on-navy);text-decoration:none;cursor:pointer;font-family:var(--body)}
+.chip:hover{border-color:var(--teal-bright);color:var(--teal-bright)}
+.pay{margin-top:28px;font-size:14px;color:#C9D6E3}
+
+footer{background:var(--navy);color:#8FA3B8;font-size:13px;border-top:1px solid #1D3456}
+footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding-block:20px}
+
+@media (max-width:860px){
+  .hero .wrap,.about{grid-template-columns:1fr}
+  .cover{transform:none}
+  .steps{grid-template-columns:repeat(2,1fr)}
+  .who,.cards{grid-template-columns:1fr}
+}
+@media (max-width:520px){
+  .steps{grid-template-columns:1fr}
+  .row{grid-template-columns:minmax(0,1fr);gap:6px;padding:16px}
+  .row .ill{grid-column:1;grid-row:auto;width:100%;height:auto;aspect-ratio:3/2;margin-bottom:8px}
+  .row h3,.row p,.req{grid-column:1}
+  .price{grid-column:1;grid-row:auto;text-align:left}
+  .price small{display:inline;margin-right:6px}
+  .eta{display:inline;margin-left:8px}
+  .top nav{order:3;width:100%;margin-left:0;gap:18px;overflow-x:auto;white-space:nowrap;padding-bottom:2px}
+  footer .wrap{padding-bottom:84px}
+  section{padding-block:56px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+
+/* ===== Vibrancy layer: warm accent, service cards, trust strip ===== */
+:root{ --sun:#F5A524; --sun-tint:#FFF1D6; --on-sun:#2A1A00; --sky-tint:#E7F0FB; --shadow:rgba(11,37,69,.14) }
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){ --sun:#FFC15A; --sun-tint:#3A2E14; --on-sun:#2A1A00; --sky-tint:#16294A; --shadow:rgba(0,0,0,.45) }}
+:root[data-theme="dark"]{ --sun:#FFC15A; --sun-tint:#3A2E14; --on-sun:#2A1A00; --sky-tint:#16294A; --shadow:rgba(0,0,0,.45) }
+
+/* hero glow + node pattern echoing the logo */
+.hero{position:relative;overflow:hidden;
+  background:
+    radial-gradient(760px 420px at 88% 18%, rgba(19,196,163,.26), transparent 62%),
+    radial-gradient(620px 340px at 4% 110%, rgba(245,165,36,.20), transparent 60%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cg fill='none' stroke='%2313C4A3' stroke-opacity='.10' stroke-width='1.5'%3E%3Cpath d='M20 20h50l20 30-20 30H20zM70 80l30 30'/%3E%3C/g%3E%3Cg fill='%2313C4A3' fill-opacity='.18'%3E%3Ccircle cx='20' cy='20' r='4'/%3E%3Ccircle cx='70' cy='20' r='3'/%3E%3Ccircle cx='90' cy='50' r='4'/%3E%3Ccircle cx='20' cy='80' r='3'/%3E%3Ccircle cx='100' cy='110' r='4'/%3E%3C/g%3E%3C/svg%3E"),
+    var(--navy)}
+.hero h1 em{background:linear-gradient(transparent 62%, rgba(245,165,36,.35) 62%);padding-inline:.08em}
+.btn-primary{box-shadow:0 8px 22px rgba(19,196,163,.35)}
+.btn-primary:hover{transform:translateY(-1px)}
+.btn{transition:transform .15s, filter .15s, border-color .15s}
+.hero-art{position:relative;justify-self:center;width:100%;max-width:400px}
+.hero-photo{position:absolute;width:72%;height:auto;left:-14%;top:-22px;border-radius:6px;transform:rotate(-5deg);box-shadow:0 18px 40px rgba(0,0,0,.4);opacity:.95}
+.hero-art .cover{margin-left:auto}
+
+/* trust strip */
+.trust{background:var(--teal-bright);color:var(--on-accent)}
+.trust ul{list-style:none;margin:0;padding:16px 0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px 24px}
+.trust li{display:flex;align-items:center;gap:10px;font-weight:600;font-size:15px;min-width:0}
+.trust svg{flex:none;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+
+/* services as photo cards */
+.schedule{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;background:none;border:0;border-radius:0;overflow:visible}
+.row{display:flex;flex-direction:column;gap:8px;padding:0 0 20px;border:1px solid var(--line);border-radius:12px;background:var(--surface);overflow:hidden;transition:transform .2s, box-shadow .2s;min-width:0}
+.row:last-child{border-bottom:1px solid var(--line)}
+.row:hover{transform:translateY(-4px);box-shadow:0 16px 34px var(--shadow)}
+.row .ill{width:100%;height:auto;aspect-ratio:3/2;border-radius:0;margin:0 0 8px;transition:transform .4s}
+.row:hover .ill{transform:scale(1.03)}
+.row h3,.row p{padding-inline:20px}
+.row h3{font-size:20px}
+.price{display:flex;align-items:baseline;flex-wrap:wrap;gap:4px 8px;margin:auto 20px 0;padding-top:14px;border-top:1px dashed var(--line);text-align:left;white-space:normal}
+.price small{display:inline;margin:0}
+.price strong{font-size:20px;font-weight:600}
+.eta{display:inline-block;margin:0 0 0 auto;padding:3px 10px;border-radius:999px;background:var(--sun-tint);color:var(--fg);font-size:12px;font-weight:500}
+.req{margin:6px 20px 0;padding:10px 14px;border-radius:8px;background:var(--tint);text-align:center;justify-self:auto;align-self:stretch}
+.req:hover{text-decoration:none;background:var(--teal-bright);color:var(--on-accent)}
+.row.template{background:var(--sun-tint);border-color:transparent}
+.row.template .req{background:var(--sun);color:var(--on-sun)}
+
+/* who we work with: tinted cards */
+.who > div{padding:24px;border-radius:12px}
+.who > div:nth-child(1){background:var(--sun-tint)}
+.who > div:nth-child(2){background:var(--tint)}
+.who > div:nth-child(3){background:var(--sky-tint)}
+.who .eyebrow{color:var(--fg);opacity:.7}
+
+/* steps: numbered pills */
+.steps li{border-top:0;padding:22px;border-radius:12px;background:var(--surface);border:1px solid var(--line)}
+.steps li::before{justify-self:start;padding:4px 12px;border-radius:999px;background:var(--teal-bright);color:var(--on-accent);font-weight:500}
+.steps li:nth-child(3)::before{background:var(--sun);color:var(--on-sun)}
+
+/* contact: WhatsApp card stands out */
+.cards .card:first-child{background:rgba(19,196,163,.12);border-color:var(--teal-bright)}
+.creds li:nth-child(odd){background:var(--tint)}
+.creds li:nth-child(even){background:var(--sun-tint)}
+
+@media (max-width:860px){
+  .schedule{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .trust ul{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .hero-photo{display:none}
+}
+@media (max-width:560px){
+  .schedule{grid-template-columns:minmax(0,1fr)}
+  .row{padding:0 0 18px}
+  .row .ill{margin-bottom:8px}
+  .trust li{font-size:14px}
+}
+@media (prefers-reduced-motion:reduce){.row,.row .ill,.btn{transition:none}.row:hover,.row:hover .ill,.btn-primary:hover{transform:none}}
+
+/* ===== Requirements form ===== */
+:root{ --danger:#C2410C }
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){ --danger:#FF8A5B }}
+:root[data-theme="dark"]{ --danger:#FF8A5B }
+.steplink{justify-self:start;font-weight:600;font-size:14px;color:var(--teal);text-decoration:none}
+.steplink::after{content:" \2193"}
+.steplink:hover{text-decoration:underline}
+.rq{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:28px;display:grid;gap:30px;box-shadow:0 12px 30px var(--shadow)}
+.rq fieldset{border:0;margin:0;padding:0;min-width:0}
+.rq legend{padding:0;font-family:var(--display);font-weight:700;font-size:20px;color:var(--fg);margin-bottom:14px}
+.rq .grp{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 22px}
+.rq .grp > legend{grid-column:1/-1}
+.svc-pick{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.svc-pick label{display:flex;align-items:center;gap:10px;padding:12px 14px;border:1.5px solid var(--line);border-radius:10px;cursor:pointer;font-weight:600;font-size:15px;min-width:0;background:var(--bg);transition:border-color .15s, background .15s}
+.svc-pick label:hover{border-color:var(--teal)}
+.svc-pick label:has(input:checked){border-color:var(--teal);background:var(--tint)}
+.rq input[type=radio],.rq input[type=checkbox]{accent-color:var(--teal);width:16px;height:16px;flex:none;margin:0}
+.rq .f{display:grid;gap:6px;align-content:start;min-width:0}
+.rq .f.wide{grid-column:1/-1}
+.rq .l{font-size:14px;font-weight:600;color:var(--fg);margin:0 0 2px;font-family:var(--body)}
+.rq .star{color:var(--danger)}
+.rq input[type=text],.rq input[type=tel],.rq input[type=number],.rq input[type=date],.rq select,.rq textarea{font:inherit;font-size:15px;padding:10px 12px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--fg);width:100%;min-width:0}
+.rq textarea{resize:vertical}
+.rq input:focus,.rq select:focus,.rq textarea:focus{outline:2px solid var(--teal);outline-offset:1px;border-color:transparent}
+.rq .opts{display:flex;flex-wrap:wrap;gap:8px}
+.rq .opts label{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border:1px solid var(--line);border-radius:999px;font-size:14px;cursor:pointer;background:var(--bg)}
+.rq .opts label:has(input:checked){border-color:var(--teal);background:var(--tint)}
+.rq .err{color:var(--danger);font-size:13px;margin:0}
+.rq .bad input,.rq .bad select,.rq .bad textarea{border-color:var(--danger)}
+.rq .hint{color:var(--muted);margin:-12px 0 0}
+.rq-actions{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.btn-line{border-color:var(--line);color:var(--fg);background:var(--surface)}
+.btn-line:hover{border-color:var(--teal)}
+.rq-done{margin-top:20px;background:var(--tint);border:1px solid var(--teal);border-radius:14px;padding:24px;display:grid;gap:14px}
+.rq-done h3{font-size:22px}
+.rq-done p{color:var(--fg)}
+.rq-done pre{white-space:pre-wrap;word-break:break-word;font-family:var(--mono);font-size:13px;background:var(--surface);color:var(--fg);padding:14px;border-radius:8px;max-height:280px;overflow:auto;margin:0}
+@media (max-width:860px){ .svc-pick{grid-template-columns:repeat(2,minmax(0,1fr))} }
+@media (max-width:560px){
+  .rq{padding:18px}
+  .svc-pick,.rq .grp{grid-template-columns:minmax(0,1fr)}
+}
+
+.rq .sub{grid-column:1/-1;margin:14px 0 0;padding-top:16px;border-top:1px solid var(--line);font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--teal)}
+.rq .skip{grid-column:1/-1;margin:-6px 0 0;font-size:14px;color:var(--muted)}
+.rq .follow{padding:12px 14px;border-radius:10px;background:var(--sun-tint)}
+
+/* ===== Tabbed pages ===== */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;box-shadow:0 1px 0 #1D3456}
+.top nav{gap:6px}
+.top nav a{padding:8px 14px;border-radius:999px}
+.top nav a.on{background:rgba(19,196,163,.18);color:var(--teal-bright);opacity:1}
+.top nav a.cta{background:var(--teal-bright);color:var(--on-accent);opacity:1;font-weight:600}
+.top nav a.cta:hover{color:var(--on-accent);filter:brightness(1.06)}
+.top nav a.cta.on{box-shadow:inset 0 0 0 2px var(--on-navy)}
+.page:not([hidden]){animation:pgin .25s ease}
+@keyframes pgin{from{transform:translateY(6px)}to{transform:none}}
+.pg-next{display:flex;justify-content:center;margin-top:28px}
+.page > section{min-height:55vh}
+@media (max-width:560px){ .top nav{gap:4px} .top nav a{padding:7px 12px} }
+@media (prefers-reduced-motion:reduce){ .page:not([hidden]){animation:none} }
 </style>
-</head>
-<body>
+
 <header class="top">
   <div class="wrap">
-    <a class="brand" href="../" aria-label="Radken Consolidated home">
+    <a class="brand" href="#top" aria-label="Radken People home">
       <svg width="40" height="40" viewBox="0 0 200 200" aria-hidden="true">
         <rect width="200" height="200" rx="36" fill="#13325C"/>
-        <g stroke="#8B7CF6" stroke-width="12" stroke-linecap="round" fill="none">
+        <g stroke="#13C4A3" stroke-width="12" stroke-linecap="round" fill="none">
           <line x1="60" y1="40" x2="60" y2="160"/><line x1="60" y1="40" x2="120" y2="40"/><line x1="120" y1="40" x2="140" y2="75"/>
           <line x1="140" y1="75" x2="120" y2="105"/><line x1="120" y1="105" x2="60" y2="105"/><line x1="100" y1="105" x2="145" y2="160"/>
         </g>
-        <g fill="#FFFFFF" stroke="#8B7CF6" stroke-width="7">
+        <g fill="#FFFFFF" stroke="#13C4A3" stroke-width="7">
           <circle cx="60" cy="40" r="13"/><circle cx="120" cy="40" r="11"/><circle cx="140" cy="75" r="13"/>
           <circle cx="60" cy="105" r="11"/><circle cx="60" cy="160" r="13"/><circle cx="145" cy="160" r="13"/>
         </g>
       </svg>
       <div><b>RADKEN</b><span>PEOPLE</span></div>
     </a>
-    <nav aria-label="Sections">
-      <a href="#prices" data-sw="Bei">Prices</a>
+    <nav aria-label="Pages">
+      <a href="#home" data-sw="Nyumbani">Home</a>
+      <a href="#services" data-sw="Huduma">Services</a>
       <a href="#how" data-sw="Jinsi inavyofanya kazi">How it works</a>
+      <a href="#form" class="cta" data-sw="Omba huduma">Request</a>
+      <a href="#about" data-sw="Kuhusu">About</a>
       <a href="#contact" data-sw="Mawasiliano">Contact</a>
-      <a href="../" data-sw="Radken Consolidated">Radken Consolidated</a>
-      <button class="lang" id="lang-toggle" type="button" aria-label="Switch language / Badilisha lugha"><span data-l="en" class="on">EN</span><span data-l="sw">SW</span></button>
     </nav>
+    <div class="switches"><button class="lang ctry" id="ctry-toggle" type="button" hidden aria-label="Choose country / Chagua nchi"><span data-c="TZ">🇹🇿<b> TZ</b></span><span data-c="KE" class="on">🇰🇪<b> KE</b></span></button>
+    <button class="lang" id="lang-toggle" type="button" aria-label="Switch language / Badilisha lugha"><span data-l="en" class="on">EN</span><span data-l="sw">SW</span></button></div>
   </div>
 </header>
 
 <main id="top">
+<div class="page" data-page="home">
   <div class="hero">
     <div class="wrap">
-      <div class="hero-grid">
       <div>
-      <span class="eyebrow" data-sw="Nairobi · Kitengo cha Radken Consolidated">Nairobi · A Radken Consolidated division</span>
-      <h1 data-sw="Usimamizi wa wafanyakazi, &lt;em&gt;umepangwa vizuri&lt;/em&gt;.">HR that's <em>properly sorted</em>.</h1>
-      <p class="lead" data-sw="Sera za wafanyakazi, uajiri, mikataba, mapokezi ya wafanyakazi wapya na tathmini za utendaji kwa shule, kliniki na biashara ndogo ambazo hazina idara ya HR.">HR policies, recruitment, contracts, onboarding and appraisals for schools, clinics and small businesses that don't have their own HR department.</p>
-      <div class="cta">
-        <a class="btn btn-acc wa" data-svc="general" href="https://wa.me/254708102133" target="_blank" rel="noopener" data-sw="Ongea nasi kwa WhatsApp">Talk to us on WhatsApp</a>
-        <a class="btn btn-ghost" href="#prices" data-sw="Angalia bei">See prices</a>
+        <span class="eyebrow" data-sw="Sera za HR · Uajiri · Mikataba · Tathmini · Nairobi">HR Policies · Recruitment · Contracts · Appraisals · Nairobi</span>
+        <h1 data-sw="Usimamizi wa wafanyakazi ambao shirika lako &lt;em&gt;limekuwa likiuahirisha&lt;/em&gt;, umepangwa vizuri.">The HR your organisation <em>keeps putting off</em>, properly sorted.</h1>
+        <p class="lead" data-sw="Radken People huandaa sera za HR, mikataba ya wafanyakazi, maelezo ya kazi, vifurushi vya mapokezi na mifumo ya tathmini, na kusaidia kuajiri, kwa shule, kliniki na biashara ndogo zisizo na idara ya HR.">Radken People prepares HR policies, staff contracts, job descriptions, onboarding packs and appraisal systems, and helps you recruit, for schools, clinics and small businesses without an HR department.</p>
+        <div class="cta">
+          <a class="btn btn-primary" href="#form" data-sw="Omba huduma">Request HR help</a>
+          <a class="btn btn-ghost" href="#services" data-sw="Angalia bei">See prices</a>
+        </div>
       </div>
+      <div class="hero-art">
+      <img class="hero-photo" src="https://images.unsplash.com/photo-1758873269317-51888e824b28?auto=format&amp;fit=crop&amp;w=640&amp;h=427&amp;q=70" alt="" width="640" height="426">
+      <div class="cover" aria-label="Example of a Radken People document">
+        <div class="ref"><span>Ref RP-HB-2026-007</span><span>Draft v1</span></div>
+        <h3 data-sw="Kitabu cha sera za HR">HR Policy Handbook</h3>
+        <p class="for" data-sw="Kwa shule binafsi yenye wafanyakazi 40">Prepared for a private school with 40 staff</p>
+        <ol>
+          <li><span data-sw="Ajira na mikataba">Employment &amp; contracts</span><span>p.2</span></li>
+          <li><span data-sw="Likizo na mahudhurio">Leave &amp; attendance</span><span>p.5</span></li>
+          <li><span data-sw="Maadili na nidhamu">Conduct &amp; discipline</span><span>p.8</span></li>
+          <li><span data-sw="Tathmini ya utendaji">Performance reviews</span><span>p.11</span></li>
+        </ol>
+        <div class="foot">RADKEN PEOPLE <small data-sw="Mfano wa jalada">Sample cover</small></div>
       </div>
-      <img class="hero-img" src="https://images.unsplash.com/photo-1758520144427-ddb02ac74e9d?auto=format&fit=crop&w=1200&h=750&q=70" alt="Two women shaking hands across a desk in a job interview" width="1200" height="750">
       </div>
     </div>
   </div>
 
-  <section id="prices" style="padding-top:0">
+  <div class="trust"><div class="wrap"><ul><li><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12V4h8l10 10-8 8L3 12z"/><circle cx="7.5" cy="8.5" r="1.5"/></svg><span data-sw="Bei wazi, zinazojadilika">Clear prices, open to discussion</span></li><li><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 4v5c0 4.5-3.4 8.4-8 9-4.6-.6-8-4.5-8-9V7l8-4z"/></svg><span data-sw="Imeandaliwa kwa mazingira ya kazi ya Kenya">Built for Kenyan workplaces</span></li><li><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-12.6 7.4L3 20.5l1.6-5.2A8.5 8.5 0 1 1 21 11.5z"/></svg><span data-sw="Omba kwa WhatsApp">Request on WhatsApp</span></li><li><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h10M9 4v2M6.5 6c.8 3.5 3.3 6.3 6.5 7.5M12 6c-.8 3.5-3.6 6.5-7 8"/><path d="M13 20l4-9 4 9M14.5 17h5"/></svg><span data-sw="Kiingereza na Kiswahili">English &amp; Kiswahili</span></li></ul></div></div>
+
+  <section class="alt">
     <div class="wrap">
-      <div class="menu">
-        <article class="svc" id="svc-handbook">
-          <div class="ico" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V2H6.5A2.5 2.5 0 0 0 4 4.5v15z"/><path d="M6.5 17A2.5 2.5 0 0 0 4 19.5 2.5 2.5 0 0 0 6.5 22H20v-5"/></svg></div>
-          <h3 data-sw="Kitabu cha sera za HR">HR policy handbook</h3>
-          <p data-sw="Likizo, nidhamu, maadili ya kazi na taratibu nyingine, zote katika kitabu kimoja.">Leave, discipline, code of conduct and other workplace rules, in one handbook.</p>
-          <div class="price"><small>KES</small>25,000</div>
-          <a class="order wa" data-svc="handbook" href="https://wa.me/254708102133" target="_blank" rel="noopener" data-sw="Agiza kitabu cha sera">Order a handbook</a>
-        </article>
-        <article class="svc" id="svc-recruit">
-          <div class="ico" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/><path d="M11 8a2 2 0 1 0 0 .01M8 15c.6-1.6 1.9-2.5 3-2.5s2.4.9 3 2.5"/></svg></div>
-          <h3 data-sw="Msaada wa kuajiri">Recruitment support</h3>
-          <p data-sw="Tangazo la kazi, kuchuja waombaji na kusimamia usaili.">Job advert, shortlisting and running the interviews.</p>
-          <div class="price"><small>KES</small>20,000<span class="per" data-sw="kwa nafasi">per role</span></div>
-          <a class="order wa" data-svc="recruit" href="https://wa.me/254708102133" target="_blank" rel="noopener" data-sw="Omba msaada wa kuajiri">Get recruitment help</a>
-        </article>
-        <article class="svc" id="svc-appraisal">
-          <div class="ico" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg></div>
-          <h3 data-sw="Mfumo wa tathmini ya utendaji">Performance appraisal system</h3>
-          <p data-sw="Fomu za tathmini na malengo (KPIs) yanayoendana na kila nafasi.">Appraisal forms and KPIs that fit each role.</p>
-          <div class="price"><small>KES</small>15,000</div>
-          <a class="order wa" data-svc="appraisal" href="https://wa.me/254708102133" target="_blank" rel="noopener" data-sw="Agiza mfumo wa tathmini">Order an appraisal system</a>
-        </article>
-        <article class="svc" id="svc-contracts">
-          <div class="ico" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17l2 1 2-2 2 1"/></svg></div>
-          <h3 data-sw="Mikataba ya wafanyakazi">Staff contract templates</h3>
-          <p data-sw="Mikataba ya kudumu, ya muda na ya majaribio, tayari kujazwa.">Permanent, fixed-term and probation contracts, ready to fill in.</p>
-          <div class="price"><small>KES</small>10,000</div>
-          <a class="order wa" data-svc="contracts" href="https://wa.me/254708102133" target="_blank" rel="noopener" data-sw="Agiza mikataba">Order contracts</a>
-        </article>
-        <article class="svc" id="svc-onboarding">
-          <div class="ico" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M19 8v6M22 11h-6"/></svg></div>
-          <h3 data-sw="Kifurushi cha mapokezi">Staff onboarding pack</h3>
-          <p data-sw="Orodha ya hatua, barua ya kukaribisha na fomu za mfanyakazi mpya.">Checklist, welcome letter and new-starter forms.</p>
-          <div class="price"><small>KES</small>10,000</div>
-          <a class="order wa" data-svc="onboarding" href="https://wa.me/254708102133" target="_blank" rel="noopener" data-sw="Agiza kifurushi cha mapokezi">Order an onboarding pack</a>
-        </article>
-        <article class="svc" id="svc-records">
-          <div class="ico" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h18v13H3z"/><path d="M8 7V4h8v3M3 12h18"/></svg></div>
-          <h3 data-sw="Mfumo wa kumbukumbu za wafanyakazi">Employee records setup</h3>
-          <p data-sw="Faili na rejista ya wafanyakazi iliyopangwa na rahisi kusasisha.">An organised staff file and register that's easy to keep up to date.</p>
-          <div class="price"><small>KES</small>10,000</div>
-          <a class="order wa" data-svc="records" href="https://wa.me/254708102133" target="_blank" rel="noopener" data-sw="Agiza mfumo wa kumbukumbu">Order records setup</a>
-        </article>
-        <article class="svc" id="svc-jd">
-          <div class="ico" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg></div>
-          <h3 data-sw="Maelezo ya kazi">Job description</h3>
-          <p data-sw="Majukumu, sifa na malengo yaliyoandikwa wazi kwa kila nafasi.">Duties, requirements and goals written clearly for each role.</p>
-          <div class="price"><small>KES</small>3,000<span class="per" data-sw="kwa nafasi">per role</span></div>
-          <a class="order wa" data-svc="jd" href="https://wa.me/254708102133" target="_blank" rel="noopener" data-sw="Agiza maelezo ya kazi">Order job descriptions</a>
-        </article>
+      <div class="head">
+        <span class="eyebrow" data-sw="Tunaowahudumia">Who we work with</span>
+        <h2 data-sw="Kwa mashirika yasiyo na idara ya HR.">Built for organisations without an HR department.</h2>
       </div>
-      <p class="note" data-sw="Bei za kuanzia. Kila kazi inaanza na bei iliyoandikwa kabla kazi haijaanza, na bei zinajadilika.">Starting prices. Every job starts with a written price before any work begins, and prices are open to discussion.</p>
+      <div class="who">
+        <div>
+          <span class="eyebrow" data-sw="Shule">Schools</span>
+          <h3 data-sw="Shule binafsi">Private schools</h3>
+          <p data-sw="Mikataba ya walimu, sera za likizo na nidhamu, na tathmini za kila muhula.">Teacher contracts, leave and discipline policies, and termly appraisals.</p>
+        </div>
+        <div>
+          <span class="eyebrow" data-sw="Afya">Health</span>
+          <h3 data-sw="Kliniki na hospitali ndogo">Clinics &amp; small hospitals</h3>
+          <p data-sw="Ratiba za zamu, kumbukumbu za leseni za wafanyakazi na kuajiri wataalamu.">Shift rules, staff licence records and recruiting clinical staff.</p>
+        </div>
+        <div>
+          <span class="eyebrow" data-sw="Biashara">Business</span>
+          <h3 data-sw="Biashara ndogo">Small businesses</h3>
+          <p data-sw="Kila kitu cha msingi cha HR mara biashara inapoanza kuajiri wafanyakazi wake wa kwanza.">The HR basics, done right as you hire your first staff.</p>
+        </div>
+      </div>
     </div>
   </section>
+</div>
 
+<div class="page" data-page="services">
+  <section id="services">
+    <div class="wrap">
+      <div class="head">
+        <span class="eyebrow" data-sw="Huduma na bei">Services &amp; prices</span>
+        <h2 data-sw="Bei za kuanzia zilizo wazi, kwa shilingi za Kenya, na zinazojadilika.">Clear starting prices, in Kenyan shillings, and open to discussion.</h2>
+        <p data-sw="Kila kazi huanza na fomu fupi ya mahitaji. Kisha tunakubaliana bei kamili kabla kazi haijaanza. Tuambie bajeti yako na tutashirikiana nawe.">Every job starts with a short request form. We then agree the exact price before any work begins. Tell us your budget and we'll work with you.</p>
+      </div>
+      <div class="schedule">
+        <div class="row">
+          <img class="ill" src="https://images.unsplash.com/photo-1758873269117-d5845126928a?auto=format&amp;fit=crop&amp;w=640&amp;h=427&amp;q=70" alt="A team sharing ideas around a whiteboard" width="640" height="427" loading="lazy" decoding="async">
+          <h3 data-sw="Kitabu cha sera za HR">HR policy handbook</h3>
+          <p data-sw="Likizo, nidhamu, maadili, mahudhurio na malalamiko, zote katika kitabu kimoja tayari kwa wafanyakazi kusaini.">Leave, discipline, conduct, attendance and grievances, in one handbook ready for staff to sign.</p>
+          <div class="price"><small data-sw="kuanzia">from</small><strong>KES 25,000</strong></div>
+          <a class="req" href="#form" data-service="handbook" data-sw="Anza ombi">Start request</a>
+        </div>
+        <div class="row">
+          <img class="ill" src="https://images.unsplash.com/photo-1758520144427-ddb02ac74e9d?auto=format&amp;fit=crop&amp;w=640&amp;h=427&amp;q=70" alt="Two women shaking hands across a desk at a job interview" width="640" height="427" loading="lazy" decoding="async">
+          <h3 data-sw="Msaada wa kuajiri">Recruitment support</h3>
+          <p data-sw="Tangazo la kazi, kuchuja waombaji, maswali ya usaili na kusimamia usaili.">Job advert, shortlisting, interview questions and running the interviews.</p>
+          <div class="price"><small data-sw="kwa nafasi">per role</small><strong>KES 20,000</strong></div>
+          <a class="req" href="#form" data-service="recruit" data-sw="Anza ombi">Start request</a>
+        </div>
+        <div class="row">
+          <img class="ill" src="https://images.unsplash.com/photo-1758876202919-4d2fbedcf23d?auto=format&amp;fit=crop&amp;w=640&amp;h=427&amp;q=70" alt="Two colleagues discussing work at a laptop" width="640" height="427" loading="lazy" decoding="async">
+          <h3 data-sw="Mfumo wa tathmini ya utendaji">Performance appraisal system</h3>
+          <p data-sw="Fomu za tathmini, malengo (KPIs) kwa kila nafasi na ratiba ya mapitio.">Appraisal forms, KPIs for each role and a review calendar.</p>
+          <div class="price"><small data-sw="kuanzia">from</small><strong>KES 15,000</strong></div>
+          <a class="req" href="#form" data-service="appraisal" data-sw="Anza ombi">Start request</a>
+        </div>
+        <div class="row">
+          <img class="ill" src="../img/radken-policy.webp" alt="Hands signing a document at a desk" width="640" height="427" loading="lazy" decoding="async">
+          <h3 data-sw="Mikataba ya wafanyakazi">Staff contract templates</h3>
+          <p data-sw="Mikataba ya kudumu, ya muda maalum, ya majaribio na ya vibarua, tayari kujazwa.">Permanent, fixed-term, probation and casual contracts, ready to fill in.</p>
+          <div class="price"><small data-sw="kuanzia">from</small><strong>KES 10,000</strong></div>
+          <a class="req" href="#form" data-service="contracts" data-sw="Anza ombi">Start request</a>
+        </div>
+        <div class="row">
+          <img class="ill" src="https://images.unsplash.com/photo-1758873272000-d3763373f863?auto=format&amp;fit=crop&amp;w=640&amp;h=427&amp;q=70" alt="A man on the phone in an open-plan office with colleagues" width="640" height="427" loading="lazy" decoding="async">
+          <h3 data-sw="Kifurushi cha mapokezi">Staff onboarding pack</h3>
+          <p data-sw="Orodha ya hatua za siku ya kwanza, barua ya kukaribisha na fomu za mfanyakazi mpya.">First-day checklist, welcome letter and new-starter forms.</p>
+          <div class="price"><small data-sw="kuanzia">from</small><strong>KES 10,000</strong></div>
+          <a class="req" href="#form" data-service="onboarding" data-sw="Anza ombi">Start request</a>
+        </div>
+        <div class="row">
+          <img class="ill" src="https://images.unsplash.com/photo-1544396821-4dd40b938ad3?auto=format&amp;fit=crop&amp;w=640&amp;h=427&amp;q=70" alt="Colourful ring binders on office shelves" width="640" height="427" loading="lazy" decoding="async">
+          <h3 data-sw="Mfumo wa kumbukumbu za wafanyakazi">Employee records setup</h3>
+          <p data-sw="Faili za wafanyakazi na rejista iliyopangwa, rahisi kusasisha na kukaguliwa.">Organised staff files and a register that's easy to update and audit.</p>
+          <div class="price"><small data-sw="kuanzia">from</small><strong>KES 10,000</strong></div>
+          <a class="req" href="#form" data-service="records" data-sw="Anza ombi">Start request</a>
+        </div>
+        <div class="row template">
+          <img class="ill" src="../img/radken-specs.webp" alt="Paperwork and a calculator on a desk" width="640" height="427" loading="lazy" decoding="async">
+          <h3 data-sw="Maelezo ya kazi">Job description</h3>
+          <p data-sw="Majukumu, sifa na malengo yaliyoandikwa wazi kwa kila nafasi.">Duties, requirements and goals written clearly for each role.</p>
+          <div class="price"><small data-sw="kwa nafasi">per role</small><strong>KES 3,000</strong></div>
+          <a class="req" href="#form" data-service="jd" data-sw="Anza ombi">Start request</a>
+        </div>
+      </div>
+      <p class="note" data-sw="Radken People huandaa nyaraka na kusaidia mchakato wa HR. Kwa masuala ya kisheria yenye utata, tunakushauri kuongea na wakili.">Radken People prepares HR documents and supports your HR processes. For disputed legal matters, we recommend speaking to a lawyer.</p>
+      <div class="pg-next"><a class="btn btn-primary" href="#form" data-sw="Anza ombi">Start a request</a></div>
+    </div>
+  </section>
+</div>
+
+<div class="page" data-page="how">
   <section id="how">
     <div class="wrap">
-      <div class="sec-head">
+      <div class="head">
         <span class="eyebrow" data-sw="Jinsi inavyofanya kazi">How it works</span>
-        <h2 data-sw="Hatua tatu, rahisi.">Three simple steps.</h2>
+        <h2 data-sw="Kutoka ujumbe wa kwanza hadi HR iliyopangwa.">From first message to HR that's in order.</h2>
       </div>
       <ol class="steps">
-        <li><b data-sw="Tuambie unachohitaji">Tell us what you need</b><span data-sw="Bonyeza kitufe na tuambie kuhusu shirika lako na idadi ya wafanyakazi.">Tap a button and tell us about your organisation and how many staff you have.</span></li>
-        <li><b data-sw="Pokea bei na rasimu">Get a price and a draft</b><span data-sw="Tunakubaliana bei, kisha Dennis anakuandalia rasimu ya kwanza uipitie.">We agree the price, then Dennis prepares a first draft for you to review.</span></li>
-        <li><b data-sw="Tumia kazini">Put it to work</b><span data-sw="Unapokea nyaraka za mwisho tayari kutumika na wafanyakazi wako.">You receive the final documents, ready to use with your staff.</span></li>
+        <li><h3 data-sw="Tuambie unachohitaji">Tell us what you need</h3><p data-sw="Chagua huduma na ujibu fomu fupi kuhusu shirika na wafanyakazi wako.">Pick a service and answer a short form about your organisation and staff.</p><a class="steplink" href="#form" data-sw="Fungua fomu">Open the form</a></li>
+        <li><h3 data-sw="Kubaliana bei">Agree the price</h3><p data-sw="Dennis anathibitisha bei kamili na muda wa kukamilisha kabla kazi haijaanza.">Dennis confirms the exact price and timing before any work starts.</p></li>
+        <li><h3 data-sw="Pitia rasimu">Review the draft</h3><p data-sw="Unapokea rasimu ya kwanza na kuomba marekebisho yoyote.">You receive a first draft and ask for any changes.</p></li>
+        <li><h3 data-sw="Tumia kazini">Put it to work</h3><p data-sw="Unapokea nyaraka za mwisho za Word, tayari kutumika na wafanyakazi wako.">You get the final Word documents, ready to use with your staff.</p></li>
       </ol>
     </div>
   </section>
+</div>
 
-  <section id="contact" class="contact">
+<div class="page" data-page="form">
+  <section id="form" class="formsec alt">
     <div class="wrap">
-      <div class="card">
-        <span class="eyebrow" data-sw="Mawasiliano">Contact</span>
-        <b>Dennis Mburu</b>
-        <span data-sw="Mshauri wa HR na Uendeshaji, Radken People · Nairobi, Kenya">HR &amp; Operations Consultant, Radken People · Nairobi, Kenya</span>
-        <a href="https://wa.me/254708102133" target="_blank" rel="noopener">+254 708 102 133</a>
-        <a href="mailto:mburudennis2312@gmail.com">mburudennis2312@gmail.com</a>
+      <div class="head">
+        <span class="eyebrow" data-sw="Fomu ya mahitaji">Request form</span>
+        <h2 data-sw="Tuambie unachohitaji.">Tell us what you need.</h2>
+        <p data-sw="Chagua huduma, jibu maswali yake, kisha tuma majibu yako kwa WhatsApp. Inachukua takriban dakika 5.">Pick a service, answer the questions for it, then send your answers on WhatsApp. It takes about 5 minutes.</p>
       </div>
-      <div class="cta" style="margin:0">
-        <a class="btn btn-acc wa" data-svc="general" href="https://wa.me/254708102133" target="_blank" rel="noopener" data-sw="Ongea na Dennis kwa WhatsApp">Chat with Dennis on WhatsApp</a>
+      <form id="rq" class="rq" novalidate></form>
+      <div id="rq-done" class="rq-done" hidden></div>
+    </div>
+  </section>
+</div>
+
+<div class="page" data-page="about">
+  <section id="about">
+    <div class="wrap about">
+      <div class="head" style="margin-bottom:0">
+        <span class="eyebrow" data-sw="Kuhusu">About</span>
+        <h2 data-sw="Inaendeshwa na mtaalamu wa HR na uendeshaji.">Run by an HR and operations professional.</h2>
+      </div>
+      <div>
+        <p data-sw="Radken People ni kitengo cha Radken Consolidated, kinachoendeshwa na Dennis Mburu mjini Nairobi. Dennis ana zaidi ya miaka 5 ya uzoefu katika HR na uendeshaji: kuajiri, kupokea wafanyakazi wapya, mahusiano ya wafanyakazi, usimamizi wa utendaji na kumbukumbu za wafanyakazi.">Radken People is a division of Radken Consolidated, run by Dennis Mburu in Nairobi. Dennis has more than 5 years' experience in HR and operations: recruitment, onboarding, employee relations, performance management and personnel records.</p>
+        <p data-sw="Ana Diploma ya Usimamizi wa Miradi na uzoefu wa kusimamia timu, bajeti na ripoti za KPI.">He holds a Diploma in Project Management and has managed teams, budgets and KPI reporting.</p>
+        <ul class="creds">
+          <li data-sw="Kuajiri na mapokezi">Recruitment &amp; onboarding</li>
+          <li data-sw="Mahusiano ya wafanyakazi">Employee relations</li>
+          <li data-sw="Usimamizi wa utendaji">Performance management</li>
+          <li data-sw="Kumbukumbu za wafanyakazi">Personnel records</li>
+        </ul>
       </div>
     </div>
   </section>
+</div>
+
+<div class="page" data-page="contact">
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <div class="head">
+        <span class="eyebrow" data-sw="Mawasiliano">Contact</span>
+        <h2 data-sw="Ongea na Dennis.">Talk to Dennis.</h2>
+        <p data-sw="Tuma ujumbe wenye jina la shirika lako, idadi ya wafanyakazi na unachohitaji. Utajibiwa pamoja na bei.">Send a message with your organisation's name, how many staff you have and what you need. You'll get a reply with the price.</p>
+      </div>
+      <div class="cards">
+        <div class="card">
+          <small data-sw="Simu na WhatsApp">Phone &amp; WhatsApp</small>
+          <div class="val" id="v-phone">+254 708 102 133</div>
+          <div class="acts">
+            <button class="chip" type="button" data-copy="v-phone" data-sw="Nakili">Copy</button>
+            <a class="chip" href="https://wa.me/254708102133" target="_blank" rel="noopener" data-wa-en="Hello Radken People, I'd like help with HR for my organisation." data-wa-sw="Habari Radken People, ningependa msaada wa HR kwa shirika langu." data-sw="Fungua WhatsApp">Open WhatsApp</a>
+          </div>
+        </div>
+        <div class="card">
+          <small data-sw="Barua pepe">Email</small>
+          <div class="val" id="v-email">mburudennis2312@gmail.com</div>
+          <div class="acts">
+            <button class="chip" type="button" data-copy="v-email" data-sw="Nakili">Copy</button>
+            <a class="chip" data-mail href="mailto:mburudennis2312@gmail.com" data-sw="Andika barua pepe">Write email</a>
+          </div>
+        </div>
+        <div class="card">
+          <small data-sw="Mahali">Location</small>
+          <div class="val">Nairobi, Kenya</div>
+          <p style="font-size:14px;color:#C9D6E3" data-sw="Kazi nyingi hufanyika kwa mbali, hivyo tunahudumia mashirika popote Kenya.">Most of the work is done remotely, so we serve organisations anywhere in Kenya.</p>
+        </div>
+      </div>
+      <p class="pay" data-sw="Malipo: maelezo ya malipo yanatolewa mnapokubaliana bei.">Payment: payment details are shared once the price is agreed.</p>
+    </div>
+  </section>
+</div>
 </main>
 
-<footer><div class="wrap"><span>© 2026 Radken People · Nairobi</span><span>A division of <a href="../">Radken Consolidated</a> · Photo: Vitaly Gariev on Unsplash</span></div></footer>
+<a class="wa-float" href="https://wa.me/254708102133" target="_blank" rel="noopener" data-wa-en="Hello Radken People, I'd like help with HR for my organisation." data-wa-sw="Habari Radken People, ningependa msaada wa HR kwa shirika langu." aria-label="Chat with Radken People on WhatsApp">
+  <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.5 8.5 0 0 1-12.6 7.4L3 20.5l1.6-5.2A8.5 8.5 0 1 1 21 11.5z"/><path d="M8.5 11.5h.01M12 11.5h.01M15.5 11.5h.01"/></svg>
+  <span data-sw="Tuandikie">Chat with us</span>
+</a>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Radken People · HR Policies · Recruitment · Contracts · a division of <a href="../">Radken Consolidated</a></span>
+    <span>Photos: Vitaly Gariev and Viktor Talashuk on Unsplash</span>
+  </div>
+</footer>
+
 
 <script>
+var LANG='en', CTRY='KE';
+/* Radken People works in Kenya only: every enquiry goes to Dennis Mburu in Nairobi */
+var CONTACTS={TZ:{wa:'254708102133',email:'mburudennis2312@gmail.com'},KE:{wa:'254708102133',email:'mburudennis2312@gmail.com'}};
+var WORDS={en:{copied:'Copied',selected:'Selected'},sw:{copied:'Imenakiliwa',selected:'Imechaguliwa'}};
+function waHref(msg){ return 'https://wa.me/'+CONTACTS[CTRY].wa+'?text='+encodeURIComponent(msg); }
+/* Text picks by country, then language: Kenya text (data-ke / data-ke-sw) where it exists, otherwise the Tanzania text */
+function pick(el,l){
+  var ke=CTRY==='KE'&&el.hasAttribute('data-ke');
+  if(ke) return l==='sw' ? (el.getAttribute('data-ke-sw')||el.getAttribute('data-ke')) : el.getAttribute('data-ke');
+  return l==='sw' && el.hasAttribute('data-sw') ? el.getAttribute('data-sw') : el.dataset.en;
+}
+function setLang(l){
+  LANG=l;
+  document.documentElement.lang=l;
+  document.querySelectorAll('[data-sw],[data-ke]').forEach(function(el){
+    if(el.dataset.en===undefined) el.dataset.en=el.innerHTML;
+    el.innerHTML = pick(el,l);
+  });
+  document.querySelectorAll('a[href*="wa.me/"]:not([data-wa-en])').forEach(function(a){
+    a.href=a.href.replace(/wa\.me\/\d+/,'wa.me/'+CONTACTS[CTRY].wa);
+  });
+  document.querySelectorAll('[data-mail]').forEach(function(a){ a.href='mailto:'+CONTACTS[CTRY].email; });
+  document.querySelectorAll('[data-wa-en]').forEach(function(a){
+    a.href = waHref(a.getAttribute(l==='sw'?'data-wa-sw':'data-wa-en'));
+  });
+  document.querySelectorAll('#lang-toggle span').forEach(function(sp){ sp.classList.toggle('on', sp.dataset.l===l); });
+  try{ localStorage.setItem('radken-lang', l); }catch(e){}
+  if(window.renderForm) window.renderForm();
+}
+document.getElementById('lang-toggle').addEventListener('click', function(){ setLang(LANG==='en'?'sw':'en'); });
+function setCountry(c){
+  CTRY=c==='KE'?'KE':'TZ';
+  document.querySelectorAll('#ctry-toggle span').forEach(function(sp){ sp.classList.toggle('on', sp.dataset.c===CTRY); });
+  try{ localStorage.setItem('radken-country', CTRY); }catch(e){}
+  setLang(LANG);
+}
+document.getElementById('ctry-toggle').addEventListener('click', function(){ setCountry(CTRY==='TZ'?'KE':'TZ'); });
+/* Kenya only: the country switch stays hidden */
+try{ var saved=localStorage.getItem('radken-lang'); if(saved==='sw') setLang('sw'); }catch(e){}
+
+document.querySelectorAll('[data-copy]').forEach(function(b){
+  b.addEventListener('click', function(){
+    var el=document.getElementById(b.getAttribute('data-copy'));
+    var text=el.textContent.trim();
+    var label=b.innerHTML;
+    function flash(t){ b.textContent=t; setTimeout(function(){ b.innerHTML=label; },1500); }
+    function fallback(){ var r=document.createRange(); r.selectNodeContents(el); var s=window.getSelection(); s.removeAllRanges(); s.addRange(r); flash(WORDS[LANG].selected); }
+    try{ navigator.clipboard.writeText(text).then(function(){ flash(WORDS[LANG].copied); }, fallback); }catch(e){ fallback(); }
+  });
+});
+
 (function(){
-  var LANG='en', els=[].slice.call(document.querySelectorAll('[data-sw]'));
-  els.forEach(function(el){ el.dataset.en=el.innerHTML; });
-  /* Each button opens WhatsApp to Dennis with a ready message for that service, in the visitor's language */
-  var MSG={
-    en:{general:"Hello Radken People, I'd like help with HR for my organisation.",handbook:"Hello Radken People, I'd like an HR policy handbook (KES 25,000).",recruit:"Hello Radken People, I'd like recruitment support for a role (KES 20,000 per role).",appraisal:"Hello Radken People, I'd like a performance appraisal system (KES 15,000).",contracts:"Hello Radken People, I'd like staff contract templates (KES 10,000).",onboarding:"Hello Radken People, I'd like a staff onboarding pack (KES 10,000).",records:"Hello Radken People, I'd like an employee records setup (KES 10,000).",jd:"Hello Radken People, I'd like job descriptions written (KES 3,000 per role)."},
-    sw:{general:"Habari Radken People, ningependa msaada wa HR kwa shirika langu.",handbook:"Habari Radken People, ningependa kitabu cha sera za HR (KES 25,000).",recruit:"Habari Radken People, ningependa msaada wa kuajiri kwa nafasi moja (KES 20,000 kwa nafasi).",appraisal:"Habari Radken People, ningependa mfumo wa tathmini ya utendaji (KES 15,000).",contracts:"Habari Radken People, ningependa mikataba ya wafanyakazi (KES 10,000).",onboarding:"Habari Radken People, ningependa kifurushi cha mapokezi ya wafanyakazi (KES 10,000).",records:"Habari Radken People, ningependa mfumo wa kumbukumbu za wafanyakazi (KES 10,000).",jd:"Habari Radken People, ningependa maelezo ya kazi (KES 3,000 kwa nafasi)."}
-  };
-  function setLinks(){
-    document.querySelectorAll('a.wa').forEach(function(a){ a.href='https://wa.me/254708102133?text='+encodeURIComponent(MSG[LANG][a.dataset.svc]||MSG[LANG].general); });
+var YN=[['Yes','Ndiyo'],['No','Hapana'],['Not sure','Sina uhakika']];
+function q(id,o){ o.id=id; return o; }
+function S(en,sw){ return {type:'section',en:en,sw:sw}; }
+var STAFF=function(){ return q('staff',{type:'select',en:'How many staff do you have?',sw:'Mna wafanyakazi wangapi?',opts:[['1–10','1–10'],['11–30','11–30'],['31–100','31–100'],['More than 100','Zaidi ya 100']]}); };
+var LANGQ=function(){ return q('doc_lang',{type:'radio',en:'Language of the documents',sw:'Lugha ya nyaraka',opts:[['English','Kiingereza'],['Kiswahili','Kiswahili'],['Both','Zote mbili']]}); };
+
+var COMMON=[
+  q('org',{type:'text',req:1,en:'Organisation name',sw:'Jina la shirika',ph:['e.g. Greenfield Academy','mf. Greenfield Academy']}),
+  q('orgtype',{type:'radio',en:'Type of organisation',sw:'Aina ya shirika',opts:[['School','Shule'],['Clinic or hospital','Kliniki au hospitali'],['Business or office','Biashara au ofisi'],['Other','Nyingine']]}),
+  q('name',{type:'text',req:1,en:'Your name',sw:'Jina lako'}),
+  q('role',{type:'text',en:'Your role',sw:'Wadhifa wako',ph:['e.g. Director, Administrator, Manager','mf. Mkurugenzi, Msimamizi, Meneja']}),
+  q('phone',{type:'tel',req:1,en:'Phone / WhatsApp number',sw:'Namba ya simu / WhatsApp',ph:['e.g. 0712 345 678','mf. 0712 345 678']}),
+  q('loc',{type:'text',en:'Location',sw:'Mahali',ph:['e.g. Westlands, Nairobi','mf. Westlands, Nairobi']}),
+  q('when',{type:'select',en:'When do you need it?',sw:'Mnaihitaji lini?',opts:[['As soon as possible','Haraka iwezekanavyo'],['Within 2 weeks','Ndani ya wiki 2'],['Within a month','Ndani ya mwezi mmoja'],['Just planning for now','Tunapanga tu kwa sasa']]}),
+  q('heard',{type:'select',en:'How did you hear about us?',sw:'Mlitusikiaje?',opts:[['WhatsApp','WhatsApp'],['Friend or colleague','Rafiki au mfanyakazi mwenzako'],['LinkedIn','LinkedIn'],['Online','Mtandaoni'],['Other','Nyingine']]})
+];
+
+var SERVICES=[
+ {id:'handbook',en:'HR policy handbook',sw:'Kitabu cha sera za HR',q:[
+  S('Your organisation','Shirika lenu'),
+  STAFF(),
+  q('h_existing',{type:'radio',wide:1,en:'Do you have any written HR policies today?',sw:'Mna sera zozote za HR zilizoandikwa kwa sasa?',opts:[['None','Hakuna'],['A few, out of date','Chache, za zamani'],['Yes, need updating','Ndiyo, zinahitaji kusasishwa']]}),
+  q('h_topics',{type:'checks',wide:1,en:'Which topics should it cover?',sw:'Kiguse mada zipi?',opts:[['Leave (annual, sick, maternity)','Likizo (ya mwaka, ugonjwa, uzazi)'],['Working hours and attendance','Saa za kazi na mahudhurio'],['Code of conduct','Maadili ya kazi'],['Discipline and grievances','Nidhamu na malalamiko'],['Pay and benefits','Mishahara na marupurupu'],['Health and safety','Afya na usalama'],['Ending employment','Kusitisha ajira'],['All of the above','Zote hapo juu']]}),
+  q('h_issue',{type:'textarea',wide:1,en:'Any staff issue that prompted this?',sw:'Kuna changamoto ya wafanyakazi iliyosababisha hili?'}),
+  LANGQ()
+ ]},
+ {id:'recruit',en:'Recruitment support',sw:'Msaada wa kuajiri',q:[
+  S('The role','Nafasi'),
+  q('r_role',{type:'text',wide:1,req:1,en:'Which role are you hiring for?',sw:'Mnaajiri nafasi gani?',ph:['e.g. Class teacher, Nurse, Accountant','mf. Mwalimu wa darasa, Muuguzi, Mhasibu']}),
+  q('r_count',{type:'number',en:'How many people?',sw:'Watu wangapi?'}),
+  q('r_type',{type:'radio',en:'Type of contract',sw:'Aina ya mkataba',opts:[['Permanent','Wa kudumu'],['Fixed-term','Wa muda maalum'],['Casual','Kibarua']]}),
+  q('r_jd',{type:'radio',en:'Do you have a job description?',sw:'Mna maelezo ya kazi?',opts:YN}),
+  q('r_help',{type:'checks',wide:1,en:'What help do you need?',sw:'Mnahitaji msaada gani?',opts:[['Writing and posting the advert','Kuandika na kutangaza nafasi'],['Shortlisting applicants','Kuchuja waombaji'],['Interview questions','Maswali ya usaili'],['Sitting in on interviews','Kushiriki kwenye usaili'],['Reference checks','Kuhakiki marejeo'],['Offer letter','Barua ya kumpa kazi']]}),
+  q('r_start',{type:'date',en:'When should the person start?',sw:'Mtu aanze kazi lini?'})
+ ]},
+ {id:'appraisal',en:'Performance appraisal system',sw:'Mfumo wa tathmini ya utendaji',q:[
+  S('Your team','Timu yenu'),
+  STAFF(),
+  q('a_roles',{type:'number',en:'How many different job roles?',sw:'Kuna nafasi za kazi tofauti ngapi?'}),
+  q('a_now',{type:'radio',wide:1,en:'How do you review staff today?',sw:'Mnawatathmini wafanyakazi vipi kwa sasa?',opts:[['We don’t','Hatufanyi'],['Informally','Kwa njia isiyo rasmi'],['A form we want to improve','Fomu tunayotaka kuboresha']]}),
+  q('a_freq',{type:'radio',en:'How often should reviews happen?',sw:'Tathmini zifanyike mara ngapi?',opts:[['Once a year','Mara moja kwa mwaka'],['Twice a year','Mara mbili kwa mwaka'],['Every term or quarter','Kila muhula au robo mwaka']]}),
+  q('a_link',{type:'radio',wide:1,en:'Should reviews be linked to pay rises or bonuses?',sw:'Tathmini ziunganishwe na nyongeza ya mshahara au bonasi?',opts:YN})
+ ]},
+ {id:'contracts',en:'Staff contract templates',sw:'Mikataba ya wafanyakazi',q:[
+  S('The contracts','Mikataba'),
+  q('k_types',{type:'checks',wide:1,req:1,en:'Which contracts do you need?',sw:'Mnahitaji mikataba ipi?',opts:[['Permanent','Ya kudumu'],['Fixed-term','Ya muda maalum'],['Probation','Ya majaribio'],['Casual or part-time','Ya kibarua au muda mfupi'],['Internship','Ya mafunzo kwa vitendo']]}),
+  STAFF(),
+  q('k_now',{type:'radio',wide:1,en:'Do staff have written contracts today?',sw:'Wafanyakazi wana mikataba ya maandishi kwa sasa?',opts:[['All of them','Wote'],['Some','Baadhi'],['None','Hakuna']]}),
+  LANGQ()
+ ]},
+ {id:'onboarding',en:'Staff onboarding pack',sw:'Kifurushi cha mapokezi',q:[
+  S('New starters','Wafanyakazi wapya'),
+  q('o_count',{type:'number',en:'How many new staff do you expect this year?',sw:'Mnatarajia wafanyakazi wapya wangapi mwaka huu?'}),
+  q('o_items',{type:'checks',wide:1,en:'What should the pack include?',sw:'Kifurushi kiwe na nini?',opts:[['First-day checklist','Orodha ya siku ya kwanza'],['Welcome letter','Barua ya kukaribisha'],['New-starter details form','Fomu ya taarifa za mfanyakazi mpya'],['Probation review form','Fomu ya tathmini ya majaribio'],['Introduction to policies','Utangulizi wa sera']]}),
+  LANGQ()
+ ]},
+ {id:'records',en:'Employee records setup',sw:'Mfumo wa kumbukumbu za wafanyakazi',q:[
+  S('Your records','Kumbukumbu zenu'),
+  STAFF(),
+  q('e_now',{type:'radio',wide:1,en:'Where are staff records kept today?',sw:'Kumbukumbu za wafanyakazi zinatunzwa wapi kwa sasa?',opts:[['Paper files','Mafaili ya karatasi'],['Excel','Excel'],['A system','Kwenye mfumo'],['Scattered or missing','Zimetawanyika au hazipo']]}),
+  q('e_format',{type:'radio',en:'Preferred format',sw:'Muundo unaopendelea',opts:[['Excel','Excel'],['Google Sheets','Google Sheets'],['Paper files','Mafaili ya karatasi'],['Not sure','Sina uhakika']]}),
+  q('e_audit',{type:'radio',en:'Is this for an audit or inspection?',sw:'Ni kwa ajili ya ukaguzi?',opts:YN})
+ ]},
+ {id:'jd',en:'Job descriptions',sw:'Maelezo ya kazi',q:[
+  S('The roles','Nafasi'),
+  q('j_roles',{type:'textarea',wide:1,req:1,en:'Which roles need a job description?',sw:'Nafasi gani zinahitaji maelezo ya kazi?',ph:['e.g. Receptionist, Driver, Lab technician','mf. Mpokezi, Dereva, Fundi wa maabara']}),
+  q('j_reason',{type:'radio',wide:1,en:'What are they for?',sw:'Ni kwa ajili ya nini?',opts:[['Hiring','Kuajiri'],['Existing staff','Wafanyakazi waliopo'],['Both','Vyote viwili']]})
+ ]}
+];
+var NOTES=q('notes',{type:'textarea',wide:1,en:'Anything else we should know?',sw:'Kuna jambo lingine tunalopaswa kujua?'});
+
+var CONTROL={};
+SERVICES.forEach(function(s){ s.q.forEach(function(f){ if(f.show) CONTROL[f.show[0]]=1; }); });
+
+var UI={
+ pick:['1. Which HR service do you need?','1. Mnahitaji huduma gani ya HR?'],
+ hint:['Choose a service above to see its questions.','Chagua huduma hapo juu ili uone maswali yake.'],
+ you:['2. About you','2. Kuhusu wewe'],
+ job:['3. About your request','3. Kuhusu ombi lako'],
+ skip:['Only fields marked * are required. Skip anything you are not sure about, and we will ask on WhatsApp.','Sehemu zenye * pekee ndizo za lazima. Ruka usichokuwa na uhakika nacho, tutakuuliza kwa WhatsApp.'],
+ submit:['Prepare my request','Andaa ombi langu'],
+ reset:['Start over','Anza upya'],
+ need:['Please fill in this field.','Tafadhali jaza sehemu hii.'],
+ needOne:['Please pick at least one.','Tafadhali chagua angalau kimoja.'],
+ needSvc:['Choose a service first.','Chagua huduma kwanza.'],
+ doneH:['Your request is ready to send','Ombi lako liko tayari kutumwa'],
+ doneP:['Open WhatsApp with your answers filled in, then press Send. Dennis will reply with the exact price and timing.','Fungua WhatsApp ikiwa na majibu yako, kisha bonyeza Tuma. Dennis atakujibu na bei kamili na muda wa kukamilisha.'],
+ openWa:['Open WhatsApp','Fungua WhatsApp'],
+ email:['Send by email instead','Tuma kwa barua pepe'],
+ copy:['Copy answers','Nakili majibu'],
+ copied:['Copied','Imenakiliwa'],
+ edit:['Edit answers','Hariri majibu'],
+ head:['Radken People request','Ombi kwa Radken People'],
+ svc:['Service','Huduma'],
+ contact:['Contact','Mawasiliano']
+};
+function L(){ return window.LANG==='sw'?1:0; }
+function t(pair){ return pair[L()]; }
+function tx(o){ return L()?o.sw:o.en; }
+function esc(v){ return String(v).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];}); }
+
+var state={service:null,v:{}};
+var form=document.getElementById('rq'), done=document.getElementById('rq-done');
+function svc(){ for(var i=0;i<SERVICES.length;i++) if(SERVICES[i].id===state.service) return SERVICES[i]; return null; }
+function visible(f){
+  if(!f.show) return true;
+  var v=state.v[f.show[0]], ok=f.show[1];
+  if(Array.isArray(v)) return v.some(function(i){return ok.indexOf(i)>-1;});
+  return v!==undefined && ok.indexOf(v)>-1;
+}
+
+function field(f){
+  if(f.type==='section') return '<h4 class="sub">'+esc(tx(f))+'</h4>';
+  if(!visible(f)) return '';
+  var v=state.v[f.id], id='rq-'+f.id, label=esc(tx(f))+(f.req?' <span class="star" aria-hidden="true">*</span>':''), h='';
+  var ph=f.ph?' placeholder="'+esc(f.ph[L()])+'"':'';
+  var cls='f'+(f.wide?' wide':'')+(f.show?' follow':'');
+  if(f.type==='radio'||f.type==='checks'){
+    var type=f.type==='radio'?'radio':'checkbox';
+    h='<fieldset class="'+cls+'" data-q="'+f.id+'"><legend class="l">'+label+'</legend><div class="opts">';
+    f.opts.forEach(function(o,i){
+      var on = f.type==='radio' ? v===i : (v||[]).indexOf(i)>-1;
+      h+='<label><input type="'+type+'" name="'+f.id+'" value="'+i+'"'+(on?' checked':'')+'> '+esc(o[L()])+'</label>';
+    });
+    return h+'</div><p class="err" hidden></p></fieldset>';
   }
-  function setLang(l){
-    LANG=l==='sw'?'sw':'en';
-    document.documentElement.lang=LANG;
-    els.forEach(function(el){ el.innerHTML= LANG==='sw' ? el.dataset.sw : el.dataset.en; });
-    document.querySelectorAll('#lang-toggle span').forEach(function(s){ s.classList.toggle('on', s.dataset.l===LANG); });
-    setLinks();
-    try{ localStorage.setItem('radken-lang', LANG); }catch(e){}
+  h='<label class="'+cls+'" data-q="'+f.id+'" for="'+id+'"><span class="l">'+label+'</span>';
+  if(f.type==='select'){
+    h+='<select id="'+id+'" name="'+f.id+'"><option value="">—</option>';
+    f.opts.forEach(function(o,i){ h+='<option value="'+i+'"'+(v===i?' selected':'')+'>'+esc(o[L()])+'</option>'; });
+    h+='</select>';
+  } else if(f.type==='textarea'){
+    h+='<textarea id="'+id+'" name="'+f.id+'" rows="3"'+ph+'>'+esc(v||'')+'</textarea>';
+  } else {
+    h+='<input id="'+id+'" name="'+f.id+'" type="'+f.type+'"'+(f.type==='number'?' min="0" inputmode="numeric"':'')+ph+' value="'+esc(v||'')+'">';
   }
-  document.getElementById('lang-toggle').addEventListener('click', function(){ setLang(LANG==='en'?'sw':'en'); });
-  var saved='en'; try{ saved=localStorage.getItem('radken-lang')||'en'; }catch(e){}
-  setLang(saved);
+  return h+'<span class="err" hidden></span></label>';
+}
+
+function render(){
+  var s=svc(), h='<fieldset class="pick"><legend>'+t(UI.pick)+'</legend><div class="svc-pick">';
+  SERVICES.forEach(function(x){
+    h+='<label><input type="radio" name="service" value="'+x.id+'"'+(state.service===x.id?' checked':'')+'><span>'+esc(tx(x))+'</span></label>';
+  });
+  h+='</div><p class="err" id="rq-svc-err" hidden></p></fieldset>';
+  if(!s){ h+='<p class="hint">'+t(UI.hint)+'</p>'; }
+  else {
+    h+='<fieldset class="grp"><legend>'+t(UI.you)+'</legend>'+COMMON.map(field).join('')+'</fieldset>';
+    h+='<fieldset class="grp"><legend>'+t(UI.job)+' · '+esc(tx(s))+'</legend><p class="skip">'+t(UI.skip)+'</p>'+s.q.map(field).join('')+'<h4 class="sub">'+esc(tx(NOTES))+'</h4>'+field(Object.assign({},NOTES,{en:'',sw:''}))+'</fieldset>';
+    h+='<div class="rq-actions"><button class="btn btn-primary" type="submit">'+t(UI.submit)+'</button><button class="btn btn-line" type="button" id="rq-reset">'+t(UI.reset)+'</button></div>';
+  }
+  form.innerHTML=h;
+  var r=document.getElementById('rq-reset');
+  if(r) r.addEventListener('click',function(){ state={service:state.service,v:{}}; done.hidden=true; render(); });
+  if(!done.hidden) showDone();
+}
+window.renderForm=render;
+
+form.addEventListener('change',onInput); form.addEventListener('input',onInput);
+function onInput(e){
+  var el=e.target; if(!el.name) return;
+  if(el.name==='service'){ if(state.service!==el.value){ state.service=el.value; done.hidden=true; render(); } return; }
+  if(el.type==='checkbox'){
+    state.v[el.name]=[].slice.call(form.querySelectorAll('input[name="'+el.name+'"]:checked')).map(function(c){return +c.value;});
+  } else if(el.type==='radio'||el.tagName==='SELECT'){
+    state.v[el.name]= el.value===''?undefined:+el.value;
+  } else state.v[el.name]=el.value;
+  var box=el.closest('[data-q]'); if(box){ var er=box.querySelector('.err'); if(er) er.hidden=true; box.classList.remove('bad'); }
+  if(CONTROL[el.name] && e.type==='change'){ var y=window.scrollY; render(); window.scrollTo(0,y); }
+}
+
+function val(f){
+  var v=state.v[f.id];
+  if(v===undefined||v===''||(Array.isArray(v)&&!v.length)) return '';
+  if(f.type==='checks') return v.map(function(i){return f.opts[i][L()];}).join(', ');
+  if(f.type==='radio'||f.type==='select') return f.opts[v][L()];
+  return String(v).trim();
+}
+function answerable(){ var s=svc(); return s?COMMON.concat(s.q,[NOTES]).filter(function(f){return f.type!=='section'&&visible(f);}):[]; }
+function message(){
+  var s=svc(), out=['*'+t(UI.head)+'*', (LANG==='sw'?'Nchi':'Country')+': '+(CTRY==='KE'?'Kenya':'Tanzania'), t(UI.svc)+': '+tx(s)];
+  function block(title, list){
+    var lines=[]; list.forEach(function(f){ if(!visible(f)) return; var v=val(f); if(v) lines.push('• '+tx(f).replace(/\?$/,'')+': '+v); });
+    if(lines.length){ out.push('', '*'+title+'*'); out.push.apply(out,lines); }
+  }
+  block(t(UI.contact), COMMON);
+  var title=tx(s), buf=[];
+  s.q.forEach(function(f){ if(f.type==='section'){ block(title,buf); title=tx(f); buf=[]; } else buf.push(f); });
+  block(title,buf);
+  var n=val(NOTES); if(n){ out.push('', '*'+tx(NOTES).replace(/\?$/,'')+'*', n); }
+  return out.join('\n');
+}
+
+form.addEventListener('submit',function(e){
+  e.preventDefault();
+  if(!svc()){ var se=document.getElementById('rq-svc-err'); se.textContent=t(UI.needSvc); se.hidden=false; return; }
+  var first=null;
+  answerable().forEach(function(f){
+    if(!f.req) return;
+    var box=form.querySelector('[data-q="'+f.id+'"]'), er=box&&box.querySelector('.err');
+    if(!val(f)){ if(er){ er.textContent=t(f.type==='checks'?UI.needOne:UI.need); er.hidden=false; } if(box) box.classList.add('bad'); first=first||box; }
+  });
+  if(first){ first.scrollIntoView({behavior:'smooth',block:'center'}); var inp=first.querySelector('input,textarea,select'); if(inp) inp.focus({preventScroll:true}); return; }
+  done.hidden=false; showDone(); done.scrollIntoView({behavior:'smooth',block:'start'});
+});
+
+function showDone(){
+  var m=message();
+  var wa=waHref(m);
+  var mail='mailto:'+CONTACTS[CTRY].email+'?subject='+encodeURIComponent(t(UI.head)+' – '+tx(svc()))+'&body='+encodeURIComponent(m.replace(/\*/g,''));
+  done.innerHTML='<h3>'+t(UI.doneH)+'</h3><p>'+t(UI.doneP)+'</p>'+
+    '<div class="rq-actions"><a class="btn btn-primary" href="'+wa+'" target="_blank" rel="noopener">'+t(UI.openWa)+'</a>'+
+    '<a class="btn btn-line" href="'+mail+'">'+t(UI.email)+'</a>'+
+    '<button class="btn btn-line" type="button" id="rq-copy">'+t(UI.copy)+'</button>'+
+    '<button class="btn btn-line" type="button" id="rq-edit">'+t(UI.edit)+'</button></div>'+
+    '<pre id="rq-msg">'+esc(m)+'</pre>';
+  document.getElementById('rq-edit').addEventListener('click',function(){ done.hidden=true; form.scrollIntoView({behavior:'smooth',block:'start'}); });
+  var cb=document.getElementById('rq-copy');
+  cb.addEventListener('click',function(){
+    function ok(){ cb.textContent=t(UI.copied); setTimeout(function(){cb.textContent=t(UI.copy);},1500); }
+    function fb(){ var r=document.createRange(); r.selectNodeContents(document.getElementById('rq-msg')); var sl=window.getSelection(); sl.removeAllRanges(); sl.addRange(r); }
+    try{ navigator.clipboard.writeText(m).then(ok,fb); }catch(e){ fb(); }
+  });
+}
+
+document.querySelectorAll('[data-service]').forEach(function(a){
+  a.addEventListener('click',function(){ state.service=a.getAttribute('data-service'); done.hidden=true; render(); });
+});
+render();
+})();
+
+
+// ===== Tabbed pages =====
+(function(){
+  var PAGES=['home','services','how','form','about','contact'];
+  function show(p,scroll){
+    if(p==='top'||PAGES.indexOf(p)<0) p='home';
+    document.querySelectorAll('.page').forEach(function(el){ el.hidden = el.getAttribute('data-page')!==p; });
+    document.querySelectorAll('.top nav a').forEach(function(a){
+      var on=a.getAttribute('href')==='#'+p; a.classList.toggle('on',on);
+      if(on) a.setAttribute('aria-current','page'); else a.removeAttribute('aria-current');
+    });
+    if(scroll!==false) window.scrollTo(0,0);
+    try{ history.replaceState(null,'','#'+p); }catch(e){}
+  }
+  document.addEventListener('click',function(e){
+    var a=e.target.closest && e.target.closest('a[href^="#"]'); if(!a) return;
+    var p=a.getAttribute('href').slice(1);
+    if(p==='top'||PAGES.indexOf(p)>-1){ e.preventDefault(); show(p); }
+  });
+  window.addEventListener('hashchange',function(){ show(location.hash.slice(1)); });
+  show((location.hash||'#home').slice(1), false);
 })();
 </script>
-</body>
-</html>
+
+</body></html>
