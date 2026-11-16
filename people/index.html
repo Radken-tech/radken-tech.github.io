@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Radken People · Radken Consolidated</title>
+<meta name="description" content="Radken People, Nairobi: HR policies, recruitment, contracts, onboarding and appraisals for schools, clinics and small businesses. A division of Radken Consolidated.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: same family structure as Radken Graphics (hero, priced service cards with WhatsApp order buttons, how it works, contact), with a violet accent for the HR division. */
+:root{
+  --navy:#0B2545; --teal:#0E9E84; --acc:#8B7CF6; --on-acc:#160F3A;
+  --bg:#F5F8FA; --surface:#FFFFFF; --fg:#13233A; --muted:#55657A; --line:#D9E1E8; --tint:#EEEBFE; --ico:#5B4BD6;
+  --on-navy:#F2F7FA;
+  --display:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;
+  --body:"IBM Plex Sans","Segoe UI",system-ui,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --navy:#0A1C33; --teal:#2FD3B2; --acc:#A99BFF; --ico:#A99BFF;
+  --bg:#0C1626; --surface:#122139; --fg:#E7EEF5; --muted:#9AAABD; --line:#22344F; --tint:#25204A; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --navy:#0A1C33; --teal:#2FD3B2; --acc:#A99BFF; --ico:#A99BFF;
+  --bg:#0C1626; --surface:#122139; --fg:#E7EEF5; --muted:#9AAABD; --line:#22344F; --tint:#25204A; color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 var(--body)}
+.wrap{max-width:1080px;margin:0 auto;padding-inline:16px}
+h1,h2,h3{font-family:var(--display);margin:0;line-height:1.1;text-wrap:balance}
+p{margin:0}
+a{color:var(--teal)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--acc)}
+
+.top{background:var(--navy);color:var(--on-navy)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:14px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--on-navy)}
+.brand b{font-family:var(--display);font-weight:800;font-size:20px;letter-spacing:.04em;display:block;line-height:1.1}
+.brand span{font-family:var(--display);font-weight:700;font-size:11px;letter-spacing:.3em;color:var(--acc);display:block;line-height:1}
+.top nav{display:flex;gap:4px 18px;flex-wrap:wrap;align-items:center}
+.top nav a{color:var(--on-navy);text-decoration:none;font-size:14px;opacity:.85}
+.lang{display:inline-flex;border:1px solid #3A5578;border-radius:6px;overflow:hidden;background:transparent;padding:0;cursor:pointer;font-family:var(--mono);font-size:12px}
+.lang span{padding:6px 10px;color:var(--on-navy);opacity:.7}
+.lang span.on{background:var(--acc);color:var(--on-acc);opacity:1;font-weight:500}
+
+.hero{background:var(--navy);color:var(--on-navy);padding-block:48px 120px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;inset:auto -120px -160px auto;width:460px;height:460px;border-radius:50%;background:radial-gradient(closest-side,rgba(139,124,246,.25),transparent);pointer-events:none}
+.hero .wrap{position:relative;z-index:1}
+.hero h1{font-size:clamp(32px,6vw,54px);font-weight:800;margin-top:12px;max-width:17ch}
+.hero h1 em{font-style:normal;color:var(--acc)}
+.hero .lead{font-size:18px;color:#C9D6E3;margin-top:16px;max-width:60ch}
+.cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}
+.btn{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:600;font-size:15px;border-radius:8px;padding:12px 18px;border:1px solid transparent}
+.btn-acc{background:var(--acc);color:var(--on-acc)}
+.btn-ghost{border-color:#3A5578;color:var(--on-navy)}
+
+.menu{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin-top:-80px;position:relative;z-index:2}
+.svc{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px;display:grid;gap:10px;align-content:start;min-width:0;box-shadow:0 10px 28px rgba(11,37,69,.10)}
+.svc .ico{width:44px;height:44px;border-radius:10px;display:grid;place-items:center;background:var(--tint);color:var(--ico)}
+.svc h3{font-size:20px}
+.svc p{color:var(--muted);font-size:15px}
+.price{font-family:var(--display);font-weight:800;font-size:28px;font-variant-numeric:tabular-nums;line-height:1}
+.price small{font:500 12px var(--mono);color:var(--muted);letter-spacing:.08em;margin-right:6px;vertical-align:middle}
+.price .per{font:500 13px var(--body);color:var(--muted);letter-spacing:0;margin-left:4px}
+.svc .order{justify-self:start;font-weight:600;text-decoration:none;font-size:15px;color:var(--teal)}
+.svc .order::after{content:" →"}
+.note{color:var(--muted);font-size:14px;margin-top:16px}
+
+section{padding-block:52px}
+.sec-head{display:grid;gap:8px;margin-bottom:22px;max-width:62ch}
+.sec-head h2{font-size:clamp(26px,4vw,34px)}
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;counter-reset:st}
+.steps li{counter-increment:st;display:grid;gap:4px;border-top:3px solid var(--acc);padding-top:12px}
+.steps li::before{content:counter(st);font:700 13px var(--mono);color:var(--acc)}
+.steps b{font-family:var(--display);font-size:18px}
+.steps span{color:var(--muted);font-size:15px}
+
+.contact{background:var(--surface);border-block:1px solid var(--line)}
+.contact .wrap{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;align-items:center}
+.card{display:grid;gap:4px}
+.card b{font-family:var(--display);font-size:22px}
+.card span{color:var(--muted)}
+.card a{overflow-wrap:anywhere}
+
+footer{color:var(--muted);font-size:13px;padding-block:28px}
+footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="../" aria-label="Radken Consolidated home">
+      <svg width="40" height="40" viewBox="0 0 200 200" aria-hidden="true">
+        <rect width="200" height="200" rx="36" fill="#13325C"/>
+        <g stroke="#8B7CF6" stroke-width="12" stroke-linecap="round" fill="none">
+          <line x1="60" y1="40" x2="60" y2="160"/><line x1="60" y1="40" x2="120" y2="40"/><line x1="120" y1="40" x2="140" y2="75"/>
+          <line x1="140" y1="75" x2="120" y2="105"/><line x1="120" y1="105" x2="60" y2="105"/><line x1="100" y1="105" x2="145" y2="160"/>
+        </g>
+        <g fill="#FFFFFF" stroke="#8B7CF6" stroke-width="7">
+          <circle cx="60" cy="40" r="13"/><circle cx="120" cy="40" r="11"/><circle cx="140" cy="75" r="13"/>
+          <circle cx="60" cy="105" r="11"/><circle cx="60" cy="160" r="13"/><circle cx="145" cy="160" r="13"/>
+        </g>
+      </svg>
+      <div><b>RADKEN</b><span>PEOPLE</span></div>
+    </a>
+    <nav aria-label="Sections">
+      <a href="#prices" data-sw="Bei">Prices</a>
+      <a href="#how" data-sw="Jinsi inavyofanya kazi">How it works</a>
+      <a href="#contact" data-sw="Mawasiliano">Contact</a>
+      <a href="../" data-sw="Radken Consolidated">Radken Consolidated</a>
+      <button class="lang" id="lang-toggle" type="button" aria-label="Switch language / Badilisha lugha"><span data-l="en" class="on">EN</span><span data-l="sw">SW</span></button>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div class="wrap">
+      <span class="eyebrow" data-sw="Nairobi · Kitengo cha Radken Consolidated">Nairobi · A Radken Consolidated division</span>
+      <h1 data-sw="Usimamizi wa wafanyakazi, &lt;em&gt;umepangwa vizuri&lt;/em&gt;.">HR that's <em>properly sorted</em>.</h1>
+      <p class="lead" data-sw="Sera za wafanyakazi, uajiri, mikataba, mapokezi ya wafanyakazi wapya na tathmini za utendaji kwa shule, kliniki na biashara ndogo ambazo hazina idara ya HR.">HR policies, recruitment, contracts, onboarding and appraisals for schools, clinics and small businesses that don't have their own HR department.</p>
+      <div class="cta">
+        <a class="btn btn-acc wa" data-svc="general" href="https://wa.me/254708102133" target="_blank" rel="noopener" data-sw="Ongea nasi kwa WhatsApp">Talk to us on WhatsApp</a>
+        <a class="btn btn-ghost" href="#prices" data-sw="Angalia bei">See prices</a>
+      </div>
+    </div>
+  </div>
+
+  <section id="prices" style="padding-top:0">
+    <div class="wrap">
+      <div class="menu">
+        <article class="svc" id="svc-handbook">
+          <div class="ico" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V2H6.5A2.5 2.5 0 0 0 4 4.5v15z"/><path d="M6.5 17A2.5 2.5 0 0 0 4 19.5 2.5 2.5 0 0 0 6.5 22H20v-5"/></svg></div>
+          <h3 data-sw="Kitabu cha sera za HR">HR policy handbook</h3>
+          <p data-sw="Likizo, nidhamu, maadili ya kazi na taratibu nyingine, zote katika kitabu kimoja.">Leave, discipline, code of conduct and other workplace rules, in one handbook.</p>
+          <div class="price"><small>KES</small>25,000</div>
+          <a class="order wa" data-svc="handbook" href="https://wa.me/254708102133" target="_blank" rel="noopener" data-sw="Agiza kitabu cha sera">Order a handbook</a>
+        </article>
+        <article class="svc" id="svc-recruit">
+          <div class="ico" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/><path d="M11 8a2 2 0 1 0 0 .01M8 15c.6-1.6 1.9-2.5 3-2.5s2.4.9 3 2.5"/></svg></div>
+          <h3 data-sw="Msaada wa kuajiri">Recruitment support</h3>
+          <p data-sw="Tangazo la kazi, kuchuja waombaji na kusimamia usaili.">Job advert, shortlisting and running the interviews.</p>
+          <div class="price"><small>KES</small>20,000<span class="per" data-sw="kwa nafasi">per role</span></div>
+          <a class="order wa" data-svc="recruit" href="https://wa.me/254708102133" target="_blank" rel="noopener" data-sw="Omba msaada wa kuajiri">Get recruitment help</a>
+        </article>
+        <article class="svc" id="svc-appraisal">
+          <div class="ico" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg></div>
+          <h3 data-sw="Mfumo wa tathmini ya utendaji">Performance appraisal system</h3>
+          <p data-sw="Fomu za tathmini na malengo (KPIs) yanayoendana na kila nafasi.">Appraisal forms and KPIs that fit each role.</p>
+          <div class="price"><small>KES</small>15,000</div>
+          <a class="order wa" data-svc="appraisal" href="https://wa.me/254708102133" target="_blank" rel="noopener" data-sw="Agiza mfumo wa tathmini">Order an appraisal system</a>
+        </article>
+        <article class="svc" id="svc-contracts">
+          <div class="ico" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17l2 1 2-2 2 1"/></svg></div>
+          <h3 data-sw="Mikataba ya wafanyakazi">Staff contract templates</h3>
+          <p data-sw="Mikataba ya kudumu, ya muda na ya majaribio, tayari kujazwa.">Permanent, fixed-term and probation contracts, ready to fill in.</p>
+          <div class="price"><small>KES</small>10,000</div>
+          <a class="order wa" data-svc="contracts" href="https://wa.me/254708102133" target="_blank" rel="noopener" data-sw="Agiza mikataba">Order contracts</a>
+        </article>
+        <article class="svc" id="svc-onboarding">
+          <div class="ico" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M19 8v6M22 11h-6"/></svg></div>
+          <h3 data-sw="Kifurushi cha mapokezi">Staff onboarding pack</h3>
+          <p data-sw="Orodha ya hatua, barua ya kukaribisha na fomu za mfanyakazi mpya.">Checklist, welcome letter and new-starter forms.</p>
+          <div class="price"><small>KES</small>10,000</div>
+          <a class="order wa" data-svc="onboarding" href="https://wa.me/254708102133" target="_blank" rel="noopener" data-sw="Agiza kifurushi cha mapokezi">Order an onboarding pack</a>
+        </article>
+        <article class="svc" id="svc-records">
+          <div class="ico" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h18v13H3z"/><path d="M8 7V4h8v3M3 12h18"/></svg></div>
+          <h3 data-sw="Mfumo wa kumbukumbu za wafanyakazi">Employee records setup</h3>
+          <p data-sw="Faili na rejista ya wafanyakazi iliyopangwa na rahisi kusasisha.">An organised staff file and register that's easy to keep up to date.</p>
+          <div class="price"><small>KES</small>10,000</div>
+          <a class="order wa" data-svc="records" href="https://wa.me/254708102133" target="_blank" rel="noopener" data-sw="Agiza mfumo wa kumbukumbu">Order records setup</a>
+        </article>
+        <article class="svc" id="svc-jd">
+          <div class="ico" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg></div>
+          <h3 data-sw="Maelezo ya kazi">Job description</h3>
+          <p data-sw="Majukumu, sifa na malengo yaliyoandikwa wazi kwa kila nafasi.">Duties, requirements and goals written clearly for each role.</p>
+          <div class="price"><small>KES</small>3,000<span class="per" data-sw="kwa nafasi">per role</span></div>
+          <a class="order wa" data-svc="jd" href="https://wa.me/254708102133" target="_blank" rel="noopener" data-sw="Agiza maelezo ya kazi">Order job descriptions</a>
+        </article>
+      </div>
+      <p class="note" data-sw="Bei za kuanzia. Kila kazi inaanza na bei iliyoandikwa kabla kazi haijaanza, na bei zinajadilika.">Starting prices. Every job starts with a written price before any work begins, and prices are open to discussion.</p>
+    </div>
+  </section>
+
+  <section id="how">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow" data-sw="Jinsi inavyofanya kazi">How it works</span>
+        <h2 data-sw="Hatua tatu, rahisi.">Three simple steps.</h2>
+      </div>
+      <ol class="steps">
+        <li><b data-sw="Tuambie unachohitaji">Tell us what you need</b><span data-sw="Bonyeza kitufe na tuambie kuhusu shirika lako na idadi ya wafanyakazi.">Tap a button and tell us about your organisation and how many staff you have.</span></li>
+        <li><b data-sw="Pokea bei na rasimu">Get a price and a draft</b><span data-sw="Tunakubaliana bei, kisha Dennis anakuandalia rasimu ya kwanza uipitie.">We agree the price, then Dennis prepares a first draft for you to review.</span></li>
+        <li><b data-sw="Tumia kazini">Put it to work</b><span data-sw="Unapokea nyaraka za mwisho tayari kutumika na wafanyakazi wako.">You receive the final documents, ready to use with your staff.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <div class="card">
+        <span class="eyebrow" data-sw="Mawasiliano">Contact</span>
+        <b>Dennis Mburu</b>
+        <span data-sw="Mshauri wa HR na Uendeshaji, Radken People · Nairobi, Kenya">HR &amp; Operations Consultant, Radken People · Nairobi, Kenya</span>
+        <a href="https://wa.me/254708102133" target="_blank" rel="noopener">+254 708 102 133</a>
+        <a href="mailto:mburudennis2312@gmail.com">mburudennis2312@gmail.com</a>
+      </div>
+      <div class="cta" style="margin:0">
+        <a class="btn btn-acc wa" data-svc="general" href="https://wa.me/254708102133" target="_blank" rel="noopener" data-sw="Ongea na Dennis kwa WhatsApp">Chat with Dennis on WhatsApp</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer><div class="wrap"><span>© 2026 Radken People · Nairobi</span><span>A division of <a href="../">Radken Consolidated</a></span></div></footer>
+
+<script>
+(function(){
+  var LANG='en', els=[].slice.call(document.querySelectorAll('[data-sw]'));
+  els.forEach(function(el){ el.dataset.en=el.innerHTML; });
+  /* Each button opens WhatsApp to Dennis with a ready message for that service, in the visitor's language */
+  var MSG={
+    en:{general:"Hello Radken People, I'd like help with HR for my organisation.",handbook:"Hello Radken People, I'd like an HR policy handbook (KES 25,000).",recruit:"Hello Radken People, I'd like recruitment support for a role (KES 20,000 per role).",appraisal:"Hello Radken People, I'd like a performance appraisal system (KES 15,000).",contracts:"Hello Radken People, I'd like staff contract templates (KES 10,000).",onboarding:"Hello Radken People, I'd like a staff onboarding pack (KES 10,000).",records:"Hello Radken People, I'd like an employee records setup (KES 10,000).",jd:"Hello Radken People, I'd like job descriptions written (KES 3,000 per role)."},
+    sw:{general:"Habari Radken People, ningependa msaada wa HR kwa shirika langu.",handbook:"Habari Radken People, ningependa kitabu cha sera za HR (KES 25,000).",recruit:"Habari Radken People, ningependa msaada wa kuajiri kwa nafasi moja (KES 20,000 kwa nafasi).",appraisal:"Habari Radken People, ningependa mfumo wa tathmini ya utendaji (KES 15,000).",contracts:"Habari Radken People, ningependa mikataba ya wafanyakazi (KES 10,000).",onboarding:"Habari Radken People, ningependa kifurushi cha mapokezi ya wafanyakazi (KES 10,000).",records:"Habari Radken People, ningependa mfumo wa kumbukumbu za wafanyakazi (KES 10,000).",jd:"Habari Radken People, ningependa maelezo ya kazi (KES 3,000 kwa nafasi)."}
+  };
+  function setLinks(){
+    document.querySelectorAll('a.wa').forEach(function(a){ a.href='https://wa.me/254708102133?text='+encodeURIComponent(MSG[LANG][a.dataset.svc]||MSG[LANG].general); });
+  }
+  function setLang(l){
+    LANG=l==='sw'?'sw':'en';
+    document.documentElement.lang=LANG;
+    els.forEach(function(el){ el.innerHTML= LANG==='sw' ? el.dataset.sw : el.dataset.en; });
+    document.querySelectorAll('#lang-toggle span').forEach(function(s){ s.classList.toggle('on', s.dataset.l===LANG); });
+    setLinks();
+    try{ localStorage.setItem('radken-lang', LANG); }catch(e){}
+  }
+  document.getElementById('lang-toggle').addEventListener('click', function(){ setLang(LANG==='en'?'sw':'en'); });
+  var saved='en'; try{ saved=localStorage.getItem('radken-lang')||'en'; }catch(e){}
+  setLang(saved);
+})();
+</script>
+</body>
+</html>
