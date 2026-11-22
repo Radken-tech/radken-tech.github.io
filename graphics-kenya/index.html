@@ -502,6 +502,13 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
           <div class="price"><strong class="ask" data-sw="Uliza bei" data-ke="Ask for price" data-ke-sw="Uliza bei">Ask for price</strong></div>
           <a class="req" href="#form" data-service="tee" data-sw="Agiza mavazi">Order apparel</a>
         </div>
+        <div class="row">
+          <img class="ill" src="img/memorial-illustration.webp" alt="Illustration of a funeral programme booklet and a memorial roll-up banner" width="640" height="427" loading="lazy" decoding="async">
+          <h3 data-sw="Programu za mazishi na mabango ya kumbukumbu">Funeral programmes &amp; memorial banners</h3>
+          <p data-sw="Heshima ya mwisho iliyoandaliwa kwa upole: vitabu vya programu vyenye picha, ratiba ya ibada, nyimbo na salamu za rambirambi, pamoja na mabango ya roll-up kwa ibada. Tunafanya kazi haraka wakati muda ni mfupi.">A dignified tribute, prepared with care: programme booklets with photos, order of service, hymns and tributes, plus roll-up banners for the service. We work fast when time is short.</p>
+          <div class="price"><strong class="ask" data-sw="Uliza bei" data-ke="Ask for price" data-ke-sw="Uliza bei">Ask for price</strong></div>
+          <a class="req" href="#form" data-service="memorial" data-sw="Agiza programu">Order a programme</a>
+        </div>
       </div>
       <p class="note" data-sw="Mihuri, vibao na T-shirt hupangiwa bei kulingana na ukubwa na idadi: tuma maelezo na Simon atakujibu na bei. Bei zote zinajadilika." >Stamps, signs and T-shirts are priced by size and quantity: send your details and Simon will reply with a price. All prices are open to discussion.</p>
       <div class="pg-next"><a class="btn btn-primary" href="#form" data-sw="Agiza muundo">Order a design</a></div>
@@ -855,6 +862,14 @@ var SERVICES=[
   q('g_where',{type:'radio',en:'Where will it go?',sw:'Kitawekwa wapi?',opts:[['Indoors','Ndani'],['Outdoors','Nje']]}),
   q('g_text',{type:'textarea',wide:1,req:1,en:'Text or logo to show',sw:'Maandishi au nembo ya kuonyesha',ph:['Business name, slogan…','Jina la biashara, kauli mbiu…']}),
   LOGO(), COLOURS()
+ ]},
+ {id:'memorial',en:'Funeral programme or memorial banner',sw:'Programu ya mazishi au bango la kumbukumbu',q:[
+  S('The tribute','Heshima'),
+  q('m_type',{type:'checks',wide:1,en:'What do you need?',sw:'Unahitaji nini?',opts:[['Programme booklet','Kitabu cha programu'],['Roll-up banner','Bango la roll-up'],['Photo banner or backdrop','Bango la picha au la nyuma'],['Thank-you cards','Kadi za shukrani']]}),
+  q('m_pages',{type:'select',en:'Programme pages',sw:'Kurasa za programu',opts:[['4 pages','Kurasa 4'],['8 pages','Kurasa 8'],['12 pages','Kurasa 12'],['16 pages or more','Kurasa 16 au zaidi'],['Not sure','Sina uhakika']]}),
+  q('m_qty',{type:'number',en:'How many programmes?',sw:'Programu ngapi?'}),
+  q('m_date',{type:'text',req:1,en:'Date of the service',sw:'Tarehe ya ibada',ph:['e.g. Friday 4 December','mf. Ijumaa 4 Desemba']}),
+  q('m_photos',{type:'radio',en:'Photos and text',sw:'Picha na maandishi',opts:[['I will send them on WhatsApp','Nitazituma kwa WhatsApp'],['Please call me to collect them','Tafadhali nipigie kuzichukua']]})
  ]},
  {id:'tee',en:'T-shirts, caps & uniforms',sw:'T-shirt, kofia na sare',q:[
   S('The items','Bidhaa'),
