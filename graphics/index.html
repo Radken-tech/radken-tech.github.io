@@ -304,6 +304,9 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
 .page > section{min-height:55vh}
 @media (max-width:560px){ .top nav{gap:4px} .top nav a{padding:7px 12px} }
 @media (prefers-reduced-motion:reduce){ .page:not([hidden]){animation:none} }
+
+/* card titles and text line up on the left (an older grid rule pushed them right) */
+.row h3,.row p{align-self:stretch}
 </style>
 
 <header class="top">
