@@ -312,6 +312,9 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
 :root[data-theme="dark"]{ --navy:#0C2B21; --teal:#6FD1A6; --teal-bright:#F2C14E; --bg:#0B1813; --surface:#12241C; --fg:#E7F1EC; --muted:#A1B8AD; --line:#1F3A2F; --tint:#163A2D; --sun:#F08A6B; --sun-tint:#3A1E15; --on-sun:#2A0E05; --sky-tint:#163A2D; --shadow:rgba(0,0,0,.45); color-scheme:dark }
 .hero h1{letter-spacing:-.015em}
 .row,.card,.btn{border-radius:14px}
+
+/* card titles and text line up on the left (an older grid rule pushed them right) */
+.row h3,.row p{align-self:stretch}
 </style>
 
 <header class="top">
@@ -462,6 +465,34 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
           <a class="req" href="#form" data-service="jd" data-sw="Anza ombi">Start request</a>
         </div>
       </div>
+      <div class="head" id="support" style="margin-top:44px">
+        <span class="eyebrow" data-sw="Msaada wa mbali">Remote support</span>
+        <h2 data-sw="Timu ya msaada bila gharama ya kuajiri.">A support team without the cost of hiring.</h2>
+        <p data-sw="Timu ya Radken People inafanya kazi hii kwa niaba yako kwa mbali, kwa ada ya kila mwezi. Huna kazi ya kuajiri, kulipa mishahara wala makato ya NSSF na SHIF. Unaweza kuongeza au kupunguza saa kila mwezi.">Radken People's team does this work for you remotely, for a monthly fee. There is no recruiting, payroll or NSSF and SHIF deductions to handle. You can add or cut hours month by month.</p>
+      </div>
+      <div class="schedule">
+        <div class="row">
+          <img class="ill" src="https://images.unsplash.com/photo-1683535161123-585f7b10080d?auto=format&amp;fit=crop&amp;w=640&amp;h=427&amp;q=70" alt="A woman working on a laptop at a table at home" width="640" height="427" loading="lazy" decoding="async">
+          <h3 data-sw="Msaidizi wa mtandaoni (virtual assistant)">Virtual assistant</h3>
+          <p data-sw="Barua pepe, kuingiza data, nyaraka, kupanga miadi, ankara na utafiti mtandaoni, vinashughulikiwa na msaidizi maalum. Takriban saa 20 kwa mwezi kuanza.">Emails, data entry, documents, bookings, invoices and online research, handled by a dedicated assistant. About 20 hours a month to start.</p>
+          <div class="price"><small data-sw="kuanzia, kwa mwezi">from, per month</small><strong>KES 15,000</strong></div>
+          <a class="req" href="#form" data-service="va" data-sw="Anza ombi">Start request</a>
+        </div>
+        <div class="row">
+          <img class="ill" src="https://images.unsplash.com/photo-1766066014237-00645c74e9c6?auto=format&amp;fit=crop&amp;w=640&amp;h=427&amp;q=70" alt="A smiling woman wearing a headset at a computer" width="640" height="427" loading="lazy" decoding="async">
+          <h3 data-sw="Huduma kwa wateja">Customer service</h3>
+          <p data-sw="Simu, ujumbe wa WhatsApp na barua pepe zako zinajibiwa kwa jina la biashara yako, kwa adabu na kwa wakati, kwa Kiingereza na Kiswahili. Unapata ripoti kila wiki.">Your calls, WhatsApp messages and emails answered in your business name, politely and on time, in English and Kiswahili. You get a weekly report.</p>
+          <div class="price"><small data-sw="kuanzia, kwa mwezi">from, per month</small><strong>KES 25,000</strong></div>
+          <a class="req" href="#form" data-service="cs" data-sw="Anza ombi">Start request</a>
+        </div>
+        <div class="row">
+          <img class="ill" src="https://images.unsplash.com/photo-1758518729922-3a9e7b62b4c9?auto=format&amp;fit=crop&amp;w=640&amp;h=427&amp;q=70" alt="A professional woman in a suit writing in a notebook at a desk" width="640" height="427" loading="lazy" decoding="async">
+          <h3 data-sw="Msaidizi mkuu (executive assistant)">Executive assistant</h3>
+          <p data-sw="Ratiba na mikutano, safari, kumbukumbu za vikao, ufuatiliaji na kuchuja barua pepe zako, ili mkurugenzi ajikite katika kuendesha shirika.">Diary and meetings, travel, minutes, follow-ups and filtering your inbox, so the director can focus on running the organisation.</p>
+          <div class="price"><small data-sw="kuanzia, kwa mwezi">from, per month</small><strong>KES 30,000</strong></div>
+          <a class="req" href="#form" data-service="ea" data-sw="Anza ombi">Start request</a>
+        </div>
+      </div>
       <p class="note" data-sw="Radken People huandaa nyaraka na kusaidia mchakato wa HR. Kwa masuala ya kisheria yenye utata, tunakushauri kuongea na wakili.">Radken People prepares HR documents and supports your HR processes. For disputed legal matters, we recommend speaking to a lawyer.</p>
       <div class="pg-next"><a class="btn btn-primary" href="#form" data-sw="Anza ombi">Start a request</a></div>
     </div>
@@ -565,7 +596,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
 <footer>
   <div class="wrap">
     <span>© 2026 Radken People · HR Policies · Recruitment · Contracts · a division of <a href="../">Radken Consolidated</a></span>
-    <span>Photos: Vitaly Gariev and Viktor Talashuk on Unsplash</span>
+    <span>Photos: Vitaly Gariev, Viktor Talashuk, Sweet Life and BaljkanN4 on Unsplash</span>
   </div>
 </footer>
 
@@ -690,6 +721,27 @@ var SERVICES=[
   S('The roles','Nafasi'),
   q('j_roles',{type:'textarea',wide:1,req:1,en:'Which roles need a job description?',sw:'Nafasi gani zinahitaji maelezo ya kazi?',ph:['e.g. Receptionist, Driver, Lab technician','mf. Mpokezi, Dereva, Fundi wa maabara']}),
   q('j_reason',{type:'radio',wide:1,en:'What are they for?',sw:'Ni kwa ajili ya nini?',opts:[['Hiring','Kuajiri'],['Existing staff','Wafanyakazi waliopo'],['Both','Vyote viwili']]})
+ ]},
+ {id:'va',en:'Virtual assistant',sw:'Msaidizi wa mtandaoni',q:[
+  S('The support you need','Msaada unaohitaji'),
+  q('v_tasks',{type:'checks',wide:1,req:1,en:'What should the assistant handle?',sw:'Msaidizi ashughulikie nini?',opts:[['Emails and inbox','Barua pepe'],['Data entry and spreadsheets','Kuingiza data na majedwali'],['Documents and reports','Nyaraka na ripoti'],['Bookings and scheduling','Kupanga miadi'],['Invoices and follow-ups','Ankara na ufuatiliaji'],['Online research','Utafiti mtandaoni'],['Social media','Mitandao ya kijamii']]}),
+  q('v_hours',{type:'select',en:'Hours per month',sw:'Saa kwa mwezi',opts:[['About 20 hours','Takriban saa 20'],['About 40 hours','Takriban saa 40'],['About 80 hours (half-time)','Takriban saa 80 (nusu muda)'],['Full-time','Muda wote'],['Not sure','Sina uhakika']]}),
+  q('v_tools',{type:'text',wide:1,en:'Tools you use',sw:'Programu mnazotumia',ph:['e.g. Gmail, Excel, QuickBooks','mf. Gmail, Excel, QuickBooks']}),
+  q('v_start',{type:'date',en:'When should support start?',sw:'Msaada uanze lini?'})
+ ]},
+ {id:'cs',en:'Customer service',sw:'Huduma kwa wateja',q:[
+  S('Your customers','Wateja wenu'),
+  q('c_channels',{type:'checks',wide:1,req:1,en:'Which channels should we answer?',sw:'Tujibu kupitia njia zipi?',opts:[['Phone calls','Simu'],['WhatsApp','WhatsApp'],['Email','Barua pepe'],['Social media messages','Ujumbe wa mitandao ya kijamii'],['Website chat','Gumzo la tovuti']]}),
+  q('c_volume',{type:'select',en:'Roughly how many customer contacts a day?',sw:'Takriban wateja wangapi wanawasiliana kwa siku?',opts:[['Under 20','Chini ya 20'],['20–50','20–50'],['50–150','50–150'],['More than 150','Zaidi ya 150']]}),
+  q('c_hours',{type:'radio',wide:1,en:'Hours of cover',sw:'Muda wa huduma',opts:[['Business hours, weekdays','Saa za kazi, siku za wiki'],['Weekdays and Saturday','Siku za wiki na Jumamosi'],['Every day','Kila siku'],['Not sure','Sina uhakika']]}),
+  q('c_lang',{type:'radio',en:'Languages',sw:'Lugha',opts:[['English','Kiingereza'],['Kiswahili','Kiswahili'],['Both','Zote mbili']]})
+ ]},
+ {id:'ea',en:'Executive assistant',sw:'Msaidizi mkuu',q:[
+  S('Who we will support','Tutakayemsaidia'),
+  q('x_who',{type:'text',wide:1,req:1,en:'Whose assistant? (role)',sw:'Msaidizi wa nani? (cheo)',ph:['e.g. Director, Head teacher, CEO','mf. Mkurugenzi, Mwalimu mkuu, Afisa Mtendaji']}),
+  q('x_tasks',{type:'checks',wide:1,en:'What should the assistant handle?',sw:'Msaidizi ashughulikie nini?',opts:[['Diary and meetings','Ratiba na mikutano'],['Inbox management','Kusimamia barua pepe'],['Travel arrangements','Mipango ya safari'],['Minutes and follow-ups','Kumbukumbu za vikao na ufuatiliaji'],['Reports and presentations','Ripoti na mawasilisho'],['Board and event logistics','Maandalizi ya vikao vya bodi na matukio']]}),
+  q('x_mode',{type:'radio',wide:1,en:'How should the assistant work?',sw:'Msaidizi afanye kazi vipi?',opts:[['Fully remote','Kwa mbali kabisa'],['Mostly remote, some office days','Zaidi kwa mbali, siku chache ofisini'],['Not sure','Sina uhakika']]}),
+  q('x_hours',{type:'select',en:'Hours per month',sw:'Saa kwa mwezi',opts:[['About 40 hours','Takriban saa 40'],['About 80 hours (half-time)','Takriban saa 80 (nusu muda)'],['Full-time','Muda wote'],['Not sure','Sina uhakika']]})
  ]}
 ];
 var NOTES=q('notes',{type:'textarea',wide:1,en:'Anything else we should know?',sw:'Kuna jambo lingine tunalopaswa kujua?'});
