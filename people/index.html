@@ -315,6 +315,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
 
 /* card titles and text line up on the left (an older grid rule pushed them right) */
 .row h3,.row p{align-self:stretch}
+#services .head .jump{color:var(--teal);border-color:var(--line)}
+#support{scroll-margin-top:215px}
 </style>
 
 <header class="top">
@@ -351,12 +353,13 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
   <div class="hero">
     <div class="wrap">
       <div>
-        <span class="eyebrow" data-sw="Sera za HR · Uajiri · Mikataba · Tathmini · Nairobi">HR Policies · Recruitment · Contracts · Appraisals · Nairobi</span>
+        <span class="eyebrow" data-sw="Sera za HR · Uajiri · Mikataba · Wasaidizi wa mbali · Nairobi">HR Policies · Recruitment · Contracts · Remote assistants · Nairobi</span>
         <h1 data-sw="Usimamizi wa wafanyakazi ambao shirika lako &lt;em&gt;limekuwa likiuahirisha&lt;/em&gt;, umepangwa vizuri.">The HR your organisation <em>keeps putting off</em>, properly sorted.</h1>
-        <p class="lead" data-sw="Radken People huandaa sera za HR, mikataba ya wafanyakazi, maelezo ya kazi, vifurushi vya mapokezi na mifumo ya tathmini, na kusaidia kuajiri, kwa shule, kliniki na biashara ndogo zisizo na idara ya HR.">Radken People prepares HR policies, staff contracts, job descriptions, onboarding packs and appraisal systems, and helps you recruit, for schools, clinics and small businesses without an HR department.</p>
+        <p class="lead" data-sw="Radken People huandaa sera za HR, mikataba ya wafanyakazi, maelezo ya kazi, vifurushi vya mapokezi na mifumo ya tathmini, na kusaidia kuajiri, kwa shule, kliniki na biashara ndogo zisizo na idara ya HR. Pia tunatoa wasaidizi wa mtandaoni, wa huduma kwa wateja na wasaidizi wakuu wanaofanya kazi kwa mbali.">Radken People prepares HR policies, staff contracts, job descriptions, onboarding packs and appraisal systems, and helps you recruit, for schools, clinics and small businesses without an HR department. We also provide remote virtual assistants, customer service agents and executive assistants.</p>
         <div class="cta">
           <a class="btn btn-primary" href="#form" data-sw="Omba huduma">Request HR help</a>
           <a class="btn btn-ghost" href="#services" data-sw="Angalia bei">See prices</a>
+          <a class="btn btn-ghost" href="#services" data-jump="support" data-sw="Wasaidizi wa mbali">Remote assistants</a>
         </div>
       </div>
       <div class="hero-art">
@@ -413,6 +416,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
         <span class="eyebrow" data-sw="Huduma na bei">Services &amp; prices</span>
         <h2 data-sw="Bei za kuanzia zilizo wazi, kwa shilingi za Kenya, na zinazojadilika.">Clear starting prices, in Kenyan shillings, and open to discussion.</h2>
         <p data-sw="Kila kazi huanza na fomu fupi ya mahitaji. Kisha tunakubaliana bei kamili kabla kazi haijaanza. Tuambie bajeti yako na tutashirikiana nawe.">Every job starts with a short request form. We then agree the exact price before any work begins. Tell us your budget and we'll work with you.</p>
+        <p><a class="btn btn-ghost jump" href="#services" data-jump="support" data-sw="Nenda kwa msaada wa mbali ↓">Jump to remote support ↓</a></p>
       </div>
       <div class="schedule">
         <div class="row">
@@ -906,6 +910,12 @@ document.querySelectorAll('[data-service]').forEach(function(a){
 render();
 })();
 
+
+// ===== "Remote assistants" links open Services and scroll to the support section =====
+document.addEventListener('click',function(e){
+  var a=e.target.closest && e.target.closest('[data-jump]'); if(!a) return;
+  setTimeout(function(){ var s=document.getElementById(a.getAttribute('data-jump')); if(s) s.scrollIntoView({behavior:'smooth',block:'start'}); },60);
+});
 
 // ===== Tabbed pages =====
 (function(){
