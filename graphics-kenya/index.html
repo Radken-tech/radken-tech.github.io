@@ -337,6 +337,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
 .gal figcaption{padding:12px 16px 16px;font-size:14px;color:var(--muted)}
 .gal figcaption b{display:block;color:var(--fg);font-family:var(--display);font-size:16px;margin-bottom:2px}
 .gal figure[hidden]{display:none}
+.gal video{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;background:#000}
 #zoom{border:0;padding:0;background:transparent;max-width:min(96vw,1100px);max-height:92vh}
 #zoom::backdrop{background:rgba(8,10,12,.85)}
 #zoom img{display:block;max-width:100%;max-height:86vh;margin:auto;border-radius:8px;background:#fff}
@@ -488,7 +489,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
           <a class="req" href="#form" data-service="stamp" data-sw="Agiza muhuri">Order a seal</a>
         </div>
         <div class="row">
-          <img class="ill" src="img/neon-elephant.webp" alt="A green neon elephant sign on clear acrylic" width="640" height="427" loading="lazy" decoding="async">
+          <img class="ill" src="img/sign-bodega.webp" alt="Glowing LED channel letters for a tavern sign" width="640" height="427" loading="lazy" decoding="async">
           <h3 data-sw="Vibao na neon">Signs &amp; neon</h3>
           <p data-sw="Vibao vya mapokezi vya acrylic vya 3D, vibao vya maduka na neon ya LED ya nembo yako.">3D acrylic reception signs, shop signboards and custom LED neon of your logo.</p>
           <div class="price"><strong class="ask" data-sw="Uliza bei" data-ke="Ask for price" data-ke-sw="Uliza bei">Ask for price</strong></div>
@@ -496,10 +497,10 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
         </div>
         <div class="row">
           <img class="ill" src="img/tshirt-lion.webp" alt="A white T-shirt with a full-colour lion print" width="640" height="427" loading="lazy" decoding="async">
-          <h3 data-sw="Uchapishaji wa T-shirt">T-shirt printing</h3>
-          <p data-sw="Uchapishaji wa rangi kamili kwa timu, matukio, makanisa na bidhaa, kuanzia vipande vichache hadi wingi.">Full-colour prints for teams, events, churches and merchandise, from a few pieces to bulk.</p>
+          <h3 data-sw="T-shirt, kofia na sare">T-shirts, caps &amp; uniforms</h3>
+          <p data-sw="T-shirt zilizochapishwa, kofia zenye nembo, kofia za bucket na polo za wafanyakazi kwa timu, matukio na bidhaa, kuanzia vipande vichache hadi wingi.">Printed T-shirts, branded caps, bucket hats and staff polos for teams, events and merchandise, from a few pieces to bulk.</p>
           <div class="price"><strong class="ask" data-sw="Uliza bei" data-ke="Ask for price" data-ke-sw="Uliza bei">Ask for price</strong></div>
-          <a class="req" href="#form" data-service="tee" data-sw="Agiza T-shirt">Order T-shirts</a>
+          <a class="req" href="#form" data-service="tee" data-sw="Agiza mavazi">Order apparel</a>
         </div>
       </div>
       <p class="note" data-sw="Mihuri, vibao na T-shirt hupangiwa bei kulingana na ukubwa na idadi: tuma maelezo na Simon atakujibu na bei. Bei zote zinajadilika." >Stamps, signs and T-shirts are priced by size and quantity: send your details and Simon will reply with a price. All prices are open to discussion.</p>
@@ -513,16 +514,82 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
     <div class="wrap">
       <div class="head">
         <span class="eyebrow" data-sw="Kazi zetu">Our work</span>
-        <h2 data-sw="Kutoka muhuri wa ofisi hadi bango la tukio.">From the office stamp to the event wall.</h2>
-        <p data-sw="Mifano ya mihuri, mihuri ya kubonyeza, mabango, vibao na T-shirt tunazotengeneza kwa wateja kote Kenya. Gusa picha kuiona kubwa.">Samples of the stamps, seals, banners, signs and T-shirts we make for clients across Kenya. Tap a photo to see it bigger.</p>
+        <h2 data-sw="Kutoka muhuri wa ofisi hadi kibao kinachong'aa juu ya duka.">From the office stamp to the glowing sign above the shop.</h2>
+        <p data-sw="Vibao vya duka, neon, mabango, kadi, mifuko, kofia, sare na mihuri tuliyotengeneza kwa wateja kote Kenya. Gusa picha kuiona kubwa.">Shop signs, neon, banners, cards, bags, caps, uniforms and stamps we have made for clients across Kenya. Tap a photo to see it bigger.</p>
       </div>
       <div class="fchips" role="group" aria-label="Filter">
         <button class="fchip on" type="button" data-f="all" data-sw="Zote">All</button>
+        <button class="fchip" type="button" data-f="signs" data-sw="Vibao na neon">Signs &amp; neon</button>
+        <button class="fchip" type="button" data-f="print" data-sw="Uchapishaji na mabango">Print &amp; banners</button>
+        <button class="fchip" type="button" data-f="apparel" data-sw="Mavazi na kofia">Apparel</button>
         <button class="fchip" type="button" data-f="stamps" data-sw="Mihuri">Stamps</button>
-        <button class="fchip" type="button" data-f="seals" data-sw="Mihuri ya kubonyeza">Embossing seals</button>
-        <button class="fchip" type="button" data-f="branding" data-sw="Mabango, vibao na T-shirt">Banners, signs &amp; T-shirts</button>
+        <button class="fchip" type="button" data-f="seals" data-sw="Mihuri ya kubonyeza">Seals</button>
       </div>
       <div class="gal">
+        <figure data-cat="signs" class="vid"><video controls muted playsinline preload="none" poster="img/video-garnish.jpg" src="img/video-garnish.mp4"></video>
+          <figcaption><b data-sw="Video: kibao kikiwaka">Video: the sign lit up</b><span data-sw="Kibao cha Garnish Kitchen kikiwaka jioni, kimefungwa na tayari kwa wateja.">The Garnish Kitchen sign glowing at dusk, installed and ready for customers.</span></figcaption></figure>
+        <figure data-cat="signs"><button type="button" aria-label="View larger"><img class="fill" src="img/sign-bodega.webp" alt="LED channel letters" loading="lazy" decoding="async"></button>
+          <figcaption><b data-sw="Herufi za LED zinazong'aa">LED channel letters</b><span data-sw="Herufi za 3D zinazong'aa kwa mbele ya baa, zinaonekana mbali hata usiku.">Glowing 3D letters for a bar front, bright enough to pull people in after dark.</span></figcaption></figure>
+        <figure data-cat="signs"><button type="button" aria-label="View larger"><img class="fill" src="img/sign-gpgate.webp" alt="Backlit 3D signboard" loading="lazy" decoding="async"></button>
+          <figcaption><b data-sw="Kibao cha 3D chenye mwanga">Backlit 3D signboard</b><span data-sw="Herufi zilizoinuka zenye mwanga kwa duka la kampuni ya sola.">Raised, lit-up lettering for a solar company's showroom.</span></figcaption></figure>
+        <figure data-cat="signs"><button type="button" aria-label="View larger"><img class="fill" src="img/sign-garnish.webp" alt="Restaurant lightbox sign" loading="lazy" decoding="async"></button>
+          <figcaption><b data-sw="Kibao cha mgahawa chenye mwanga">Restaurant lightbox sign</b><span data-sw="Vyakula maarufu, namba ya simu na picha za chakula, vyote kwenye kibao kimoja chenye mwanga.">Menu highlights, phone number and food cut-outs, all in one lit sign.</span></figcaption></figure>
+        <figure data-cat="signs"><button type="button" aria-label="View larger"><img class="fill" src="img/sign-garnish-front.webp" alt="Installed and open for business" loading="lazy" decoding="async"></button>
+          <figcaption><b data-sw="Kimewekwa na biashara imefunguliwa">Installed and open for business</b><span data-sw="Kibao hicho hicho juu ya duka: tunabuni, tunatengeneza na kufunga.">The same sign fitted above the shop: we design, make and install.</span></figcaption></figure>
+        <figure data-cat="signs"><button type="button" aria-label="View larger"><img class="fill" src="img/sign-mamakelly-night.webp" alt="Butchery & restaurant sign at night" loading="lazy" decoding="async"></button>
+          <figcaption><b data-sw="Kibao cha bucha na mgahawa usiku">Butchery & restaurant sign at night</b><span data-sw="Kibao chenye mwanga kinachoonyesha biashara hata baada ya jua kutua.">A lightbox that keeps the business visible long after sunset.</span></figcaption></figure>
+        <figure data-cat="signs"><button type="button" aria-label="View larger"><img class="fill" src="img/sign-mamakelly.webp" alt="The same sign by day" loading="lazy" decoding="async"></button>
+          <figcaption><b data-sw="Kibao hicho hicho mchana">The same sign by day</b><span data-sw="Herufi safi zinazosomeka vizuri kutoka ng'ambo ya barabara.">Clean lettering that reads clearly from across the road.</span></figcaption></figure>
+        <figure data-cat="signs"><button type="button" aria-label="View larger"><img class="fill" src="img/sign-herdelight.webp" alt="Boutique shopfront sign" loading="lazy" decoding="async"></button>
+          <figcaption><b data-sw="Kibao cha mbele ya duka la nguo">Boutique shopfront sign</b><span data-sw="Herufi za mwandiko na nembo kwa duka la mitindo.">Script lettering with a logo badge for a fashion shop.</span></figcaption></figure>
+        <figure data-cat="signs"><button type="button" aria-label="View larger"><img class="fill" src="img/sign-parcelgrid.webp" alt="3D signboard with contacts" loading="lazy" decoding="async"></button>
+          <figcaption><b data-sw="Kibao cha 3D chenye mawasiliano">3D signboard with contacts</b><span data-sw="Herufi za njano zilizoinuka juu ya kijani, pamoja na namba za simu.">Raised yellow letters on green, with phone numbers built in.</span></figcaption></figure>
+        <figure data-cat="signs"><button type="button" aria-label="View larger"><img class="fill" src="img/sign-freshwalk.webp" alt="Cut-out shape signage" loading="lazy" decoding="async"></button>
+          <figcaption><b data-sw="Kibao chenye maumbo yaliyokatwa">Cut-out shape signage</b><span data-sw="Umbo la kiatu na herufi za 3D kwa biashara ya usafi.">A shoe-shaped cut-out and 3D letters for a cleaning business.</span></figcaption></figure>
+        <figure data-cat="signs"><button type="button" aria-label="View larger"><img class="fill" src="img/sign-stjohn.webp" alt="School crest sign" loading="lazy" decoding="async"></button>
+          <figcaption><b data-sw="Kibao cha nembo ya shule">School crest sign</b><span data-sw="Nembo ya shule ya 3D yenye rangi kamili na kauli mbiu, kwa lango au ukuta.">A full-colour 3D school crest and motto for the gate or wall.</span></figcaption></figure>
+        <figure data-cat="signs"><button type="button" aria-label="View larger"><img class="fill" src="img/sign-long-letters.webp" alt="Long-format 3D lettering" loading="lazy" decoding="async"></button>
+          <figcaption><b data-sw="Herufi ndefu za 3D">Long-format 3D lettering</b><span data-sw="Kibao kirefu chenye nembo iliyoinuka, tayari kufungwa kwenye jengo.">A long fascia sign with a raised logo, ready to mount on a building.</span></figcaption></figure>
+        <figure data-cat="signs"><button type="button" aria-label="View larger"><img class="fill" src="img/neon-beyondbeauty.webp" alt="Neon for a beauty salon" loading="lazy" decoding="async"></button>
+          <figcaption><b data-sw="Neon kwa saluni">Neon for a beauty salon</b><span data-sw="Neon ya waridi ya mwandiko, ukuta wa picha ambao wateja hupenda kushiriki.">Pink script neon that makes a selfie wall customers love to share.</span></figcaption></figure>
+        <figure data-cat="signs"><button type="button" aria-label="View larger"><img class="fill" src="img/neon-goodvibes.webp" alt=""Good Vibes" neon" loading="lazy" decoding="async"></button>
+          <figcaption><b data-sw="Neon ya "Good Vibes"">"Good Vibes" neon</b><span data-sw="Maneno ya neon juu ya ubao wenye umbo, kwa migahawa, nyumba na matukio.">Warm neon wording on a shaped backboard, for cafés, homes and events.</span></figcaption></figure>
+        <figure data-cat="signs"><button type="button" aria-label="View larger"><img class="fill" src="img/sign-accord.webp" alt="3D reception sign" loading="lazy" decoding="async"></button>
+          <figcaption><b data-sw="Kibao cha mapokezi cha 3D">3D reception sign</b><span data-sw="Herufi za acrylic zilizoinuka kwenye kioo: mwonekano mzuri wa kwanza mapokezi.">Raised acrylic lettering on a clear panel: a strong first impression at the front desk.</span></figcaption></figure>
+        <figure data-cat="signs"><button type="button" aria-label="View larger"><img class="fill" src="img/neon-elephant.webp" alt="Custom neon sign" loading="lazy" decoding="async"></button>
+          <figcaption><b data-sw="Kibao cha neon maalum">Custom neon sign</b><span data-sw="Nembo yako kwa neon ya LED juu ya acrylic, inayong'aa kwa maduka, matukio na kuta.">Your logo bent in LED neon on clear acrylic, glowing for shops, events and walls.</span></figcaption></figure>
+        <figure data-cat="print"><button type="button" aria-label="View larger"><img class="fill" src="img/backdrop-festival.webp" alt="Festival media wall" loading="lazy" decoding="async"></button>
+          <figcaption><b data-sw="Ukuta wa picha wa tamasha">Festival media wall</b><span data-sw="Bango la nyuma lenye rangi kwa tamasha la nje.">A colourful step-and-repeat backdrop for an outdoor festival.</span></figcaption></figure>
+        <figure data-cat="print"><button type="button" aria-label="View larger"><img class="fill" src="img/banner-cereals.webp" alt="Shop banner" loading="lazy" decoding="async"></button>
+          <figcaption><b data-sw="Bango la duka">Shop banner</b><span data-sw="Bango lenye picha kwa duka la nafaka na viungo.">A rich, photo-style banner for a cereals and spices shop.</span></figcaption></figure>
+        <figure data-cat="print"><button type="button" aria-label="View larger"><img class="fill" src="img/cards-blue.webp" alt="Business cards" loading="lazy" decoding="async"></button>
+          <figcaption><b data-sw="Kadi za biashara">Business cards</b><span data-sw="Kadi za pande mbili zenye nembo, mawasiliano na QR code.">Two-sided cards with logo, contacts and a QR code.</span></figcaption></figure>
+        <figure data-cat="print"><button type="button" aria-label="View larger"><img class="fill" src="img/cards-gakaara.webp" alt="Company business cards" loading="lazy" decoding="async"></button>
+          <figcaption><b data-sw="Kadi za kampuni">Company business cards</b><span data-sw="Kadi zinazofanana kwa kampuni ya bidhaa, kwa timu nzima.">Matching cards for a supplies company, ready for the whole team.</span></figcaption></figure>
+        <figure data-cat="print"><button type="button" aria-label="View larger"><img class="fill" src="img/cards-purple.webp" alt="Business cards for a foundation" loading="lazy" decoding="async"></button>
+          <figcaption><b data-sw="Kadi za biashara za taasisi">Business cards for a foundation</b><span data-sw="Rangi nzito mbele, taarifa wazi nyuma.">Bold colour on the front, clear details on the back.</span></figcaption></figure>
+        <figure data-cat="print"><button type="button" aria-label="View larger"><img class="fill" src="img/bags-set.webp" alt="Printed gift bags" loading="lazy" decoding="async"></button>
+          <figcaption><b data-sw="Mifuko ya zawadi iliyochapishwa">Printed gift bags</b><span data-sw="Mifuko ya shukrani kwa sherehe, wafanyakazi na wageni.">Personal thank-you bags for celebrations, staff and guests.</span></figcaption></figure>
+        <figure data-cat="print"><button type="button" aria-label="View larger"><img class="fill" src="img/bag-brother.webp" alt="Custom thank-you bags" loading="lazy" decoding="async"></button>
+          <figcaption><b data-sw="Mifuko maalum ya shukrani">Custom thank-you bags</b><span data-sw="Maneno na muundo wako kwenye mifuko bora ya karatasi.">Your words and design printed on quality paper bags.</span></figcaption></figure>
+        <figure data-cat="print"><button type="button" aria-label="View larger"><img class="fill" src="img/banner-laticrete.webp" alt="Event wall banner" loading="lazy" decoding="async"></button>
+          <figcaption><b data-sw="Bango kubwa la tukio">Event wall banner</b><span data-sw="Bango kubwa na ukuta wa picha kwa maadhimisho ya kampuni jijini Nairobi.">A full-length printed banner and media wall for a company anniversary in Nairobi.</span></figcaption></figure>
+        <figure data-cat="print"><button type="button" aria-label="View larger"><img class="fill" src="img/backdrop-thinkmarkets.webp" alt="Media wall backdrop" loading="lazy" decoding="async"></button>
+          <figcaption><b data-sw="Bango la nyuma la picha">Media wall backdrop</b><span data-sw="Ukuta wa nembo kwenye fremu inayokunjika, kwa uzinduzi na picha za waandishi wa habari.">A step-and-repeat logo wall on a pop-up frame, for launches and press photos.</span></figcaption></figure>
+        <figure data-cat="apparel"><button type="button" aria-label="View larger"><img class="fill" src="img/cap-black.webp" alt="Embroidered-look caps" loading="lazy" decoding="async"></button>
+          <figcaption><b data-sw="Kofia zenye nembo">Embroidered-look caps</b><span data-sw="Kofia zenye nembo ya rangi kamili kwa kampuni ya safari.">Full-colour logo caps for a safari company.</span></figcaption></figure>
+        <figure data-cat="apparel"><button type="button" aria-label="View larger"><img class="fill" src="img/cap-beige.webp" alt="Caps in your colours" loading="lazy" decoding="async"></button>
+          <figcaption><b data-sw="Kofia kwa rangi zako">Caps in your colours</b><span data-sw="Nembo hiyo hiyo kwenye kofia nyepesi: chagua rangi yoyote.">The same logo on a light cap: choose any colour of cap.</span></figcaption></figure>
+        <figure data-cat="apparel"><button type="button" aria-label="View larger"><img class="fill" src="img/bucket-hats.webp" alt="Branded bucket hats" loading="lazy" decoding="async"></button>
+          <figcaption><b data-sw="Kofia za bucket zenye nembo">Branded bucket hats</b><span data-sw="Kofia za rangi mbili kwa timu, safari na zawadi.">Two-tone bucket hats for teams, tours and giveaways.</span></figcaption></figure>
+        <figure data-cat="apparel"><button type="button" aria-label="View larger"><img class="fill" src="img/polo-powerhub.webp" alt="Branded polo shirts" loading="lazy" decoding="async"></button>
+          <figcaption><b data-sw="Fulana za polo zenye nembo">Branded polo shirts</b><span data-sw="Polo za kampuni zenye nembo na mawasiliano mgongoni: tangazo linalotembea.">Company polos with logo and contacts on the back: a walking advert.</span></figcaption></figure>
+        <figure data-cat="apparel"><button type="button" aria-label="View larger"><img class="fill" src="img/polo-set.webp" alt="Staff uniforms" loading="lazy" decoding="async"></button>
+          <figcaption><b data-sw="Sare za wafanyakazi">Staff uniforms</b><span data-sw="Polo nyeusi na nyeupe zinazofanana kwa timu nzima.">Matching black and white polos for a whole team.</span></figcaption></figure>
+        <figure data-cat="apparel"><button type="button" aria-label="View larger"><img class="fill" src="img/tshirt-pair.webp" alt="Printed T-shirts" loading="lazy" decoding="async"></button>
+          <figcaption><b data-sw="T-shirt zilizochapishwa">Printed T-shirts</b><span data-sw="Uchapishaji wa rangi kali kwenye T-shirt ya rangi yoyote.">Bold colour prints on any shirt colour.</span></figcaption></figure>
+        <figure data-cat="apparel"><button type="button" aria-label="View larger"><img class="fill" src="img/tshirt-lion.webp" alt="Printed T-shirts" loading="lazy" decoding="async"></button>
+          <figcaption><b data-sw="T-shirt zilizochapishwa">Printed T-shirts</b><span data-sw="Uchapishaji wa rangi kamili kwa timu, matukio na bidhaa.">Full-colour prints for teams, events and merchandise.</span></figcaption></figure>
         <figure data-cat="stamps"><button type="button" aria-label="View larger"><img src="img/stamp-s844.webp" alt="Self-inking company stamp" loading="lazy" decoding="async"></button>
           <figcaption><b data-sw="Muhuri wa kampuni unaojiwekea wino">Self-inking company stamp</b><span data-sw="Jina na anwani ya kampuni yako pamoja na mistari ya Sahihi na Tarehe, tayari kwa kila ankara na hati ya mzigo.">Your company name and address with Sign and Date lines, ready for every invoice and delivery note.</span></figcaption></figure>
         <figure data-cat="stamps"><button type="button" aria-label="View larger"><img src="img/stamp-r542d.webp" alt="Round date stamp" loading="lazy" decoding="async"></button>
@@ -551,16 +618,6 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
           <figcaption><b data-sw="Mihuri ya kubonyeza (embossing)">Embossing seals</b><span data-sw="Muhuri unaoinua karatasi bila wino, kwa vyeti, hati na barua rasmi.">A raised, ink-free seal for certificates, title deeds and official letters.</span></figcaption></figure>
         <figure data-cat="seals"><button type="button" aria-label="View larger"><img src="img/seal-a40.webp" alt="Pocket embossing seal" loading="lazy" decoding="async"></button>
           <figcaption><b data-sw="Muhuri mdogo wa kubonyeza">Pocket embossing seal</b><span data-sw="Mwepesi na rahisi kubeba, kwa wataalamu wanaogonga nyaraka popote.">Light and portable, for professionals who seal documents on site.</span></figcaption></figure>
-        <figure data-cat="branding"><button type="button" aria-label="View larger"><img class="fill" src="img/banner-laticrete.webp" alt="Event wall banner" loading="lazy" decoding="async"></button>
-          <figcaption><b data-sw="Bango kubwa la tukio">Event wall banner</b><span data-sw="Bango kubwa na ukuta wa picha kwa maadhimisho ya kampuni jijini Nairobi.">A full-length printed banner and media wall for a company anniversary in Nairobi.</span></figcaption></figure>
-        <figure data-cat="branding"><button type="button" aria-label="View larger"><img class="fill" src="img/backdrop-thinkmarkets.webp" alt="Media wall backdrop" loading="lazy" decoding="async"></button>
-          <figcaption><b data-sw="Bango la nyuma la picha">Media wall backdrop</b><span data-sw="Ukuta wa nembo kwenye fremu inayokunjika, kwa uzinduzi na picha za waandishi wa habari.">A step-and-repeat logo wall on a pop-up frame, for launches and press photos.</span></figcaption></figure>
-        <figure data-cat="branding"><button type="button" aria-label="View larger"><img class="fill" src="img/sign-accord.webp" alt="3D reception sign" loading="lazy" decoding="async"></button>
-          <figcaption><b data-sw="Kibao cha mapokezi cha 3D">3D reception sign</b><span data-sw="Herufi za acrylic zilizoinuka kwenye kioo: mwonekano mzuri wa kwanza mapokezi.">Raised acrylic lettering on a clear panel: a strong first impression at the front desk.</span></figcaption></figure>
-        <figure data-cat="branding"><button type="button" aria-label="View larger"><img class="fill" src="img/neon-elephant.webp" alt="Custom neon sign" loading="lazy" decoding="async"></button>
-          <figcaption><b data-sw="Kibao cha neon maalum">Custom neon sign</b><span data-sw="Nembo yako kwa neon ya LED juu ya acrylic, inayong'aa kwa maduka, matukio na kuta.">Your logo bent in LED neon on clear acrylic, glowing for shops, events and walls.</span></figcaption></figure>
-        <figure data-cat="branding"><button type="button" aria-label="View larger"><img class="fill" src="img/tshirt-lion.webp" alt="Printed T-shirts" loading="lazy" decoding="async"></button>
-          <figcaption><b data-sw="T-shirt zilizochapishwa">Printed T-shirts</b><span data-sw="Uchapishaji wa rangi kamili kwa timu, matukio na bidhaa.">Full-colour prints for teams, events and merchandise.</span></figcaption></figure>
       </div>
       <div class="pg-next"><a class="btn btn-primary" href="#form" data-sw="Agiza sasa">Order now</a></div>
     </div>
@@ -799,13 +856,14 @@ var SERVICES=[
   q('g_text',{type:'textarea',wide:1,req:1,en:'Text or logo to show',sw:'Maandishi au nembo ya kuonyesha',ph:['Business name, slogan…','Jina la biashara, kauli mbiu…']}),
   LOGO(), COLOURS()
  ]},
- {id:'tee',en:'T-shirt printing',sw:'Uchapishaji wa T-shirt',q:[
-  S('The T-shirts','T-shirt'),
-  q('t_qty',{type:'number',req:1,en:'How many T-shirts?',sw:'T-shirt ngapi?'}),
+ {id:'tee',en:'T-shirts, caps & uniforms',sw:'T-shirt, kofia na sare',q:[
+  S('The items','Bidhaa'),
+  q('t_item',{type:'checks',wide:1,en:'What do you need?',sw:'Unahitaji nini?',opts:[['T-shirts','T-shirt'],['Polo shirts / uniforms','Polo / sare'],['Caps','Kofia'],['Bucket hats','Kofia za bucket']]}),
+  q('t_qty',{type:'number',req:1,en:'How many pieces in total?',sw:'Vipande vingapi kwa jumla?'}),
   q('t_design',{type:'radio',wide:1,en:'Do you have the design?',sw:'Una muundo tayari?',opts:[['Yes, I will send it','Ndiyo, nitautuma'],['No, please design it','Hapana, tafadhali niandalie'],['I have a logo only','Nina nembo tu']]}),
-  q('t_colour',{type:'text',en:'T-shirt colour(s)',sw:'Rangi ya T-shirt',ph:['e.g. white and green','mf. nyeupe na kijani']}),
+  q('t_colour',{type:'text',en:'Colour(s)',sw:'Rangi',ph:['e.g. white and green','mf. nyeupe na kijani']}),
   q('t_sizes',{type:'text',wide:1,en:'Sizes needed',sw:'Saizi zinazohitajika',ph:['e.g. 5 M, 10 L, 5 XL','mf. 5 M, 10 L, 5 XL']}),
-  q('t_text',{type:'textarea',wide:1,en:'Text on the T-shirt',sw:'Maandishi kwenye T-shirt'})
+  q('t_text',{type:'textarea',wide:1,en:'Text to print',sw:'Maandishi ya kuchapisha'})
  ]}
 ];
 var NOTES=q('notes',{type:'textarea',wide:1,en:'Anything else we should know?',sw:'Kuna jambo lingine tunalopaswa kujua?'});
@@ -978,7 +1036,7 @@ render();
     chips.forEach(function(x){ x.classList.toggle('on',x===c); });
     figs.forEach(function(f){ f.hidden = c.dataset.f!=='all' && f.dataset.cat!==c.dataset.f; });
   }); });
-  figs.forEach(function(f){ f.querySelector('button').addEventListener('click',function(){
+  figs.forEach(function(f){ var bt=f.querySelector('button'); if(!bt) return; bt.addEventListener('click',function(){
     var im=f.querySelector('img'); dlg.querySelector('img').src=im.src; dlg.querySelector('img').alt=im.alt;
     dlg.querySelector('p').textContent=f.querySelector('figcaption b').textContent;
     if(dlg.showModal) dlg.showModal();
