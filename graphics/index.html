@@ -330,7 +330,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
       <a href="#about" data-sw="Kuhusu">About</a>
       <a href="#contact" data-sw="Mawasiliano">Contact</a>
     </nav>
-    <div class="switches"><button class="lang ctry" id="ctry-toggle" type="button" aria-label="Choose country / Chagua nchi"><span data-c="TZ" class="on">🇹🇿<b> TZ</b></span><span data-c="KE">🇰🇪<b> KE</b></span></button>
+    <div class="switches"><a class="lang ctry" id="ctry-toggle" href="../graphics-kenya/" aria-label="Kenya site / Tovuti ya Kenya"><span data-c="TZ" class="on">🇹🇿<b> TZ</b></span><span data-c="KE">🇰🇪<b> KE</b></span></a>
     <button class="lang" id="lang-toggle" type="button" aria-label="Switch language / Badilisha lugha"><span data-l="en" class="on">EN</span><span data-l="sw">SW</span></button></div>
   </div>
 </header>
@@ -535,7 +535,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
 
 <footer>
   <div class="wrap">
-    <span>© 2026 Radken Graphics · Posters · Banners · Cards · CVs · a division of <a href="../">Radken Consolidated</a></span>
+    <span>© 2026 Radken Graphics · Posters · Banners · Cards · CVs · a division of <a href="../">Radken Consolidated</a> · <a href="../graphics-kenya/">Kenya site</a></span>
     <span>Photos: Theme Photos, Rohan, Deon Fosu, MK +2 and Resume Genius on Unsplash</span>
   </div>
 </footer>
@@ -578,15 +578,14 @@ function setCountry(c){
   try{ localStorage.setItem('radken-country', CTRY); }catch(e){}
   setLang(LANG);
 }
-document.getElementById('ctry-toggle').addEventListener('click', function(){ setCountry(CTRY==='TZ'?'KE':'TZ'); });
-/* ?ke or ?country=ke in the link opens the Kenya version; otherwise the visitor's last choice */
-var KENYA_OPEN=true;
+
+/* Kenya has its own page now (graphics-kenya). Old ?ke links, and visitors who last chose Kenya, are sent there; ?tz keeps them here */
 (function(){
-  if(!KENYA_OPEN) return;
   var qs=(location.search||'').toLowerCase(), c=null;
   if(/[?&](ke|country=ke)\b/.test(qs)) c='KE'; else if(/[?&](tz|country=tz)\b/.test(qs)) c='TZ';
   if(!c){ try{ c=localStorage.getItem('radken-country'); }catch(e){} }
-  if(c==='KE') setCountry('KE');
+  if(c==='KE'){ location.replace('../graphics-kenya/'+location.hash); return; }
+  try{ localStorage.setItem('radken-country','TZ'); }catch(e){}
 })();
 try{ var saved=localStorage.getItem('radken-lang'); if(saved==='sw') setLang('sw'); }catch(e){}
 

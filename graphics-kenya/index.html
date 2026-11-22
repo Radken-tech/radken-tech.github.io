@@ -1,0 +1,842 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Radken Graphics Kenya · Radken Consolidated</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: same family layout as Radken Technologies. Hero pairs the promise with a sample order card; below, priced service photo cards, the four-step order flow, an order form and contact. */
+:root{
+  --navy:#0B2545; --teal:#0E9E84; --teal-bright:#13C4A3;
+  --bg:#F5F8FA; --surface:#FFFFFF; --fg:#13233A; --muted:#55657A; --line:#D9E1E8; --tint:#E6F5F1;
+  --on-navy:#F2F7FA; --on-accent:#062018;
+  --display:"Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --body:"IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --mono:"IBM Plex Mono", ui-monospace, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --navy:#0A1C33; --teal:#2FD3B2; --teal-bright:#2FD3B2;
+  --bg:#0C1626; --surface:#122139; --fg:#E7EEF5; --muted:#9AAABD; --line:#22344F; --tint:#123A3A;
+  --on-navy:#F2F7FA; color-scheme:dark }}
+:root[data-theme="dark"]{
+  --navy:#0A1C33; --teal:#2FD3B2; --teal-bright:#2FD3B2;
+  --bg:#0C1626; --surface:#122139; --fg:#E7EEF5; --muted:#9AAABD; --line:#22344F; --tint:#123A3A;
+  --on-navy:#F2F7FA; color-scheme:dark }
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.6}
+.wrap{max-width:1080px;margin:0 auto;padding-inline:20px}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;line-height:1.1}
+p{margin:0}
+a{color:var(--teal)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--teal-bright);outline-offset:2px}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--teal)}
+
+/* header */
+.top{background:var(--navy);color:var(--on-navy)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:14px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--on-navy)}
+.brand b{font-family:var(--display);font-weight:800;font-size:20px;letter-spacing:.04em}
+.brand span{font-family:var(--display);font-weight:700;font-size:12px;letter-spacing:.3em;color:var(--teal-bright);display:block;line-height:1}
+.top nav{display:flex;gap:20px;flex-wrap:wrap}
+.top nav a{color:var(--on-navy);text-decoration:none;font-size:14px;opacity:.85}
+.top nav a:hover{opacity:1;color:var(--teal-bright)}
+.top nav{margin-left:auto}
+.lang{display:inline-flex;border:1px solid #3A5578;border-radius:6px;overflow:hidden;background:transparent;padding:0;cursor:pointer;font-family:var(--mono);font-size:12px}
+.lang span{padding:6px 10px;color:var(--on-navy);opacity:.7}
+.switches{display:flex;gap:6px;flex-wrap:nowrap}
+.ctry span{white-space:nowrap}
+@media (max-width:520px){.ctry span b{display:none}.ctry span{padding:6px 8px}}
+.lang span.on{background:var(--teal-bright);color:var(--on-accent);opacity:1;font-weight:500}
+html[lang="sw"] .steps li::before{content:"Hatua " counter(st)}
+
+/* hero */
+.hero{background:var(--navy);color:var(--on-navy);padding-block:48px 64px}
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+.hero h1{font-size:clamp(34px,5.4vw,58px);font-weight:800;letter-spacing:-.01em}
+.hero h1 em{font-style:normal;color:var(--teal-bright)}
+.hero .lead{margin-top:20px;font-size:18px;max-width:34em;color:#C9D6E3}
+.hero .eyebrow{color:var(--teal-bright);margin-bottom:16px;display:block}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:6px;font-weight:600;font-size:15px;text-decoration:none;border:1.5px solid transparent;cursor:pointer;font-family:var(--body)}
+.btn-primary{background:var(--teal-bright);color:#062018}
+.btn-primary:hover{filter:brightness(1.06)}
+.btn-ghost{border-color:#3A5578;color:var(--on-navy);background:transparent}
+.btn-ghost:hover{border-color:var(--teal-bright)}
+
+/* proposal cover */
+.cover{background:#FFFFFF;color:#13233A;border-radius:4px;padding:28px 26px 22px;box-shadow:0 24px 50px rgba(0,0,0,.35);transform:rotate(1.5deg);max-width:380px;justify-self:center;width:100%;position:relative}
+.cover::after{content:"";position:absolute;inset:auto 14px -10px 14px;height:10px;background:#E4EAF0;border-radius:0 0 4px 4px;z-index:-1}
+.cover .ref{font-family:var(--mono);font-size:11px;color:#55657A;display:flex;justify-content:space-between;border-bottom:1px solid #D9E1E8;padding-bottom:10px}
+.cover h3{font-size:24px;margin-top:22px;color:#0B2545}
+.cover .for{margin-top:6px;font-size:14px;color:#55657A}
+.cover ol{margin:20px 0 0;padding:0;list-style:none;font-size:13.5px;counter-reset:s}
+.cover li{display:flex;justify-content:space-between;gap:8px;padding:7px 0;border-bottom:1px dashed #D9E1E8;counter-increment:s}
+.cover li::before{content:counter(s) ".";font-family:var(--mono);color:#0E9E84;width:22px;flex:none}
+.cover li span:first-child{flex:1}
+.cover li span:last-child{font-family:var(--mono);color:#55657A;font-size:12px}
+.cover .foot{margin-top:18px;display:flex;align-items:center;gap:8px;font-family:var(--display);font-weight:700;font-size:13px;color:#0B2545}
+.cover .foot small{font-family:var(--body);font-weight:400;color:#55657A;margin-left:auto;font-size:11px}
+
+/* sections */
+section{padding-block:72px}
+.head{max-width:40em;display:grid;gap:12px;margin-bottom:36px}
+.head h2{font-size:clamp(28px,3.6vw,40px);font-weight:800;color:var(--fg)}
+.head p{color:var(--muted);font-size:17px}
+
+/* services schedule */
+.schedule{background:var(--surface);border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.row{display:grid;grid-template-columns:168px minmax(0,1fr) auto;gap:6px 24px;padding:20px 24px;border-bottom:1px solid var(--line);align-items:center}
+.row:last-child{border-bottom:0}
+.row .ill{grid-column:1;grid-row:1 / span 3;width:168px;height:112px;object-fit:cover;border-radius:6px;background:var(--tint);display:block;max-width:100%}
+.row h3{grid-column:2;font-size:19px;font-weight:700;align-self:end}
+.row p{grid-column:2;color:var(--muted);font-size:15px;max-width:52ch;align-self:start}
+.price{grid-column:3;grid-row:1 / span 3;text-align:right;font-family:var(--mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+.row.template .ill{background:var(--surface)}
+/* illustration strokes and fills come from theme tokens */
+.ill .s{fill:none;stroke:var(--fg);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.ill .a{fill:none;stroke:var(--teal);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.ill .fa{fill:var(--teal)}
+.ill .fp{fill:var(--surface);stroke:var(--fg);stroke-width:2.2;stroke-linejoin:round}
+.ill .fl{fill:var(--line)}
+.price small{display:block;font-size:11px;color:var(--muted);letter-spacing:.08em;text-transform:uppercase}
+.price strong{font-size:18px;font-weight:500;color:var(--fg)}
+.row.template{background:var(--tint)}
+.eta{display:block;font-style:normal;font-family:var(--body);font-size:12px;color:var(--muted);margin-top:2px}
+.req{grid-column:2;justify-self:start;font-size:14px;font-weight:600;color:var(--teal);text-decoration:none;margin-top:2px}
+.req::after{content:" \2192"}
+.req:hover{text-decoration:underline}
+.wa-float{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:20;display:inline-flex;align-items:center;gap:8px;padding:12px 18px 12px 14px;border-radius:999px;background:var(--teal-bright);color:var(--on-accent);font-weight:600;font-size:15px;text-decoration:none;box-shadow:0 8px 24px rgba(6,32,24,.35)}
+.wa-float:hover{filter:brightness(1.06)}
+.wa-float svg{flex:none}
+.note{margin-top:14px;font-size:14px;color:var(--muted)}
+
+/* who it's for */
+.alt{background:var(--surface);border-block:1px solid var(--line)}
+.who{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.who > div{display:grid;gap:8px;align-content:start;min-width:0}
+.who h3{font-size:20px}
+.who p{color:var(--muted);font-size:15px}
+.who .eyebrow{color:var(--muted)}
+
+/* steps */
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:20px;counter-reset:st}
+.steps li{counter-increment:st;display:grid;gap:8px;align-content:start;padding-top:16px;border-top:3px solid var(--teal);min-width:0}
+.steps li::before{content:"Step " counter(st);font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--teal)}
+.steps h3{font-size:18px}
+.steps p{color:var(--muted);font-size:15px}
+
+/* about */
+.about{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;align-items:start}
+.about p{color:var(--muted);font-size:17px;max-width:36em}
+.about p + p{margin-top:14px}
+.creds{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px;padding:0;list-style:none}
+.creds li{font-family:var(--mono);font-size:12px;padding:6px 10px;border:1px solid var(--line);border-radius:999px;color:var(--fg);background:var(--surface)}
+
+/* contact */
+.contact{background:var(--navy);color:var(--on-navy)}
+.contact .head h2{color:var(--on-navy)}
+.contact .head p{color:#C9D6E3}
+.contact .eyebrow{color:var(--teal-bright)}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card{border:1px solid #2A4468;border-radius:8px;padding:20px;display:grid;gap:10px;min-width:0}
+.card small{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--teal-bright)}
+.card .val{font-size:18px;font-weight:600;word-break:break-word;user-select:all}
+.card .acts{display:flex;gap:8px;flex-wrap:wrap}
+.chip{font-size:13px;padding:6px 12px;border-radius:5px;border:1px solid #3A5578;background:transparent;color:var(--on-navy);text-decoration:none;cursor:pointer;font-family:var(--body)}
+.chip:hover{border-color:var(--teal-bright);color:var(--teal-bright)}
+.pay{margin-top:28px;font-size:14px;color:#C9D6E3}
+
+footer{background:var(--navy);color:#8FA3B8;font-size:13px;border-top:1px solid #1D3456}
+footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding-block:20px}
+
+@media (max-width:860px){
+  .hero .wrap,.about{grid-template-columns:1fr}
+  .cover{transform:none}
+  .steps{grid-template-columns:repeat(2,1fr)}
+  .who,.cards{grid-template-columns:1fr}
+}
+@media (max-width:520px){
+  .steps{grid-template-columns:1fr}
+  .row{grid-template-columns:minmax(0,1fr);gap:6px;padding:16px}
+  .row .ill{grid-column:1;grid-row:auto;width:100%;height:auto;aspect-ratio:3/2;margin-bottom:8px}
+  .row h3,.row p,.req{grid-column:1}
+  .price{grid-column:1;grid-row:auto;text-align:left}
+  .price small{display:inline;margin-right:6px}
+  .eta{display:inline;margin-left:8px}
+  .top nav{order:3;width:100%;margin-left:0;gap:18px;overflow-x:auto;white-space:nowrap;padding-bottom:2px}
+  footer .wrap{padding-bottom:84px}
+  section{padding-block:56px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+
+/* ===== Vibrancy layer: warm accent, service cards, trust strip ===== */
+:root{ --sun:#F5A524; --sun-tint:#FFF1D6; --on-sun:#2A1A00; --sky-tint:#E7F0FB; --shadow:rgba(11,37,69,.14) }
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){ --sun:#FFC15A; --sun-tint:#3A2E14; --on-sun:#2A1A00; --sky-tint:#16294A; --shadow:rgba(0,0,0,.45) }}
+:root[data-theme="dark"]{ --sun:#FFC15A; --sun-tint:#3A2E14; --on-sun:#2A1A00; --sky-tint:#16294A; --shadow:rgba(0,0,0,.45) }
+
+/* hero glow + node pattern echoing the logo */
+.hero{position:relative;overflow:hidden;
+  background:
+    radial-gradient(760px 420px at 88% 18%, rgba(19,196,163,.26), transparent 62%),
+    radial-gradient(620px 340px at 4% 110%, rgba(245,165,36,.20), transparent 60%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cg fill='none' stroke='%2313C4A3' stroke-opacity='.10' stroke-width='1.5'%3E%3Cpath d='M20 20h50l20 30-20 30H20zM70 80l30 30'/%3E%3C/g%3E%3Cg fill='%2313C4A3' fill-opacity='.18'%3E%3Ccircle cx='20' cy='20' r='4'/%3E%3Ccircle cx='70' cy='20' r='3'/%3E%3Ccircle cx='90' cy='50' r='4'/%3E%3Ccircle cx='20' cy='80' r='3'/%3E%3Ccircle cx='100' cy='110' r='4'/%3E%3C/g%3E%3C/svg%3E"),
+    var(--navy)}
+.hero h1 em{background:linear-gradient(transparent 62%, rgba(245,165,36,.35) 62%);padding-inline:.08em}
+.btn-primary{box-shadow:0 8px 22px rgba(19,196,163,.35)}
+.btn-primary:hover{transform:translateY(-1px)}
+.btn{transition:transform .15s, filter .15s, border-color .15s}
+.hero-art{position:relative;justify-self:center;width:100%;max-width:400px}
+.hero-photo{position:absolute;width:72%;height:auto;left:-14%;top:-22px;border-radius:6px;transform:rotate(-5deg);box-shadow:0 18px 40px rgba(0,0,0,.4);opacity:.95}
+.hero-art .cover{margin-left:auto}
+
+/* trust strip */
+.trust{background:var(--teal-bright);color:var(--on-accent)}
+.trust ul{list-style:none;margin:0;padding:16px 0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px 24px}
+.trust li{display:flex;align-items:center;gap:10px;font-weight:600;font-size:15px;min-width:0}
+.trust svg{flex:none;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+
+/* services as photo cards */
+.schedule{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;background:none;border:0;border-radius:0;overflow:visible}
+.row{display:flex;flex-direction:column;gap:8px;padding:0 0 20px;border:1px solid var(--line);border-radius:12px;background:var(--surface);overflow:hidden;transition:transform .2s, box-shadow .2s;min-width:0}
+.row:last-child{border-bottom:1px solid var(--line)}
+.row:hover{transform:translateY(-4px);box-shadow:0 16px 34px var(--shadow)}
+.row .ill{width:100%;height:auto;aspect-ratio:3/2;border-radius:0;margin:0 0 8px;transition:transform .4s}
+.row:hover .ill{transform:scale(1.03)}
+.row h3,.row p{padding-inline:20px}
+.row h3{font-size:20px}
+.price{display:flex;align-items:baseline;flex-wrap:wrap;gap:4px 8px;margin:auto 20px 0;padding-top:14px;border-top:1px dashed var(--line);text-align:left;white-space:normal}
+.price small{display:inline;margin:0}
+.price strong{font-size:20px;font-weight:600}
+.eta{display:inline-block;margin:0 0 0 auto;padding:3px 10px;border-radius:999px;background:var(--sun-tint);color:var(--fg);font-size:12px;font-weight:500}
+.req{margin:6px 20px 0;padding:10px 14px;border-radius:8px;background:var(--tint);text-align:center;justify-self:auto;align-self:stretch}
+.req:hover{text-decoration:none;background:var(--teal-bright);color:var(--on-accent)}
+.row.template{background:var(--sun-tint);border-color:transparent}
+.row.template .req{background:var(--sun);color:var(--on-sun)}
+
+/* who we work with: tinted cards */
+.who > div{padding:24px;border-radius:12px}
+.who > div:nth-child(1){background:var(--sun-tint)}
+.who > div:nth-child(2){background:var(--tint)}
+.who > div:nth-child(3){background:var(--sky-tint)}
+.who .eyebrow{color:var(--fg);opacity:.7}
+
+/* steps: numbered pills */
+.steps li{border-top:0;padding:22px;border-radius:12px;background:var(--surface);border:1px solid var(--line)}
+.steps li::before{justify-self:start;padding:4px 12px;border-radius:999px;background:var(--teal-bright);color:var(--on-accent);font-weight:500}
+.steps li:nth-child(3)::before{background:var(--sun);color:var(--on-sun)}
+
+/* contact: WhatsApp card stands out */
+.cards .card:first-child{background:rgba(19,196,163,.12);border-color:var(--teal-bright)}
+.creds li:nth-child(odd){background:var(--tint)}
+.creds li:nth-child(even){background:var(--sun-tint)}
+
+@media (max-width:860px){
+  .schedule{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .trust ul{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .hero-photo{display:none}
+}
+@media (max-width:560px){
+  .schedule{grid-template-columns:minmax(0,1fr)}
+  .row{padding:0 0 18px}
+  .row .ill{margin-bottom:8px}
+  .trust li{font-size:14px}
+}
+@media (prefers-reduced-motion:reduce){.row,.row .ill,.btn{transition:none}.row:hover,.row:hover .ill,.btn-primary:hover{transform:none}}
+
+/* ===== Requirements form ===== */
+:root{ --danger:#C2410C }
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){ --danger:#FF8A5B }}
+:root[data-theme="dark"]{ --danger:#FF8A5B }
+.steplink{justify-self:start;font-weight:600;font-size:14px;color:var(--teal);text-decoration:none}
+.steplink::after{content:" \2193"}
+.steplink:hover{text-decoration:underline}
+.rq{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:28px;display:grid;gap:30px;box-shadow:0 12px 30px var(--shadow)}
+.rq fieldset{border:0;margin:0;padding:0;min-width:0}
+.rq legend{padding:0;font-family:var(--display);font-weight:700;font-size:20px;color:var(--fg);margin-bottom:14px}
+.rq .grp{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 22px}
+.rq .grp > legend{grid-column:1/-1}
+.svc-pick{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.svc-pick label{display:flex;align-items:center;gap:10px;padding:12px 14px;border:1.5px solid var(--line);border-radius:10px;cursor:pointer;font-weight:600;font-size:15px;min-width:0;background:var(--bg);transition:border-color .15s, background .15s}
+.svc-pick label:hover{border-color:var(--teal)}
+.svc-pick label:has(input:checked){border-color:var(--teal);background:var(--tint)}
+.rq input[type=radio],.rq input[type=checkbox]{accent-color:var(--teal);width:16px;height:16px;flex:none;margin:0}
+.rq .f{display:grid;gap:6px;align-content:start;min-width:0}
+.rq .f.wide{grid-column:1/-1}
+.rq .l{font-size:14px;font-weight:600;color:var(--fg);margin:0 0 2px;font-family:var(--body)}
+.rq .star{color:var(--danger)}
+.rq input[type=text],.rq input[type=tel],.rq input[type=number],.rq input[type=date],.rq select,.rq textarea{font:inherit;font-size:15px;padding:10px 12px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--fg);width:100%;min-width:0}
+.rq textarea{resize:vertical}
+.rq input:focus,.rq select:focus,.rq textarea:focus{outline:2px solid var(--teal);outline-offset:1px;border-color:transparent}
+.rq .opts{display:flex;flex-wrap:wrap;gap:8px}
+.rq .opts label{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border:1px solid var(--line);border-radius:999px;font-size:14px;cursor:pointer;background:var(--bg)}
+.rq .opts label:has(input:checked){border-color:var(--teal);background:var(--tint)}
+.rq .err{color:var(--danger);font-size:13px;margin:0}
+.rq .bad input,.rq .bad select,.rq .bad textarea{border-color:var(--danger)}
+.rq .hint{color:var(--muted);margin:-12px 0 0}
+.rq-actions{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.btn-line{border-color:var(--line);color:var(--fg);background:var(--surface)}
+.btn-line:hover{border-color:var(--teal)}
+.rq-done{margin-top:20px;background:var(--tint);border:1px solid var(--teal);border-radius:14px;padding:24px;display:grid;gap:14px}
+.rq-done h3{font-size:22px}
+.rq-done p{color:var(--fg)}
+.rq-done pre{white-space:pre-wrap;word-break:break-word;font-family:var(--mono);font-size:13px;background:var(--surface);color:var(--fg);padding:14px;border-radius:8px;max-height:280px;overflow:auto;margin:0}
+@media (max-width:860px){ .svc-pick{grid-template-columns:repeat(2,minmax(0,1fr))} }
+@media (max-width:560px){
+  .rq{padding:18px}
+  .svc-pick,.rq .grp{grid-template-columns:minmax(0,1fr)}
+}
+
+.rq .sub{grid-column:1/-1;margin:14px 0 0;padding-top:16px;border-top:1px solid var(--line);font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--teal)}
+.rq .skip{grid-column:1/-1;margin:-6px 0 0;font-size:14px;color:var(--muted)}
+.rq .follow{padding:12px 14px;border-radius:10px;background:var(--sun-tint)}
+
+/* ===== Tabbed pages ===== */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;box-shadow:0 1px 0 #1D3456}
+.top nav{gap:6px}
+.top nav a{padding:8px 14px;border-radius:999px}
+.top nav a.on{background:rgba(19,196,163,.18);color:var(--teal-bright);opacity:1}
+.top nav a.cta{background:var(--teal-bright);color:var(--on-accent);opacity:1;font-weight:600}
+.top nav a.cta:hover{color:var(--on-accent);filter:brightness(1.06)}
+.top nav a.cta.on{box-shadow:inset 0 0 0 2px var(--on-navy)}
+.page:not([hidden]){animation:pgin .25s ease}
+@keyframes pgin{from{transform:translateY(6px)}to{transform:none}}
+.pg-next{display:flex;justify-content:center;margin-top:28px}
+.page > section{min-height:55vh}
+@media (max-width:560px){ .top nav{gap:4px} .top nav a{padding:7px 12px} }
+@media (prefers-reduced-motion:reduce){ .page:not([hidden]){animation:none} }
+</style>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Radken Graphics home">
+      <svg width="40" height="40" viewBox="0 0 200 200" aria-hidden="true">
+        <rect width="200" height="200" rx="36" fill="#13325C"/>
+        <g stroke="#13C4A3" stroke-width="12" stroke-linecap="round" fill="none">
+          <line x1="60" y1="40" x2="60" y2="160"/><line x1="60" y1="40" x2="120" y2="40"/><line x1="120" y1="40" x2="140" y2="75"/>
+          <line x1="140" y1="75" x2="120" y2="105"/><line x1="120" y1="105" x2="60" y2="105"/><line x1="100" y1="105" x2="145" y2="160"/>
+        </g>
+        <g fill="#FFFFFF" stroke="#13C4A3" stroke-width="7">
+          <circle cx="60" cy="40" r="13"/><circle cx="120" cy="40" r="11"/><circle cx="140" cy="75" r="13"/>
+          <circle cx="60" cy="105" r="11"/><circle cx="60" cy="160" r="13"/><circle cx="145" cy="160" r="13"/>
+        </g>
+      </svg>
+      <div><b>RADKEN</b><span>GRAPHICS · KENYA</span></div>
+    </a>
+    <nav aria-label="Pages">
+      <a href="#home" data-sw="Nyumbani">Home</a>
+      <a href="#services" data-sw="Huduma">Services</a>
+      <a href="#how" data-sw="Jinsi inavyofanya kazi">How it works</a>
+      <a href="#form" class="cta" data-sw="Agiza">Order</a>
+      <a href="#about" data-sw="Kuhusu">About</a>
+      <a href="#contact" data-sw="Mawasiliano">Contact</a>
+    </nav>
+    <div class="switches"><a class="lang ctry" id="ctry-toggle" href="../graphics/?tz" aria-label="Tanzania site / Tovuti ya Tanzania"><span data-c="TZ">🇹🇿<b> TZ</b></span><span data-c="KE" class="on">🇰🇪<b> KE</b></span></a>
+    <button class="lang" id="lang-toggle" type="button" aria-label="Switch language / Badilisha lugha"><span data-l="en" class="on">EN</span><span data-l="sw">SW</span></button></div>
+  </div>
+</header>
+
+<main id="top">
+<div class="page" data-page="home">
+  <div class="hero">
+    <div class="wrap">
+      <div>
+        <span class="eyebrow" data-sw="Posters · Mabango · Kadi za biashara · CV · Arusha" data-ke="Posters · Banners · Business cards · CVs · Kenya" data-ke-sw="Posters · Mabango · Kadi za biashara · CV · Kenya">Posters · Banners · Business cards · CVs · Arusha</span>
+        <h1 data-sw="Michoro inayofanya biashara yako &lt;em&gt;ionekane&lt;/em&gt;, kwa bei iliyo wazi.">Design that gets your business <em>noticed</em>, at a clear price.</h1>
+        <p class="lead" data-sw="Radken Graphics huandaa posters, mabango, kadi za biashara na CV zilizopangwa vizuri. Unatuambia unachohitaji, tunakutumia rasimu, na unapokea faili tayari kuchapishwa au kutumika mtandaoni.">Radken Graphics designs posters, banners, business cards and well-laid-out CVs. You tell us what you need, we send you a draft, and you get files ready to print or post online.</p>
+        <div class="cta">
+          <a class="btn btn-primary" href="#form" data-sw="Agiza muundo">Order a design</a>
+          <a class="btn btn-ghost" href="#services" data-sw="Angalia bei">See prices</a>
+        </div>
+      </div>
+      <div class="hero-art">
+      <img class="hero-photo" src="https://images.unsplash.com/photo-1572044162444-ad60f128bdea?auto=format&fit=crop&w=640&h=426&q=70" alt="" width="640" height="426">
+      <div class="cover" aria-label="Example of a Radken Graphics order">
+        <div class="ref"><span>Order RG-PO-2026-021</span><span>Draft v1</span></div>
+        <h3 data-sw="Muundo wa poster">Poster design</h3>
+        <p class="for" data-sw="Kwa ajili ya ofa ya ufunguzi wa duka">For a shop's grand-opening offer</p>
+        <ol>
+          <li><span data-sw="Maandishi na picha zako (kutoka fomu ya agizo)">Your text &amp; photos (from your order form)</span><span>✓</span></li>
+          <li><span data-sw="Rasimu ya kwanza kwa ajili ya kuipitia">First draft for you to review</span><span>✓</span></li>
+          <li><span data-sw="Marekebisho yako">Your changes</span><span>✓</span></li>
+          <li><span data-sw="PDF ya kuchapisha + picha ya WhatsApp">Print-ready PDF + image for WhatsApp</span><span>✓</span></li>
+        </ol>
+        <div class="foot">RADKEN GRAPHICS <small data-sw="Mfano wa agizo">Sample order</small></div>
+      </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="trust"><div class="wrap"><ul><li><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12V4h8l10 10-8 8L3 12z"/><circle cx="7.5" cy="8.5" r="1.5"/></svg><span data-sw="Bei wazi, zinazojadilika">Clear prices, open to discussion</span></li><li><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-12.6 7.4L3 20.5l1.6-5.2A8.5 8.5 0 1 1 21 11.5z"/></svg><span data-sw="Agiza kwa WhatsApp">Order on WhatsApp</span></li><li><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14.5 0 18M12 3c-3 3.5-3 14.5 0 18"/></svg><span data-sw="Tanzania na Kenya">Tanzania &amp; Kenya</span></li><li><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h10M9 4v2M6.5 6c.8 3.5 3.3 6.3 6.5 7.5M12 6c-.8 3.5-3.6 6.5-7 8"/><path d="M13 20l4-9 4 9M14.5 17h5"/></svg><span data-sw="Kiingereza na Kiswahili">English &amp; Kiswahili</span></li></ul></div></div>
+
+  <section class="alt">
+    <div class="wrap">
+      <div class="head">
+        <span class="eyebrow" data-sw="Tunaowahudumia">Who we work with</span>
+        <h2 data-sw="Kwa yeyote anayehitaji kuonekana vizuri.">For anyone who needs to look the part.</h2>
+      </div>
+      <div class="who">
+        <div>
+          <span class="eyebrow" data-sw="Biashara">Business</span>
+          <h3 data-sw="Maduka na biashara ndogo">Shops &amp; small businesses</h3>
+          <p data-sw="Posters za ofa, mabango ya mbele ya duka na kadi za biashara zinazoonyesha wewe ni nani.">Offer posters, shopfront banners and business cards that show who you are.</p>
+        </div>
+        <div>
+          <span class="eyebrow" data-sw="Matukio">Events</span>
+          <h3 data-sw="Shule, makanisa na matukio">Schools, churches &amp; events</h3>
+          <p data-sw="Matangazo ya siku za wazazi, mahafali, harusi, makongamano na michango.">Notices for parents' days, graduations, weddings, conferences and fundraisers.</p>
+        </div>
+        <div>
+          <span class="eyebrow" data-sw="Kazi">Careers</span>
+          <h3 data-sw="Wanaotafuta kazi">Job seekers</h3>
+          <p data-sw="CV iliyoandikwa upya na kupangwa vizuri kwa kazi unayoiomba.">A CV rewritten and laid out for the job you're applying for.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div class="page" data-page="services">
+  <section id="services">
+    <div class="wrap">
+      <div class="head">
+        <span class="eyebrow" data-sw="Huduma na bei">Services &amp; prices</span>
+        <h2 data-sw="Bei za kuanzia zilizo wazi, kwa shilingi, na zinazojadilika.">Clear starting prices, in shillings, and open to discussion.</h2>
+        <p data-sw="Bei ni za muundo (design). Uchapishaji, kama unauhitaji, unakubaliwa kabla kazi haijaanza. Badili nchi juu (TZ / KE) kuona bei za Tanzania au Kenya." data-ke="Prices are for the design. Printing, if you need it, is agreed before work starts. These are Kenya prices in KES, handled by Simon Kimani." data-ke-sw="Bei ni za muundo (design). Uchapishaji, kama unauhitaji, unakubaliwa kabla kazi haijaanza. Hizi ni bei za Kenya kwa KES, zinazoshughulikiwa na Simon Kimani.">Prices are for the design. Printing, if you need it, is agreed before work starts. Switch country at the top (TZ / KE) to see Tanzania or Kenya prices.</p>
+      </div>
+      <div class="schedule">
+        <div class="row">
+          <img class="ill" src="https://images.unsplash.com/photo-1533319417894-6fbb331e5513?auto=format&fit=crop&w=640&h=427&q=70" alt="Colourful posters on a wall" width="640" height="427" loading="lazy" decoding="async">
+          <h3 data-sw="Poster">Poster</h3>
+          <p data-sw="Kwa matangazo, ofa, matukio na mitandao ya kijamii.">For adverts, offers, events and social media.</p>
+          <div class="price"><small data-sw="kuanzia">from</small><strong data-ke="KES 1,500">TZS 25,000</strong></div>
+          <a class="req" href="#form" data-service="poster" data-sw="Agiza poster">Order a poster</a>
+        </div>
+        <div class="row">
+          <img class="ill" src="https://images.unsplash.com/photo-1559613671-dfe2fb6a7680?auto=format&fit=crop&w=640&h=427&q=70" alt="Advertising boards on the side of a building" width="640" height="427" loading="lazy" decoding="async">
+          <h3 data-sw="Bango (banner)">Banner</h3>
+          <p data-sw="Mabango ya kusimama (roll-up), ya nje na ya nyuma ya jukwaa kwa maduka, ofisi na matukio.">Roll-up, outdoor and backdrop banners for shopfronts, offices and events.</p>
+          <div class="price"><small data-sw="kuanzia">from</small><strong data-ke="KES 2,000">TZS 35,000</strong></div>
+          <a class="req" href="#form" data-service="banner" data-sw="Agiza bango">Order a banner</a>
+        </div>
+        <div class="row">
+          <img class="ill" src="https://images.unsplash.com/photo-1636247498719-a8a04ed961a4?auto=format&fit=crop&w=640&h=427&q=70" alt="A set of business card designs" width="640" height="427" loading="lazy" decoding="async">
+          <h3 data-sw="Kadi za biashara">Business cards</h3>
+          <p data-sw="Muundo safi wenye jina, nembo na mawasiliano yako, upande mmoja au pande mbili.">A clean design with your name, logo and contacts, one or two sided.</p>
+          <div class="price"><small data-sw="kuanzia">from</small><strong data-ke="KES 1,000">TZS 15,000</strong></div>
+          <a class="req" href="#form" data-service="card" data-sw="Agiza kadi">Order business cards</a>
+        </div>
+        <div class="row">
+          <img class="ill" src="https://images.unsplash.com/photo-1698047681432-006d2449c631?auto=format&fit=crop&w=640&h=427&q=70" alt="A CV being read at a job interview" width="640" height="427" loading="lazy" decoding="async">
+          <h3 data-sw="Uandishi wa CV">CV writing</h3>
+          <p data-sw="CV yako imeandikwa upya, imepangwa vizuri na inaendana na kazi unayoiomba.">Your CV rewritten, neatly laid out and matched to the job you're applying for.</p>
+          <div class="price"><small data-sw="kuanzia">from</small><strong data-ke="KES 2,500">TZS 15,000</strong></div>
+          <a class="req" href="#form" data-service="cv" data-sw="Agiza CV">Order a CV</a>
+        </div>
+      </div>
+      <p class="note" data-sw="Bei zinajadilika: tuambie bajeti yako na tutashirikiana nawe." >Prices are open to discussion: tell us your budget and we'll work with you.</p>
+      <div class="pg-next"><a class="btn btn-primary" href="#form" data-sw="Agiza muundo">Order a design</a></div>
+    </div>
+  </section>
+</div>
+
+<div class="page" data-page="how">
+  <section id="how">
+    <div class="wrap">
+      <div class="head">
+        <span class="eyebrow" data-sw="Jinsi inavyofanya kazi">How it works</span>
+        <h2 data-sw="Kutoka wazo hadi faili tayari kuchapishwa.">From idea to print-ready file.</h2>
+      </div>
+      <ol class="steps">
+        <li><h3 data-sw="Tuambie unachohitaji">Tell us what you need</h3><p data-sw="Chagua huduma na ujaze fomu fupi: maandishi, ukubwa, rangi na picha zako.">Pick a service and fill in a short form: your text, size, colours and photos.</p><a class="steplink" href="#form" data-sw="Fungua fomu">Open the form</a></li>
+        <li><h3 data-sw="Kubaliana bei">Agree the price</h3><p data-sw="Tunathibitisha bei na muda wa kukamilisha kabla kazi haijaanza.">We confirm the price and when it will be ready before any work starts.</p></li>
+        <li><h3 data-sw="Pitia rasimu">Review your draft</h3><p data-sw="Unapokea rasimu ya kwanza kwenye WhatsApp na kuomba marekebisho.">You get a first draft on WhatsApp and ask for any changes.</p></li>
+        <li><h3 data-sw="Pokea faili zako">Get your files</h3><p data-sw="Ukiridhika, unalipa na kupokea faili tayari kuchapishwa au kutumika mtandaoni.">Once you're happy, you pay and receive files ready to print or post online.</p></li>
+      </ol>
+    </div>
+  </section>
+</div>
+
+<div class="page" data-page="form">
+  <section id="form" class="formsec alt">
+    <div class="wrap">
+      <div class="head">
+        <span class="eyebrow" data-sw="Fomu ya agizo">Order form</span>
+        <h2 data-sw="Tuambie unachohitaji.">Tell us what you need.</h2>
+        <p data-sw="Chagua huduma, jibu maswali yake, kisha tuma majibu yako kwa WhatsApp. Inachukua takriban dakika 3–5.">Pick a service, answer the questions for it, then send your answers on WhatsApp. It takes about 3–5 minutes.</p>
+      </div>
+      <form id="rq" class="rq" novalidate></form>
+      <div id="rq-done" class="rq-done" hidden></div>
+    </div>
+  </section>
+</div>
+
+<div class="page" data-page="about">
+  <section id="about">
+    <div class="wrap about">
+      <div class="head" style="margin-bottom:0">
+        <span class="eyebrow" data-sw="Kuhusu">About</span>
+        <h2 data-sw="Wabunifu wanaoelewa biashara za hapa.">Designers who know local business.</h2>
+      </div>
+      <div>
+        <p data-sw="Radken Graphics ni kitengo cha Radken Consolidated. Nchini Tanzania kazi inafanywa na David Martin mjini Arusha, na nchini Kenya na Simon Kimani." data-ke="Radken Graphics is a division of Radken Consolidated. In Kenya your designer is Simon Kimani, and in Tanzania it's David Martin in Arusha." data-ke-sw="Radken Graphics ni kitengo cha Radken Consolidated. Nchini Kenya mbunifu wako ni Simon Kimani, na nchini Tanzania ni David Martin mjini Arusha.">Radken Graphics is a division of Radken Consolidated. In Tanzania the work is done by David Martin in Arusha, and in Kenya by Simon Kimani.</p>
+        <p data-sw="Tunaandaa kazi kwa ajili ya jinsi itakavyotumika: poster inayosomeka kutoka mbali, bango linaloonekana barabarani, na CV ambayo mwajiri anaisoma kwa sekunde chache.">We design for how the work will be used: a poster you can read from across the street, a banner that stands out on the road, and a CV an employer can scan in seconds.</p>
+        <ul class="creds">
+          <li data-sw="Posters na matangazo">Posters &amp; adverts</li>
+          <li data-sw="Mabango">Banners</li>
+          <li data-sw="Kadi za biashara">Business cards</li>
+          <li data-sw="Uandishi wa CV">CV writing</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div class="page" data-page="contact">
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <div class="head">
+        <span class="eyebrow" data-sw="Mawasiliano">Contact</span>
+        <h2 data-sw="Agiza muundo wako." data-ke="Order your design from Simon." data-ke-sw="Agiza muundo wako kwa Simon.">Order your design from David.</h2>
+        <p data-sw="Tuma ujumbe wenye unachohitaji, maandishi na picha zako. Utajibiwa pamoja na bei na muda wa kukamilisha.">Send a message with what you need, your text and any photos. You'll get a reply with the price and when it will be ready.</p>
+      </div>
+      <div class="cards">
+        <div class="card">
+          <small data-sw="Simu na WhatsApp">Phone &amp; WhatsApp</small>
+          <div class="val" id="v-phone" data-ke="+254 795 685 178">+255 782 394 926</div>
+          <div class="acts">
+            <button class="chip" type="button" data-copy="v-phone" data-sw="Nakili">Copy</button>
+            <a class="chip" href="https://wa.me/255782394926" target="_blank" rel="noopener" data-wa-en="Hello Radken Graphics, I'd like to order a design." data-wa-sw="Habari Radken Graphics, ningependa kuagiza muundo." data-sw="Fungua WhatsApp">Open WhatsApp</a>
+          </div>
+        </div>
+        <div class="card">
+          <small data-sw="Barua pepe">Email</small>
+          <div class="val" id="v-email" data-ke="slicksigns63@gmail.com">davidmartinex210@gmail.com</div>
+          <div class="acts">
+            <button class="chip" type="button" data-copy="v-email" data-sw="Nakili">Copy</button>
+            <a class="chip" data-mail href="mailto:davidmartinex210@gmail.com" data-sw="Andika barua pepe">Write email</a>
+          </div>
+        </div>
+        <div class="card">
+          <small data-sw="Mbunifu wako">Your designer</small>
+          <div class="val" data-ke="Simon Kimani · Kenya">David Martin · Arusha</div>
+          <p style="font-size:14px;color:#C9D6E3" data-sw="Faili zinatumwa kwa WhatsApp au barua pepe, hivyo tunahudumia wateja popote Tanzania." data-ke="Files are sent by WhatsApp or email, so we serve clients anywhere in Kenya." data-ke-sw="Faili zinatumwa kwa WhatsApp au barua pepe, hivyo tunahudumia wateja popote Kenya.">Files are sent by WhatsApp or email, so we serve clients anywhere in Tanzania.</p>
+        </div>
+      </div>
+      <p class="pay" data-sw="Malipo: maelezo ya malipo yanatolewa unapothibitisha agizo lako.">Payment: payment details are shared when you confirm your order.</p>
+    </div>
+  </section>
+</div>
+</main>
+
+<a class="wa-float" href="https://wa.me/255782394926" target="_blank" rel="noopener" data-wa-en="Hello Radken Graphics, I'd like to order a design." data-wa-sw="Habari Radken Graphics, ningependa kuagiza muundo." aria-label="Chat with Radken Graphics on WhatsApp">
+  <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.5 8.5 0 0 1-12.6 7.4L3 20.5l1.6-5.2A8.5 8.5 0 1 1 21 11.5z"/><path d="M8.5 11.5h.01M12 11.5h.01M15.5 11.5h.01"/></svg>
+  <span data-sw="Tuandikie">Chat with us</span>
+</a>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Radken Graphics Kenya · Posters · Banners · Cards · CVs · a division of <a href="../">Radken Consolidated</a> · <a href="../graphics/?tz">Tanzania site</a></span>
+    <span>Photos: Theme Photos, Rohan, Deon Fosu, MK +2 and Resume Genius on Unsplash</span>
+  </div>
+</footer>
+
+
+<script>
+var LANG='en', CTRY='TZ';
+/* Each market has its own designer: Tanzania orders go to David Martin (Arusha), Kenya orders to Simon Kimani */
+var CONTACTS={TZ:{wa:'255782394926',email:'davidmartinex210@gmail.com'},KE:{wa:'254795685178',email:'slicksigns63@gmail.com'}};
+var WORDS={en:{copied:'Copied',selected:'Selected'},sw:{copied:'Imenakiliwa',selected:'Imechaguliwa'}};
+function waHref(msg){ return 'https://wa.me/'+CONTACTS[CTRY].wa+'?text='+encodeURIComponent(msg); }
+/* Text picks by country, then language: Kenya text (data-ke / data-ke-sw) where it exists, otherwise the Tanzania text */
+function pick(el,l){
+  var ke=CTRY==='KE'&&el.hasAttribute('data-ke');
+  if(ke) return l==='sw' ? (el.getAttribute('data-ke-sw')||el.getAttribute('data-ke')) : el.getAttribute('data-ke');
+  return l==='sw' && el.hasAttribute('data-sw') ? el.getAttribute('data-sw') : el.dataset.en;
+}
+function setLang(l){
+  LANG=l;
+  document.documentElement.lang=l;
+  document.querySelectorAll('[data-sw],[data-ke]').forEach(function(el){
+    if(el.dataset.en===undefined) el.dataset.en=el.innerHTML;
+    el.innerHTML = pick(el,l);
+  });
+  document.querySelectorAll('a[href*="wa.me/"]:not([data-wa-en])').forEach(function(a){
+    a.href=a.href.replace(/wa\.me\/\d+/,'wa.me/'+CONTACTS[CTRY].wa);
+  });
+  document.querySelectorAll('[data-mail]').forEach(function(a){ a.href='mailto:'+CONTACTS[CTRY].email; });
+  document.querySelectorAll('[data-wa-en]').forEach(function(a){
+    a.href = waHref(a.getAttribute(l==='sw'?'data-wa-sw':'data-wa-en'));
+  });
+  document.querySelectorAll('#lang-toggle span').forEach(function(sp){ sp.classList.toggle('on', sp.dataset.l===l); });
+  try{ localStorage.setItem('radken-lang', l); }catch(e){}
+  if(window.renderForm) window.renderForm();
+}
+document.getElementById('lang-toggle').addEventListener('click', function(){ setLang(LANG==='en'?'sw':'en'); });
+function setCountry(c){
+  CTRY=c==='KE'?'KE':'TZ';
+  document.querySelectorAll('#ctry-toggle span').forEach(function(sp){ sp.classList.toggle('on', sp.dataset.c===CTRY); });
+  try{ localStorage.setItem('radken-country', CTRY); }catch(e){}
+  setLang(LANG);
+}
+
+/* This page is Radken Graphics Kenya: always Kenya text, KES prices and Simon's contacts */
+setCountry('KE');
+try{ var saved=localStorage.getItem('radken-lang'); if(saved==='sw') setLang('sw'); }catch(e){}
+
+document.querySelectorAll('[data-copy]').forEach(function(b){
+  b.addEventListener('click', function(){
+    var el=document.getElementById(b.getAttribute('data-copy'));
+    var text=el.textContent.trim();
+    var label=b.innerHTML;
+    function flash(t){ b.textContent=t; setTimeout(function(){ b.innerHTML=label; },1500); }
+    function fallback(){ var r=document.createRange(); r.selectNodeContents(el); var s=window.getSelection(); s.removeAllRanges(); s.addRange(r); flash(WORDS[LANG].selected); }
+    try{ navigator.clipboard.writeText(text).then(function(){ flash(WORDS[LANG].copied); }, fallback); }catch(e){ fallback(); }
+  });
+});
+
+(function(){
+var YN=[['Yes','Ndiyo'],['No','Hapana'],['Not sure','Sina uhakika']];
+function q(id,o){ o.id=id; return o; }
+function S(en,sw){ return {type:'section',en:en,sw:sw}; }
+var PRINT=function(){ return q('print',{type:'radio',wide:1,en:'Do you also need it printed?',sw:'Unahitaji pia kichapishwe?',opts:[['Design only','Muundo tu'],['Design and printing','Muundo na uchapishaji'],['Not sure','Sina uhakika']]}); };
+var LOGO=function(){ return q('logo',{type:'radio',en:'Do you have a logo?',sw:'Una nembo (logo)?',opts:YN}); };
+var COLOURS=function(){ return q('colours',{type:'text',wide:1,en:'Colours you would like',sw:'Rangi unazopenda',ph:['e.g. our brand colours, blue and gold','mf. rangi za biashara yetu, bluu na dhahabu']}); };
+
+var COMMON=[
+  q('name',{type:'text',req:1,en:'Your name',sw:'Jina lako'}),
+  q('org',{type:'text',en:'Business or organisation (if any)',sw:'Biashara au taasisi (kama ipo)',ph:['e.g. Mama Neema Shop','mf. Duka la Mama Neema']}),
+  q('phone',{type:'tel',req:1,en:'Phone / WhatsApp number',sw:'Namba ya simu / WhatsApp',ph:['e.g. 0712 345 678','mf. 0712 345 678']}),
+  q('loc',{type:'text',en:'Location',sw:'Mahali',get ph(){ return CTRY==='KE'?['e.g. Westlands, Nairobi','mf. Westlands, Nairobi']:['e.g. Arusha town','mf. Arusha mjini']; }}),
+  q('when',{type:'select',en:'When do you need it?',sw:'Unaihitaji lini?',opts:[['Within 2 days','Ndani ya siku 2'],['This week','Wiki hii'],['Within 2 weeks','Ndani ya wiki 2'],['No rush','Hakuna haraka']]}),
+  q('heard',{type:'select',en:'How did you hear about us?',sw:'Ulitusikiaje?',opts:[['WhatsApp','WhatsApp'],['Friend or colleague','Rafiki au mfanyakazi mwenzako'],['Instagram or Facebook','Instagram au Facebook'],['Online','Mtandaoni'],['Other','Nyingine']]})
+];
+
+var SERVICES=[
+ {id:'poster',en:'Poster',sw:'Poster',q:[
+  S('The poster','Poster'),
+  q('p_for',{type:'radio',wide:1,en:'What is it for?',sw:'Ni kwa ajili ya nini?',opts:[['Advert or offer','Tangazo au ofa'],['Event','Tukio'],['Announcement or notice','Taarifa au tangazo rasmi'],['Social media post','Chapisho la mitandao ya kijamii'],['Other','Nyingine']]}),
+  q('p_size',{type:'select',en:'Size',sw:'Ukubwa',opts:[['A4','A4'],['A3','A3'],['A2 or bigger','A2 au zaidi'],['Square for social media','Mraba kwa mitandao ya kijamii'],['Not sure','Sina uhakika']]}),
+  q('p_text',{type:'textarea',wide:1,req:1,en:'Text to put on the poster',sw:'Maandishi ya kuweka kwenye poster',ph:['Title, date, place, prices, phone number…','Kichwa, tarehe, mahali, bei, namba ya simu…']}),
+  q('p_photos',{type:'radio',en:'Do you have photos to use?',sw:'Una picha za kutumia?',opts:YN}),
+  LOGO(), COLOURS(),
+  S('Printing','Uchapishaji'),
+  PRINT(),
+  q('p_qty',{type:'number',show:['print',[1]],en:'How many copies?',sw:'Nakala ngapi?'})
+ ]},
+ {id:'banner',en:'Banner',sw:'Bango (banner)',q:[
+  S('The banner','Bango'),
+  q('b_type',{type:'radio',wide:1,en:'Type of banner',sw:'Aina ya bango',opts:[['Roll-up (stands on the floor)','Roll-up (linasimama sakafuni)'],['Outdoor PVC banner','Bango la nje la PVC'],['Stage or event backdrop','Bango la nyuma ya jukwaa au tukio'],['Not sure','Sina uhakika']]}),
+  q('b_size',{type:'text',en:'Size, if you know it',sw:'Ukubwa, kama unaujua',ph:['e.g. 85 × 200 cm','mf. sm 85 × 200']}),
+  q('b_where',{type:'radio',en:'Where will it be used?',sw:'Litatumika wapi?',opts:[['Indoors','Ndani'],['Outdoors','Nje']]}),
+  q('b_text',{type:'textarea',wide:1,req:1,en:'Text to put on the banner',sw:'Maandishi ya kuweka kwenye bango',ph:['Business name, services, phone number, location…','Jina la biashara, huduma, namba ya simu, mahali…']}),
+  LOGO(), COLOURS(),
+  S('Printing','Uchapishaji'),
+  PRINT()
+ ]},
+ {id:'card',en:'Business cards',sw:'Kadi za biashara',q:[
+  S('The cards','Kadi'),
+  q('c_people',{type:'number',en:'How many people need cards?',sw:'Watu wangapi wanahitaji kadi?'}),
+  q('c_details',{type:'checks',wide:1,en:'What should be on the card?',sw:'Kadi iwe na nini?',opts:[['Name and job title','Jina na wadhifa'],['Phone and WhatsApp','Simu na WhatsApp'],['Email','Barua pepe'],['Address','Anwani'],['Website or social media','Tovuti au mitandao ya kijamii'],['QR code','QR code']]}),
+  q('c_info',{type:'textarea',wide:1,req:1,en:'The details, exactly as they should appear',sw:'Taarifa hizo, kama zinavyopaswa kuonekana',ph:['Name, title, phone, email…','Jina, wadhifa, simu, barua pepe…']}),
+  q('c_sides',{type:'radio',en:'One side or two?',sw:'Upande mmoja au pande mbili?',opts:[['One side','Upande mmoja'],['Two sides','Pande mbili'],['Not sure','Sina uhakika']]}),
+  LOGO(), COLOURS(),
+  S('Printing','Uchapishaji'),
+  PRINT(),
+  q('c_qty',{type:'number',show:['print',[1]],en:'How many cards per person?',sw:'Kadi ngapi kwa kila mtu?'})
+ ]},
+ {id:'cv',en:'CV writing',sw:'Uandishi wa CV',q:[
+  S('Your career','Kazi yako'),
+  q('v_job',{type:'text',wide:1,req:1,en:'What job or field are you applying for?',sw:'Unaomba kazi gani au katika fani gani?',ph:['e.g. Accountant, Nurse, Sales','mf. Mhasibu, Muuguzi, Mauzo']}),
+  q('v_years',{type:'select',en:'Years of work experience',sw:'Miaka ya uzoefu wa kazi',opts:[['Student or new graduate','Mwanafunzi au mhitimu mpya'],['1–3 years','Miaka 1–3'],['4–9 years','Miaka 4–9'],['10 years or more','Miaka 10 au zaidi']]}),
+  q('v_have',{type:'radio',en:'Do you have a CV now?',sw:'Una CV kwa sasa?',opts:[['Yes, I will send it','Ndiyo, nitaituma'],['No, starting fresh','Hapana, tunaanza upya']]}),
+  q('v_lang',{type:'radio',en:'Language',sw:'Lugha',opts:[['English','Kiingereza'],['Kiswahili','Kiswahili'],['Both','Zote mbili']]}),
+  q('v_cover',{type:'radio',en:'Do you also need a cover letter?',sw:'Unahitaji pia barua ya maombi?',opts:YN})
+ ]}
+];
+var NOTES=q('notes',{type:'textarea',wide:1,en:'Anything else we should know?',sw:'Kuna jambo lingine tunalopaswa kujua?'});
+
+var CONTROL={};
+SERVICES.forEach(function(s){ s.q.forEach(function(f){ if(f.show) CONTROL[f.show[0]]=1; }); });
+
+var UI={
+ pick:['1. What would you like designed?','1. Ungependa tukuandalie nini?'],
+ hint:['Choose a service above to see its questions.','Chagua huduma hapo juu ili uone maswali yake.'],
+ you:['2. About you','2. Kuhusu wewe'],
+ job:['3. About your order','3. Kuhusu agizo lako'],
+ skip:['Only fields marked * are required. Skip anything you are not sure about, and we will ask on WhatsApp.','Sehemu zenye * pekee ndizo za lazima. Ruka usichokuwa na uhakika nacho, tutakuuliza kwa WhatsApp.'],
+ submit:['Prepare my order','Andaa agizo langu'],
+ reset:['Start over','Anza upya'],
+ need:['Please fill in this field.','Tafadhali jaza sehemu hii.'],
+ needOne:['Please pick at least one.','Tafadhali chagua angalau kimoja.'],
+ needSvc:['Choose a service first.','Chagua huduma kwanza.'],
+ doneH:['Your order is ready to send','Agizo lako liko tayari kutumwa'],
+ doneP:['Open WhatsApp with your answers filled in, then press Send. Attach your logo or photos in the same chat. You will get a reply with the price and when it will be ready.','Fungua WhatsApp ikiwa na majibu yako, kisha bonyeza Tuma. Ambatisha nembo au picha zako kwenye mazungumzo hayo hayo. Utajibiwa na bei na muda wa kukamilisha.'],
+ openWa:['Open WhatsApp','Fungua WhatsApp'],
+ email:['Send by email instead','Tuma kwa barua pepe'],
+ copy:['Copy answers','Nakili majibu'],
+ copied:['Copied','Imenakiliwa'],
+ edit:['Edit answers','Hariri majibu'],
+ head:['Radken Graphics order','Agizo kwa Radken Graphics'],
+ svc:['Service','Huduma'],
+ contact:['Contact','Mawasiliano']
+};
+function L(){ return window.LANG==='sw'?1:0; }
+function t(pair){ return pair[L()]; }
+function tx(o){ return L()?o.sw:o.en; }
+function esc(v){ return String(v).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];}); }
+
+var state={service:null,v:{}};
+var form=document.getElementById('rq'), done=document.getElementById('rq-done');
+function svc(){ for(var i=0;i<SERVICES.length;i++) if(SERVICES[i].id===state.service) return SERVICES[i]; return null; }
+function visible(f){
+  if(!f.show) return true;
+  var v=state.v[f.show[0]], ok=f.show[1];
+  if(Array.isArray(v)) return v.some(function(i){return ok.indexOf(i)>-1;});
+  return v!==undefined && ok.indexOf(v)>-1;
+}
+
+function field(f){
+  if(f.type==='section') return '<h4 class="sub">'+esc(tx(f))+'</h4>';
+  if(!visible(f)) return '';
+  var v=state.v[f.id], id='rq-'+f.id, label=esc(tx(f))+(f.req?' <span class="star" aria-hidden="true">*</span>':''), h='';
+  var ph=f.ph?' placeholder="'+esc(f.ph[L()])+'"':'';
+  var cls='f'+(f.wide?' wide':'')+(f.show?' follow':'');
+  if(f.type==='radio'||f.type==='checks'){
+    var type=f.type==='radio'?'radio':'checkbox';
+    h='<fieldset class="'+cls+'" data-q="'+f.id+'"><legend class="l">'+label+'</legend><div class="opts">';
+    f.opts.forEach(function(o,i){
+      var on = f.type==='radio' ? v===i : (v||[]).indexOf(i)>-1;
+      h+='<label><input type="'+type+'" name="'+f.id+'" value="'+i+'"'+(on?' checked':'')+'> '+esc(o[L()])+'</label>';
+    });
+    return h+'</div><p class="err" hidden></p></fieldset>';
+  }
+  h='<label class="'+cls+'" data-q="'+f.id+'" for="'+id+'"><span class="l">'+label+'</span>';
+  if(f.type==='select'){
+    h+='<select id="'+id+'" name="'+f.id+'"><option value="">—</option>';
+    f.opts.forEach(function(o,i){ h+='<option value="'+i+'"'+(v===i?' selected':'')+'>'+esc(o[L()])+'</option>'; });
+    h+='</select>';
+  } else if(f.type==='textarea'){
+    h+='<textarea id="'+id+'" name="'+f.id+'" rows="3"'+ph+'>'+esc(v||'')+'</textarea>';
+  } else {
+    h+='<input id="'+id+'" name="'+f.id+'" type="'+f.type+'"'+(f.type==='number'?' min="0" inputmode="numeric"':'')+ph+' value="'+esc(v||'')+'">';
+  }
+  return h+'<span class="err" hidden></span></label>';
+}
+
+function render(){
+  var s=svc(), h='<fieldset class="pick"><legend>'+t(UI.pick)+'</legend><div class="svc-pick">';
+  SERVICES.forEach(function(x){
+    h+='<label><input type="radio" name="service" value="'+x.id+'"'+(state.service===x.id?' checked':'')+'><span>'+esc(tx(x))+'</span></label>';
+  });
+  h+='</div><p class="err" id="rq-svc-err" hidden></p></fieldset>';
+  if(!s){ h+='<p class="hint">'+t(UI.hint)+'</p>'; }
+  else {
+    h+='<fieldset class="grp"><legend>'+t(UI.you)+'</legend>'+COMMON.map(field).join('')+'</fieldset>';
+    h+='<fieldset class="grp"><legend>'+t(UI.job)+' · '+esc(tx(s))+'</legend><p class="skip">'+t(UI.skip)+'</p>'+s.q.map(field).join('')+'<h4 class="sub">'+esc(tx(NOTES))+'</h4>'+field(Object.assign({},NOTES,{en:'',sw:''}))+'</fieldset>';
+    h+='<div class="rq-actions"><button class="btn btn-primary" type="submit">'+t(UI.submit)+'</button><button class="btn btn-line" type="button" id="rq-reset">'+t(UI.reset)+'</button></div>';
+  }
+  form.innerHTML=h;
+  var r=document.getElementById('rq-reset');
+  if(r) r.addEventListener('click',function(){ state={service:state.service,v:{}}; done.hidden=true; render(); });
+  if(!done.hidden) showDone();
+}
+window.renderForm=render;
+
+form.addEventListener('change',onInput); form.addEventListener('input',onInput);
+function onInput(e){
+  var el=e.target; if(!el.name) return;
+  if(el.name==='service'){ if(state.service!==el.value){ state.service=el.value; done.hidden=true; render(); } return; }
+  if(el.type==='checkbox'){
+    state.v[el.name]=[].slice.call(form.querySelectorAll('input[name="'+el.name+'"]:checked')).map(function(c){return +c.value;});
+  } else if(el.type==='radio'||el.tagName==='SELECT'){
+    state.v[el.name]= el.value===''?undefined:+el.value;
+  } else state.v[el.name]=el.value;
+  var box=el.closest('[data-q]'); if(box){ var er=box.querySelector('.err'); if(er) er.hidden=true; box.classList.remove('bad'); }
+  if(CONTROL[el.name] && e.type==='change'){ var y=window.scrollY; render(); window.scrollTo(0,y); }
+}
+
+function val(f){
+  var v=state.v[f.id];
+  if(v===undefined||v===''||(Array.isArray(v)&&!v.length)) return '';
+  if(f.type==='checks') return v.map(function(i){return f.opts[i][L()];}).join(', ');
+  if(f.type==='radio'||f.type==='select') return f.opts[v][L()];
+  return String(v).trim();
+}
+function answerable(){ var s=svc(); return s?COMMON.concat(s.q,[NOTES]).filter(function(f){return f.type!=='section'&&visible(f);}):[]; }
+function message(){
+  var s=svc(), out=['*'+t(UI.head)+'*', (LANG==='sw'?'Nchi':'Country')+': '+(CTRY==='KE'?'Kenya':'Tanzania'), t(UI.svc)+': '+tx(s)];
+  function block(title, list){
+    var lines=[]; list.forEach(function(f){ if(!visible(f)) return; var v=val(f); if(v) lines.push('• '+tx(f).replace(/\?$/,'')+': '+v); });
+    if(lines.length){ out.push('', '*'+title+'*'); out.push.apply(out,lines); }
+  }
+  block(t(UI.contact), COMMON);
+  var title=tx(s), buf=[];
+  s.q.forEach(function(f){ if(f.type==='section'){ block(title,buf); title=tx(f); buf=[]; } else buf.push(f); });
+  block(title,buf);
+  var n=val(NOTES); if(n){ out.push('', '*'+tx(NOTES).replace(/\?$/,'')+'*', n); }
+  return out.join('\n');
+}
+
+form.addEventListener('submit',function(e){
+  e.preventDefault();
+  if(!svc()){ var se=document.getElementById('rq-svc-err'); se.textContent=t(UI.needSvc); se.hidden=false; return; }
+  var first=null;
+  answerable().forEach(function(f){
+    if(!f.req) return;
+    var box=form.querySelector('[data-q="'+f.id+'"]'), er=box&&box.querySelector('.err');
+    if(!val(f)){ if(er){ er.textContent=t(f.type==='checks'?UI.needOne:UI.need); er.hidden=false; } if(box) box.classList.add('bad'); first=first||box; }
+  });
+  if(first){ first.scrollIntoView({behavior:'smooth',block:'center'}); var inp=first.querySelector('input,textarea,select'); if(inp) inp.focus({preventScroll:true}); return; }
+  done.hidden=false; showDone(); done.scrollIntoView({behavior:'smooth',block:'start'});
+});
+
+function showDone(){
+  var m=message();
+  var wa=waHref(m);
+  var mail='mailto:'+CONTACTS[CTRY].email+'?subject='+encodeURIComponent(t(UI.head)+' – '+tx(svc()))+'&body='+encodeURIComponent(m.replace(/\*/g,''));
+  done.innerHTML='<h3>'+t(UI.doneH)+'</h3><p>'+t(UI.doneP)+'</p>'+
+    '<div class="rq-actions"><a class="btn btn-primary" href="'+wa+'" target="_blank" rel="noopener">'+t(UI.openWa)+'</a>'+
+    '<a class="btn btn-line" href="'+mail+'">'+t(UI.email)+'</a>'+
+    '<button class="btn btn-line" type="button" id="rq-copy">'+t(UI.copy)+'</button>'+
+    '<button class="btn btn-line" type="button" id="rq-edit">'+t(UI.edit)+'</button></div>'+
+    '<pre id="rq-msg">'+esc(m)+'</pre>';
+  document.getElementById('rq-edit').addEventListener('click',function(){ done.hidden=true; form.scrollIntoView({behavior:'smooth',block:'start'}); });
+  var cb=document.getElementById('rq-copy');
+  cb.addEventListener('click',function(){
+    function ok(){ cb.textContent=t(UI.copied); setTimeout(function(){cb.textContent=t(UI.copy);},1500); }
+    function fb(){ var r=document.createRange(); r.selectNodeContents(document.getElementById('rq-msg')); var sl=window.getSelection(); sl.removeAllRanges(); sl.addRange(r); }
+    try{ navigator.clipboard.writeText(m).then(ok,fb); }catch(e){ fb(); }
+  });
+}
+
+document.querySelectorAll('[data-service]').forEach(function(a){
+  a.addEventListener('click',function(){ state.service=a.getAttribute('data-service'); done.hidden=true; render(); });
+});
+render();
+})();
+
+
+// ===== Tabbed pages =====
+(function(){
+  var PAGES=['home','services','how','form','about','contact'];
+  function show(p,scroll){
+    if(p==='top'||PAGES.indexOf(p)<0) p='home';
+    document.querySelectorAll('.page').forEach(function(el){ el.hidden = el.getAttribute('data-page')!==p; });
+    document.querySelectorAll('.top nav a').forEach(function(a){
+      var on=a.getAttribute('href')==='#'+p; a.classList.toggle('on',on);
+      if(on) a.setAttribute('aria-current','page'); else a.removeAttribute('aria-current');
+    });
+    if(scroll!==false) window.scrollTo(0,0);
+    try{ history.replaceState(null,'','#'+p); }catch(e){}
+  }
+  document.addEventListener('click',function(e){
+    var a=e.target.closest && e.target.closest('a[href^="#"]'); if(!a) return;
+    var p=a.getAttribute('href').slice(1);
+    if(p==='top'||PAGES.indexOf(p)>-1){ e.preventDefault(); show(p); }
+  });
+  window.addEventListener('hashchange',function(){ show(location.hash.slice(1)); });
+  show((location.hash||'#home').slice(1), false);
+})();
+</script>
+
+</body></html>
