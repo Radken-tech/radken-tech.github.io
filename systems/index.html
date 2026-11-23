@@ -84,6 +84,12 @@ section{padding-block:64px}
 
 /* steps */
 .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;counter-reset:s}
+.deck{margin-top:22px;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:20px;display:grid;grid-template-columns:minmax(0,320px) 1fr;gap:24px;align-items:center}
+.deck img{width:100%;height:auto;border-radius:10px;border:1px solid var(--line);display:block}
+.deck h3{margin:6px 0 8px}.deck p{color:var(--muted);margin:0 0 16px}
+.deck-acts{display:flex;gap:10px;flex-wrap:wrap}
+.deck .btn-ghost{border-color:var(--line);color:var(--fg)}
+@media (max-width:700px){.deck{grid-template-columns:1fr}}
 .step{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px;display:grid;gap:8px;align-content:start}
 .step::before{counter-increment:s;content:"0" counter(s);font:500 12px var(--mono);color:var(--lime-deep)}
 .step h3{font-size:19px}
@@ -212,6 +218,18 @@ footer a{color:var(--on-ink-muted)}
         <div class="step"><h3 data-sw="Inachambua">Assesses</h3><p data-sw="Inaangalia kila mmoja ana uhitaji gani wa huduma zako, na kuwapanga kwa kipaumbele.">It works out which of your services each one is likely to need, and ranks them by priority.</p></div>
         <div class="step"><h3 data-sw="Inaandika">Drafts</h3><p data-sw="Inaandika barua pepe fupi na maalum kwa kila mmoja kwa jina lako, pamoja na ufuatiliaji baada ya siku tano.">It writes a short, tailored email to each one in your name, plus a follow-up after five days.</p></div>
         <div class="step"><h3 data-sw="Unaidhinisha">You approve</h3><p data-sw="Unasoma, unarekebisha na kuidhinisha. Barua pepe zinatumwa kutoka kwenye anwani yako mwenyewe.">You read, edit and approve. Emails go out from your own address.</p></div>
+      </div>
+      <div class="deck" id="deck">
+        <img src="deck-cover.png" alt="Cover slide: New clients, found for you every morning" width="640" height="360" loading="lazy">
+        <div>
+          <span class="eyebrow" data-sw="Wasilisho">Presentation</span>
+          <h3 data-sw="Jinsi mfumo unavyofanya kazi, kwa slaidi 9">How the system works, in 9 slides</h3>
+          <p data-sw="Hatua nne, asubuhi ya kawaida na mfumo, unachopata, unavyodhibiti, bei na jinsi ya kuanza. Inafaa kushiriki na wenzako au kuonyesha kwenye mkutano.">The four steps, a morning with the system, what you get, how you stay in control, pricing and how to start. Easy to share with colleagues or show in a meeting.</p>
+          <div class="deck-acts">
+            <a class="btn btn-lime" href="Radken-Systems-How-It-Works.pdf" target="_blank" rel="noopener" data-sw="Tazama wasilisho (PDF)">View presentation (PDF)</a>
+            <a class="btn btn-ghost" href="Radken-Systems-How-It-Works.pptx" download data-sw="Pakua PowerPoint">Download PowerPoint</a>
+          </div>
+        </div>
       </div>
     </div>
   </section>
