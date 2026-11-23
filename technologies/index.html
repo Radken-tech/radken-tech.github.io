@@ -113,6 +113,15 @@ section{padding-block:72px}
 
 /* who it's for */
 .alt{background:var(--surface);border-block:1px solid var(--line)}
+.more{margin-top:56px}
+.more-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.more-card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:22px 0 18px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.more-card h3,.more-card p,.more-card ul{padding-inline:20px}
+.more-card h3{font-size:20px}
+.more-card p{color:var(--muted);font-size:15px}
+.more-card ul{margin:0;padding-left:38px;font-size:15px;display:grid;gap:4px;flex:1;align-content:start}
+.more-card .req{margin-top:8px}
+@media (max-width:860px){.more-grid{grid-template-columns:1fr}}
 .who{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
 .who > div{display:grid;gap:8px;align-content:start;min-width:0}
 .who h3{font-size:20px}
@@ -461,7 +470,64 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
           <a class="req" href="https://wa.me/255719082119?text=Hi%20Radken%20Technologies%2C%20I%27d%20like%20to%20buy%20a%20ready-made%20template%3A%20%5Btemplate%20name%5D." target="_blank" rel="noopener" data-wa-en="Hi Radken Technologies, I&#x27;d like to buy a ready-made template: [template name]." data-wa-sw="Habari Radken Technologies, ningependa kununua kiolezo: [jina la kiolezo]." data-sw="Nunua kupitia WhatsApp">Buy on WhatsApp</a>
         </div>
       </div>
-      <p class="note" data-sw="Radken Technologies huandaa nyaraka tu. Ufungaji hufanywa na msambazaji unayemchagua, hivyo ushauri wetu unabaki huru. Muda wa kukamilisha unahesabiwa kuanzia malipo yako yanapothibitishwa.">Radken Technologies prepares documents only. Installation is done by your chosen supplier, which keeps our advice independent. Delivery times count from when your payment is confirmed.</p>
+      <p class="note" data-sw="Muda wa kukamilisha nyaraka unahesabiwa kuanzia malipo yako yanapothibitishwa.">Delivery times for documents count from when your payment is confirmed.</p>
+      <div class="more">
+        <div class="head">
+          <span class="eyebrow" data-sw="Huduma zaidi">More services</span>
+          <h2 data-sw="Zaidi ya nyaraka: tunafanya kazi yenyewe pia.">Beyond documents: we do the work too.</h2>
+          <p data-sw="Huduma hizi hupangiwa bei baada ya kuelewa mahitaji yako. Tuandikie na utapata nukuu.">These services are priced after we understand your needs. Message us and you'll get a quote.</p>
+        </div>
+        <div class="more-grid">
+        <div class="more-card" id="svc-ict">
+          <h3 data-sw="Ushauri wa TEHAMA na Msaada wa IT">ICT Consultancy &amp; IT Support</h3>
+          <p data-sw="Kazi za TEHAMA kwa vitendo, kuanzia ushauri hadi ufungaji na msaada endelevu.">Hands-on IT work, from advice to installation and ongoing support.</p>
+          <ul>
+            <li data-sw="Ushauri wa TEHAMA na teknolojia">IT consultancy and technology advisory</li>
+            <li data-sw="Kubuni, kufunga na kusanidi mitandao">Network design, installation and configuration</li>
+            <li data-sw="Kutatua matatizo ya kompyuta na programu">Computer hardware and software troubleshooting</li>
+            <li data-sw="Kufunga, kusanidi na kutunza seva">Server installation, configuration and maintenance</li>
+            <li data-sw="Usimamizi wa miundombinu ya TEHAMA">IT infrastructure management</li>
+            <li data-sw="Kufunga na kusanidi CCTV">CCTV installation and configuration</li>
+            <li data-sw="Usimamizi wa Microsoft 365 na Active Directory">Microsoft 365 and Active Directory management</li>
+            <li data-sw="Kupanga na kutekeleza miradi ya TEHAMA">IT project planning and implementation</li>
+            <li data-sw="Msaada wa kiufundi na matengenezo ya TEHAMA">Technical support and IT maintenance</li>
+          </ul>
+          <a class="req" href="https://wa.me/255719082119?text=Hi%20Radken%20Technologies%2C%20I%27d%20like%20a%20quote%20for%20ICT%20Consultancy%20%26%20IT%20Support%3A%20%5Bwhat%20you%20need%5D." target="_blank" rel="noopener" data-wa-en="Hi Radken Technologies, I&#x27;d like a quote for ICT Consultancy &amp; IT Support: [what you need]." data-wa-sw="Habari Radken Technologies, naomba bei ya Ushauri wa TEHAMA na Msaada wa IT: [unachohitaji]." data-sw="Omba bei">Ask for a quote</a>
+        </div>
+        <div class="more-card" id="svc-design">
+          <h3 data-sw="Ubunifu wa Michoro na Chapa">Graphic Design &amp; Branding</h3>
+          <p data-sw="Michoro inayoipa biashara yako mwonekano wazi na wa kitaalamu, kwa kuchapisha na mtandaoni.">Designs that give your business a clear, professional look, in print and online.</p>
+          <ul>
+            <li data-sw="Kubuni nembo na utambulisho wa chapa">Logo design and brand identity</li>
+            <li data-sw="Kadi za biashara na wasifu wa kampuni">Business cards and corporate profiles</li>
+            <li data-sw="Vipeperushi, mabango na broshua">Flyers, posters and brochures</li>
+            <li data-sw="Wasifu wa kampuni na vifaa vya masoko">Company profiles and marketing materials</li>
+            <li data-sw="Michoro na matangazo ya mitandao ya kijamii">Social media graphics and advertisements</li>
+            <li data-sw="Mabango, kadi za mialiko na michoro ya promosheni">Banners, invitations and promotional designs</li>
+            <li data-sw="Matangazo ya bidhaa na biashara">Product and business advertisements</li>
+            <li data-sw="Ubunifu wa kidijitali na wa kuchapisha">Digital and print design solutions</li>
+          </ul>
+          <a class="req" href="https://wa.me/255719082119?text=Hi%20Radken%20Technologies%2C%20I%27d%20like%20a%20quote%20for%20Graphic%20Design%20%26%20Branding%3A%20%5Bwhat%20you%20need%5D." target="_blank" rel="noopener" data-wa-en="Hi Radken Technologies, I&#x27;d like a quote for Graphic Design &amp; Branding: [what you need]." data-wa-sw="Habari Radken Technologies, naomba bei ya Ubunifu wa Michoro na Chapa: [unachohitaji]." data-sw="Omba bei">Ask for a quote</a>
+        </div>
+        <div class="more-card" id="svc-social">
+          <h3 data-sw="Usimamizi wa Mitandao ya Kijamii na Masoko ya Kidijitali">Social Media Management &amp; Digital Marketing</h3>
+          <p data-sw="Tunaendesha kurasa na kampeni zako ili watu sahihi zaidi wakupate.">We run your pages and campaigns so more of the right people find you.</p>
+          <ul>
+            <li data-sw="Usimamizi wa akaunti za mitandao ya kijamii">Social media account management</li>
+            <li data-sw="Mkakati na mipango ya mitandao ya kijamii">Social media strategy and planning</li>
+            <li data-sw="Kutengeneza na kusimamia maudhui">Content creation and management</li>
+            <li data-sw="Kampeni za matangazo mitandaoni">Social media advertising campaigns</li>
+            <li data-sw="Kalenda ya maudhui na kupanga machapisho">Content calendars and scheduling</li>
+            <li data-sw="Kuwasiliana na wafuasi na kusimamia jamii">Audience engagement and community management</li>
+            <li data-sw="Kampeni za kuitangaza chapa">Brand awareness campaigns</li>
+            <li data-sw="Kufuatilia utendaji na kutoa ripoti">Social media performance monitoring and reporting</li>
+            <li data-sw="Ushauri wa masoko ya kidijitali">Digital marketing consultancy</li>
+          </ul>
+          <a class="req" href="https://wa.me/255719082119?text=Hi%20Radken%20Technologies%2C%20I%27d%20like%20a%20quote%20for%20Social%20Media%20Management%20%26%20Digital%20Marketing%3A%20%5Bwhat%20you%20need%5D." target="_blank" rel="noopener" data-wa-en="Hi Radken Technologies, I&#x27;d like a quote for Social Media Management &amp; Digital Marketing: [what you need]." data-wa-sw="Habari Radken Technologies, naomba bei ya Usimamizi wa Mitandao ya Kijamii na Masoko ya Kidijitali: [unachohitaji]." data-sw="Omba bei">Ask for a quote</a>
+        </div>
+        </div>
+      </div>
+
       <div class="pg-next"><a class="btn btn-primary" href="#form" data-sw="Anza ombi">Start a request</a></div>
     </div>
   </section>
