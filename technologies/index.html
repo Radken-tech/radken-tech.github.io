@@ -119,8 +119,11 @@ section{padding-block:72px}
 .more-card h3,.more-card p,.more-card ul{padding-inline:20px}
 .more-card h3{font-size:20px}
 .more-card p{color:var(--muted);font-size:15px}
-.more-card ul{margin:0;padding-left:38px;font-size:15px;display:grid;gap:4px;flex:1;align-content:start}
+.more-card ul{margin:0;padding-left:20px;list-style:none;font-size:15px;display:grid;gap:4px;flex:1;align-content:start}
 .more-card .req{margin-top:8px}
+.more-card li{border-bottom:1px dashed var(--line);padding-bottom:4px;display:flex;flex-direction:column}
+.more-card li b{font-family:var(--mono);font-size:12px;font-weight:500;color:var(--teal)}
+
 @media (max-width:860px){.more-grid{grid-template-columns:1fr}}
 .who{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
 .who > div{display:grid;gap:8px;align-content:start;min-width:0}
@@ -475,57 +478,58 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
         <div class="head">
           <span class="eyebrow" data-sw="Huduma zaidi">More services</span>
           <h2 data-sw="Zaidi ya nyaraka: tunafanya kazi yenyewe pia.">Beyond documents: we do the work too.</h2>
-          <p data-sw="Huduma hizi hupangiwa bei baada ya kuelewa mahitaji yako. Tuandikie na utapata nukuu.">These services are priced after we understand your needs. Message us and you'll get a quote.</p>
+          <p data-sw="Bei za kuanzia zinazokadiriwa kwa soko la Dar es Salaam. Bei ya mwisho inategemea ukubwa wa kazi, na kila bei inajadilika: tuambie bajeti yako na tutakutafutia suluhisho.">Approximate starting prices for the Dar es Salaam market. The final price depends on the size of the job, and every price is open to negotiation: tell us your budget and we'll find something that works.</p>
         </div>
         <div class="more-grid">
         <div class="more-card" id="svc-ict">
           <h3 data-sw="Ushauri wa TEHAMA na Msaada wa IT">ICT Consultancy &amp; IT Support</h3>
           <p data-sw="Kazi za TEHAMA kwa vitendo jijini Dar es Salaam, kuanzia ushauri hadi ufungaji na msaada endelevu.">Hands-on IT work in Dar es Salaam, from advice to installation and ongoing support.</p>
           <ul>
-            <li data-sw="Ushauri wa TEHAMA na teknolojia">IT consultancy and technology advisory</li>
-            <li data-sw="Kubuni, kufunga na kusanidi mitandao">Network design, installation and configuration</li>
-            <li data-sw="Kutatua matatizo ya kompyuta na programu">Computer hardware and software troubleshooting</li>
-            <li data-sw="Kufunga, kusanidi na kutunza seva">Server installation, configuration and maintenance</li>
-            <li data-sw="Usimamizi wa miundombinu ya TEHAMA">IT infrastructure management</li>
-            <li data-sw="Kufunga na kusanidi CCTV">CCTV installation and configuration</li>
-            <li data-sw="Usimamizi wa Microsoft 365 na Active Directory">Microsoft 365 and Active Directory management</li>
-            <li data-sw="Kupanga na kutekeleza miradi ya TEHAMA">IT project planning and implementation</li>
-            <li data-sw="Msaada wa kiufundi na matengenezo ya TEHAMA">Technical support and IT maintenance</li>
+            <li><span data-sw="Ushauri wa TEHAMA na teknolojia">IT consultancy and technology advisory</span><b data-sw="kuanzia TZS 150,000 / tathmini">from TZS 150,000 / assessment</b></li>
+            <li><span data-sw="Kubuni, kufunga na kusanidi mitandao">Network design, installation and configuration</span><b data-sw="kuanzia TZS 500,000 + vifaa">from TZS 500,000 + equipment</b></li>
+            <li><span data-sw="Kutatua matatizo ya kompyuta na programu">Computer hardware and software troubleshooting</span><b data-sw="kuanzia TZS 30,000 / kifaa">from TZS 30,000 / device</b></li>
+            <li><span data-sw="Kufunga, kusanidi na kutunza seva">Server installation, configuration and maintenance</span><b data-sw="kuanzia TZS 400,000 + vifaa">from TZS 400,000 + equipment</b></li>
+            <li><span data-sw="Usimamizi wa miundombinu ya TEHAMA">IT infrastructure management</span><b data-sw="kuanzia TZS 350,000 /mwezi">from TZS 350,000 /month</b></li>
+            <li><span data-sw="Kufunga na kusanidi CCTV">CCTV installation and configuration</span><b data-sw="kuanzia TZS 40,000 / kamera + vifaa">from TZS 40,000 / camera + equipment</b></li>
+            <li><span data-sw="Usimamizi wa Microsoft 365 na Active Directory">Microsoft 365 and Active Directory management</span><b data-sw="kuanzia TZS 300,000 / usanidi">from TZS 300,000 / setup</b></li>
+            <li><span data-sw="Kupanga na kutekeleza miradi ya TEHAMA">IT project planning and implementation</span><b data-sw="kuanzia TZS 500,000 / mradi">from TZS 500,000 / project</b></li>
+            <li><span data-sw="Msaada wa kiufundi na matengenezo ya TEHAMA">Technical support and IT maintenance</span><b data-sw="kuanzia TZS 250,000 /mwezi">from TZS 250,000 /month</b></li>
           </ul>
-          <a class="req" href="https://wa.me/255719082119?text=Hi%20Radken%20Technologies%2C%20I%27d%20like%20a%20quote%20for%20ICT%20Consultancy%20%26%20IT%20Support%3A%20%5Bwhat%20you%20need%5D." target="_blank" rel="noopener" data-wa-en="Hi Radken Technologies, I&#x27;d like a quote for ICT Consultancy &amp; IT Support: [what you need]." data-wa-sw="Habari Radken Technologies, naomba bei ya Ushauri wa TEHAMA na Msaada wa IT: [unachohitaji]." data-sw="Omba bei">Ask for a quote</a>
+          <a class="req" href="https://wa.me/255719082119?text=Hi%20Radken%20Technologies%2C%20I%27d%20like%20a%20quote%20%28open%20to%20negotiation%29%20for%20ICT%20Consultancy%20%26%20IT%20Support%3A%20%5Bwhat%20you%20need%5D." target="_blank" rel="noopener" data-wa-en="Hi Radken Technologies, I&#x27;d like a quote (open to negotiation) for ICT Consultancy &amp; IT Support: [what you need]." data-wa-sw="Habari Radken Technologies, naomba bei ya Ushauri wa TEHAMA na Msaada wa IT: [unachohitaji]." data-sw="Omba bei au jadili bei">Get a quote or negotiate</a>
         </div>
         <div class="more-card" id="svc-design">
           <h3 data-sw="Ubunifu wa Michoro na Chapa">Graphic Design &amp; Branding</h3>
           <p data-sw="Michoro inayoipa biashara yako mwonekano wazi na wa kitaalamu, kwa kuchapisha na mtandaoni.">Designs that give your business a clear, professional look, in print and online.</p>
           <ul>
-            <li data-sw="Kubuni nembo na utambulisho wa chapa">Logo design and brand identity</li>
-            <li data-sw="Kadi za biashara na wasifu wa kampuni">Business cards and corporate profiles</li>
-            <li data-sw="Vipeperushi, mabango na broshua">Flyers, posters and brochures</li>
-            <li data-sw="Wasifu wa kampuni na vifaa vya masoko">Company profiles and marketing materials</li>
-            <li data-sw="Michoro na matangazo ya mitandao ya kijamii">Social media graphics and advertisements</li>
-            <li data-sw="Mabango, kadi za mialiko na michoro ya promosheni">Banners, invitations and promotional designs</li>
-            <li data-sw="Matangazo ya bidhaa na biashara">Product and business advertisements</li>
-            <li data-sw="Ubunifu wa kidijitali na wa kuchapisha">Digital and print design solutions</li>
+            <li><span data-sw="Kubuni nembo na utambulisho wa chapa">Logo design and brand identity</span><b data-sw="kuanzia TZS 100,000">from TZS 100,000</b></li>
+            <li><span data-sw="Kadi za biashara na wasifu wa kampuni">Business cards and corporate profiles</span><b data-sw="kuanzia TZS 15,000">from TZS 15,000</b></li>
+            <li><span data-sw="Vipeperushi, mabango na broshua">Flyers, posters and brochures</span><b data-sw="kuanzia TZS 25,000 / muundo">from TZS 25,000 / design</b></li>
+            <li><span data-sw="Wasifu wa kampuni na vifaa vya masoko">Company profiles and marketing materials</span><b data-sw="kuanzia TZS 250,000">from TZS 250,000</b></li>
+            <li><span data-sw="Michoro na matangazo ya mitandao ya kijamii">Social media graphics and advertisements</span><b data-sw="kuanzia TZS 15,000 / muundo">from TZS 15,000 / design</b></li>
+            <li><span data-sw="Mabango, kadi za mialiko na michoro ya promosheni">Banners, invitations and promotional designs</span><b data-sw="kuanzia TZS 25,000 / muundo">from TZS 25,000 / design</b></li>
+            <li><span data-sw="Matangazo ya bidhaa na biashara">Product and business advertisements</span><b data-sw="kuanzia TZS 30,000 / muundo">from TZS 30,000 / design</b></li>
+            <li><span data-sw="Ubunifu wa kidijitali na wa kuchapisha">Digital and print design solutions</span><b data-sw="kuanzia TZS 30,000">from TZS 30,000</b></li>
           </ul>
-          <a class="req" href="https://wa.me/255719082119?text=Hi%20Radken%20Technologies%2C%20I%27d%20like%20a%20quote%20for%20Graphic%20Design%20%26%20Branding%3A%20%5Bwhat%20you%20need%5D." target="_blank" rel="noopener" data-wa-en="Hi Radken Technologies, I&#x27;d like a quote for Graphic Design &amp; Branding: [what you need]." data-wa-sw="Habari Radken Technologies, naomba bei ya Ubunifu wa Michoro na Chapa: [unachohitaji]." data-sw="Omba bei">Ask for a quote</a>
+          <a class="req" href="https://wa.me/255719082119?text=Hi%20Radken%20Technologies%2C%20I%27d%20like%20a%20quote%20%28open%20to%20negotiation%29%20for%20Graphic%20Design%20%26%20Branding%3A%20%5Bwhat%20you%20need%5D." target="_blank" rel="noopener" data-wa-en="Hi Radken Technologies, I&#x27;d like a quote (open to negotiation) for Graphic Design &amp; Branding: [what you need]." data-wa-sw="Habari Radken Technologies, naomba bei ya Ubunifu wa Michoro na Chapa: [unachohitaji]." data-sw="Omba bei au jadili bei">Get a quote or negotiate</a>
         </div>
         <div class="more-card" id="svc-social">
           <h3 data-sw="Usimamizi wa Mitandao ya Kijamii na Masoko ya Kidijitali">Social Media Management &amp; Digital Marketing</h3>
           <p data-sw="Tunaendesha kurasa na kampeni zako ili watu sahihi zaidi wakupate.">We run your pages and campaigns so more of the right people find you.</p>
           <ul>
-            <li data-sw="Usimamizi wa akaunti za mitandao ya kijamii">Social media account management</li>
-            <li data-sw="Mkakati na mipango ya mitandao ya kijamii">Social media strategy and planning</li>
-            <li data-sw="Kutengeneza na kusimamia maudhui">Content creation and management</li>
-            <li data-sw="Kampeni za matangazo mitandaoni">Social media advertising campaigns</li>
-            <li data-sw="Kalenda ya maudhui na kupanga machapisho">Content calendars and scheduling</li>
-            <li data-sw="Kuwasiliana na wafuasi na kusimamia jamii">Audience engagement and community management</li>
-            <li data-sw="Kampeni za kuitangaza chapa">Brand awareness campaigns</li>
-            <li data-sw="Kufuatilia utendaji na kutoa ripoti">Social media performance monitoring and reporting</li>
-            <li data-sw="Ushauri wa masoko ya kidijitali">Digital marketing consultancy</li>
+            <li><span data-sw="Usimamizi wa akaunti za mitandao ya kijamii">Social media account management</span><b data-sw="kuanzia TZS 350,000 /mwezi">from TZS 350,000 /month</b></li>
+            <li><span data-sw="Mkakati na mipango ya mitandao ya kijamii">Social media strategy and planning</span><b data-sw="kuanzia TZS 200,000">from TZS 200,000</b></li>
+            <li><span data-sw="Kutengeneza na kusimamia maudhui">Content creation and management</span><b data-sw="kuanzia TZS 250,000 /mwezi">from TZS 250,000 /month</b></li>
+            <li><span data-sw="Kampeni za matangazo mitandaoni">Social media advertising campaigns</span><b data-sw="kuanzia TZS 150,000 + bajeti ya matangazo">from TZS 150,000 + ad budget</b></li>
+            <li><span data-sw="Kalenda ya maudhui na kupanga machapisho">Content calendars and scheduling</span><b data-sw="kuanzia TZS 100,000 /mwezi">from TZS 100,000 /month</b></li>
+            <li><span data-sw="Kuwasiliana na wafuasi na kusimamia jamii">Audience engagement and community management</span><b data-sw="kuanzia TZS 150,000 /mwezi">from TZS 150,000 /month</b></li>
+            <li><span data-sw="Kampeni za kuitangaza chapa">Brand awareness campaigns</span><b data-sw="kuanzia TZS 300,000 + bajeti ya matangazo">from TZS 300,000 + ad budget</b></li>
+            <li><span data-sw="Kufuatilia utendaji na kutoa ripoti">Social media performance monitoring and reporting</span><b data-sw="kuanzia TZS 80,000 /mwezi">from TZS 80,000 /month</b></li>
+            <li><span data-sw="Ushauri wa masoko ya kidijitali">Digital marketing consultancy</span><b data-sw="kuanzia TZS 100,000 / kikao">from TZS 100,000 / session</b></li>
           </ul>
-          <a class="req" href="https://wa.me/255719082119?text=Hi%20Radken%20Technologies%2C%20I%27d%20like%20a%20quote%20for%20Social%20Media%20Management%20%26%20Digital%20Marketing%3A%20%5Bwhat%20you%20need%5D." target="_blank" rel="noopener" data-wa-en="Hi Radken Technologies, I&#x27;d like a quote for Social Media Management &amp; Digital Marketing: [what you need]." data-wa-sw="Habari Radken Technologies, naomba bei ya Usimamizi wa Mitandao ya Kijamii na Masoko ya Kidijitali: [unachohitaji]." data-sw="Omba bei">Ask for a quote</a>
+          <a class="req" href="https://wa.me/255719082119?text=Hi%20Radken%20Technologies%2C%20I%27d%20like%20a%20quote%20%28open%20to%20negotiation%29%20for%20Social%20Media%20Management%20%26%20Digital%20Marketing%3A%20%5Bwhat%20you%20need%5D." target="_blank" rel="noopener" data-wa-en="Hi Radken Technologies, I&#x27;d like a quote (open to negotiation) for Social Media Management &amp; Digital Marketing: [what you need]." data-wa-sw="Habari Radken Technologies, naomba bei ya Usimamizi wa Mitandao ya Kijamii na Masoko ya Kidijitali: [unachohitaji]." data-sw="Omba bei au jadili bei">Get a quote or negotiate</a>
         </div>
         </div>
+        <p class="note" data-sw="Vifaa, uchapishaji na bajeti ya matangazo kwenye mitandao hulipiwa tofauti na hununuliwa kwa idhini yako. Bei zinajadilika.">Equipment, printing and social media ad budgets are paid separately and only bought with your approval. Prices are negotiable.</p>
       </div>
 
       <div class="pg-next"><a class="btn btn-primary" href="#form" data-sw="Anza ombi">Start a request</a></div>
