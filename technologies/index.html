@@ -113,6 +113,15 @@ section{padding-block:72px}
 
 /* who it's for */
 .alt{background:var(--surface);border-block:1px solid var(--line)}
+.enq{border:1px solid var(--line);border-radius:14px;padding:0;max-width:420px;width:calc(100% - 32px);background:var(--surface);color:var(--fg)}
+.enq::backdrop{background:rgba(5,15,30,.55)}
+.enq form{display:grid;gap:12px;padding:22px 20px}
+.enq h3{font-size:21px}
+.enq-sub{color:var(--muted);font-size:14px;margin-top:-6px}
+.enq label{display:grid;gap:4px;font-size:14px;font-weight:600}
+.enq input,.enq textarea{font:inherit;font-weight:400;font-size:15px;padding:10px 12px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--fg);width:100%}
+.enq-err{color:#C0392B;font-size:14px;margin:0}
+.enq-acts{display:flex;gap:10px;flex-wrap:wrap}
 .more{margin-top:56px}
 .more-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 .more-card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:22px 0 18px;display:flex;flex-direction:column;gap:10px;min-width:0}
@@ -274,7 +283,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
 .rq .f.wide{grid-column:1/-1}
 .rq .l{font-size:14px;font-weight:600;color:var(--fg);margin:0 0 2px;font-family:var(--body)}
 .rq .star{color:var(--danger)}
-.rq input[type=text],.rq input[type=tel],.rq input[type=number],.rq input[type=date],.rq select,.rq textarea{font:inherit;font-size:15px;padding:10px 12px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--fg);width:100%;min-width:0}
+.rq input[type=text],.rq input[type=tel],.rq input[type=email],.rq input[type=number],.rq input[type=date],.rq select,.rq textarea{font:inherit;font-size:15px;padding:10px 12px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--fg);width:100%;min-width:0}
 .rq textarea{resize:vertical}
 .rq input:focus,.rq select:focus,.rq textarea:focus{outline:2px solid var(--teal);outline-offset:1px;border-color:transparent}
 .rq .opts{display:flex;flex-wrap:wrap;gap:8px}
@@ -714,7 +723,8 @@ var COMMON=[
   q('orgtype',{type:'radio',en:'Type of organisation',sw:'Aina ya taasisi',opts:[['School','Shule'],['Clinic or hospital','Kliniki au hospitali'],['Business or office','Biashara au ofisi'],['Other','Nyingine']]}),
   q('name',{type:'text',req:1,en:'Your name',sw:'Jina lako'}),
   q('role',{type:'text',en:'Your role',sw:'Wadhifa wako',ph:['e.g. Bursar, Head teacher, Clinic manager','mf. Mhasibu, Mkuu wa shule, Meneja wa kliniki']}),
-  q('phone',{type:'tel',req:1,en:'Phone / WhatsApp number',sw:'Namba ya simu / WhatsApp',ph:['e.g. 0712 345 678','mf. 0712 345 678']}),
+  q('phone',{type:'tel',req:1,en:'WhatsApp number',sw:'Namba ya WhatsApp',ph:['e.g. 0712 345 678','mf. 0712 345 678']}),
+  q('cemail',{type:'email',req:1,en:'Email address',sw:'Barua pepe',ph:['e.g. name@school.ac.tz','mf. jina@shule.ac.tz']}),
   q('loc',{type:'text',en:'Location',sw:'Mahali',get ph(){ return CTRY==='KE'?['e.g. Westlands, Nairobi','mf. Westlands, Nairobi']:['e.g. Mbezi Beach, Dar es Salaam','mf. Mbezi Beach, Dar es Salaam']; }}),
   q('when',{type:'select',en:'When do you need the document?',sw:'Unahitaji nyaraka lini?',opts:[['As soon as possible','Haraka iwezekanavyo'],['Within 2 weeks','Ndani ya wiki 2'],['Within a month','Ndani ya mwezi mmoja'],['Just planning for now','Tunapanga tu kwa sasa']]}),
   q('heard',{type:'select',en:'How did you hear about us?',sw:'Ulitusikiaje?',opts:[['WhatsApp','WhatsApp'],['Friend or colleague','Rafiki au mfanyakazi mwenzako'],['Email from us','Barua pepe kutoka kwetu'],['Online','Mtandaoni'],['Other','Nyingine']]})
@@ -866,6 +876,7 @@ var UI={
  needOne:['Please pick at least one.','Tafadhali chagua angalau kimoja.'],
  needSvc:['Choose a service first.','Chagua huduma kwanza.'],
  doneH:['Your request is ready to send','Ombi lako liko tayari kutumwa'],
+ badEmail:['Please enter a valid email address','Tafadhali andika barua pepe sahihi'],
  doneP:['Open WhatsApp with your answers filled in, then press Send. You will get a reply with a proforma and the exact price.','Fungua WhatsApp ikiwa na majibu yako, kisha bonyeza Tuma. Utajibiwa na proforma pamoja na bei kamili.'],
  openWa:['Open WhatsApp','Fungua WhatsApp'],
  email:['Send by email instead','Tuma kwa barua pepe'],
@@ -982,7 +993,10 @@ form.addEventListener('submit',function(e){
     var box=form.querySelector('[data-q="'+f.id+'"]'), er=box&&box.querySelector('.err');
     if(!val(f)){ if(er){ er.textContent=t(f.type==='checks'?UI.needOne:UI.need); er.hidden=false; } if(box) box.classList.add('bad'); first=first||box; }
   });
+  var ce=COMMON.filter(function(f){return f.id==='cemail';})[0];
+  if(!first && !EMAIL_OK.test(val(ce))){ var eb=form.querySelector('[data-q="cemail"]'), ee=eb&&eb.querySelector('.err'); if(ee){ ee.textContent=t(UI.badEmail); ee.hidden=false; } if(eb) eb.classList.add('bad'); first=eb; }
   if(first){ first.scrollIntoView({behavior:'smooth',block:'center'}); var inp=first.querySelector('input,textarea,select'); if(inp) inp.focus({preventScroll:true}); return; }
+  notify('Request form – '+tx(svc()), {name:val(COMMON.filter(function(f){return f.id==='name';})[0]), email:val(ce), whatsapp:val(COMMON.filter(function(f){return f.id==='phone';})[0]), service:tx(svc()), details:message().replace(/\*/g,'')});
   done.hidden=false; showDone(); done.scrollIntoView({behavior:'smooth',block:'start'});
 });
 
@@ -1035,4 +1049,67 @@ render();
 })();
 </script>
 
+
+<dialog id="enq" class="enq" aria-labelledby="enq-h">
+  <form method="dialog" id="enq-form" novalidate>
+    <h3 id="enq-h" data-sw="Tuambie jinsi ya kukufikia">Tell us how to reach you</h3>
+    <p class="enq-sub" data-sw="Tutakujibu kwa WhatsApp au barua pepe.">We'll reply on WhatsApp or email.</p>
+    <label><span data-sw="Jina lako">Your name</span><input name="name" type="text" autocomplete="name" required></label>
+    <label><span data-sw="Barua pepe">Email address</span><input name="email" type="email" autocomplete="email" required placeholder="name@example.com"></label>
+    <label><span data-sw="Namba ya WhatsApp">WhatsApp number</span><input name="whatsapp" type="tel" autocomplete="tel" required placeholder="0712 345 678"></label>
+    <label><span data-sw="Unahitaji nini? (si lazima)">What do you need? (optional)</span><textarea name="need" rows="3"></textarea></label>
+    <p class="enq-err" id="enq-err" hidden></p>
+    <div class="enq-acts"><button class="btn btn-primary" type="submit" data-sw="Endelea">Continue</button><button class="btn btn-line" type="button" id="enq-cancel" data-sw="Ghairi">Cancel</button></div>
+  </form>
+</dialog>
+<script>
+/* Enquiry notifications: every quote, WhatsApp or email click first collects the client's
+   name, email and WhatsApp number, emails a copy to Radken (FormSubmit, free), then carries on
+   to WhatsApp/email as before. The request form sends the same notification on submit. */
+var NOTIFY_TO='kennyrodgers36@outlook.com', NOTIFY_CC='emmanuelshirima4@gmail.com';
+var EMAIL_OK=/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+function notify(subject, data){
+  var body=Object.assign({_subject:'Radken Technologies enquiry: '+subject, _cc:NOTIFY_CC, _template:'table', _captcha:'false', page:location.href}, data);
+  try{ fetch('https://formsubmit.co/ajax/'+NOTIFY_TO,{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify(body),keepalive:true}).catch(function(){}); }catch(e){}
+}
+(function(){
+  var dlg=document.getElementById('enq'), f=document.getElementById('enq-form'), err=document.getElementById('enq-err'), pending=null, known=null;
+  if(!dlg.showModal) return; /* very old browsers: links work as before */
+  if(LANG==='sw') setLang('sw'); /* translate the box if the visitor chose Kiswahili */
+  try{ known=JSON.parse(sessionStorage.getItem('radken-enq')||'null'); }catch(e){}
+  function label(a){
+    var card=a.closest('.more-card,.row'), h=card&&card.querySelector('h3');
+    return h ? h.textContent.trim() : (a.hasAttribute('data-mail') ? 'Email button' : 'WhatsApp chat');
+  }
+  function go(a){
+    var href=a.href, d=known||{};
+    if(d.name && href.indexOf('wa.me/')>-1){
+      var u=new URL(href), msg=(u.searchParams.get('text')||'')+'\n\n'+'Name: '+d.name+'\nEmail: '+d.email+'\nWhatsApp: '+d.whatsapp+(d.need?'\nNeed: '+d.need:'');
+      u.searchParams.set('text',msg.trim()); href=u.toString();
+    }
+    if(href.indexOf('mailto:')===0) location.href=href; else window.open(href,'_blank','noopener');
+  }
+  document.addEventListener('click',function(e){
+    var a=e.target.closest('a[href*="wa.me/"],a[data-mail]');
+    if(!a || a.closest('#rq-done')) return; /* request-form results already sent their notification */
+    e.preventDefault();
+    pending={a:a, what:label(a)};
+    if(known){ notify(pending.what, Object.assign({service:pending.what},known)); go(a); return; }
+    err.hidden=true; dlg.showModal(); f.elements.name.focus();
+  });
+  document.getElementById('enq-cancel').addEventListener('click',function(){ dlg.close(); });
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    var sw=document.documentElement.lang==='sw'||LANG==='sw';
+    var d={name:f.elements.name.value.trim(), email:f.elements.email.value.trim(), whatsapp:f.elements.whatsapp.value.trim(), need:f.elements.need.value.trim()};
+    var msg = !d.name ? (sw?'Tafadhali andika jina lako':'Please enter your name')
+      : !EMAIL_OK.test(d.email) ? (sw?'Tafadhali andika barua pepe sahihi':'Please enter a valid email address')
+      : d.whatsapp.replace(/\D/g,'').length<9 ? (sw?'Tafadhali andika namba ya WhatsApp sahihi':'Please enter a valid WhatsApp number') : '';
+    if(msg){ err.textContent=msg; err.hidden=false; return; }
+    known=d; try{ sessionStorage.setItem('radken-enq',JSON.stringify(d)); }catch(e){}
+    notify(pending.what, Object.assign({service:pending.what},d));
+    dlg.close(); go(pending.a);
+  });
+})();
+</script>
 </body></html>
