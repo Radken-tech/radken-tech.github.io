@@ -264,7 +264,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
 .rq .f.wide{grid-column:1/-1}
 .rq .l{font-size:14px;font-weight:600;color:var(--fg);margin:0 0 2px;font-family:var(--body)}
 .rq .star{color:var(--danger)}
-.rq input[type=text],.rq input[type=tel],.rq input[type=number],.rq input[type=date],.rq select,.rq textarea{font:inherit;font-size:15px;padding:10px 12px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--fg);width:100%;min-width:0}
+.rq input[type=text],.rq input[type=tel],.rq input[type=email],.rq input[type=number],.rq input[type=date],.rq select,.rq textarea{font:inherit;font-size:15px;padding:10px 12px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--fg);width:100%;min-width:0}
 .rq textarea{resize:vertical}
 .rq input:focus,.rq select:focus,.rq textarea:focus{outline:2px solid var(--teal);outline-offset:1px;border-color:transparent}
 .rq .opts{display:flex;flex-wrap:wrap;gap:8px}
@@ -799,7 +799,8 @@ var COLOURS=function(){ return q('colours',{type:'text',wide:1,en:'Colours you w
 var COMMON=[
   q('name',{type:'text',req:1,en:'Your name',sw:'Jina lako'}),
   q('org',{type:'text',en:'Business or organisation (if any)',sw:'Biashara au taasisi (kama ipo)',ph:['e.g. Mama Neema Shop','mf. Duka la Mama Neema']}),
-  q('phone',{type:'tel',req:1,en:'Phone / WhatsApp number',sw:'Namba ya simu / WhatsApp',ph:['e.g. 0712 345 678','mf. 0712 345 678']}),
+  q('phone',{type:'tel',req:1,en:'WhatsApp number',sw:'Namba ya WhatsApp',ph:['e.g. 0712 345 678','mf. 0712 345 678']}),
+  q('cemail',{type:'email',req:1,en:'Email address',sw:'Barua pepe',ph:['e.g. name@example.com','mf. jina@mfano.com']}),
   q('loc',{type:'text',en:'Location',sw:'Mahali',get ph(){ return CTRY==='KE'?['e.g. Westlands, Nairobi','mf. Westlands, Nairobi']:['e.g. Arusha town','mf. Arusha mjini']; }}),
   q('when',{type:'select',en:'When do you need it?',sw:'Unaihitaji lini?',opts:[['Within 2 days','Ndani ya siku 2'],['This week','Wiki hii'],['Within 2 weeks','Ndani ya wiki 2'],['No rush','Hakuna haraka']]}),
   q('heard',{type:'select',en:'How did you hear about us?',sw:'Ulitusikiaje?',opts:[['WhatsApp','WhatsApp'],['Friend or colleague','Rafiki au mfanyakazi mwenzako'],['Instagram or Facebook','Instagram au Facebook'],['Online','Mtandaoni'],['Other','Nyingine']]})
@@ -898,6 +899,7 @@ var UI={
  needOne:['Please pick at least one.','Tafadhali chagua angalau kimoja.'],
  needSvc:['Choose a service first.','Chagua huduma kwanza.'],
  doneH:['Your order is ready to send','Agizo lako liko tayari kutumwa'],
+ badEmail:['Please enter a valid email address','Tafadhali andika barua pepe sahihi'],
  doneP:['Open WhatsApp with your answers filled in, then press Send. Attach your logo or photos in the same chat. You will get a reply with the price and when it will be ready.','Fungua WhatsApp ikiwa na majibu yako, kisha bonyeza Tuma. Ambatisha nembo au picha zako kwenye mazungumzo hayo hayo. Utajibiwa na bei na muda wa kukamilisha.'],
  openWa:['Open WhatsApp','Fungua WhatsApp'],
  email:['Send by email instead','Tuma kwa barua pepe'],
@@ -1014,7 +1016,10 @@ form.addEventListener('submit',function(e){
     var box=form.querySelector('[data-q="'+f.id+'"]'), er=box&&box.querySelector('.err');
     if(!val(f)){ if(er){ er.textContent=t(f.type==='checks'?UI.needOne:UI.need); er.hidden=false; } if(box) box.classList.add('bad'); first=first||box; }
   });
+  var ce=COMMON.filter(function(f){return f.id==='cemail';})[0];
+  if(!first && !EMAIL_OK.test(val(ce))){ var eb=form.querySelector('[data-q="cemail"]'), ee=eb&&eb.querySelector('.err'); if(ee){ ee.textContent=t(UI.badEmail); ee.hidden=false; } if(eb) eb.classList.add('bad'); first=eb; }
   if(first){ first.scrollIntoView({behavior:'smooth',block:'center'}); var inp=first.querySelector('input,textarea,select'); if(inp) inp.focus({preventScroll:true}); return; }
+  radkenNotify('Request form – '+tx(svc()), {name:val(COMMON.filter(function(f){return f.id==='name';})[0]), email:val(ce), whatsapp:val(COMMON.filter(function(f){return f.id==='phone';})[0]), service:tx(svc()), details:message().replace(/\*/g,'')});
   done.hidden=false; showDone(); done.scrollIntoView({behavior:'smooth',block:'start'});
 });
 
@@ -1082,4 +1087,5 @@ render();
 })();
 </script>
 
+<script src="../enquiry.js" data-division="Radken Graphics Kenya"></script>
 </body></html>
