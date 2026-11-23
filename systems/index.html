@@ -108,6 +108,14 @@ section{padding-block:64px}
 .who span{background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:9px 16px;font-size:15px}
 
 /* pricing */
+.dash-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.dcard{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 20px;display:grid;gap:6px;align-content:start;border-top:3px solid var(--lime-deep)}
+.dcard h3{font-size:18px;margin:0}.dcard p{margin:0;color:var(--muted);font-size:15px}
+.dash-pts{margin:22px 0 26px;padding-left:20px;display:grid;gap:6px}
+.dash-cta{margin-top:20px}
+#dashboards .btn-lime{display:inline-flex}
+@media (max-width:900px){.dash-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.dash-grid{grid-template-columns:1fr}}
 .prices{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;max-width:820px}
 .price{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:24px;display:grid;gap:10px;align-content:start}
 .price.main{border:2px solid var(--lime-deep)}
@@ -171,6 +179,7 @@ footer a{color:var(--on-ink-muted)}
     <nav aria-label="Sections">
       <a class="hide-s" href="#how" data-sw="Inavyofanya kazi">How it works</a>
       <a class="hide-s" href="#pricing" data-sw="Bei">Pricing</a>
+      <a class="hide-s" href="#dashboards" data-sw="Dashibodi">Dashboards</a>
       <a href="#contact" data-sw="Mawasiliano">Contact</a>
       <button class="lang" id="lang-toggle" type="button" aria-label="Switch language / Badilisha lugha"><span data-l="en" class="on">EN</span><span data-l="sw">SW</span></button>
     </nav>
@@ -303,6 +312,53 @@ footer a{color:var(--on-ink-muted)}
         </div>
       </div>
       <p class="fine" data-sw="Mfumo unatafuta tu taarifa zilizochapishwa hadharani na biashara zenyewe, na barua pepe zote zinatumwa kutoka kwenye anwani yako baada ya wewe kuidhinisha. Wateja wako na rasimu zako ni mali yako.">The system only uses contact details businesses have published themselves, and every email goes out from your own address after you approve it. Your leads and drafts belong to you.</p>
+    </div>
+  </section>
+
+  <section id="dashboards">
+    <div class="wrap">
+      <div class="head">
+        <span class="eyebrow" data-sw="Pia kutoka Radken Systems">Also from Radken Systems</span>
+        <h2 data-sw="Dashibodi za biashara: namba zako zote kwenye skrini moja.">Business dashboards: all your numbers on one screen.</h2>
+        <p data-sw="Bado unafuatilia mauzo, stoo au madeni kwenye daftari, Excel na WhatsApp? Tunakujengea dashibodi yako mwenyewe, inayofanya kazi kwenye simu na kompyuta, ili uone kinachoendelea kwa haraka.">Still tracking sales, stock or debts in notebooks, Excel files and WhatsApp? We build you your own dashboard that works on phone and computer, so you can see what's happening at a glance.</p>
+      </div>
+      <div class="dash-grid">
+        <div class="dcard"><h3 data-sw="Mauzo na madeni">Sales &amp; debtors</h3><p data-sw="Mauzo ya kila siku, nani anadaiwa, na malipo yaliyochelewa.">Daily sales, who owes you, and overdue payments.</p></div>
+        <div class="dcard"><h3 data-sw="Stoo na oda">Stock &amp; orders</h3><p data-sw="Bidhaa zilizopo, zinazokaribia kuisha, na oda zinazosubiri.">What's in stock, what's running low, and orders waiting.</p></div>
+        <div class="dcard"><h3 data-sw="Kazi na miradi">Jobs &amp; projects</h3><p data-sw="Kila kazi, nani anaifanya, hatua iliyofikiwa na tarehe ya mwisho.">Every job, who's on it, its stage and its deadline.</p></div>
+        <div class="dcard"><h3 data-sw="Wafanyakazi na zamu">Staff &amp; rosters</h3><p data-sw="Zamu, mahudhurio, likizo na nani yupo kazini leo.">Shifts, attendance, leave and who's in today.</p></div>
+        <div class="dcard"><h3 data-sw="Magari na mafuta">Vehicles &amp; fuel</h3><p data-sw="Matumizi ya mafuta, huduma za magari na gharama kwa kila gari.">Fuel use, servicing and cost per vehicle.</p></div>
+        <div class="dcard"><h3 data-sw="Wateja na fursa">Clients &amp; opportunities</h3><p data-sw="Wateja wako, nukuu ulizotuma na zipi zimekubaliwa.">Your clients, quotes sent and which ones were won.</p></div>
+      </div>
+      <ul class="dash-pts">
+        <li data-sw="Imejengwa kwa namna biashara yako inavyofanya kazi, si kiolezo cha jumla">Built around how your business works, not a generic template</li>
+        <li data-sw="Wewe na timu yako mnaweza kuiona na kuisasisha">You and your team can view and update it</li>
+        <li data-sw="Takwimu zako zinabaki kuwa mali yako, na unaweza kuzipakua">Your data stays yours, and you can download it</li>
+      </ul>
+      <div class="prices">
+        <div class="price">
+          <span class="eyebrow" data-sw="Mara moja">Once</span>
+          <h3 data-sw="Kujenga dashibodi">Dashboard build</h3>
+          <div class="amt"><small data-sw="kuanzia">from</small> TZS 350,000</div>
+          <ul>
+            <li data-sw="Kikao cha kuelewa unachotaka kufuatilia">A session to understand what you want to track</li>
+            <li data-sw="Dashibodi yako, tayari ndani ya wiki 1 hadi 2">Your dashboard, ready in 1 to 2 weeks</li>
+            <li data-sw="Kuhamisha takwimu zako za sasa (Excel au daftari)">Moving in your current data (Excel or notebook)</li>
+            <li data-sw="Mafunzo mafupi kwako na timu yako">A short walkthrough for you and your team</li>
+          </ul>
+        </div>
+        <div class="price">
+          <span class="eyebrow" data-sw="Kila mwezi, si lazima">Monthly, optional</span>
+          <h3 data-sw="Huduma na maboresho">Care &amp; updates</h3>
+          <div class="amt"><small data-sw="kuanzia">from</small> TZS 50,000 <small data-sw="kwa mwezi">/ month</small></div>
+          <ul>
+            <li data-sw="Mabadiliko madogo na ripoti mpya">Small changes and new reports</li>
+            <li data-sw="Msaada unapokwama">Help when you get stuck</li>
+            <li data-sw="Nakala za akiba za takwimu zako">Backups of your data</li>
+          </ul>
+        </div>
+      </div>
+      <div class="dash-cta"><a class="btn btn-lime" href="https://wa.me/255786670743?text=Hi%20Radken%20Systems%2C%20I%27d%20like%20a%20dashboard%20for%20my%20business%20to%20track%3A%20%5Bwhat%20you%20want%20to%20track%5D." target="_blank" rel="noopener" data-sw="Omba dashibodi kwa WhatsApp">Ask for a dashboard on WhatsApp</a></div>
     </div>
   </section>
 
