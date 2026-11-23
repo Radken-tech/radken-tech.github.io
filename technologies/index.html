@@ -113,6 +113,15 @@ section{padding-block:72px}
 
 /* who it's for */
 .alt{background:var(--surface);border-block:1px solid var(--line)}
+.gf{margin-top:48px;background:var(--surface);border:2px solid var(--teal);border-radius:16px;padding:28px;display:grid;grid-template-columns:1.6fr 1fr;gap:28px}
+.gf h2{margin:6px 0 10px}.gf-main>p{color:var(--muted);margin:0 0 14px}
+.gf-list{margin:0;padding-left:20px;display:grid;gap:6px}
+.gf-price{display:flex;flex-direction:column;gap:14px;justify-content:center;border-left:1px solid var(--line);padding-left:28px}
+.gf-price b{display:block;font-size:24px;font-family:var(--display,inherit)}
+.gf-k{font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--teal)}
+.gf-price small{color:var(--muted);font-size:13px;display:block}
+.gf-price .btn{text-align:center;justify-content:center}
+@media (max-width:860px){.gf{grid-template-columns:1fr;padding:20px}.gf-price{border-left:0;padding-left:0;border-top:1px solid var(--line);padding-top:20px}}
 .more{margin-top:56px}
 .more-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 .more-card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:22px 0 18px;display:flex;flex-direction:column;gap:10px;min-width:0}
@@ -474,6 +483,26 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
         </div>
       </div>
       <p class="note" data-sw="Muda wa kukamilisha nyaraka unahesabiwa kuanzia malipo yako yanapothibitishwa.">Delivery times for documents count from when your payment is confirmed.</p>
+      <div class="gf" id="get-found">
+        <div class="gf-main">
+          <span class="eyebrow" data-sw="Kifurushi kipya">New package</span>
+          <h2 data-sw="Get Found: wateja wakupate, na wakufikie.">Get Found: be easy to find, and easy to reach.</h2>
+          <p data-sw="Biashara nyingi jijini Dar hazina barua pepe ya kampuni wala tovuti, kwa hiyo wateja wanashindwa kuzipata. Tunakuandalia yote kwa pamoja, tayari ndani ya siku 7 hivi.">Many Dar es Salaam businesses have no company email or website, so customers can't find them or get in touch. We set it all up for you in one go, usually ready within about 7 days.</p>
+          <ul class="gf-list">
+            <li data-sw="Barua pepe ya kampuni kwa jina lako, mfano info@biasharayako.co.tz">Company email on your own name, e.g. info@yourbusiness.co.tz</li>
+            <li data-sw="Tovuti rahisi ya ukurasa mmoja inayofanya kazi vizuri kwenye simu">A simple one-page website that works well on phones</li>
+            <li data-sw="Google Business Profile ili uonekane kwenye Ramani za Google">Google Business Profile, so you show up on Google Maps</li>
+            <li data-sw="Nembo safi na muundo wa kadi za biashara">A clean logo and business card design</li>
+            <li data-sw="Kitufe cha WhatsApp na fomu ya mawasiliano kwenye tovuti">WhatsApp button and contact form on the website</li>
+          </ul>
+        </div>
+        <div class="gf-price">
+          <div><span class="gf-k" data-sw="Mara moja">One time</span><b data-sw="kuanzia TZS 450,000">from TZS 450,000</b></div>
+          <div><span class="gf-k" data-sw="Kila mwaka">Every year</span><b data-sw="kuanzia TZS 120,000">from TZS 120,000</b><small data-sw="jina la tovuti (.co.tz), barua pepe na hosting">domain (.co.tz), email and hosting</small></div>
+          <a class="btn btn-primary" href="https://wa.me/255719082119?text=Hi%20Radken%20Technologies%2C%20I%27m%20interested%20in%20the%20Get%20Found%20package%20for%20my%20business%3A%20%5Bbusiness%20name%5D." target="_blank" rel="noopener" data-wa-en="Hi Radken Technologies, I&#x27;m interested in the Get Found package for my business: [business name]." data-wa-sw="Habari Radken Technologies, ninavutiwa na kifurushi cha Get Found kwa biashara yangu: [jina la biashara]." data-sw="Nataka Get Found">I want Get Found</a>
+          <small data-sw="Bei zinajadilika. Una tayari baadhi ya hivi? Tutapunguza bei.">Prices are negotiable. Already have some of these? We'll take them off the price.</small>
+        </div>
+      </div>
       <div class="more">
         <div class="head">
           <span class="eyebrow" data-sw="Huduma zaidi">More services</span>
