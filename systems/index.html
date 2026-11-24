@@ -90,6 +90,10 @@ section{padding-block:64px}
 .deck-acts{display:flex;gap:10px;flex-wrap:wrap}
 .deck .btn-ghost{border-color:var(--line);color:var(--fg)}
 @media (max-width:700px){.deck{grid-template-columns:1fr}}
+/* Demo video: full width above the presentation card */
+.demo{margin-top:22px;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:20px;display:grid;gap:12px}
+.demo video{width:100%;max-width:100%;aspect-ratio:16/9;border-radius:10px;border:1px solid var(--line);background:#0F1318;display:block}
+.demo h3{margin:6px 0 0}.demo p{color:var(--muted);margin:0}
 .step{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px;display:grid;gap:8px;align-content:start}
 .step::before{counter-increment:s;content:"0" counter(s);font:500 12px var(--mono);color:var(--lime-deep)}
 .step h3{font-size:19px}
@@ -227,6 +231,14 @@ footer a{color:var(--on-ink-muted)}
         <div class="step"><h3 data-sw="Inachambua">Assesses</h3><p data-sw="Inaangalia kila mmoja ana uhitaji gani wa huduma zako, na kuwapanga kwa kipaumbele.">It works out which of your services each one is likely to need, and ranks them by priority.</p></div>
         <div class="step"><h3 data-sw="Inaandika">Drafts</h3><p data-sw="Inaandika barua pepe fupi na maalum kwa kila mmoja kwa jina lako, pamoja na ufuatiliaji baada ya siku tano.">It writes a short, tailored email to each one in your name, plus a follow-up after five days.</p></div>
         <div class="step"><h3 data-sw="Unaidhinisha">You approve</h3><p data-sw="Unasoma, unarekebisha na kuidhinisha. Barua pepe zinatumwa kutoka kwenye anwani yako mwenyewe.">You read, edit and approve. Emails go out from your own address.</p></div>
+      </div>
+      <div class="demo" id="demo">
+        <div>
+          <span class="eyebrow" data-sw="Video ya dakika moja">1-minute video</span>
+          <h3 data-sw="Tazama mfumo ukifanya kazi">Watch the system at work</h3>
+          <p data-sw="Kutoka mteja mtarajiwa kupatikana asubuhi hadi barua pepe kutumwa na ankara ya awali kuandaliwa. Wateja na anwani kwenye video ni za mfano.">From a prospect found in the morning to an email sent and a proforma ready. The leads and addresses in the video are examples.</p>
+        </div>
+        <video src="demo.mp4" poster="demo-poster.jpg" controls playsinline preload="none" aria-label="Radken Systems demo video"></video>
       </div>
       <div class="deck" id="deck">
         <img src="deck-cover.png" alt="Cover slide: New clients, found for you every morning" width="640" height="360" loading="lazy">
