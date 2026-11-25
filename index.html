@@ -88,6 +88,25 @@ section{padding-block:56px}
 .mark{width:44px;height:44px;border-radius:10px;display:grid;place-items:center;background:var(--tint);color:var(--teal)}
 .div.empty .mark{background:transparent;border:1px dashed var(--line);color:var(--muted);font:700 22px var(--display)}
 
+.pack{background:var(--navy);color:var(--on-navy)}
+.pack .eyebrow{color:var(--teal-bright)}
+.pack .sec-head p{color:#C9D6E3}
+.pack-grid{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:20px;align-items:start}
+@media (max-width:760px){.pack-grid{grid-template-columns:1fr}}
+.pack-items{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.pack-items li{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:14px;align-items:start;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.10);border-radius:12px;padding:16px}
+.pack-items .dot{width:12px;height:12px;border-radius:50%;margin-top:7px}
+.pack-items h3{font-size:18px}
+.pack-items p{color:#C9D6E3;font-size:14px;margin-top:4px}
+.pack-items small{display:block;font:500 11px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:#9FB2C8;margin-top:6px}
+.pack-items .was{font-family:var(--mono);font-size:13px;color:#9FB2C8;white-space:nowrap;font-variant-numeric:tabular-nums}
+.pack-price{background:var(--surface);color:var(--fg);border-radius:14px;padding:22px;display:grid;gap:10px;border-top:4px solid var(--teal-bright)}
+.pack-price .old{font-family:var(--mono);color:var(--muted);text-decoration:line-through;font-size:14px}
+.pack-price .now{font:800 clamp(30px,5vw,40px)/1.05 var(--display);font-variant-numeric:tabular-nums}
+.pack-price .save{justify-self:start;font:600 12px var(--body);background:var(--tint);color:var(--teal);padding:4px 10px;border-radius:999px}
+.pack-price p{color:var(--muted);font-size:14px}
+.pack-price .btn{text-align:center}
+
 .points{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px}
 .points div{display:grid;gap:6px;border-top:3px solid var(--teal);padding-top:14px}
 .points h3{font-size:19px}
@@ -126,6 +145,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
     </a>
     <nav aria-label="Sections">
       <a href="#divisions" data-sw="Vitengo">Divisions</a>
+      <a href="#starter" data-sw="Kifurushi">Starter Pack</a>
       <a href="#how" data-sw="Tunavyofanya kazi">How we work</a>
       <a href="#partner" data-sw="Shirikiana nasi">Partner with us</a>
       <a href="#contact" data-sw="Mawasiliano">Contact</a>
@@ -235,6 +255,31 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
           <p data-sw="Tunaongeza huduma mpya pamoja na washirika wanaoaminika. Kila kitengo kipya kitaonekana hapa.">We're adding new services together with trusted partners. Each new division will appear here.</p>
           <a class="go" href="#partner" data-sw="Kuwa mshirika">Become a partner</a>
         </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="starter" class="pack">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow" data-sw="Kifurushi cha Kuanzia · Tanzania">Starter Pack · Tanzania</span>
+        <h2 data-sw="Kila kitu biashara mpya inahitaji, kutoka kwa mshirika mmoja.">Everything a new business needs, from one partner.</h2>
+        <p data-sw="Vitengo vitatu vya Radken vinafanya kazi pamoja ili biashara yako ionekane mtandaoni, ionekane ya kitaalamu, na iendelee kuonekana. Kwa bei moja, chini ya kununua kila kimoja peke yake.">Three Radken divisions work together so your business is online, looks professional, and stays visible. One price, less than buying each part on its own.</p>
+      </div>
+      <div class="pack-grid">
+        <ul class="pack-items">
+          <li><span class="dot" style="background:#38bdf8" aria-hidden="true"></span><div><h3 data-sw="Get Found">Get Found</h3><p data-sw="Barua pepe ya kampuni, tovuti ya ukurasa mmoja, kuonekana kwenye Google Maps, pamoja na nembo na muundo wa kadi ya biashara.">Company email, a one-page website, a Google Maps listing, plus a logo and business card design.</p><small data-sw="Radken Technologies · Emmanuel">Radken Technologies · Emmanuel</small></div><span class="was">TZS 450,000</span></li>
+          <li><span class="dot" style="background:#f472b6" aria-hidden="true"></span><div><h3 data-sw="Mabango 2 ya uzinduzi">2 launch posters</h3><p data-sw="Mabango au vipeperushi viwili kwa siku ya ufunguzi na mitandao ya kijamii.">Two posters or flyers for your opening and your social media.</p><small data-sw="Radken Graphics · David">Radken Graphics · David</small></div><span class="was">TZS 50,000</span></li>
+          <li><span class="dot" style="background:#e8aa42" aria-hidden="true"></span><div><h3 data-sw="Social Autopilot, mwezi wa kwanza">Social Autopilot, first month</h3><p data-sw="Tunaandaa kurasa zako za LinkedIn, Instagram na Facebook, kisha machapisho 3 kwa wiki kwa rangi zako. Unaidhinisha kila chapisho.">We set up your LinkedIn, Instagram and Facebook pages, then 3 posts a week in your colours. You approve every post.</p><small data-sw="Radken Systems · Kenny">Radken Systems · Kenny</small></div><span class="was">TZS 350,000</span></li>
+        </ul>
+        <div class="pack-price">
+          <span class="old" data-sw="Kila kimoja peke yake: TZS 850,000">Bought separately: TZS 850,000</span>
+          <div class="now">TZS 700,000</div>
+          <span class="save" data-sw="Unaokoa TZS 150,000">You save TZS 150,000</span>
+          <p data-sw="Malipo moja, mtu mmoja wa kuwasiliana naye. Tunaratibu vitengo vyote vitatu kwa ajili yako. Baada ya mwezi wa kwanza, Social Autopilot ni TZS 150,000 kwa mwezi ukiamua kuendelea.">One payment, one contact. We coordinate all three divisions for you. After the first month, Social Autopilot is TZS 150,000 a month if you choose to continue.</p>
+          <a class="btn btn-primary" href="https://wa.me/255786670743?text=Hi%20Radken%2C%20I%27d%20like%20the%20Starter%20Pack%20for%20my%20business%3A%20%5Bbusiness%20name%5D." target="_blank" rel="noopener" data-sw="Omba Starter Pack kwa WhatsApp">Get the Starter Pack on WhatsApp</a>
+          <p style="font-size:13px" data-sw="Au piga +255 786 670 743 · kennyrodgers36@outlook.com">Or call +255 786 670 743 · kennyrodgers36@outlook.com</p>
+        </div>
       </div>
     </div>
   </section>
