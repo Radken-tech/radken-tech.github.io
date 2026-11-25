@@ -106,6 +106,14 @@ section{padding-block:56px}
 .pack-price .save{justify-self:start;font:600 12px var(--body);background:var(--tint);color:var(--teal);padding:4px 10px;border-radius:999px}
 .pack-price p{color:var(--muted);font-size:14px}
 .pack-price .btn{text-align:center}
+.pack-prices{display:grid;gap:14px}
+.pack-price.growth{background:transparent;color:var(--on-navy);border:1px solid rgba(232,170,66,.55);border-top:4px solid var(--teal-bright)}
+.pack-price.growth .old,.pack-price.growth p{color:#C9D6E3}
+.pack-price.growth .save{background:rgba(232,170,66,.18);color:var(--teal-bright)}
+.pack-price .tier{font:600 12px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--teal)}
+.pack-price.growth .tier{color:var(--teal-bright)}
+.pack-items li.plus{border-style:dashed;border-color:rgba(232,170,66,.55)}
+.pack-items .only{display:inline-block;margin-left:8px;font:600 10px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--teal-bright);border:1px solid rgba(232,170,66,.55);border-radius:999px;padding:2px 8px;vertical-align:middle}
 
 .points{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px}
 .points div{display:grid;gap:6px;border-top:3px solid var(--teal);padding-top:14px}
@@ -145,7 +153,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
     </a>
     <nav aria-label="Sections">
       <a href="#divisions" data-sw="Vitengo">Divisions</a>
-      <a href="#starter" data-sw="Kifurushi">Starter Pack</a>
+      <a href="#starter" data-sw="Vifurushi">Packs</a>
       <a href="#how" data-sw="Tunavyofanya kazi">How we work</a>
       <a href="#partner" data-sw="Shirikiana nasi">Partner with us</a>
       <a href="#contact" data-sw="Mawasiliano">Contact</a>
@@ -262,7 +270,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
   <section id="starter" class="pack">
     <div class="wrap">
       <div class="sec-head">
-        <span class="eyebrow" data-sw="Kifurushi cha Kuanzia · Tanzania">Starter Pack · Tanzania</span>
+        <span class="eyebrow" data-sw="Vifurushi · Tanzania">Starter &amp; Growth Packs · Tanzania</span>
         <h2 data-sw="Kila kitu biashara mpya inahitaji, kutoka kwa mshirika mmoja.">Everything a new business needs, from one partner.</h2>
         <p data-sw="Vitengo vitatu vya Radken vinafanya kazi pamoja ili biashara yako ionekane mtandaoni, ionekane ya kitaalamu, na iendelee kuonekana. Kwa bei moja, chini ya kununua kila kimoja peke yake.">Three Radken divisions work together so your business is online, looks professional, and stays visible. One price, less than buying each part on its own.</p>
       </div>
@@ -271,14 +279,27 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
           <li><span class="dot" style="background:#38bdf8" aria-hidden="true"></span><div><h3 data-sw="Get Found">Get Found</h3><p data-sw="Barua pepe ya kampuni, tovuti ya ukurasa mmoja, kuonekana kwenye Google Maps, pamoja na nembo na muundo wa kadi ya biashara.">Company email, a one-page website, a Google Maps listing, plus a logo and business card design.</p><small data-sw="Radken Technologies · Emmanuel">Radken Technologies · Emmanuel</small></div><span class="was">TZS 450,000</span></li>
           <li><span class="dot" style="background:#f472b6" aria-hidden="true"></span><div><h3 data-sw="Mabango 2 ya uzinduzi">2 launch posters</h3><p data-sw="Mabango au vipeperushi viwili kwa siku ya ufunguzi na mitandao ya kijamii.">Two posters or flyers for your opening and your social media.</p><small data-sw="Radken Graphics · David">Radken Graphics · David</small></div><span class="was">TZS 50,000</span></li>
           <li><span class="dot" style="background:#e8aa42" aria-hidden="true"></span><div><h3 data-sw="Social Autopilot, mwezi wa kwanza">Social Autopilot, first month</h3><p data-sw="Tunaandaa kurasa zako za LinkedIn, Instagram na Facebook, kisha machapisho 3 kwa wiki kwa rangi zako. Unaidhinisha kila chapisho.">We set up your LinkedIn, Instagram and Facebook pages, then 3 posts a week in your colours. You approve every post.</p><small data-sw="Radken Systems · Kenny">Radken Systems · Kenny</small></div><span class="was">TZS 350,000</span></li>
+          <li class="plus"><span class="dot" style="background:#B8F34A" aria-hidden="true"></span><div><h3><span data-sw="Mfumo wa kutafuta wateja, mwezi wa kwanza">Client-finding system, first month</span> <span class="only" data-sw="Growth Pack tu">Growth Pack only</span></h3><p data-sw="Kila asubuhi mfumo unatafuta makampuni yanayoweza kuhitaji huduma zako na kuandaa barua pepe maalum kwa kila moja. Unaidhinisha kabla chochote hakijatumwa.">Every morning it finds companies that may need your services and drafts a tailored email to each one. You approve before anything is sent.</p><small data-sw="Radken Systems · Kenny">Radken Systems · Kenny</small></div><span class="was">TZS 600,000</span></li>
         </ul>
+        <div class="pack-prices">
         <div class="pack-price">
+          <span class="tier">Starter Pack</span>
           <span class="old" data-sw="Kila kimoja peke yake: TZS 850,000">Bought separately: TZS 850,000</span>
           <div class="now">TZS 700,000</div>
           <span class="save" data-sw="Unaokoa TZS 150,000">You save TZS 150,000</span>
           <p data-sw="Malipo moja, mtu mmoja wa kuwasiliana naye. Tunaratibu vitengo vyote vitatu kwa ajili yako. Baada ya mwezi wa kwanza, Social Autopilot ni TZS 150,000 kwa mwezi ukiamua kuendelea.">One payment, one contact. We coordinate all three divisions for you. After the first month, Social Autopilot is TZS 150,000 a month if you choose to continue.</p>
           <a class="btn btn-primary" href="https://wa.me/255786670743?text=Hi%20Radken%2C%20I%27d%20like%20the%20Starter%20Pack%20for%20my%20business%3A%20%5Bbusiness%20name%5D." target="_blank" rel="noopener" data-sw="Omba Starter Pack kwa WhatsApp">Get the Starter Pack on WhatsApp</a>
-          <p style="font-size:13px" data-sw="Au piga +255 786 670 743 · kennyrodgers36@outlook.com">Or call +255 786 670 743 · kennyrodgers36@outlook.com</p>
+          <p style="font-size:13px" data-sw="Inafaa biashara yoyote mpya.">Right for any new business.</p>
+        </div>
+        <div class="pack-price growth">
+          <span class="tier">Growth Pack</span>
+          <span class="old" data-sw="Kila kimoja peke yake: TZS 1,450,000">Bought separately: TZS 1,450,000</span>
+          <div class="now">TZS 1,200,000</div>
+          <span class="save" data-sw="Unaokoa TZS 250,000">You save TZS 250,000</span>
+          <p data-sw="Kila kitu kwenye Starter Pack, pamoja na mfumo wa kutafuta wateja. Kwa biashara mpya zinazouza kwa makampuni na taasisi. Baada ya mwezi wa kwanza: Social Autopilot TZS 150,000 na mfumo wa kutafuta wateja TZS 100,000 kwa mwezi, ukiamua kuendelea.">Everything in the Starter Pack, plus the client-finding system. For new businesses that sell to companies and institutions. After the first month: Social Autopilot TZS 150,000 and client-finding TZS 100,000 a month, if you choose to continue.</p>
+          <a class="btn btn-primary" href="https://wa.me/255786670743?text=Hi%20Radken%2C%20I%27d%20like%20the%20Growth%20Pack%20for%20my%20business%3A%20%5Bbusiness%20name%5D." target="_blank" rel="noopener" data-sw="Omba Growth Pack kwa WhatsApp">Get the Growth Pack on WhatsApp</a>
+        </div>
+        <p style="font-size:13px;color:#C9D6E3" data-sw="Au piga +255 786 670 743 · kennyrodgers36@outlook.com">Or call +255 786 670 743 · kennyrodgers36@outlook.com</p>
         </div>
       </div>
     </div>
